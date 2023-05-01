@@ -1,7 +1,7 @@
 # Docs
 A detailed explanation for how to configure tables, forms, reports, dashboards and triggers. 
 
-## Creating tables for structured data with SQL ##
+## Performing the basic CRUD operations with Cliosight ##
    
    
   
