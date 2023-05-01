@@ -22,6 +22,13 @@ A detailed explanation for how to configure tables, forms, reports, dashboards a
 ## The JSON fields of a Report ##
 
 ## Examples of Reports in Cliosight's syntax ##
+
+
+## The Structure of a Dashboard ##
+
+## The JSON fields of a Dashboard ##
+
+## Examples of Dashboards in Cliosight's syntax ##
   
   
 
