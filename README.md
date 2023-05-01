@@ -8,7 +8,7 @@ A detailed explanation for how to configure tables, forms, reports, dashboards a
 ## A relational database example ##
 
 
-## Performance and security considerations while dealing with large amounts of data ##
+## Speed and security considerations while dealing with large amounts of data ##
      
      
 
