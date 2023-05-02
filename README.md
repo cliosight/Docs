@@ -37,7 +37,7 @@ A detailed explanation for how to configure tables, forms, reports, dashboards a
 
 ## Examples of Dashboards in Cliosight's syntax ##
   
-## Adding trustworthiness to the data presented through Cliosight's widgets and APIs##
+## Adding trustworthiness to the data presented through Cliosight's widgets and APIs
 
 ## The Structure of a Trigger ##
 
