@@ -24,21 +24,22 @@ CREATE TABLE `consultation` ( `id` int NOT NULL AUTO_INCREMENT, `client_email` v
       
 ### Contact table ###
 
-CREATE TABLE `contact` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL, `phone` varchar(255) DEFAULT NULL,  PRIMARY KEY (`id`) )     
+CREATE TABLE `contact` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) NOT NULL, `phone` varchar(255) DEFAULT NULL,  PRIMARY KEY (`id`) )     
 
 ### Group table ###
 
-CREATE TABLE `group` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `admin_email` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )
+CREATE TABLE `group` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `admin_email` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )
       
 ### Group_Contact Association ###
 
-CREATE TABLE `groups_contacts` ( `id` int NOT NULL AUTO_INCREMENT, `contact_id` int DEFAULT NULL, `group_id` int DEFAULT NULL, PRIMARY KEY (`id`) )    
+CREATE TABLE `groups_contacts` ( `id` int NOT NULL AUTO_INCREMENT, `contact_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) )    
     
 ### Group_Meeting Association ###
 
-CREATE TABLE `groups_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int DEFAULT NULL, `group_id` int DEFAULT NULL, PRIMARY KEY (`id`) )   
+CREATE TABLE `groups_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) )   
      
-     
+### Contacts_Meetings Association ###   
+CREATE TABLE `contacts_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `contact_id` int NOT NULL, PRIMARY KEY (`id`) )
 
 
 ## Handling multiple datasources and connection pools ##
