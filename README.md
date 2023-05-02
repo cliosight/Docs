@@ -8,10 +8,10 @@ A detailed explanation for how to configure tables, forms, reports, dashboards a
 ## A relational database example ##
 
 
-## Performance considerations while dealing with large amounts of data ##
+## Handling multiple datasources and database connections ##
 
 
-## Security considerations for cloud deployment ##
+## Security considerations in cloud deployment ##
      
      
 
