@@ -20,7 +20,15 @@ CREATE TABLE `interview` ( `id` int NOT NULL AUTO_INCREMENT, `candidate_email` v
        
 ### Consultation table ###
 
-CREATE TABLE `consultation` ( `id` int NOT NULL AUTO_INCREMENT, `client_email` varchar(255) NOT NULL, `client_name` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `country_code` varchar(255) DEFAULT NULL, `client_mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )     
+CREATE TABLE `consultation` ( `id` int NOT NULL AUTO_INCREMENT, `client_email` varchar(255) NOT NULL, `client_name` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `country_code` varchar(255) DEFAULT NULL, `client_mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )   
+
+### Meetings_Interviews Association ###
+   
+CREATE TABLE `meetings_interviews` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int DEFAULT NULL, `interview_id` int DEFAULT NULL, PRIMARY KEY (`id`) )   
+
+### Meetings_Consultations Association ###
+   
+CREATE TABLE `meetings_consultations` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int DEFAULT NULL, `consultation_id` int DEFAULT NULL, PRIMARY KEY (`id`) ) 
       
 ### Contact table ###
 
