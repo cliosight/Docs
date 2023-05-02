@@ -1,5 +1,5 @@
 # Docs
-A detailed explanation for how to configure tables, forms, reports, dashboards and triggers. 
+A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
 ## Performing the basic CRUD operations with Cliosight ##
    
