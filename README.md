@@ -10,17 +10,17 @@ With SQL interface users can perform all possible CRUD operations on the data in
 Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and they can have both individuals added to the meeting and/or pre-existing groups of contacts. In order to track the individuals who attended a meeting, there has to be a direct association between a meeting and a contact. This is because group details can be edited by design for instance, after a meeting has taken place.
     
 ## Schema details ##
-### Meeeting table ###
+### Meeetings table ###
 
-CREATE TABLE `meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) 
+CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) 
     
-### Interview table ###
+### Interviews table ###
 
-CREATE TABLE `interview` ( `id` int NOT NULL AUTO_INCREMENT, `candidate_email` varchar(255) NOT NULL, `candidate_name` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )     
+CREATE TABLE `interviews` ( `id` int NOT NULL AUTO_INCREMENT, `candidate_email` varchar(255) NOT NULL, `candidate_name` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )     
        
-### Consultation table ###
+### Consultations table ###
 
-CREATE TABLE `consultation` ( `id` int NOT NULL AUTO_INCREMENT, `client_email` varchar(255) NOT NULL, `client_name` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `country_code` varchar(255) DEFAULT NULL, `client_mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )   
+CREATE TABLE `consultations` ( `id` int NOT NULL AUTO_INCREMENT, `client_email` varchar(255) NOT NULL, `client_name` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `country_code` varchar(255) DEFAULT NULL, `client_mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )   
 
 ### Meetings_Interviews Association ###
    
@@ -30,13 +30,13 @@ CREATE TABLE `meetings_interviews` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_
    
 CREATE TABLE `meetings_consultations` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int DEFAULT NULL, `consultation_id` int DEFAULT NULL, PRIMARY KEY (`id`) ) 
       
-### Contact table ###
+### Contacts table ###
 
-CREATE TABLE `contact` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) NOT NULL, `phone` varchar(255) DEFAULT NULL,  PRIMARY KEY (`id`) )     
+CREATE TABLE `contacts` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) NOT NULL, `phone` varchar(255) DEFAULT NULL,  PRIMARY KEY (`id`) )     
 
-### Group table ###
+### Groups table ###
 
-CREATE TABLE `group` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `admin_email` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )
+CREATE TABLE `groups` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `admin_email` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )
       
 ### Groups_Contacts Association ###
 
