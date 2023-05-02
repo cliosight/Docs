@@ -34,7 +34,7 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 
 ## Examples of Dashboards in Cliosight's syntax ##
   
-## Adding trustworthiness to the data presented through Cliosight's widgets and APIs
+## Claiming trustworthiness 
 
 
 ## JSON fields of a Trigger ##
