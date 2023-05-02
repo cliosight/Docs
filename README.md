@@ -16,32 +16,28 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
      
      
 
-## The Structure of a Form ##
 
-## The JSON fields of a Form ##
+## JSON fields of a Form ##
 
 ## Examples of Forms in Cliosight's syntax ##
    
    
   
-## The Structure of a Report ##
 
-## The JSON fields of a Report ##
+## JSON fields of a Report ##
 
 ## Examples of Reports in Cliosight's syntax ##
 
 
-## The Structure of a Dashboard ##
 
-## The JSON fields of a Dashboard ##
+## JSON fields of a Dashboard ##
 
 ## Examples of Dashboards in Cliosight's syntax ##
   
 ## Adding trustworthiness to the data presented through Cliosight's widgets and APIs
 
-## The Structure of a Trigger ##
 
-## The JSON fields of a Trigger ##
+## JSON fields of a Trigger ##
 
 ## Examples of commonly used Triggers in Cliosight's syntax ##
 
