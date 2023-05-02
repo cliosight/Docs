@@ -7,7 +7,7 @@ With SQL interface users can perform all possible CRUD operations on the data.
    
   
 ## A relational database example ##
-Let's consider the database design for collaboartion. A ## meeting ## can be either an ##interview## or a ##consultation##. A meeting can be sent to individuals or ##groups## of individuals whose ##contact## information is already saved in the database.  
+Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or **groups** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and they can have both individuals added to the meeting and/or pre-existing groups of contacts. In order to track the individuals who attended a meeting, there has to be a direct association between a meeting and a contact. This is because group details can be edited by design for instance, after a meeting has taken place.
 
 
 
