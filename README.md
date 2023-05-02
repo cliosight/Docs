@@ -1,4 +1,6 @@
-# Docs
+# Cliosight Documentation
+-------------------------
+-------------------------
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
 ## Performing the basic CRUD operations with Cliosight ##
