@@ -3,7 +3,7 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 
 ## Performing the basic CRUD operations with Cliosight ##
 Cliosight will support the top database servers like MySQL, Postgres, MS SQL Server, Google BigQuery, Amazon Dynamo DB and others.
-With SQL interface users can perform all possible CRUD operations on the data in both the in-house and external databases.
+With SQL interface users can perform all possible CRUD operations on the data in both in-house and external databases.
    
   
 ## A relational database example ##
@@ -43,13 +43,8 @@ CREATE TABLE `contacts_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id
 
 
 ## Handling multiple datasources and connection pools ##
-
-
-## Security considerations in cloud deployment ##
-
-     
-     
-
+Paid users will have the option to create multiple datasources for in-house and remote databases. Free tier will only have one in-house MySQL database with shared a connection pool. This makes uploading huge volumes of data faster for paid users. Optionally, they will also have the option to deploy Cliosight into their VPC for a dedicated connection pool and higher security of their sensitive data.
+   
 
 ## JSON fields of a Form ##
 
