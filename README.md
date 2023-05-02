@@ -7,7 +7,7 @@ With SQL interface users can perform all possible CRUD operations on the data.
    
   
 ## A relational database example ##
-Let's consider the database design for collaboartion. A ##meeting## can be either an ##interview## or a ##consultation##. A meeting can be sent to individuals or ##groups## of individuals whose ##contact## information is already saved in the database.  
+Let's consider the database design for collaboartion. A ## meeting ## can be either an ##interview## or a ##consultation##. A meeting can be sent to individuals or ##groups## of individuals whose ##contact## information is already saved in the database.  
 
 
 
