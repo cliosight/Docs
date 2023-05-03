@@ -1,7 +1,7 @@
 # Cliosight Documentation
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
-## SQL interface for all structured data ##
+## SQL interface for structured data ##
 Cliosight will support the top database servers like MySQL, Postgres, MS SQL Server, Google BigQuery, Amazon Dynamo DB and others.
 With our SQL interface, users can perform all possible SQL operations on the data in both in-house and remote databases. We will also expand to other sources like distributed ledgers.
 
