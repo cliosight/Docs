@@ -35,11 +35,11 @@ CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varch
     
 ### Interviews table ###
 
-CREATE TABLE `interviews` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` varchar(255) NOT NULL, `skill` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) 
+CREATE TABLE `interviews` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` varchar(255) NOT NULL, `skill` varchar(255) DEFAULT NULL, `experience` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) 
        
 ### Consultations table ###
 
-CREATE TABLE `consultations` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` varchar(255) NOT NULL, `module` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )    
+CREATE TABLE `consultations` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` varchar(255) NOT NULL, `module` varchar(255) DEFAULT NULL, `category` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )    
       
     
 ### Groups_Meetings Association ###
