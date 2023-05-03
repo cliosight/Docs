@@ -1,17 +1,17 @@
 # Cliosight Documentation
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
-## Performing the basic CRUD operations with Cliosight ##
+## SQL interface for all structured data ##
 Cliosight will support the top database servers like MySQL, Postgres, MS SQL Server, Google BigQuery, Amazon Dynamo DB and others.
-With SQL interface users can perform all possible CRUD operations on the data in both in-house and external databases.
+With our SQL interface, users can perform all possible SQL operations on the data in both in-house and remote databases. We will also expand to other sources like distributed ledgers.
 
 
-## Handling multiple datasources and connection pools ##
-Paid users will have the option to create multiple datasources for in-house and remote databases. Free tier will only have one in-house MySQL database with shared a connection pool. This makes uploading huge volumes of data faster for paid users. Optionally, they will also have the option to deploy Cliosight into their VPC for a dedicated connection pool and higher security of their sensitive data.
+## Support for multiple datasources ##
+Paid users will have the option to create multiple datasources for in-house and remote databases. Free tier will only have one in-house MySQL database with shared resources. Uploading large volumes of data will be much faster for paid users due to dedicated resources.
    
   
 ## A relational database example ##
-Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and they can have both individuals added to the meeting and/or pre-existing groups of contacts. In order to track the individuals who attended a meeting, there has to be a direct association between a meeting and a contact. This is because group details can be edited by design for instance, after a meeting has taken place.
+Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and they can have both individuals added to the meeting and pre-existing groups of contacts. In order to track the individuals who attended a meeting, there has to be a direct association between a meeting and a contact. This is because a group might be edited after a meeting has taken place.
     
 ## Schema details ##
 ### Meeetings table ###
