@@ -24,13 +24,13 @@ CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varch
 
 CREATE TABLE `interviews` ( `id` int NOT NULL AUTO_INCREMENT, `candidate_id` varchar(255) NOT NULL, PRIMARY KEY (`id`) ) 
     
-CREATE TABLE `candidates` ( `id` int NOT NULL AUTO_INCREMENT, `candidate_email` varchar(255) NOT NULL, PRIMARY KEY (`id`) ) 
+CREATE TABLE `candidates` ( `id` int NOT NULL AUTO_INCREMENT, `email` varchar(255) NOT NULL, PRIMARY KEY (`id`) ) 
        
 ### Consultations table ###
 
 CREATE TABLE `consultations` ( `id` int NOT NULL AUTO_INCREMENT, `client_id` varchar(255) NOT NULL, PRIMARY KEY (`id`) )    
 
-CREATE TABLE `clients` ( `id` int NOT NULL AUTO_INCREMENT, `cient_email` varchar(255) NOT NULL, `country_code` varchar(255) DEFAULT NULL, `client_mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )   
+CREATE TABLE `clients` ( `id` int NOT NULL AUTO_INCREMENT, `email` varchar(255) NOT NULL, `country_code` varchar(255) DEFAULT NULL, `mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )   
 
 ### Meetings_Interviews Association ###
    
