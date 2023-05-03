@@ -11,38 +11,15 @@ Paid users will have the option to create multiple datasources for in-house and 
    
   
 ## A relational database example ##
-Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and it can have both individuals added at the time of creation and pre-existing groups or individual contacts. A meeting can be edited at any time. In order to track the individuals who attended a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email id. This scenario can only be handled with triggers.  
+Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and it can have both individuals added at the time of creation or pre-existing groups and contacts. A meeting can be edited at any time. In order to track the individuals who attended a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email id. This scenario can only be handled with triggers.  
 
 To see the live "Meeting" form, [click here](https://demo.cliosight.com/app/forms/40/show?noNavbar=true).
     
 ## Schema details ##
-### Meeetings table ###
 
-CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) ) 
-    
-### Interviews table ###
-
-CREATE TABLE `interviews` ( `id` int NOT NULL AUTO_INCREMENT, `candidate_id` varchar(255) NOT NULL, PRIMARY KEY (`id`) ) 
-    
-CREATE TABLE `candidates` ( `id` int NOT NULL AUTO_INCREMENT, `email` varchar(255) NOT NULL, PRIMARY KEY (`id`) ) 
-       
-### Consultations table ###
-
-CREATE TABLE `consultations` ( `id` int NOT NULL AUTO_INCREMENT, `client_id` varchar(255) NOT NULL, PRIMARY KEY (`id`) )    
-
-CREATE TABLE `clients` ( `id` int NOT NULL AUTO_INCREMENT, `email` varchar(255) NOT NULL, `country_code` varchar(255) DEFAULT NULL, `mobile` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )   
-
-### Meetings_Interviews Association ###
-   
-CREATE TABLE `meetings_interviews` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int DEFAULT NULL, `interview_id` int DEFAULT NULL, PRIMARY KEY (`id`) )   
-
-### Meetings_Consultations Association ###
-   
-CREATE TABLE `meetings_consultations` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int DEFAULT NULL, `consultation_id` int DEFAULT NULL, PRIMARY KEY (`id`) ) 
-      
 ### Contacts table ###
 
-CREATE TABLE `contacts` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) NOT NULL, `phone` varchar(255) DEFAULT NULL,  PRIMARY KEY (`id`) )     
+CREATE TABLE `contacts` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) NOT NULL, `phone` varchar(255) DEFAULT NULL, `type` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )     
 
 ### Groups table ###
 
@@ -51,13 +28,28 @@ CREATE TABLE `groups` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NO
 ### Groups_Contacts Association ###
 
 CREATE TABLE `groups_contacts` ( `id` int NOT NULL AUTO_INCREMENT, `contact_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) )    
+
+### Meeetings table ###
+
+CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) ) 
+    
+### Interviews table ###
+
+CREATE TABLE `interviews` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` varchar(255) NOT NULL, `skill` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) 
+       
+### Consultations table ###
+
+CREATE TABLE `consultations` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` varchar(255) NOT NULL, `module` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )    
+      
     
 ### Groups_Meetings Association ###
 
-CREATE TABLE `groups_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) )   
+CREATE TABLE `groups_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) ) 
+
+### Contacts_Meetings Association ###
+
+CREATE TABLE `contacts_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `contact_id` int NOT NULL, PRIMARY KEY (`id`) ) 
      
-### Contacts_Meetings Association ###   
-CREATE TABLE `contacts_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `contact_id` int NOT NULL, PRIMARY KEY (`id`) )
    
 
 ## JSON fields of a Form ##
