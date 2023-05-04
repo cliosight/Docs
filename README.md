@@ -12,9 +12,9 @@ Paid users will have the option to create multiple datasources for in-house and 
   
 ## A relational database example ##
 Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can of two types and it can have both individuals added at the time of creation or pre-existing groups and contacts. A meeting can be edited at any time. In order to track the individuals who attended a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email id, similar to meeting scheduled, updated and cancelled notifications to all participants. This scenario can only be handled with triggers.  
-Other scenarios to take care of could include:  
+Similarly,  
 1. Making sure only unique entries are present in contacts_meetings table    
-2. Link between an Interview or Consultation with the parent Meeting   
+2. Linking an Interview or Consultation with the parent Meeting   
 
 
 The forms created are given below:   
