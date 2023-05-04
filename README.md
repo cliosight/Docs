@@ -11,10 +11,12 @@ Paid users will have the option to create multiple datasources for in-house and 
    
   
 ## A relational database example ##
-Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Therefore, a meeting can be of two types and it can have both individuals added at the time of creation or pre-existing groups and contacts. A meeting can be edited at any time. In order to track the individuals who attended a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email id, similar to meeting scheduled, updated and cancelled notifications to all participants. This scenario can only be handled with triggers.  
-Similarly,  
+Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Also, pre-existing contacts can be added to the meeting explicitly. A meeting, group and contact can be edited at any time. In order to track the individuals who attended a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email, similar to meeting scheduled, updated and cancelled notifications to all participants. This scenario can only be handled with triggers and jobs.  
+Similarly, other important considerations may include:    
 1. Making sure only unique entries are present in contacts_meetings table    
-2. Linking an Interview or Consultation with the parent Meeting   
+2. Handling time conflicting meetings  
+3. Acknowledgement from attendees
+4. Meeting summary in follow up email.  
 
 
 The forms created are given below:   
