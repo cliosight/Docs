@@ -11,7 +11,7 @@ Paid users will have the option to create multiple datasources for in-house and 
    
   
 ## A relational database example ##
-Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Also, pre-existing contacts can be added to the meeting explicitly. A meeting, group and contact can be edited at any time. In order to track the individuals who attended a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email. This is similar to meeting scheduled, updated and cancelled notifications for all participants. This scenario can only be handled with triggers and jobs.  
+Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Also, pre-existing contacts can be added to the meeting explicitly. A meeting, group and contact can be edited at any time. In order to track the individuals who were invited for a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email. This is similar to meeting scheduled, updated and cancelled notifications for all participants. This scenario can only be handled with triggers and jobs.  
 Similarly, other important considerations may include:    
 1. Handling time conflicting meetings  
 2. Acknowledgement from attendees
@@ -21,8 +21,8 @@ Similarly, other important considerations may include:
 
 
 The forms created are given below:   
+[Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
 [Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)   
-[Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)  
     
 ## Schema details ##
