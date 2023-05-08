@@ -15,9 +15,10 @@ Let's consider a database design for company meetings. A **meeting** can be eith
 Similarly, other important considerations may include:    
 1. Handling time conflicting meetings  
 2. Acknowledgement from attendees
-3. Tracking those who attended the meeting
-4. Meeting summary in follow up email  
-5. Taking care of time zone differences while scheduling a meeting   
+3. Tracking who all attended the meeting 
+4. Keeping an account of the highlights  
+5. Meeting summary in follow up email   
+6. Taking care of time zone differences while scheduling a meeting   
 
 
 The forms created are given below:   
