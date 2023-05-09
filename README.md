@@ -9,7 +9,7 @@ With our SQL interface, users can perform all possible analytical operations in 
 ## Support for multiple datasources ##
 Paid users will have the option to create multiple datasources for in-house and remote databases. Free tier will only have one in-house MySQL database with shared resources. Uploading large volumes of data will be much faster for paid users due to dedicated resources.
    
-## User persmissions and access control ##
+## User permissions and access control ##
 Each component created using Cliosight will have fine-grained access control. The admin will provide necessary permissions to users so that data can be uploaded, viewed or edited in a controlled manner. For instance, restricting access to datasets and reports based on the geographic location of users. A simple use case for this is geographically targeted online marketing campaigns. Same applies for files like images and PDFs that are collected and stored in the cloud storage. Trial accounts will have limited database and file storage capacity. 
 
 ## A relational database example ##
