@@ -18,9 +18,9 @@ Similarly, other important considerations may include:
 1. Handling time conflicting meetings  
 2. Acknowledgement from attendees
 3. Tracking the session length and who all attended a meeting 
-4. Keeping an account of the meeting highlights  
-5. Meeting summary in follow up email to attendees and stakeholders    
-6. Taking care of time zone differences while scheduling a meeting   
+4. Keeping an account of the highlights  
+5. Summary in follow up email to attendees and stakeholders    
+6. Taking care of time zone differences   
 
 
 The forms created are given below:   
