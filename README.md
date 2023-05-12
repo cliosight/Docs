@@ -89,7 +89,7 @@ CREATE TABLE `contacts_meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id
 
 ## JSON fields of a Trigger ##
 
-## Examples of commonly used Triggers in Cliosight's syntax ##
+## Examples of commonly used SQL Triggers in Cliosight's syntax ##
 
 
 
