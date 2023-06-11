@@ -14,7 +14,7 @@ Each component created using Cliosight will have fine-grained access control. Th
 
 ## A relational database example ##
 Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Also, pre-existing contacts can be added to the meeting explicitly. A meeting, group and contact can be edited at any time. In order to track the individuals who were invited for a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email. This is similar to meeting scheduled, updated and cancelled notifications for all participants. This scenario can only be handled with SQL triggers and scheduled jobs.  
-Similarly, other important considerations may include:    
+Similarly, other important considerations or enhancements may include:    
 1. Handling time conflicting meetings  
 2. Acknowledgement from attendees
 3. Tracking the session length and who all attended a meeting 
@@ -25,6 +25,8 @@ Similarly, other important considerations may include:
 Now, let's consider the design for email notification of a meeting. Meetings scheduled can also be viewed through a web interface that lists all past, ongoing and scheduled  meetings with controlled access. This can be done through a report in a tabular format where individual records can be edited through a form. But the common way meetings are communicated today is through email. These emails can be deleted at any time by the invitees or organizers. So let's say our application will have a record of all of them and only an admin can delete any of them.
 
 So we have a **meeting email** entity that is created once a meeting is scheduled or updated. Parameters specific to an email is stored in that table. An email can also have multiple attachments. The one-to-one record of an attachment and a meeting email is stored in the **meeting email attachments** table.  
+
+
 The possible modifications in the meetings table that will trigger an update email notification are:   
 1. Change in recipients (sent to specific invitees)
 2. Change in date and time 
@@ -33,6 +35,10 @@ The possible modifications in the meetings table that will trigger an update ema
 5. Adding attachments
 6. Cancelling a meeting 
 
+### The use of automation and AI components ###
+Actions on a meeting can be automated through triggers and jobs as mentioned above. However, there are other parameters that can create a better experience for the users. The meeting email for instance, has user-entered text sections for the subject and note. These can be generated and refined using AI tools to precisely highlight the topics to be covered in the discussion and other details like the passcode to be used for joining. The meeting organizer might want the attendees to read some text material or go through an illustration or a video for the best use of the meeting time. Providing a summary of the attachments will attract their attention and motivate them to spend some time preparing for the meeting. 
+
+The same concept can be used for sending out follow-up emails as given in the possible enhancements section. The `highlights` field of a meeting can store the summary derived form the transcript which is a type of meeting attachement. An email therefore can be a meeting scheduled, updated or cancelled notification or an  automated follow-up email for the attendees or all invitees.
 
 The forms created are given below:   
 [Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
@@ -55,7 +61,7 @@ CREATE TABLE `groups_contacts` ( `id` int NOT NULL AUTO_INCREMENT, `contact_id` 
 
 ### Meetings table ###
 
-CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `meeting_note` varchar(255) DEFAULT NULL, `email_id` varchar(255) DEFAULT NULL, `meeting_passcode` varchar(255) DEAFULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
+CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `meeting_note` varchar(255) DEFAULT NULL, `email_id` varchar(255) DEFAULT NULL, `meeting_passcode` varchar(255) DEAFULT NULL, `meeting_highlights` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
 
 ### Meeting Email table ###
 
