@@ -12,6 +12,9 @@ Paid users will have the option to use multiple data sources by saving the confi
 ## User permissions and access control ##
 Each component created using Cliosight will have fine-grained access control. The admin will provide necessary permissions to users so that data can be uploaded, viewed or edited in a controlled manner. For instance, restricting access to datasets and reports based on the geographic location of users. Similarly, the admin can specify users who can create or execute triggers and workflows for actions on data and insights. A simple use case for this is geographically targeted online marketing campaigns. Same applies for files like images and PDFs that are stored in the cloud storage. Trial accounts will have limited database and file storage capacity. 
 
+## File upload ##
+A form can be a way to attach files associated with an entity. A text, image, video or any other file uploaded through a form will be stored in the cloud storage such that the link can be used to access that resource. 
+
 ## A relational database example ##
 Let's consider a database design for company meetings. A **meeting** can be either an **interview** or a **consultation** . A meeting can be sent to individuals or a **group** of individuals whose **contact** information is already saved in the database. Also, pre-existing contacts can be added to the meeting explicitly. A meeting, group and contact can be edited at any time. In order to track the individuals who were invited for a meeting, there has to be a direct association between the meeting and a contact. This is because a group might be edited after a meeting has taken place. Alternately, if a contact is removed or added to a group in a meeting, after it is scheduled (created) but prior to the start time, then the table connecting a meeting and a contact has to be updated accordingly. Also, a meeting cancellation or invite email has to sent to the contact's email. This is similar to meeting scheduled, updated and cancelled notifications for all participants. This scenario can only be handled with SQL triggers and scheduled jobs.  
 Similarly, other important considerations or enhancements may include:    
@@ -67,7 +70,7 @@ CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varch
 
 ### Meeting Email table ###
 
-CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachements_id` varchar(255) DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
+CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachements_id` int DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
 
 ### Meeting Email Attachments table ###
 
