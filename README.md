@@ -25,25 +25,30 @@ Similarly, other important considerations or enhancements may include:
 5. Summary in follow up email to attendees and stakeholders    
 6. Taking care of time zone differences   
 
-Now, let's consider the design for email notification of a meeting. Meetings can be viewed through a web interface with controlled access, that lists all past, ongoing and scheduled  meetings. This can be done through a report in a tabular format where individual records can be edited through a form. But the common way meetings are communicated today is through email. These emails can be deleted at any time by the invitees or organizers. So let's say our application will have a record of all meetings and only an admin can delete any of them.
+Now, let's consider the database design for email notifications related to meetings. Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a report widget with a tabular format that allows individual records to be edited through a form. However, the common way meetings are communicated to participants today is through email. It's important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only an admin will have the authority to delete any of them.
 
-So we have an **email** entity that is created once a meeting is scheduled or updated. Parameters specific to an email is stored in the corresponding table. An email can also have multiple attachments. The one-to-one record of an attachment and a meeting email is stored in the **meeting email attachments** table.  
-It is important to note that a contact might be present in multiple groups. When an email is sent to several groups and individual contacts, we need to make sure that there is no redundancy of email ids and recipients do not receive the same email multiple times.   
+To implement this functionality, we introduce an email entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple attachments, and the one-to-one relationship between an attachment and an email is stored in the email attachments table.
 
-The possible modifications in the meetings table that will trigger an update email notification are:   
-1. Change in recipients (sent to specific invitees)
-2. Change in date and time 
-3. Change in the meeting title 
-4. Adding or modifying the meeting note 
-5. Adding attachments
-6. Cancelling a meeting 
+One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
 
-### The use of automation and AI components ###
-Actions on a meeting can be automated through triggers and jobs as mentioned above. However, there are other parameters that can create a better experience for the users through the use of AI. The meeting email for instance, has user-entered text sections for the subject and note. These can be generated or refined using AI tools to precisely highlight the purpose and topics to be covered in the discussion and other details like the hyperlink and passcode to be used for joining online. We are assuming a hybrid model which is a mix of online and offline attendees. We are excluding the metaverse for now.   
+The modifications in the meetings table that will trigger an update email notification include:
 
-The meeting organizer might want the attendees to read some text material or go through an illustration in the form of an image or a video for the best use of the meeting time. Providing a summary of the attachments will attract their attention and motivate them to spend some time preparing for the meeting. 
+    Change in recipients (sent to specific invitees)
+    Change in date and time
+    Change in the meeting title
+    Adding or modifying a meeting note
+    Adding attachments
+    Cancelling a meeting
 
-The same concept can be used for sending out follow-up emails as was stated in the possible enhancements section. The `highlights` field of a meeting can store the summary derived from the transcript which is a type of meeting attachement. An email therefore can also be an automated follow-up for the attendees and stakeholders or all invitees. So, just as we have a `purpose` for a meeting that can have the values `interview` or `consultation`, we need to have an `email_type` field for a meeting email that can also hold the value `follow-up`, apart from `creation`, `updation` and `cancellation`. Creating a follow-up email is an advanced feature that requires additional APIs for speech to text conversion. The application should also provide an interface as simple as a form, for the organizer to edit the contents of the email before sending it out.
+ ## Leveraging Automation and AI Components  ##
+
+While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI. For example, the content of meeting emails, such as the subject and note, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like hyperlinks and passcodes for joining online meetings, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer.
+
+To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the meeting's topics. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
+
+The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. Therefore, an email can serve as an automated follow-up for attendees, stakeholders, or all invitees. To support this, we can introduce an `email_type` field for an email, which can hold values such as `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
+
+Creating a follow-up email is an advanced feature that requires additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking facilities are already provided by software like Etherpad. Integration with open-source collaboration applications like Jitsi Meet, which has Etherpad already integrated, can be considered by an application developer. Storing the values back into the database would require another API integration.    
 
 The forms created are given below:   
 [Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
