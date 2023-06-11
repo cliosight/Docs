@@ -22,6 +22,17 @@ Similarly, other important considerations may include:
 5. Summary in follow up email to attendees and stakeholders    
 6. Taking care of time zone differences   
 
+Now, let's consider the design for email notification of a meeting. Meetings scheduled can also be viewed through a web interface that lists all past, ongoing and scheduled  meetings with controlled access. This can be done through a report in a tabular format where individual records can be edited through a form. But the common way meetings are communicated today is through email. These emails can be deleted at any time by the invitees or organizers. So let's say our application will have a record of all of them and only an admin can delete any of them.
+
+So we have a **meeting email** entity that is created once a meeting is scheduled or updated. Parameters specific to an email is stored in that table. An email can also have multiple attachments. The one-to-one record of an attachment and a meeting email is stored in the **meeting email attachments** table.  
+The possible modifications in the meetings table that will trigger an update email notification are:   
+1. Change in recipients (sent to specific invitees)
+2. Change in date and time 
+3. Change in the meeting title 
+4. Adding or modifying the meeting note 
+5. Adding attachments
+6. Cancelling a meeting 
+
 
 The forms created are given below:   
 [Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
@@ -44,7 +55,15 @@ CREATE TABLE `groups_contacts` ( `id` int NOT NULL AUTO_INCREMENT, `contact_id` 
 
 ### Meetings table ###
 
-CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) ) 
+CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `meeting_note` varchar(255) DEFAULT NULL, `email_id` varchar(255) DEFAULT NULL, `meeting_passcode` varchar(255) DEAFULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
+
+### Meeting Email table ###
+
+CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `from_email` varchar(255) NOT NULL, `attachements_id` varchar(255) DEFAULT NULL, `meeting_id` int DEFAULT NULL, PRIMARY KEY (`id`) )
+
+### Meeting Email Attachments table ###
+
+CREATE TABLE `meeting_email_attachments` ( `id` int NOT NULL AUTO_INCREMENT, `attachment_link` varchar(255) NOT NULL, `email_id` int DEFAULT NULL, PRIMARY KEY (`id`) )
     
 ### Interviews table ###
 
