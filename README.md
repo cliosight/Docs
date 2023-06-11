@@ -36,9 +36,9 @@ The possible modifications in the meetings table that will trigger an update ema
 6. Cancelling a meeting 
 
 ### The use of automation and AI components ###
-Actions on a meeting can be automated through triggers and jobs as mentioned above. However, there are other parameters that can create a better experience for the users. The meeting email for instance, has user-entered text sections for the subject and note. These can be generated and refined using AI tools to precisely highlight the topics to be covered in the discussion and other details like the passcode to be used for joining. The meeting organizer might want the attendees to read some text material or go through an illustration or a video for the best use of the meeting time. Providing a summary of the attachments will attract their attention and motivate them to spend some time preparing for the meeting. 
+Actions on a meeting can be automated through triggers and jobs as mentioned above. However, there are other parameters that can create a better experience for the users. The meeting email for instance, has user-entered text sections for the subject and note. These can be generated and refined using AI tools to precisely highlight the topics to be covered in the discussion and other details like the passcode to be used for joining. The meeting organizer might want the attendees to read some text material or go through an illustration in the form of an image or a video for the best use of the meeting time. Providing a summary of the attachments will attract their attention and motivate them to spend some time preparing for the meeting. 
 
-The same concept can be used for sending out follow-up emails as given in the possible enhancements section. The `highlights` field of a meeting can store the summary derived form the transcript which is a type of meeting attachement. An email therefore can be a meeting scheduled, updated or cancelled notification or an  automated follow-up email for the attendees or all invitees.
+The same concept can be used for sending out follow-up emails as given in the possible enhancements section. The `highlights` field of a meeting can store the summary derived form the transcript which is a type of meeting attachement. An email therefore can be a meeting scheduled, updated or cancelled notification or an  automated follow-up for the attendees and stakeholders or all invitees. So, just as we have a `purpose` for a meeting that can have the values `interview` or `consultation`, we need to have a `type` for a meeting email like `creation`, `updation`, `cancellation` or `follow-up`. This is an advanced feature that requires additional APIs for speech to text conversion. The application should also provide an interface as simple as a form, for the organizer to edit the contents of the email before sending it out.
 
 The forms created are given below:   
 [Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
@@ -65,7 +65,7 @@ CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varch
 
 ### Meeting Email table ###
 
-CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `from_email` varchar(255) NOT NULL, `attachements_id` varchar(255) DEFAULT NULL, `meeting_id` int DEFAULT NULL, PRIMARY KEY (`id`) )
+CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachements_id` varchar(255) DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
 
 ### Meeting Email Attachments table ###
 
