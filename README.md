@@ -2,12 +2,13 @@
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
 ## SQL interface for structured data ##
-Cliosight will support the top database servers like MySQL, Postgres and MS SQL. Also AWS Dynamo DB, Azure Cosmos DB and other cloud services like Google BigQuery.
-With our SQL interface, users can perform all possible analytical operations for both in-house and user-owned databases. We will also expand to other emerging data sources like distributed ledgers in future releases.
+Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it seamlessly integrates with popular cloud services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
 
 
 ## Support for multiple data sources ##
-Paid users will have the option to use multiple data sources by saving the configurations for each. These can be created for the account's in-house databases or that on the user's virtual machines or for cloud database instances. Free tier will only have one in-house MySQL database with a shared connection pool. Uploading large volumes of data will be much faster for paid users due to dedicated resources.
+Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to a **single in-house MySQL database** with a **shared connection pool**.
+
+One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.
    
 ## User permissions and access control ##
 Each component created using Cliosight will have fine-grained access control. The admin will provide necessary permissions to users so that data can be uploaded, viewed or edited in a controlled manner. For instance, restricting access to datasets and reports based on the geographic location of users. Similarly, the admin can specify users who can create or execute triggers and workflows for actions on data and insights. A simple use case for this is geographically targeted online marketing campaigns. Same applies for files like images and PDFs that are stored in the cloud storage. Trial accounts will have limited database and file storage capacity. 
