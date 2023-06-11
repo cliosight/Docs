@@ -31,9 +31,9 @@ Similarly, other important considerations or enhancements may include:
 
 Now, let's consider the database design for email notifications. Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget with a tabular format that allows individual records to be edited through a form. However, the common way meetings are communicated to participants today is through email. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only an admin will have the authority to delete any of them.
 
-To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple attachments, and the one-to-one relationship between an attachment and an email is stored in a separate table.
+To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one relationship between an attachment and an email is stored in a separate table.
 
-One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
+One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is **no redundancy** of email addresses, and recipients do not receive duplicate emails.
 
 The modifications in the meetings table that will trigger an update email notification include:
 1. Change in recipients (sent to specific invitees)
