@@ -8,7 +8,26 @@ Cliosight is a robust platform that offers support for various leading database 
 ## Support for multiple data sources ##
 Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to a **single in-house MySQL database** with a **shared connection pool**.
 
-One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.
+One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.    
+
+Example of a datasource:   
+```json     
+{
+	"client_id": 2,
+	"datasource_definition": {
+    	"type": "mysql",
+    	"inhouse": true,
+    	"connectionLimit": 12,
+    	"host": "localhost",
+    	"port": 3306,
+    	"user": "user1",
+    	"password": "password1",
+    	"database": "database1",
+    	"multipleStatements": true,
+    	"label": "Cliosight Mysql"
+	}
+}
+```    
 
 ## File upload ##
 A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
@@ -158,20 +177,87 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
             "sub_form_definition": {     
                 "inputs": [...], // sub form inputs defined here; Same as the parent form input conventions     
                 "unique_keys": [“<column-name>”] // Array of unique key columns of the sub form root table can be specified here     
-	}		   
-       
+	}		     
     }],     
-        "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
-        "unique_keys":  ["<column-name>"] // Array of unique key columns of the main form root table can be specified here      
-	     "submit_button_label": <button-label>  // Default value is "Submit"     
-    }     
-   
+    "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
+    "unique_keys":  ["<column-name>"] // Array of unique key columns of the main form root table can be specified here      
+    "submit_button_label": <button-label>  // Default value is "Submit"     
+    }        
 } 
 ```   
       
 
 ## Examples of Forms in Cliosight's syntax ##
-![form_example](https://file.io/CGl3yMUZemLi)   
+![form_example](https://file.io/hUJZ7yyMbGFS)  
+```css
+{
+	"client_id": 2,    // Optional, added from backend according to the user id
+	"datasource_id": 1, // Set to the datasource ID
+	"table": {
+    	"name": "customer_queries"  // The root table created in the datasource
+	},
+	"sub_form_definition": {
+    	"is_public": {
+        	"status": true  // Whether or not this form is accessible without login
+    	},
+    	"css_definition": "",  // The uglified CSS definition
+        "inputs": [{  // start of the input fields of the form
+        	"input_category": "field", // Since this is a text input field
+        	"column": {
+            	"Field": "subject"  // Column name in the database table schema
+        	},
+        	"input_type": "text",  // Input type for single line text 
+        	"placeholder": "Message title",  // Optional; needed if input_label is not used
+	        “Input_label”: “”, // Optional 
+        	"validation": {
+            	"isRequired": "1", // 1 for an error message if left blank. 0 otherwise.
+            	"maxLength": 255   // According to the length of the field
+        	}
+    	     }, {  // Repeat the same for other fields
+        	"input_category": "field",
+        	"column": {
+            	"Field": "post_body"
+        	},
+        	"input_type": "textarea",
+        	"placeholder": "Your questions or comments",
+        	"validation": {
+            	"isRequired": "1", 
+            	"maxLength": 255
+        	}
+    	     }, {
+        	"cols": 6,    // Optional field to specify the columns in a row. 12 by default
+        	"input_category": "field",
+        	"column": {
+            	"Field": "fullname"
+        	},
+        	"input_type": "text",
+        	"placeholder": "Your full name",
+        	"validation": {
+            	"isRequired": "1",
+            	"maxLength": 255
+        	}
+    	     }, {
+        	"cols": 6,
+        	"input_category": "field",
+        	"column": {
+            	"Field": "email"
+        	},
+        	"input_type": "text",
+        	"placeholder": "Your email",
+        	"validation": {
+            	"isRequired": "1",
+            	"maxLength": 255
+        	}}],
+    	"last_insert_key_id": "id", // Specify this column if its value is returned as the lastInsertId value; For example, auto_increment key in mysql
+    	"unique_keys": ["id"], // Array of unique key columns of the main form root table can be specified here
+    	"submit_button_label": "Send Message", // Default value is “Submit”
+    	"label": "Contact Us" // Optional; default value is “Form”
+	} 
+}
+```   
+
+
+![form_example_1](https://file.io/CGl3yMUZemLi)   
    ```css    
    {
 	"datasource_id": 1,
@@ -237,7 +323,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
         	"input_label": "Interview Details",
         	"sub_form_button_label": "Add Interview Details",
         	"hide_sub_form_button": false,
-        	"default_instances_count": 1, // Set to 0-n depending on the use case
+        	"default_instances_count": 1, 
         	"hide_instance_remove_button": false,
         	"sub_form_table": {
             	"name": "interview"
