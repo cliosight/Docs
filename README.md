@@ -1,11 +1,16 @@
 # Cliosight Documentation
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
-## SQL interface for structured data ##
+# Table of contents
+1. [SQL interface for structured data](#sql)
+2. [Support for multiple data sources](#datasources)
+3. [File upload](#files)
+
+## SQL interface for structured data ## <a name="sql"></a>
 Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it seamlessly integrates with popular cloud services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
 
 
-## Support for multiple data sources ##
+## Support for multiple data sources ## <a name="datasources"></a>
 Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to a **single in-house MySQL database** with a **shared connection pool**.
 
 One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.    
@@ -29,13 +34,13 @@ Example of a datasource definition:
 }
 ```    
 
-## File upload ##
+## File upload ## <a name="files"></a>
 A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
    
-## User permissions and access control ##
+## User permissions and access control ## <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows for data and insights. This functionality proves especially useful in geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage.
 
-## A relational database example ##
+## A relational database example ## <a name="example"></a>
 Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
 
 To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires the utilization of SQL triggers and scheduled jobs for so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
