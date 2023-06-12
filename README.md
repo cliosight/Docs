@@ -176,7 +176,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
    {
 	"datasource_id": 1,
 	"table": {
-    	"name": "meetings"
+    	"name": "meeting"
 	},
 	"sub_form_definition": {
     	"is_public": {
@@ -192,13 +192,13 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
         	"input_type": "",
         	"input_label": "Assign Contacts",
         	"table_select_table": {
-            	"name": "contacts"
+            	"name": "contact"
         	},
         	"table_select_search_column": "email",
         	"table_select_join_column": "id",
         	"sub_form_button_label": "",
         	"sub_form_table": {
-            	"name": "contacts_meetings"
+            	"name": "contact_meeting"
         	},
         	"join_criteria_main_table_column": {
             	"Field": "id"
@@ -240,7 +240,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
         	"default_instances_count": 1, // Set to 0-n depending on the use case
         	"hide_instance_remove_button": false,
         	"sub_form_table": {
-            	"name": "interviews"
+            	"name": "interview"
         	},
         	"join_criteria_main_table_column": {
             	"Field": "id"
@@ -312,7 +312,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
         	"default_instances_count": 1,
         	"hide_instance_remove_button": false,
         	"sub_form_table": {
-            	"name": "consultations"
+            	"name": "consultation"
         	},
         	"join_criteria_main_table_column": {
             	"Field": "id"
