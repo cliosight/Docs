@@ -4,13 +4,34 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 # Table of contents
 1. [SQL interface for structured data](#sql)
 2. [Support for multiple data sources](#datasources)
-3. [File upload](#files)
+3. [File upload](#file)
+4. [User permissions and access control](#acl)
+5. [A Relational Database Example](#example)
+6. [Leveraging Automation and AI Components](#ai)
+7. [Schema details of the Example](#schema)
+8. [JSON body a Form](#form)  
+9. Examples of Forms in Cliosight
+	1.[Customer Queries](#cq)
+	2.[A section of the Meetings form](#meetings_form)
+10. [JSON body of a Report](#report)
+11. Examples of Reports in Cliosight     
+	1.[All Meetings](#meetings_report)
+	2.[Meetings of a Group](#meetings_group)
+12. [Graphs and Charts with Cliosight Reports](#graphs)
+13. [JSON body a Reporting Dashboard](#dashboard)
+14. [Example of a Reporting Dashboard](#example_dashboard)  
+15. [Claiming Trustworthiness](#trust)
+16. [JSON body of a Trigger](#trigger)
+17. Examples of commonly used SQL Triggers
+	1. [Managing an SCD (Slowly Changing Dimension)](#scd)
+	2. [Sending Email Notifications on Events](trigger_email)
+18. [Email Notification](#email)
 
-## SQL interface for structured data ## <a name="sql"></a>
+## SQL interface for structured data <a name="sql"></a>
 Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it seamlessly integrates with popular cloud services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
 
 
-## Support for multiple data sources ## <a name="datasources"></a>
+## Support for multiple data sources <a name="datasources"></a>
 Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to a **single in-house MySQL database** with a **shared connection pool**.
 
 One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.    
@@ -34,13 +55,13 @@ Example of a datasource definition:
 }
 ```    
 
-## File upload ## <a name="files"></a>
+## File upload <a name="file"></a>
 A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
    
-## User permissions and access control ## <a name="acl"></a>
+## User permissions and access control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows for data and insights. This functionality proves especially useful in geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage.
 
-## A relational database example ## <a name="example"></a>
+## A relational database example <a name="example"></a>
 Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
 
 To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires the utilization of SQL triggers and scheduled jobs for so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
@@ -57,7 +78,7 @@ Now, let's consider the database design for email notifications. Meetings can be
 
 To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one relationship between an attachment and an email is stored in a separate table.
 
-One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is **no redundancy** of email addresses, and recipients do not receive duplicate emails.
+One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
 
 The modifications in the meetings table that will trigger an update email notification include:
 1. Change in recipients (sent to specific invitees)
@@ -67,7 +88,7 @@ The modifications in the meetings table that will trigger an update email notifi
 5. Adding attachments
 6. Cancelling a meeting
 
- ## Leveraging Automation and AI Components  ##
+ ## Leveraging Automation and AI Components <a name="ai"></a>
 
 While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI. 
 1. SQL query generator   
@@ -89,7 +110,7 @@ The forms created are given below:
 [Create a Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)   
 [Schedule a Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)  
     
-## Schema details ##
+## Schema details <a name="schema"></a>
 
 ### Contact table ###
 
@@ -133,8 +154,7 @@ CREATE TABLE `group_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` in
 CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `contact_id` int NOT NULL, PRIMARY KEY (`id`) ) 
      
    
-
-## JSON for a Form ##
+## JSON body a Form <a name="form"></a>
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -199,7 +219,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
       
 
 ## Examples of Forms ##   
-### Customer contact form ###      
+### Customer Queries <a name="cq"></a>     
 
 ![form_example](https://file.io/hUJZ7yyMbGFS)  
 ```
@@ -273,7 +293,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
 }
 ```   
 
-### A section of the Meetings form ###      
+### A section of the Meetings form <a name="meetings_form"></a>     
 Major components are:   
 1. Multiselect input   
 2. Drop down menu with hardcoded values   
@@ -485,25 +505,33 @@ Major components are:
 }
 ```
 
-## JSON for a Report ##
+## JSON body a Report <a name="report"></a>
 
 ## Examples of Reports ##
+### All Meetings Report <a name="meetings_report"></a>
 
-## Creating Graphs and Charts with JavaScript libraries and Cliosight Reports ##
+### Meetings of a Group <a name="meetings_group"></a>
+
+
+## Creating Graphs and Charts with JavaScript libraries and Cliosight Reports <a name="graphs"></a>
 
 
 
-## JSON for a Reporting Dashboard ##
+## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 
-## An Example of a Reporting Dashboard ##
+## Example of a Reporting Dashboard <a name="example_dashboard"></a>
   
-## Claiming trustworthiness 
+## Claiming Trustworthiness <a name="trust"></a>
 
 
-## JSON for a Trigger ##
+## JSON body of a Trigger <a name="trigger"></a>
 
 ## Examples of commonly used SQL Triggers ##
+### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
+### Sending Email Notifications on Events <a name="trigger_email"></a>
+
+## Email Notification <a name="email"></a>
 
 
 
