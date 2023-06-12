@@ -106,6 +106,70 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 
 ## JSON fields of a Form ##
 
+{
+   "datasource_id": <int value of the datasource> 
+    "table": {
+        "name": "<main-table-name>" // This is the root table of the form
+    },
+   "sub_form_definition": {
+        "is_public": {
+            "status": <boolean> // Indicates if the form is available without login
+        },
+"css_definition": "", // css for the form
+        "inputs": [{
+            "cols": <values 1-12>, //Sets column width in the page; This is optional
+            "rules": [{ // show/hide current input based on the rules and action properties
+                "column": "<column-name>", // Matching column[‘Field’] value of a sibling input
+                "value": "<input-value>" // If value entered or selected matches the specified value
+            }],
+            "action": "show",
+            "show": <true or false>, // default action value is false
+            "input_category": "field | multiselect | form | report",  // form is for supporting sub-form definition; 
+            "column": {
+                "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category
+            },
+            "input_type": "text | select | radio | checkbox | hidden", // checkbox can be used with multiselect as well
+            "placeholder": "", // input placeholder attribute
+            "input_label": "", // label element content goes here
+            "options": [{      // required for select tag options; also applies to multiselect checkboxes
+                "label": "",  
+                "value": ""
+            }],
+            "table_select_table": “<table-name>”, // for single/multiselect dropdown where the options are from another table in database
+            "table_select_search_column": "<column-name>", // column name of the table values in multiselect
+            "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table
+            "validation": {
+                "isRequired": "0 | 1", // "1" if mandatory; throws an error if user does not enter the value and clicks submit
+                "maxLength": 255
+            },
+            "sub_form_button_label": "", // This is the add sub form button label
+            "hide_sub_form_button": true, // Do not show add sub form button
+            "default_instances_count": 1, // Default sub form items to show, useful when the add sub form button is hidden.
+            "hide_instance_remove_button": true, // Disable removing existing sub form rows by hiding the close button; This is useful along with hide sub form button enabled.
+            "sub_form_table": {
+                "name": "<table-name>" // sub form root table
+            },
+            "join_criteria_main_table_column": { // parent form root table join column
+                "Field": "<column-name>"
+            },
+            "join_criteria_sub_table_column": { // sub form root table join column
+                "Field": "<column-name>"
+            },
+            "sub_form_definition": {
+                "inputs": [...], // sub form inputs defined here; Same as the parent form input conventions.
+                "unique_keys": [“<column-name>”] // Array of unique key columns of the sub form root table can be specified here
+}		
+       
+ }],
+        "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.
+        "unique_keys":  ["<column-name>"] // Array of unique key columns of the main form root table can be specified here
+	     "submit_button_label": <button-label>  // Default value is "Submit"
+    }
+   
+}
+
+
+
 ## Examples of Forms in Cliosight's syntax ##
    
    
