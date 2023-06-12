@@ -171,6 +171,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
       
 
 ## Examples of Forms in Cliosight's syntax ##
+![form_example](https://file.io/CGl3yMUZemLi)   
    ```css    
    {
 	"datasource_id": 1,
@@ -373,11 +374,6 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 	}
 }
 ```
-
-![form](https://media-exp1.licdn.com/dms/image/C4D0BAQEwg5FK93uumQ/company-logo_200_200/0/1519923012279?e=2147483647&v=beta&t=63CNoS8OTR4lHjPhHSO7eFFqwLGwYunWfyDBV3tdc0c)  
-
-   
-  
 
 ## JSON fields of a Report ##
 
