@@ -187,8 +187,14 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 ```   
       
 
-## Examples of Forms in Cliosight's syntax ##
+## Examples of Forms in Cliosight's syntax ##   
+### Customer contact form ###      
+
 ![form_example](https://file.io/hUJZ7yyMbGFS)  
+```
+CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )   
+```   
+
 ```css
 {
 	"client_id": 2,    // Optional, added from backend according to the user id
@@ -256,6 +262,13 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 }
 ```   
 
+### A section of the Meetings form ###      
+Major components are:   
+1. Multiselect input   
+2. Drop down menu with hardcoded values   
+3. Rules based on the selection made in the drop down menu  
+4. Sub form within the main form 
+5. Multiple instances of aggregated values   
 
 ![form_example_1](https://file.io/CGl3yMUZemLi)   
    ```css    
