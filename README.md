@@ -14,7 +14,7 @@ One of the advantages of being a paid user is the significantly faster upload sp
 Each component created using Cliosight will have fine-grained access control. The admin will provide necessary permissions to users so that data can be uploaded, viewed or edited in a controlled manner. For instance, restricting access to datasets and reports based on the geographic location of users. Similarly, the admin can specify users who can create or execute triggers and workflows for actions on data and insights. A simple use case for this is geographically targeted online marketing campaigns. Same applies for files like images and PDFs that are stored in the cloud storage. Trial accounts will have limited database and file storage capacity. 
 
 ## File upload ##
-A form can be a way to attach files associated with an entity. A text, image, video or any other file uploaded through a form will be stored in the cloud storage such that the link can be used to access that resource. 
+A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that the link can be used to access that resource. 
 
 ## A relational database example ##
 Let's explore the database design for "corporate meetings". A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
