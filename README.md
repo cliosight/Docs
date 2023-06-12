@@ -80,9 +80,9 @@ CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varch
 
 CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachements_id` int DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
 
-### Meeting Email Attachments table ###
+### Meeting Attachments table ###
 
-CREATE TABLE `meeting_email_attachments` ( `id` int NOT NULL AUTO_INCREMENT, `attachment_link` varchar(255) NOT NULL, `email_id` int DEFAULT NULL, PRIMARY KEY (`id`) )
+CREATE TABLE `meeting_attachments` ( `id` int NOT NULL AUTO_INCREMENT, `attachment_link` varchar(255) NOT NULL, `email_id` int DEFAULT NULL, PRIMARY KEY (`id`) )
     
 ### Interviews table ###
 
