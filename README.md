@@ -2,17 +2,17 @@
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
 # Table of contents
-[1. SQL interface for structured data](#sql)   
-[2. Support for multiple data sources](#datasources)   
-[3. File upload](#file)   
-[4. User permissions and access control](#acl)   
-[5. A Relational Database Example](#example)   
-[6. Leveraging Automation and AI Components](#ai)   
-[7. Schema details of the Example](#schema)   
-[8. JSON body a Form](#form)    
-9. Examples of Forms 
-	1. [Customer Queries](#cq)   
-	2. [A section of the Meetings form](#meetings_form)     
+1. [SQL interface for structured data](#sql)   
+2. [Support for multiple data sources](#datasources)   
+3. [File upload](#file)   
+4. [User permissions and access control](#acl)   
+5. [A Relational Database Example](#example)   
+6. [Leveraging Automation and AI Components](#ai)   
+7. [Schema details of the Example](#schema)   
+8. [JSON body a Form](#form)    
+9. Examples of Forms          
+	1.[Customer Queries](#cq)     
+	2.[Meetings of a Group](#meetings_form)      
 10. [JSON body of a Report](#report)   
 11. Examples of Reports in Cliosight          
 	1.[All Meetings](#meetings_report)     
