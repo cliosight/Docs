@@ -115,7 +115,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
         "is_public": {       
             "status": <boolean> // Indicates if the form is available without login      
         },       
-"css_definition": "", // css for the form      
+   "css_definition": "", // css for the form      
         "inputs": [{      
             "cols": <values 1-12>, //Sets column width in the page; This is optional     
             "rules": [{ // show/hide current input based on the rules and action properties     
@@ -166,7 +166,9 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 	     "submit_button_label": <button-label>  // Default value is "Submit"     
     }     
    
-}      ```
+} ```      
+
+
 
 
 
