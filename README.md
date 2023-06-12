@@ -11,19 +11,19 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 7. [Schema details of the Example](#schema)   
 8. [JSON body a Form](#form)    
 9. Examples of Forms          
-	1.[Customer Queries](#cq)     
-	2.[Meetings of a Group](#meetings_form)      
+	1. [Customer Queries](#cq)     
+	2. [Meetings of a Group](#meetings_form)      
 10. [JSON body of a Report](#report)   
 11. Examples of Reports in Cliosight          
-	1.[All Meetings](#meetings_report)     
-	2.[Meetings of a Group](#meetings_group)     
+	1. [All Meetings](#meetings_report)     
+	2. [Meetings of a Group](#meetings_group)     
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
 13. [JSON body a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
 15. [Claiming Trustworthiness](#trust)    
-16. [JSON body of a Trigger](#trigger)    
-17. Examples of commonly used SQL Triggers    
-	1. [Managing an SCD (Slowly Changing Dimension)](#scd)   
+16. [JSON body of a Trigger](#trigger)  
+17. Examples of Reports in Cliosight          
+	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
 	2. [Sending Email Notifications on Events](#trigger_email)    
 18. [Email Notification](#email)   
 19. [Workflows](#workflow)   
