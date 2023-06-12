@@ -89,9 +89,10 @@ The modifications in the meetings table that will trigger an update email notifi
 5. Adding attachments
 6. Cancelling a meeting    
 
-[Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true) 
-[Create a Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)
-[Schedule a Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)
+Forms for this example:    
+[Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)     
+[Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)     
+[Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
 
  ## Leveraging Automation and AI Components <a name="ai"></a>
 
