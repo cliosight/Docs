@@ -105,7 +105,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
    
 
 ## JSON fields of a Form ##
-```
+```css
 {   
    "datasource_id": <int value of the datasource>     
    "table": {    
@@ -158,19 +158,17 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
             "sub_form_definition": {     
                 "inputs": [...], // sub form inputs defined here; Same as the parent form input conventions     
                 "unique_keys": [“<column-name>”] // Array of unique key columns of the sub form root table can be specified here     
-}		   
+	}		   
        
- }],     
+    }],     
         "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
         "unique_keys":  ["<column-name>"] // Array of unique key columns of the main form root table can be specified here      
 	     "submit_button_label": <button-label>  // Default value is "Submit"     
     }     
    
-} ```      
-
-
-
-
+} 
+```   
+      
 
 ## Examples of Forms in Cliosight's syntax ##
    
