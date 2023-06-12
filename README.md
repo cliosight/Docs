@@ -10,7 +10,7 @@ Paid users of our platform will enjoy the flexibility of utilizing multiple data
 
 One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.    
 
-Example of a datasource:   
+Example of a datasource definition:      
 ```json     
 {
 	"client_id": 2,
@@ -123,7 +123,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
      
    
 
-## JSON fields of a Form ##
+## JSON for a Form ##
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -187,7 +187,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 ```   
       
 
-## Examples of Forms in Cliosight's syntax ##   
+## Examples of Forms ##   
 ### Customer contact form ###      
 
 ![form_example](https://file.io/hUJZ7yyMbGFS)  
@@ -474,24 +474,24 @@ Major components are:
 }
 ```
 
-## JSON fields of a Report ##
+## JSON for a Report ##
 
-## Examples of Reports in Cliosight's syntax ##
+## Examples of Reports ##
 
-## Using reports' data for plotting graphs using various JavaScript libraries ##
+## Creating Graphs and Charts with JavaScript libraries and Cliosight Reports ##
 
 
 
-## JSON fields of a Dashboard ##
+## JSON for a Reporting Dashboard ##
 
-## Examples of Dashboards in Cliosight's syntax ##
+## An Example of a Reporting Dashboard ##
   
 ## Claiming trustworthiness 
 
 
-## JSON fields of a Trigger ##
+## JSON for a Trigger ##
 
-## Examples of commonly used SQL Triggers in Cliosight's syntax ##
+## Examples of commonly used SQL Triggers ##
 
 
 
