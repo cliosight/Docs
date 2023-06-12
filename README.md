@@ -107,9 +107,9 @@ Therefore, an email can also serve as an automated follow-up for attendees, stak
 Creating a follow-up email is an optional feature that necessitates additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking functionality is already available in software like Etherpad. Application developers can consider integrating with open-source collaboration applications such as Jitsi Meet, which already includes Etherpad. To store the values back into the database, another API integration would be required.    
 
 The forms created are given below:   
-[Create a Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
-[Create a Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)   
-[Schedule a Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)  
+[Create a Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true){:target="_blank"}    
+[Create a Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true){:target="_blank"}    
+[Schedule a Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true){:target="_blank"}   
     
 ## Schema details <a name="schema"></a>
 
