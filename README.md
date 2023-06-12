@@ -11,12 +11,12 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 7. [Schema details of the Example](#schema)   
 8. [JSON body a Form](#form)    
 9. Examples of Forms          
-	1. [Customer Queries](#cq)     
-	2. [Meetings of a Group](#meetings_form)      
+	1. [Customer Queries Form](#cq)     
+	2. [Section of the Meetings Form](#meetings_form)      
 10. [JSON body of a Report](#report)   
 11. Examples of Reports in Cliosight          
-	1. [All Meetings](#meetings_report)     
-	2. [Meetings of a Group](#meetings_group)     
+	1. [All Meetings Report](#meetings_report)     
+	2. [Group Meetings Report](#meetings_group)     
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
 13. [JSON body a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
@@ -511,7 +511,7 @@ Major components are:
 ## Examples of Reports ##
 ### All Meetings Report <a name="meetings_report"></a>
 
-### Meetings of a Group <a name="meetings_group"></a>
+### Group Meetings Report <a name="meetings_group"></a>
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Cliosight Reports <a name="graphs"></a>
