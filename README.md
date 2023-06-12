@@ -14,7 +14,7 @@ One of the advantages of being a paid user is the significantly faster upload sp
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows for data and insights. This functionality proves especially useful in geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage, including images and PDFs. As for trial accounts, they are allocated a limited capacity for database and file storage.
 
 ## File upload ##
-A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that the link can be used to access that resource. 
+A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
 
 ## A relational database example ##
 Let's explore the database design for "corporate meetings". A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
@@ -51,12 +51,12 @@ To enhance attendee interaction, the organizer may want to provide text material
 
 The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. Therefore, an email can serve as an automated follow-up for attendees, stakeholders, or all invitees. To support this, we can introduce an `email_type` field for an email, which can hold values such as `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
 
-Creating a follow-up email is an advanced feature that requires additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking facilities are already provided by software like Etherpad. Integration with open-source collaboration applications like Jitsi Meet, which has Etherpad already integrated, can be considered by an application developer. Storing the values back into the database would require another API integration.    
+Creating a follow-up email is an optional feature that requires additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking facilities are already provided by software like Etherpad. Integration with open-source collaboration applications like Jitsi Meet, which has Etherpad already integrated, can be considered by an application developer. Storing the values back into the database would require another API integration.    
 
 The forms created are given below:   
-[Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
-[Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)   
-[Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)  
+[Create a Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)  
+[Create a Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)   
+[Schedule a Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)  
     
 ## Schema details ##
 
@@ -78,7 +78,7 @@ CREATE TABLE `meetings` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varch
 
 ### Meeting Email table ###
 
-CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachements_id` int DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
+CREATE TABLE `meeting_emails` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachements_id` int DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
 
 ### Meeting Attachments table ###
 
