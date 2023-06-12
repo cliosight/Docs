@@ -10,11 +10,11 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 6. [Leveraging Automation and AI Components](#ai)
 7. [Schema details of the Example](#schema)
 8. [JSON body a Form](#form)  
-9. Examples of Forms in Cliosight
+9. Examples of Forms in Cliosight  
 	1.[Customer Queries](#cq)
 	2.[A section of the Meetings form](#meetings_form)
 10. [JSON body of a Report](#report)
-11. Examples of Reports in Cliosight     
+11. Examples of Reports in Cliosight        
 	1.[All Meetings](#meetings_report)
 	2.[Meetings of a Group](#meetings_group)
 12. [Graphs and Charts with Cliosight Reports](#graphs)
@@ -26,6 +26,7 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 	1. [Managing an SCD (Slowly Changing Dimension)](#scd)
 	2. [Sending Email Notifications on Events](trigger_email)
 18. [Email Notification](#email)
+19. [Workflows](#workflow)
 
 ## SQL interface for structured data <a name="sql"></a>
 Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it seamlessly integrates with popular cloud services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
@@ -532,6 +533,8 @@ Major components are:
 ### Sending Email Notifications on Events <a name="trigger_email"></a>
 
 ## Email Notification <a name="email"></a>
+
+## Workflows <a name="workflow"></a>
 
 
 
