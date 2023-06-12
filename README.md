@@ -64,7 +64,11 @@ The modifications in the meetings table that will trigger an update email notifi
 
  ## Leveraging Automation and AI Components  ##
 
-While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI. For example, the content of meeting emails, such as the subject and note, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode for joining online, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
+While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI. 
+1. SQL query generator   
+2. JSON body generator   
+These are the only two syntaxes used in Cliosight. Anyone with limited knowledge of SQL or wanting to build an application faster can seek help from the AI agent. 
+As far this example is concerned, we can utilize another set of APIs in specific components within Cliosight. For example, the content of meeting emails, such as the subject and note, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode for joining online, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
 
 To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
 
