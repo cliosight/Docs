@@ -105,9 +105,9 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
    
 
 ## JSON fields of a Form ##
-```json
+```css
 {   
-   "datasource_id": <int value of the datasource>     
+   "datasource_id": <int-datasource-id>,   
    "table": {    
         "name": "<main-table-name>" // This is the root table of the form      
     },       
@@ -171,7 +171,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
       
 
 ## Examples of Forms in Cliosight's syntax ##
-   ```json    
+   ```css    
    {
 	"datasource_id": 1,
 	"table": {
