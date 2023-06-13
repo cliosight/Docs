@@ -513,7 +513,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 ```css
 {
-      "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
+    "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
     "reports": [{     // list of reports
         "id": "68",
         "cols": 6
