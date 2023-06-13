@@ -305,7 +305,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_bod
 ```   
 
 ### A Section of the Meetings Form <a name="meetings_form"></a>     
-Major components are:   
+The components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
 3. Rules based on the values selected from the drop down  
@@ -495,7 +495,7 @@ Major components are:
 ### A Short Survey <a name="survey"></a>     
  
 
-## JSON body a Report <a name="report"></a>  
+## JSON body of a Report <a name="report"></a>  
 The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for  multiple applications.  
 1. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters.     
 2. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table.   
@@ -593,8 +593,8 @@ It is possible to disable uploading data from CSV files through the import data 
 
 ## Workflows <a name="workflow"></a>
 
-## Examples of Workflows in Cliosight 
-### Meetings Management Portal <a name="meetings_workflow"></a>
+## Examples of Workflows 
+### Meeting Management Portal <a name="meetings_workflow"></a>
 
 ### Sending follow-up emails <a name="followup_workflow"></a>
 
