@@ -35,7 +35,7 @@ Cliosight is a robust platform that offers support for various leading database 
 ## Support for multiple data sources <a name="datasources"></a>
 Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to a **single in-house MySQL database** with a **shared connection pool**.
 
-One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing.    
+One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from speadsheets and CSV files to be entered into a particular database table. On the other hand, the data from a report can be downloaded in the same format.     
 
 Example of a datasource definition:      
 ```json     
@@ -60,12 +60,13 @@ Example of a datasource definition:
 A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
    
 ## User permissions and access control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows for data and insights. This functionality proves especially useful in geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage.
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users.     
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage with public access to files.   
 
 ## A relational database example <a name="example"></a>
 Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
 
-To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires the utilization of SQL triggers and scheduled jobs for so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
+To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
 
 Similarly, other important considerations or enhancements may include:    
 1. Handling time conflicting meetings  
@@ -75,9 +76,9 @@ Similarly, other important considerations or enhancements may include:
 5. Summary in follow up email to attendees and stakeholders    
 6. Taking care of time zone differences   
 
-Now, let's consider the database design for email notifications. Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget with a tabular format that allows individual records to be edited through a form. However, the common way meetings are communicated to participants today is through email. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only an admin will have the authority to delete any of them.
+Now, let's consider the database design for email notifications. Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget, which is a tabular format that allows individual records to be edited through a form. However, the common way meetings are communicated to participants today is through email. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only an admin will have the authority to delete any of them.
 
-To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one relationship between an attachment and an email is stored in a separate table.
+To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one relationship between an attachment and an email is stored in a separate table. Once files are saved in the database, they can be easily reused in forms other than meetings.   
 
 One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
 
@@ -100,14 +101,16 @@ While some meeting actions can be automated through triggers, there are other as
 1. SQL query generator   
 2. JSON body generator     
 
-These are the only two syntaxes used in Cliosight. Anyone with limited knowledge of SQL or wanting to build an application faster can seek help from the AI agent. 
+These are the only two types of syntaxes used in Cliosight. Anyone with limited knowledge of SQL or wanting to build an application faster can seek help from the AI agent. 
     
-As far this example is concerned, we can utilize another set of APIs in specific components within Cliosight. For example, the content of meeting emails, such as the subject and note, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode for joining online, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
+As far this example is concerned, we can utilize another set of APIs in specific components within Cliosight.    
+For example, the content of meeting emails, such as the subject and note, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
 
 To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
 
-The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access to the report listing all meeting details.   
-Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees. To support this, we can introduce an `email_type` field for the email entity, which can hold the values `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
+The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access to the report listing all meeting details. Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees.     
+
+To support this, we can introduce an `email_type` field for the email entity, which can hold the values `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
 
 Creating a follow-up email is an optional feature that necessitates additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking functionality is already available in software like Etherpad. Application developers can consider integrating with open-source collaboration applications such as Jitsi Meet, which already includes Etherpad. To store the values back into the database, another API integration would be required.    
 
@@ -169,7 +172,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
         },       
    "css_definition": "", // css for the form      
         "inputs": [{      
-            "cols": <values 1-12>, //Sets column width in the page; This is optional     
+            "cols": <values 1-12>, // Sets column width in the page; This is optional     
             "rules": [{ // show/hide current input based on the rules and action properties     
                 "column": "<column-name>", // Matching column[‘Field’] value of a sibling input     
                 "value": "<input-value>" // If value entered or selected matches the specified value     
@@ -213,8 +216,9 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 	}		     
     }],     
     "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
-    "unique_keys":  ["<column-name>"] // Array of unique key columns of the main form root table can be specified here      
-    "submit_button_label": <button-label>  // Default value is "Submit"     
+    "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
+    "submit_button_label": <button-label>,  // Default value is "Submit" 
+    "label": <form-heading>  // Default value is "Form"
     }        
 } 
 ```   
@@ -231,7 +235,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
 ```css
 {
 	"client_id": 2,    // Optional, added from backend according to the user id
-	"datasource_id": 1, // Set to the datasource ID
+	"datasource_id": 1, 
 	"table": {
     	"name": "customer_queries"  // The root table created in the datasource
 	},
@@ -257,7 +261,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
         	"column": {
             	"Field": "post_body"
         	},
-        	"input_type": "textarea",
+        	"input_type": "textarea",   // Input type for a paragraph of text 
         	"placeholder": "Your questions or comments",
         	"validation": {
             	"isRequired": "1", 
@@ -287,10 +291,10 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
             	"isRequired": "1",
             	"maxLength": 255
         	}}],
-    	"last_insert_key_id": "id", // Specify this column if its value is returned as the lastInsertId value; For example, auto_increment key in mysql
-    	"unique_keys": ["id"], // Array of unique key columns of the main form root table can be specified here
-    	"submit_button_label": "Send Message", // Default value is “Submit”
-    	"label": "Contact Us" // Optional; default value is “Form”
+    	"last_insert_key_id": "id", 
+    	"unique_keys": ["id"],
+    	"submit_button_label": "Send Message", 
+    	"label": "Contact Us" 
 	} 
 }
 ```   
@@ -301,7 +305,7 @@ Major components are:
 2. Drop down menu with hardcoded values   
 3. Rules based on the selection made in the drop down menu  
 4. Sub form within the main form 
-5. Multiple instances of aggregated values   
+5. Multiple instances of aggregated values within the sub form   
 
 ![form_example_1](https://file.io/CGl3yMUZemLi)   
    ```css    
@@ -395,13 +399,7 @@ Major components are:
                 	}, {
                     	"label": "Full-stack dev",
                     	"value": "fullstack"
-                	}],
-                	"table_select_table": {
-                    	"name": ""
-                	},
-                	"table_select_search_column": "",
-                	"table_select_join_column": "",
-                	"value": ""
+                	}]
             	}, {
                 	"cols": 6,
                 	"input_category": "field",
@@ -419,13 +417,7 @@ Major components are:
                 	}, {
                     	"label": "Senior-Level",
                     	"value": "senior"
-                	}],
-                	"table_select_table": {
-                    	"name": ""
-                	},
-                	"table_select_search_column": "",
-                	"table_select_join_column": "",
-                	"value": ""
+                	}]
             	}],
             	"unique_keys": ["id"]
         	}
@@ -467,13 +459,7 @@ Major components are:
                 	}, {
                     	"label": "Reports",
                     	"value": "reports"
-                	}],
-                	"table_select_table": {
-                    	"name": ""
-                	},
-                	"table_select_search_column": "",
-                	"table_select_join_column": "",
-                	"value": ""
+                	}]
             	}, {
                 	"cols": 6,
                 	"input_category": "field",
@@ -488,13 +474,7 @@ Major components are:
                 	}, {
                     	"label": "Functional",
                     	"value": "functional"
-                	}],
-                	"table_select_table": {
-                    	"name": ""
-                	},
-                	"table_select_search_column": "",
-                	"table_select_join_column": "",
-                	"value": ""
+                	}]
             	}],
             	"unique_keys": ["id"]
         	}
