@@ -89,7 +89,7 @@ To implement this functionality, we introduce an **email** entity that is instan
 
 One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
 
-The modifications in the meetings table that will trigger an update email notification include:
+The modifications in the meeting table that will trigger an update email notification include:
 1. Change in recipients (sent to specific invitees)
 2. Change in date and time
 3. Change in the meeting title
