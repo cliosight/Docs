@@ -107,11 +107,11 @@ While some meeting actions can be automated through triggers, there are other as
 These are the only two types of syntaxes used in Cliosight. Anyone with limited knowledge of SQL or wanting to build an application faster can seek help from the AI agent. 
     
 As far as this example is concerned, we can utilize another set of APIs in specific components within Cliosight.      
-For example, the content of meeting emails, such as the subject and note, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
+For example, the content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
 
 To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
 
-The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access to the report listing all meeting details. Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees.     
+The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access for the report listing all meeting details. Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees.     
 
 To support this, we can introduce an `email_type` field for the email entity, which can hold the values `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
 
@@ -306,7 +306,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
 Major components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
-3. Rules based on the selection made in the drop down menu  
+3. Rules based on the values selected from the drop down  
 4. Sub form within the main form 
 5. Multiple instances of aggregated values within the sub form   
 
@@ -491,9 +491,9 @@ Major components are:
 ```
 
 ## JSON body a Report <a name="report"></a>  
-The structure of a report in Cliosight is comparitively more complex than a form. While a form is the input method, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as the source of data for  multiple applications.   
-1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or the result of another report or column values of a table.  
-2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports. 
+The structure of a report in Cliosight is comparatively more complex than a form. While a form is the input method, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as the source of data for  multiple applications.   
+1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or a column of another report or table.  
+2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters. 
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>
@@ -506,9 +506,9 @@ The structure of a report in Cliosight is comparitively more complex than a form
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
-1. It works similar to a report in terms of the filter menu definition. Global filters should be applied first because it takes precendance over the local filters. 
-2. It is possible to configure the filtering criteria by specifying which column in the report or table should be used for the join operation with the dashboard reports.
-3. It can have its own css definition and this will override the css of the individual reports and forms.
+1. It works similar to a report in terms of the filter menu definition. Global filters should be applied first because it takes precendance over the report  filters. 
+2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
+3. It can have its own css definition and it will override the css of the individual reports and forms.
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 ```css
@@ -548,7 +548,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to prevent uploading data through the import button of a form. This safeguard ensures that the primary table and associated sub-form tables  receive data via the designated form interface. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the reports and charts.  
+It is possible to prevent uploading data from CSV files through the import data option. This safeguard ensures that the primary table and associated sub-form tables  receive data via the designated form interface. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the reports and charts.  
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
