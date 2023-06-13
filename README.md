@@ -2,19 +2,20 @@
 A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
 
 # Table of contents
-1. [SQL interface for structured data](#sql)   
-2. [Support for multiple data sources](#datasources)   
+1. [SQL Interface for Structured Data](#sql)   
+2. [Support for Multiple Data Sources](#datasources)   
 3. [File upload](#file)   
-4. [User permissions and access control](#acl)   
+4. [User Permissions and Access Control](#acl)   
 5. [A Relational Database Example](#example)   
 6. [Leveraging Automation and AI Components](#ai)   
 7. [Schema details of the Example](#schema)   
 8. [JSON body a Form](#form)    
 9. Examples of Forms          
-	1. [Customer Queries Form](#cq)     
-	2. [Section of the Meetings Form](#meetings_form)      
+	1. [Customer Queries](#cq)     
+	2. [A Section of the Meetings Form](#meetings_form)   
+	3. [A Short Survey](#survey)       
 10. [JSON body of a Report](#report)   
-11. Examples of Reports in Cliosight          
+11. Examples of Reports          
 	1. [Meetings Report](#meetings_report)     
 	2. [Group Meetings Report](#meetings_group)     
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
@@ -22,20 +23,20 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 14. [Example of a Reporting Dashboard](#example_dashboard)     
 15. [Claiming Trustworthiness](#trust)    
 16. [JSON body of a Trigger](#trigger)  
-17. Examples of Triggers in Cliosight          
+17. Examples of Triggers          
 	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
 	2. [Sending Email Notifications on Events](#trigger_email)    
 18. [Email Notification](#email)   
 19. [Workflows](#workflow) 
-20. Examples of Workflows in Cliosight     
+20. Examples of Workflows     
 	1. [Meetings Management Portal](#meetings_workflow)     
 	2. [Sending follow-up emails](#followup_workflow)     
 
-## SQL interface for structured data <a name="sql"></a>
+## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it seamlessly integrates with popular cloud services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
 
 
-## Support for multiple data sources <a name="datasources"></a>
+## Support for Multiple Data Sources <a name="datasources"></a>
 Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to one in-house MySQL database with a **shared connection pool**. Tables created within an account are segregated based on the datasources.   
 
 One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from speadsheets and CSV files to be entered into a particular database table. On the other hand, the data from a report can be downloaded in the same format.     
@@ -62,11 +63,11 @@ Example of a datasource definition:
 ## File upload <a name="file"></a>
 A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
    
-## User permissions and access control <a name="acl"></a>
+## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users.     
 Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage with public access to files.   
 
-## A relational database example <a name="example"></a>
+## A Relational Database Example <a name="example"></a>
 Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
 
 To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
@@ -231,9 +232,9 @@ Forms are the basic input method within Cliosight.
 ## Examples of Forms ##   
 ### Customer Queries <a name="cq"></a>     
 
-![form_example](https://file.io/hUJZ7yyMbGFS)  
+![form_example](https://file.io/gpR49rN4lQJE)  
 
-CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )   
+**CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )**
 
 ```css
 {
@@ -262,7 +263,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
     	     }, {  // Repeat the same for other fields
         	"input_category": "field",
         	"column": {
-            	"Field": "post_body"
+            	"Field": "message_body"
         	},
         	"input_type": "textarea",   // Input type for a paragraph of text 
         	"placeholder": "Your questions or comments",
@@ -302,7 +303,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
 }
 ```   
 
-### A section of the Meetings form <a name="meetings_form"></a>     
+### A Section of the Meetings Form <a name="meetings_form"></a>     
 Major components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
@@ -490,6 +491,10 @@ Major components are:
 }
 ```
 
+### A Short Survey <a name="survey"></a>     
+
+![form_example](https://file.io/gpR49rN4lQJE)  
+
 ## JSON body a Report <a name="report"></a>  
 The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for  multiple applications.  
 1. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters.     
@@ -501,7 +506,7 @@ The structure of a report in Cliosight is comparatively more complex than a form
 ### Group Meetings Report <a name="meetings_group"></a>
 
 
-## Creating Graphs and Charts with JavaScript libraries and Cliosight Reports <a name="graphs"></a>
+## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
@@ -548,11 +553,11 @@ A reporting dashboard is an aggregation of related reports with global filters.
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to prevent uploading data from CSV files through the import data option. This safeguard ensures that the primary table and associated sub-form tables  receive data via the designated form interface. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the reports and charts.  
+It is possible to disable uploading data from CSV files through the import data option in forms. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
-## Examples of commonly used SQL Triggers ##
+## Examples of Triggers ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
 ```css 
