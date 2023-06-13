@@ -493,8 +493,7 @@ Major components are:
 ```
 
 ### A Short Survey <a name="survey"></a>     
-
-![survey_example](https://file.io/gpR49rN4lQJE)  
+ 
 
 ## JSON body a Report <a name="report"></a>  
 The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for  multiple applications.  
