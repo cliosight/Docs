@@ -15,25 +15,28 @@ A detailed explanation for creating and managing tables, forms, reports, dashboa
 	2. [Section of the Meetings Form](#meetings_form)      
 10. [JSON body of a Report](#report)   
 11. Examples of Reports in Cliosight          
-	1. [All Meetings Report](#meetings_report)     
+	1. [Meetings Report](#meetings_report)     
 	2. [Group Meetings Report](#meetings_group)     
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
 13. [JSON body a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
 15. [Claiming Trustworthiness](#trust)    
 16. [JSON body of a Trigger](#trigger)  
-17. Examples of Reports in Cliosight          
+17. Examples of Triggers in Cliosight          
 	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
 	2. [Sending Email Notifications on Events](#trigger_email)    
 18. [Email Notification](#email)   
-19. [Workflows](#workflow)   
+19. [Workflows](#workflow) 
+20. Examples of Workflows in Cliosight     
+	1. [Meetings Management Portal](#meetings_workflow)     
+	2. [Sending follow-up emails](#followup_workflow)     
 
 ## SQL interface for structured data <a name="sql"></a>
 Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it seamlessly integrates with popular cloud services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
 
 
 ## Support for multiple data sources <a name="datasources"></a>
-Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to a **single in-house MySQL database** with a **shared connection pool**.
+Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to one in-house MySQL database with a **shared connection pool**. Tables created within an account are segregated based on the datasources.   
 
 One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from speadsheets and CSV files to be entered into a particular database table. On the other hand, the data from a report can be downloaded in the same format.     
 
@@ -160,6 +163,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
      
    
 ## JSON body a Form <a name="form"></a>
+Forms are the basic input method within Cliosight. 
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -228,9 +232,8 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
 ### Customer Queries <a name="cq"></a>     
 
 ![form_example](https://file.io/hUJZ7yyMbGFS)  
-```
+
 CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )   
-```   
 
 ```css
 {
@@ -301,7 +304,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `post_body` 
 
 ### A section of the Meetings form <a name="meetings_form"></a>     
 Major components are:   
-1. Multiselect input   
+1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
 3. Rules based on the selection made in the drop down menu  
 4. Sub form within the main form 
@@ -487,16 +490,18 @@ Major components are:
 }
 ```
 
-## JSON body a Report <a name="report"></a>
+## JSON body a Report <a name="report"></a>  
+The structure of a report in Cliosight is comparitively more complex than a form. While a form is the input method, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as the source of data for  multiple applications.   
+A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or the result of another report or column values of a table.  
+The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports. 
 
 ## Examples of Reports ##
-### All Meetings Report <a name="meetings_report"></a>
+### Meetings Report <a name="meetings_report"></a>
 
 ### Group Meetings Report <a name="meetings_group"></a>
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Cliosight Reports <a name="graphs"></a>
-
 
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
@@ -516,6 +521,11 @@ Major components are:
 ## Email Notification <a name="email"></a>
 
 ## Workflows <a name="workflow"></a>
+
+## Examples of Workflows in Cliosight 
+### Meetings Management Portal <a name="meetings_workflow"></a>
+
+### Sending follow-up emails <a name="followup_workflow"></a>
 
 
 
