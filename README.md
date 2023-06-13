@@ -491,9 +491,9 @@ Major components are:
 ```
 
 ## JSON body a Report <a name="report"></a>  
-The structure of a report in Cliosight is comparatively more complex than a form. While a form is the input method, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as the source of data for  multiple applications.   
-1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or a column of another report or table.  
-2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters. 
+The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for  multiple applications.  
+1. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters.     
+2. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table.   
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>
@@ -506,9 +506,9 @@ The structure of a report in Cliosight is comparatively more complex than a form
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
-1. It works similar to a report in terms of the filter menu definition. Global filters should be applied first because it takes precendance over the report  filters. 
+1. It works similar to a report in terms of the filter menu definition. Global filters should be applied first because it takes precedence over the report  filters. 
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
-3. It can have its own css definition and it will override the css of the individual reports and forms.
+3. It can have its own css definition which will override the css of the individual reports and forms.
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 ```css
