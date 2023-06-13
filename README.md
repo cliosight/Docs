@@ -234,7 +234,7 @@ Forms are the basic input method within Cliosight.
 
 ![form_example](https://file.io/gpR49rN4lQJE)  
 
-**CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )**
+CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
 
 ```css
 {
@@ -311,7 +311,7 @@ Major components are:
 4. Sub form within the main form 
 5. Multiple instances of aggregated values within the sub form   
 
-![form_example_1](https://file.io/CGl3yMUZemLi)   
+![form_example_1](https://file.io/2HJFgVgoGIib)   
    ```css    
    {
 	"datasource_id": 1,
@@ -493,7 +493,7 @@ Major components are:
 
 ### A Short Survey <a name="survey"></a>     
 
-![form_example](https://file.io/gpR49rN4lQJE)  
+![survey_example](https://file.io/gpR49rN4lQJE)  
 
 ## JSON body a Report <a name="report"></a>  
 The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for  multiple applications.  
