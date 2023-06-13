@@ -1,5 +1,8 @@
 # Cliosight Documentation
-A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers. 
+A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers.   
+This is a work under progress. Please contact us for any clarifications:   
+1. dikshit.baruah@gmail.com      
+2. jaryya@gmail.com   
 
 # Table of contents
 1. [SQL Interface for Structured Data](#sql)   
