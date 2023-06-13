@@ -39,7 +39,7 @@ Cliosight is a robust platform that offers support for various leading database 
 ## Support for Multiple Data Sources <a name="datasources"></a>
 Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to one in-house MySQL database with a **shared connection pool**. Tables created within an account are segregated based on the datasources.   
 
-One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from speadsheets and CSV files to be entered into a particular database table. On the other hand, the data from a report can be downloaded in the same format.     
+One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files to be entered into database tables. On the other hand, the data from a report can be downloaded in the same format.     
 
 Example of a datasource definition:      
 ```json     
