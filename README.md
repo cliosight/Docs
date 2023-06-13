@@ -501,9 +501,11 @@ The structure of a report in Cliosight is comparatively more complex than a form
 2. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table.   
 
 ## Examples of Reports ##
-### Meetings Report <a name="meetings_report"></a>
+### Meetings Report <a name="meetings_report"></a>   
+ 
 
 ### Group Meetings Report <a name="meetings_group"></a>
+![group_meetings](https://file.io/IAsjW9AnP7EF)  
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
