@@ -559,7 +559,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to disable uploading data from CSV files through the import data option in forms created from an in-house datasource. Reports created from these database tables can however serve as inputs to other datasources within the same account or another. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
+It is possible to disable uploading data from CSV files through the import data option in forms created from an in-house datasource. Reports created from these database tables can however serve as inputs to tables of other datasources from which other reports can be created. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
