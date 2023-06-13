@@ -521,7 +521,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 3. It can have its own css definition which will override the css of the individual reports and forms.
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
-![dashboard](https://file.io/fEixbOQZHpij))   
+![dashboard](https://file.io/fEixbOQZHpij)    
 ```css
 {
     "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
@@ -559,7 +559,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to disable uploading data from CSV files through the import data option in forms created from an in-house datasource. Reports created from these database tables can however serve as inputs to tables of other datasources from which other reports can be created. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
+It is possible to disable uploading data from CSV files through the import data option in forms created from an in-house datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
