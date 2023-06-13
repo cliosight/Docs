@@ -167,7 +167,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
      
    
 ## JSON body a Form <a name="form"></a>
-Forms are the basic input method within Cliosight. 
+A form is the input method within Cliosight. It can be used from within the user's account or given public access, so that it can be embedded into another application. It can have a sub-form or a report and supports all basic input elements used in an HTML.   
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -499,9 +499,9 @@ The components are:
  
 
 ## JSON body of a Report <a name="report"></a>  
-The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for  multiple applications.  
-1. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters.     
-2. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table.   
+The structure of a report in Cliosight is comparatively more complex than a form. While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for multiple applications.  
+1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
+2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters.       
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>   
@@ -559,7 +559,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to disable uploading data from CSV files through the import data option in forms. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
+It is possible to disable uploading data from CSV files through the import data option in forms created from an in-house datasource. Reports created from these database tables can however serve as inputs to other datasources within the same account or another. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
