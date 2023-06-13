@@ -516,6 +516,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 3. It can have its own css definition which will override the css of the individual reports and forms.
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
+![dashboard](https://file.io/YrQz2EliEeny)   
 ```css
 {
     "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
