@@ -40,9 +40,9 @@ Cliosight is a robust platform that offers support for various leading database 
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for in-house databases within the account, user-owned virtual machines, or cloud database instances. On the other hand, users on the free tier will have access to **only one** in-house MySQL database with a **shared connection pool**. Schemas created within an account are segregated based on the datasources.   
+Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for databases within the account or a user-owned virtual machines. Cloud database instances are also supported. Schemas created within an account are segregated based on the datasources. Users on the free tier will have access to **only one** in-house MySQL database with a **shared connection pool**.    
 
-One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files to be entered into database tables. On the other hand, the data from a report can be downloaded in the same format.     
+One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files to be entered into database tables. On the other hand, the data from a report can be downloaded in the same format.       
 
 Example of a datasource definition:      
 ```json     
@@ -72,8 +72,7 @@ Furthermore, administrators can designate users with the ability to create and e
 In the current version, only forms can have public access. Reports and dashboards will require login for all actions.       
 
 ## A Relational Database Example <a name="example"></a>
-Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
-
+Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.       
 To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
 
 Similarly, other important considerations or enhancements may include:    
