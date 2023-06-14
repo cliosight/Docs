@@ -1,5 +1,5 @@
 # Cliosight Documentation
-A detailed explanation for creating and managing tables, forms, reports, dashboards and triggers.   
+A detailed explanation for creating datasources, forms, reports, dashboards, triggers and workflows.   
 This is a work under progress. Please contact us for any clarifications:   
 1. dikshit.baruah@gmail.com      
 2. jaryya@gmail.com   
