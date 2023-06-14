@@ -316,7 +316,7 @@ The components are:
 4. Sub form within the main form 
 5. Multiple instances of aggregated values within the sub form   
 
-![form_example_1](https://file.io/2HJFgVgoGIib)   
+![form_example_1](https://file.io/GcaEKoeidSMi)  
    ```css    
    {
 	"datasource_id": 1,
