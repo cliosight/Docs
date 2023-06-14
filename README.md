@@ -316,7 +316,7 @@ The components are:
 4. Sub form within the main form 
 5. Multiple instances of aggregated values within the sub form   
 
-![form_example_1](https://file.io/GcaEKoeidSMi)  
+![form_example_1](https://file.io/jHNp81gF8jZ0)  
    ```css    
    {
 	"datasource_id": 1,
@@ -512,7 +512,7 @@ For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true
  
 
 ### Group Meetings Report <a name="meetings_group"></a>
-![group_meetings]()  
+![group_meetings](https://file.io/GcaEKoeidSMi)  
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
