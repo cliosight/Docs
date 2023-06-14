@@ -512,7 +512,7 @@ For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true
  
 
 ### Group Meetings Report <a name="meetings_group"></a>
-![group_meetings](https://file.io/IAsjW9AnP7EF)  
+![group_meetings]()  
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
