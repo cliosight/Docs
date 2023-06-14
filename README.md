@@ -505,6 +505,7 @@ While a form is the data input interface, a report is the output of data analysi
 2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
 A report can be embedded using a URL in the format:    
 https://demo.cliosight.com/app/reports/serial-number/show?noNavbar=true      
+For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true      
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>   
@@ -524,6 +525,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
 Just like a form and a report, a dashboard can be shared using a URL in the format:   
 https://demo.cliosight.com/app/dashboards/serial-number/show?noNavbar=true        
+For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 ![dashboard](https://file.io/fEixbOQZHpij)    
