@@ -1,6 +1,6 @@
 # Cliosight Documentation
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows.   
-This work is under progress. Please contact us for any clarifications:   
+This work is under progress. There were innumerable changes and commits done on this file. Please contact us for any errors or clarifications:   
 1. dikshit.baruah@gmail.com      
 2. jaryya@gmail.com   
 
