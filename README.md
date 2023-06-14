@@ -168,7 +168,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
      
    
 ## JSON body a Form <a name="form"></a>
-A form can be embedded into another application with the help of an https URL. It can have sub-forms or reports and supports all basic input elements used in an HTML. The URL format of a form is https://demo.cliosight.com/app/**forms**/**<serial-number>**/show?noNavbar=true      
+A form can be embedded into another application with the help of an https URL. It can have sub-forms or reports and supports all basic input elements used in an HTML. The URL format of a form is https://demo.cliosight.com/app/forms/<serial-number>/show?noNavbar=true      
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -504,7 +504,7 @@ While a form is the data input interface, a report is the output of data analysi
 1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
 2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
 A report can be embedded using a URL in the format:    
-https://demo.cliosight.com/app/**reports**/**<serial-number>**/show?noNavbar=true      
+https://demo.cliosight.com/app/reports/<serial-number>/show?noNavbar=true      
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>   
@@ -523,7 +523,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
 Just like a form and a report, a dashboard can be shared using a URL in the format:   
-https://demo.cliosight.com/app/**dashboards**/**<serial-number>**/show?noNavbar=true        
+https://demo.cliosight.com/app/dashboards/<serial-number>/show?noNavbar=true        
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 ![dashboard](https://file.io/fEixbOQZHpij)    
