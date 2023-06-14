@@ -512,7 +512,7 @@ For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true
  
 
 ### Group Meetings Report <a name="meetings_group"></a>
-![group_meetings](https://file.io/GcaEKoeidSMi)  
+![group_meetings](https://file.io/534RhH4nP6aR) 
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
@@ -528,7 +528,7 @@ https://demo.cliosight.com/app/dashboards/serial-number/show?noNavbar=true
 For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
-![dashboard](https://file.io/fEixbOQZHpij)    
+![dashboard](https://file.io/apiY2WRGPIyj)    
 ```css
 {
     "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
