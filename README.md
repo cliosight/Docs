@@ -69,6 +69,7 @@ A form can be a way to attach files associated with an entity. A text, image, vi
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users.     
 Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage with public access to files.   
+In the current version, only forms can have public or private access. Reports and dashboards will require login.       
 
 ## A Relational Database Example <a name="example"></a>
 Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.
@@ -85,7 +86,7 @@ Similarly, other important considerations or enhancements may include:
 
 Now, let's consider the database design for email notifications. Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget, which is a tabular format that allows individual records to be edited through a form. However, the common way meetings are communicated to participants today is through email. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only an admin will have the authority to delete any of them.
 
-To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one relationship between an attachment and an email is stored in a separate table. Once files are saved in the database, they can be easily reused in forms other than meetings.   
+To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one link between an attachment and an email is stored in a separate table. Once files are saved in the database, they can be easily reused in forms other than meetings.   
 
 One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
 
@@ -167,7 +168,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
      
    
 ## JSON body a Form <a name="form"></a>
-A form is the input method within Cliosight. It can be used from within the user's account or given public access, so that it can be embedded into another application. It can have a sub-form or a report and supports all basic input elements used in an HTML.   
+A form can be embedded into another application with the help of an https URL. It can have sub-forms or reports and supports all basic input elements used in an HTML. The URL format of a form is https://demo.cliosight.com/app/**forms**/**<serial-number>**/show?noNavbar=true      
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -501,7 +502,9 @@ The components are:
 ## JSON body of a Report <a name="report"></a>  
 While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for multiple applications.  
 1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
-2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence unlimited number of reports and filters.       
+2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
+A report can be embedded using a URL in the format:    
+https://demo.cliosight.com/app/**reports**/**<serial-number>**/show?noNavbar=true      
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>   
@@ -518,7 +521,9 @@ While a form is the data input interface, a report is the output of data analysi
 A reporting dashboard is an aggregation of related reports with global filters. 
 1. It works similarly to a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.     
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
-3. It can have its own css definition which will override the css of the individual reports and forms.
+3. It can have its own css definition which will override the css of the individual reports and forms.   
+Just like a form and a report, a dashboard can be shared using a URL in the format:   
+https://demo.cliosight.com/app/**dashboards**/**<serial-number>**/show?noNavbar=true        
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 ![dashboard](https://file.io/fEixbOQZHpij)    
@@ -559,7 +564,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to disable uploading data from CSV files through the import data option in forms created from an in-house datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
+It is possible to disable uploading data from CSV files through the import data option in forms created for an in-house datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
