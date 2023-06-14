@@ -187,7 +187,7 @@ A form can be embedded into another application with the help of an https URL. I
                 "value": "<input-value>" // If value entered or selected matches the specified value     
             }],     
             "action": "show",    
-            "show": <true or false>, // default action value is false    
+            "show": true | false, // default action value is false    
             "input_category": "field | multiselect | form | report",  // form is for supporting sub-form definition;     
             "column": {    
                 "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category     
@@ -209,7 +209,7 @@ A form can be embedded into another application with the help of an https URL. I
             "sub_form_button_label": "", // This is the add sub form button label      
             "hide_sub_form_button": true, // Do not show add sub form button      
             "default_instances_count": 1, // Default sub form items to show, useful when the add sub form button is hidden       
-            "hide_instance_remove_button": true, // Disable removing existing sub form rows by hiding the close button; This is useful along with hide sub form button enabled     
+            "hide_instance_remove_button": true | false, // Disable removing existing sub form rows by hiding the close button; This is useful along with hide sub form button enabled     
             "sub_form_table": {      
                 "name": "<table-name>" // sub form root table     
             },      
@@ -226,8 +226,8 @@ A form can be embedded into another application with the help of an https URL. I
     }],     
     "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
-    "submit_button_label": <button-label>,  // Default value is "Submit" 
-    "label": <form-heading>  // Default value is "Form"
+    "submit_button_label": "<button-label>",  // Default value is "Submit" 
+    "label": "<form-heading>"  // Default value is "Form"
     }        
 } 
 ```   
