@@ -312,7 +312,7 @@ The components are:
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
 3. Rules based on the values selected from the drop down  
-4. Sub form within the main form 
+4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub form   
 
 ![form_example_1](https://file.io/jHNp81gF8jZ0)  
