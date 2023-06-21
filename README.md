@@ -15,14 +15,14 @@ This work is under progress. There were innumerable commits done on this file. P
 8. [JSON body a Form](#form)    
 9. Examples of Forms          
 	1. [Customer Queries](#cq)     
-	2. [A Section of the Meetings Form](#meetings_form)   
-	3. [A Short Survey](#survey)       
+	2. [A Section of the Meeting Creation Form](#meetings_form)   
+	3. [Survey](#survey)       
 10. [JSON body of a Report](#report)   
 11. Examples of Reports          
 	1. [Meetings Report](#meetings_report)     
 	2. [Group Meetings Report](#meetings_group)     
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
-13. [JSON body a Reporting Dashboard](#dashboard)     
+13. [JSON body of a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
 15. [Claiming Trustworthiness](#trust)    
 16. [JSON body of a Trigger](#trigger)  
@@ -234,8 +234,7 @@ A form can be embedded into another application with the help of an https URL. I
 
 ## Examples of Forms ##   
 ### Customer Queries <a name="cq"></a>     
-
-![form_example](https://file.io/a2U7oeU7uihY)
+[Customer Queries](https://demo.cliosight.com/app/forms/42/show?noNavbar=true)        
 
 CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
 
@@ -307,7 +306,7 @@ CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_bod
 }
 ```   
 
-### A Section of the Meetings Form <a name="meetings_form"></a>     
+### A Section of the Meeting Creation Form <a name="meetings_form"></a>     
 The components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
@@ -315,7 +314,8 @@ The components are:
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub form   
 
-![form_example_1](https://file.io/jHNp81gF8jZ0)  
+[Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
+
    ```css    
    {
 	"datasource_id": 1,
@@ -495,7 +495,7 @@ The components are:
 }
 ```
 
-### A Short Survey <a name="survey"></a>     
+### Sample Survey <a name="survey"></a>     
  
 
 ## JSON body of a Report <a name="report"></a>  
@@ -511,7 +511,7 @@ For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true
  
 
 ### Group Meetings Report <a name="meetings_group"></a>
-![group_meetings](https://file.io/534RhH4nP6aR) 
+
 
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
@@ -527,7 +527,7 @@ https://demo.cliosight.com/app/dashboards/serial-number/show?noNavbar=true
 For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
-![dashboard](https://file.io/apiY2WRGPIyj)    
+
 ```css
 {
     "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
