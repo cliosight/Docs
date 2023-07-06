@@ -192,7 +192,8 @@ A form can be embedded into another application with the help of an https URL. I
             "input_category": "field | multiselect | form | report",  // form is for supporting sub-form definition;     
             "column": {    
                 "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category     
-            },      
+            },
+            "pre_html": "",       
             "input_type": "text | select | radio | checkbox | hidden", // checkbox can be used with multiselect as well        
             "placeholder": "", // input placeholder attribute      
             "input_label": "", // label element content goes here      
@@ -521,7 +522,7 @@ For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
-1. It works similarly to a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.     
+1. It works like a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
 Just like a form and a report, a dashboard can be shared using a URL in the format:   
