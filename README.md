@@ -14,7 +14,7 @@ This work is under progress. There were innumerable commits done on this file. P
 7. [Schema details of the Example](#schema)   
 8. [JSON body a Form](#form)    
 9. Examples of Forms          
-	1. [Customer Queries](#cq)     
+	1. [Contact us Form](#cq)     
 	2. [A Section of the Meeting Creation Form](#meetings_form)   
 	3. [Survey](#survey)       
 10. [JSON body of a Report](#report)   
@@ -36,13 +36,13 @@ This work is under progress. There were innumerable commits done on this file. P
 	2. [Sending follow-up emails](#followup_workflow)     
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and MS SQL. Additionally, it will seamlessly integrate with popular cloud data services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface empowers users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
+Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Additionally, it will seamlessly integrate with popular cloud data services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface enables users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will enjoy the flexibility of utilizing multiple data sources by saving configurations for each source. These configurations can be created for databases within the account or user-owned virtual machines. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created within an account are segregated based on the datasources. Users on the free tier will have access to **only one** in-house MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to include multiple data sources by saving the configuration of each source in a single account. These configurations can be created for in-built databases or user-owned virtual machines. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-house MySQL database with a **shared connection pool**.    
 
-One of the advantages of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicated resources allocated specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files to be entered into database tables. On the other hand, the data from a report can be downloaded in the same format.       
+One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources  specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. On the other hand, the data from a report can be downloaded in the same format.       
 
 Example of a datasource definition:      
 ```json     
@@ -64,15 +64,14 @@ Example of a datasource definition:
 ```    
 
 ## File upload <a name="file"></a>
-A form can be a way to attach files associated with an entity. A text, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that a URL can be used to access that resource. 
+A form can be used to attach files associated with an entity in a database. A text file, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that it is accessible through a URL. It is possible to restrict the file type and size by mentioning about the same in the form definition.
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users.     
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage. As for trial accounts, they are allocated a limited capacity for database and file storage with public access to files.   
-In the current version, only forms can have public access. Reports and dashboards will require login for all actions.       
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Executing CRUD operations on the database tables directly is also a restricted action.      
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage.   
 
 ## A Relational Database Example <a name="example"></a>
-Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It's important to note that meetings, groups, and contacts can be edited at any time.       
+Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It is important to note that meetings, groups, and contacts can be edited at any time.       
 To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
 
 Similarly, other important considerations or enhancements may include:    
@@ -83,9 +82,10 @@ Similarly, other important considerations or enhancements may include:
 5. Summary in follow up email to attendees and stakeholders    
 6. Taking care of time zone differences   
 
-Now, let's consider the database design for email notifications. Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget, which is a tabular format that allows individual records to be edited through a form. However, the common way meetings are communicated to participants today is through email. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only an admin will have the authority to delete any of them.
+Now, let's consider the database design for email notifications.    
+Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget, which is a table that allows individual records to be edited through a form. However, the common way meetings are communicated and managed today is through email only. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only a team admin will have the authority to permanently delete any of them.   
 
-To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one link between an attachment and an email is stored in a separate table. Once these attached files are saved in the database, they can be reused in other forms and reports.      
+To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one link between an attachment and an email is stored in a separate table. Once these attached files are saved in the database, they can be reused in other forms and reports.        
 
 One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
 
@@ -106,12 +106,14 @@ Forms for this example:
 
 While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI. 
 1. SQL query generator   
-2. JSON body generator     
+2. JSON body generator
+3. HTML/CSS code generator      
 
-These are the only two types of syntaxes used in Cliosight. Anyone with limited knowledge of SQL or wanting to build an application faster can seek help from the AI agent. 
-    
-As far as this example is concerned, we can utilize another set of APIs in specific components within Cliosight.      
-For example, the content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
+These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" tag allows users to embed an HTML containing extra elements or files stored within the account.       
+As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.           
+
+ ## Using AI in the meeting management app  ##
+The content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
 
 To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
 
@@ -233,8 +235,8 @@ A form can be embedded into another application with the help of an https URL. I
       
 
 ## Examples of Forms ##   
-### Customer Queries <a name="cq"></a>     
-[Customer Queries](https://demo.cliosight.com/app/forms/42/show?noNavbar=true)        
+### Contact us Form <a name="cq"></a>     
+[Contact Us Form](https://demo.cliosight.com/app/forms/42/show?noNavbar=true)        
 
 CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
 
@@ -314,7 +316,7 @@ The components are:
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub form   
 
-[Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
+[Meeting Form](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
 
    ```css    
    {
@@ -495,7 +497,7 @@ The components are:
 }
 ```
 
-### Sample Survey <a name="survey"></a>     
+### Survey <a name="survey"></a>     
  
 
 ## JSON body of a Report <a name="report"></a>  
@@ -565,7 +567,7 @@ For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true
 }
   ```
 ## Claiming Trustworthiness <a name="trust"></a>
-It is possible to disable uploading data from CSV files through the import data option in forms created for an in-house datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
+It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
