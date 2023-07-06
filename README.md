@@ -67,12 +67,12 @@ Example of a datasource definition:
 A form can be used to attach files associated with an entity in a database. A text file, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that it is accessible through a URL. It is possible to restrict the file type and size by mentioning about the same in the form definition.
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Executing CRUD operations on the database tables directly is also a restricted action.      
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, the same access restrictions apply to files stored in cloud storage.   
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, access restrictions apply to files stored within the account.     
 
 ## A Relational Database Example <a name="example"></a>
 Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It is important to note that meetings, groups, and contacts can be edited at any time.       
-To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting scheduling, updates, and cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
+To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting schedule, updates, or cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
 
 Similarly, other important considerations or enhancements may include:    
 1. Handling time conflicting meetings  
@@ -109,22 +109,22 @@ While some meeting actions can be automated through triggers, there are other as
 2. JSON body generator
 3. HTML/CSS code generator      
 
-These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" tag allows users to embed an HTML containing extra elements or files stored within the account.       
+These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" tag allows users to embed an HTML containing extra elements or files stored internally.       
 As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.           
 
- ## Using AI in the meeting management app  ##
-The content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will return a link created dynamically through an API call.   
+ ## Using AI in the meeting management portal  ##
+The content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will generate and return a link created dynamically through an API call.   
 
 To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
 
-The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access for the report listing all meeting details. Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees.     
+The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section above. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access for the report listing all meeting details. Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees.     
 
 To support this, we can introduce an `email_type` field for the email entity, which can hold the values `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
 
 Creating a follow-up email is an optional feature that necessitates additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking functionality is already available in software like Etherpad. Application developers can consider integrating with open-source collaboration applications such as Jitsi Meet, which already includes Etherpad. To store the values back into the database, another API integration would be required.    
 
     
-## Schema details <a name="schema"></a>
+## Schema details of the Meeting Management Portal<a name="schema"></a>
 
 ### Contact table ###
 
