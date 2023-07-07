@@ -64,10 +64,10 @@ Example of a datasource definition:
 ```    
 
 ## File upload <a name="file"></a>
-A form can be used to attach files associated with an entity in a database. A text file, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that it is accessible through a URL. It is possible to restrict the file type and size by mentioning about the same in the form definition.
+A form can be used to attach files associated with an entity in a database. A text file, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that it is accessible through a URL. The file formats and size can be restricted by specifying them in the form definition.
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to datasets and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
 Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, access restrictions apply to files stored within the account.     
 
 ## A Relational Database Example <a name="example"></a>
