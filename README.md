@@ -195,7 +195,7 @@ A form can be embedded into another application with the help of an https URL. I
             },
             "pre_html": "",    
             "post_html":"",         
-            "input_type": "text | select | radio | checkbox | hidden", // checkbox can be used with multiselect as well        
+            "input_type": "text | select | radio | checkbox | file | hidden", // checkbox can be used with multiselect        
             "placeholder": "", // input placeholder attribute      
             "input_label": "", // label element content goes here      
             "options": [{      // required for select tag options; also applies to multiselect checkboxes     
@@ -232,14 +232,16 @@ A form can be embedded into another application with the help of an https URL. I
     "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
     "submit_button_label": "<button-label>",  // Default value is "Submit" 
-    "label": "<form-heading>"  // Default value is "Form"
+    "label": "<form-heading>",  // Default value is "Form"
+    "mc_users": [],   // for specifying the users and groups
+    "mc_groups": []
     }        
 } 
 ```   
       
 
 ## Examples of Forms ##   
-### Contact us Form <a name="cq"></a>     
+### "Contact us" in landing pages and apps <a name="cq"></a>     
 [Contact Us Form](https://demo.cliosight.com/app/forms/42/show?noNavbar=true)        
 
 CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
