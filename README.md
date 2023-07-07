@@ -16,7 +16,7 @@ This work is under progress. There were innumerable commits done on this file. P
 9. Examples of Forms          
 	1. [Contact us Form](#cq)     
 	2. [A Section of the Meeting Creation Form](#meetings_form)   
-	3. [Survey](#survey)       
+	3. [Job Application Form](#job)       
 10. [JSON body of a Report](#report)   
 11. Examples of Reports          
 	1. [Meetings Report](#meetings_report)     
@@ -109,7 +109,7 @@ While some meeting actions can be automated through triggers, there are other as
 2. JSON body generator
 3. HTML/CSS code generator      
 
-These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" tag allows users to embed an HTML containing extra elements or files stored internally.       
+These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks.       
 As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.           
 
  ## Using AI in the meeting management portal  ##
@@ -193,11 +193,11 @@ A form can be embedded into another application with the help of an https URL. I
             "column": {    
                 "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category     
             },
-            "pre_html": "",    
-            "post_html":"",         
-            "input_type": "text | select | radio | checkbox | file | hidden", // checkbox can be used with multiselect        
-            "placeholder": "", // input placeholder attribute      
-            "input_label": "", // label element content goes here      
+            "pre_html": "",    // HTML code snippet above the element  
+            "post_html":"",    // HTML code snippet below the element      
+            "input_type": "text | select | radio | checkbox | file | hidden",   // hidden columns can be used for categorizing the sources of input   
+            "placeholder": "", 
+            "input_label": "", 
             "options": [{      // required for select tag options; also applies to multiselect checkboxes     
                 "label": "",       
                 "value": ""       
@@ -206,7 +206,7 @@ A form can be embedded into another application with the help of an https URL. I
             "table_select_search_column": "<column-name>", // column name of the table values in multiselect      
             "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table     
             "validation": {       // Set of validation parameters that can restrict the inputs      
-                "isRequired": "0 | 1", // "1" if mandatory; throws an error if user does not enter the value and clicks submit     
+                "isRequired": "0 | 1",    // "1" if mandatory; throws an error if user does not enter the value and clicks submit     
                 "maxLength": 255,    
                 "types": ["image/png", "video/mp4", ... ],    
                 "size_in_kb": 2000         
@@ -503,7 +503,7 @@ The components are:
 }
 ```
 
-### Survey <a name="survey"></a>     
+### A Job Application Form <a name="job"></a>     
  
 
 ## JSON body of a Report <a name="report"></a>  
