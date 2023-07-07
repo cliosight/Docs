@@ -189,7 +189,7 @@ A form can be embedded into another application with the help of an https URL. I
             }],     
             "action": "show",    
             "show": true | false, // default action value is false    
-            "input_category": "field | multiselect | form | report",  // form is for supporting sub-form definition;     
+            "input_category": "field | multiselect | form",  // form is for supporting sub-form definition;     
             "column": {    
                 "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category     
             },
