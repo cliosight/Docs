@@ -193,7 +193,8 @@ A form can be embedded into another application with the help of an https URL. I
             "column": {    
                 "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category     
             },
-            "pre_html": "",       
+            "pre_html": "",    
+            "post_html":"",         
             "input_type": "text | select | radio | checkbox | hidden", // checkbox can be used with multiselect as well        
             "placeholder": "", // input placeholder attribute      
             "input_label": "", // label element content goes here      
@@ -204,9 +205,11 @@ A form can be embedded into another application with the help of an https URL. I
             "table_select_table": “<table-name>”, // for single/multiselect dropdown where the options are from another table in database      
             "table_select_search_column": "<column-name>", // column name of the table values in multiselect      
             "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table     
-            "validation": {       
+            "validation": {       // Set of validation parameters that can restrict the inputs      
                 "isRequired": "0 | 1", // "1" if mandatory; throws an error if user does not enter the value and clicks submit     
-                "maxLength": 255      
+                "maxLength": 255,    
+                "types": ["image/png", "video/mp4", ... ],    
+                "size_in_kb": 2000         
             },      
             "sub_form_button_label": "", // This is the add sub form button label      
             "hide_sub_form_button": true, // Do not show add sub form button      
