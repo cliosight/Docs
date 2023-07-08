@@ -14,9 +14,9 @@ This work is under progress. There were innumerable commits done on this file. P
 7. [Schema details of the Example](#schema)   
 8. [JSON body a Form](#form)    
 9. Examples of Forms          
-	1. [Contact us Form](#cq)     
-	2. [A Section of the Meeting Creation Form](#meetings_form)   
-	3. [Job Application Form](#job)       
+	1. ["Contact us" in Landing Pages](#cq)     
+	2. [A Section of the "Meeting Scheduling" Form](#meetings_form)   
+	3. [Job Application](#job)       
 10. [JSON body of a Report](#report)   
 11. Examples of Reports          
 	1. [Meetings Report](#meetings_report)     
@@ -25,14 +25,14 @@ This work is under progress. There were innumerable commits done on this file. P
 13. [JSON body of a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
 15. [Claiming Trustworthiness](#trust)    
-16. [JSON body of a Trigger](#trigger)  
+16. [JSON body of a Cliosight Trigger](#trigger)  
 17. Examples of Triggers          
 	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
 	2. [Sending Email Notifications on Events](#trigger_email)    
 18. [Email Notification](#email)   
 19. [Workflows](#workflow) 
 20. Examples of Workflows     
-	1. [Meetings Management Portal](#meetings_workflow)     
+	1. [Meeting Management Portal](#meetings_workflow)     
 	2. [Sending follow-up emails](#followup_workflow)     
 
 ## SQL Interface for Structured Data <a name="sql"></a>
@@ -169,7 +169,7 @@ CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` 
      
    
 ## JSON body a Form <a name="form"></a>
-A form can be embedded into another application with the help of an https URL. It can have sub-forms or reports and supports all basic input elements used in an HTML. The URL format of a form is https://demo.cliosight.com/app/forms/serial-number/show?noNavbar=true      
+A form can be embedded into another application with the help of an https URL. It can have sub-forms and reports and supports all basic input elements used in any HTML. The URL format of a form is https://demo.cliosight.com/app/forms/serial-number/show?noNavbar=true      
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -206,10 +206,12 @@ A form can be embedded into another application with the help of an https URL. I
             "table_select_search_column": "<column-name>", // column name of the table values in multiselect      
             "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table     
             "validation": {       // Set of validation parameters that can restrict the inputs      
-                "isRequired": "0 | 1",    // "1" if mandatory; throws an error if user does not enter the value and clicks submit     
-                "maxLength": 255,    
-                "types": ["image/png", "video/mp4", ... ],    
-                "size_in_kb": 2000         
+                "isRequired": "0 | 1",    // "1" if mandatory; throws an error if user does not enter a value but clicks submit     
+                "maxLength": 255,         // for text input fields
+                "types": ["image/png", "video/mp4", ... ],    // for restricting file formats only for file upload only
+                "size_in_kb": <max-file-size>,        // for specifying the maximum file size allowed in file upload                
+                "min_resolution": <min-file-resolution-in-pixels>,    // optional; for images only
+                "max_resolution": <max-file-resolution-in-pixels>     // optional; for images only 
             },      
             "sub_form_button_label": "", // This is the add sub form button label      
             "hide_sub_form_button": true, // Do not show add sub form button      
@@ -233,7 +235,7 @@ A form can be embedded into another application with the help of an https URL. I
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
     "submit_button_label": "<button-label>",  // Default value is "Submit" 
     "label": "<form-heading>",  // Default value is "Form"
-    "mc_users": [],   // for specifying the users and groups
+    "mc_users": [],   // for specifying the users and groups allowed for admin actions on the form viz. edit/delete    
     "mc_groups": []
     }        
 } 
@@ -322,7 +324,7 @@ The components are:
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub form   
 
-[Meeting Form](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
+[Meeting Scheduling Form](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
 
    ```css    
    {
@@ -575,7 +577,7 @@ For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true
 ## Claiming Trustworthiness <a name="trust"></a>
 It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
 
-## JSON body of a Trigger <a name="trigger"></a>
+## JSON body of a Cliosight Trigger <a name="trigger"></a>
 
 ## Examples of Triggers ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
