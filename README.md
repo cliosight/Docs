@@ -207,11 +207,12 @@ A form can be embedded into another application with the help of an https URL. I
             "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table     
             "validation": {       // Set of validation parameters that can restrict the inputs      
                 "isRequired": "0 | 1",    // "1" if mandatory; throws an error if user does not enter a value but clicks submit     
-                "maxLength": 255,         // for text input fields
-                "types": ["image/png", "video/mp4", ... ],    // for restricting file formats only for file upload only
+                "maxLength": 255,         // for text and textarea input fields
+                "minLength": 255,   
+                "types": ["image/png", "video/mp4", ... ],    // for restricting the file formats in file upload  
                 "size_in_kb": <max-file-size>,        // for specifying the maximum file size allowed in file upload                
-                "min_resolution": <min-file-resolution-in-pixels>,    // optional; for images only
-                "max_resolution": <max-file-resolution-in-pixels>     // optional; for images only 
+                "min_resolution": <min-file-resolution-in-pixels>,    // resolution specification for images     
+                "max_resolution": <max-file-resolution-in-pixels>    
             },      
             "sub_form_button_label": "", // This is the add sub form button label      
             "hide_sub_form_button": true, // Do not show add sub form button      
@@ -235,7 +236,7 @@ A form can be embedded into another application with the help of an https URL. I
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
     "submit_button_label": "<button-label>",  // Default value is "Submit" 
     "label": "<form-heading>",  // Default value is "Form"
-    "mc_users": [],   // for specifying the users and groups allowed for admin actions on the form viz. edit/delete    
+    "mc_users": [],   // for specifying the users and groups allowed for admin actions on the form viz. edit and delete    
     "mc_groups": []
     }        
 } 
