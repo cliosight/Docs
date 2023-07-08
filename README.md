@@ -113,11 +113,11 @@ These are the only two types of syntaxes used in Cliosight for configuring the w
 As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.           
 
  ## Using AI in the meeting management portal  ##
-The content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact location or the meeting link with passcode, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will generate and return a link created dynamically through an API call.   
+The content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact `location` or the `meeting link` with `passcode`, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will generate and return a link created dynamically through an API call.   
 
-To enhance attendee interaction, the organizer may want to provide text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
+To enhance attendee interaction, the organizer may want to attach text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
 
-The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section above. The highlights field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access for the report listing all meeting details. Therefore, an email can also serve as an automated follow-up for attendees, stakeholders, or all invitees.     
+The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section above. The `highlights` field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access for the report listing all meeting details. Therefore, an email can serve as an automated follow-up for attendees, stakeholders, or all invitees.     
 
 To support this, we can introduce an `email_type` field for the email entity, which can hold the values `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
 
@@ -236,7 +236,7 @@ A form can be embedded into another application with the help of an https URL. I
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
     "submit_button_label": "<button-label>",  // Default value is "Submit" 
     "label": "<form-heading>",  // Default value is "Form"
-    "mc_users": [],   // for specifying the users and groups allowed for admin actions on the form viz. edit and delete    
+    "mc_users": [],   // for specifying the users and groups allowed for admin actions on the form viz. edit and delete; admin by default    
     "mc_groups": []
     }        
 } 
@@ -533,9 +533,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 1. It works like a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
-Just like a form and a report, a dashboard can be shared using a URL in the format:   
-https://demo.cliosight.com/app/dashboards/serial-number/show?noNavbar=true        
-For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true      
+Just like a form and a report, a dashboard can be shared using a URL in the format. For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 
