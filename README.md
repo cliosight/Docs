@@ -13,7 +13,7 @@ This work is under progress. There were innumerable commits done on this file. P
 5. [A Relational Database Example](#example)   
 6. [Leveraging Automation and AI Components](#ai)   
 7. [Schema details of the Example](#schema)   
-8. [JSON body a Form](#form)    
+8. [JSON body of a Form](#form)    
 9. Examples of Forms          
 	1. ["Contact us" in Landing Pages](#cq)     
 	2. [A Section of the "Meeting Scheduling" Form](#meetings_form)   
@@ -26,7 +26,7 @@ This work is under progress. There were innumerable commits done on this file. P
 13. [JSON body of a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
 15. [Ensuring Trustworthiness](#trust)    
-16. [JSON body of a Cliosight Trigger](#trigger)  
+16. [JSON body of a Trigger](#trigger)  
 17. Examples of Triggers          
 	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
 	2. [Sending Email Notifications on Events](#trigger_email)    
