@@ -210,9 +210,9 @@ A form can be embedded into another application with the help of an https URL. I
                 "maxLength": 255,         // for text and textarea input fields
                 "minLength": 255,   
                 "types": ["image/png", "video/mp4", ... ],    // for restricting the file formats in file upload  
-                "size_in_kb": <max-file-size>,        // for specifying the maximum file size allowed in file upload                
-                "min_resolution": <min-file-resolution-in-pixels>,    // resolution specification for images     
-                "max_resolution": <max-file-resolution-in-pixels>    
+                "size_in_kb": <max-file-size>,        
+                "min_resolution_in_pixels":  [<width>,<height>],    // resolution specification for images    
+                "max_resolution_in_pixels": [<width>,<height>]     
             },      
             "sub_form_button_label": "", // This is the add sub form button label      
             "hide_sub_form_button": true, // Do not show add sub form button      
