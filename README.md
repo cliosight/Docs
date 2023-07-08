@@ -1,5 +1,5 @@
 # Cliosight Documentation
-[cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows.   
 This work is under progress. There were innumerable commits done on this file. Please contact us for any errors or clarifications:   
 1. dikshit.baruah@gmail.com      
