@@ -24,7 +24,7 @@ This work is under progress. There were innumerable commits done on this file. P
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
 13. [JSON body of a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
-15. [Claiming Trustworthiness](#trust)    
+15. [Ensuring Trustworthiness](#trust)    
 16. [JSON body of a Cliosight Trigger](#trigger)  
 17. Examples of Triggers          
 	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
@@ -574,8 +574,8 @@ For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true
     }]
 }
   ```
-## Claiming Trustworthiness <a name="trust"></a>
-It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived from the visualization widgets.
+## Ensuring Trustworthiness <a name="trust"></a>
+It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through the visualization widgets.
 
 ## JSON body of a Cliosight Trigger <a name="trigger"></a>
 
