@@ -236,9 +236,7 @@ A form can be embedded into another application with the help of an https URL. I
     "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
     "submit_button_label": "<button-label>",  // Default value is "Submit" 
-    "label": "<form-heading>",  // Default value is "Form"
-    "mc_users": [],   // for specifying the users and groups allowed for admin actions on the form viz. edit and delete; admin by default    
-    "mc_groups": []
+    "label": "<form-heading>"  // Default value is "Form"
     }        
 } 
 ```   
