@@ -17,7 +17,7 @@ This work is under progress. There were innumerable commits done on this file. P
 9. Examples of Forms          
 	1. ["Contact us" in Landing Pages](#cq)     
 	2. [A Section of the "Meeting Scheduling" Form](#meetings_form)   
-	3. [Job Application](#job)       
+	3. [eCommerce Product Upload Form](#job)       
 10. [JSON body of a Report](#report)   
 11. Examples of Reports          
 	1. [Meetings Report](#meetings_report)     
@@ -169,7 +169,7 @@ CREATE TABLE `group_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` in
 CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `contact_id` int NOT NULL, PRIMARY KEY (`id`) ) 
      
    
-## JSON body a Form <a name="form"></a>
+## JSON body of a Form <a name="form"></a>
 A form can be embedded into another application with the help of an https URL. It can have sub-forms and reports and supports all basic input elements used in any HTML. The URL format of a form is https://demo.cliosight.com/app/forms/serial-number/show?noNavbar=true      
 ```css
 {   
@@ -181,9 +181,9 @@ A form can be embedded into another application with the help of an https URL. I
         "is_public": {       
             "status": <boolean> // Indicates if the form is available without login      
         },       
-   "css_definition": "", // css for the form      
+   "css_definition": "", // uglified css for the form      
         "inputs": [{      
-            "cols": <values 1-12>, // Sets column width in the page; This is optional     
+            "cols": <values 1-12>, // Sets column width in the page; This is optional; default value is 12      
             "rules": [{ // show/hide current input based on the rules and action properties     
                 "column": "<column-name>", // Matching column[‘Field’] value of a sibling input     
                 "value": "<input-value>" // If value entered or selected matches the specified value     
@@ -192,11 +192,11 @@ A form can be embedded into another application with the help of an https URL. I
             "show": true | false, // default action value is false    
             "input_category": "field | multiselect | form",  // form is for supporting sub-form definition;     
             "column": {    
-                "Field": "<column-name>"  // column of the main table or the polulated values via "multiselect" in input category     
+                "Field": "<column-name>"  // column of the main table or the populated values via "multiselect" in input category     
             },
             "pre_html": "",    // HTML code snippet above the element  
             "post_html":"",    // HTML code snippet below the element      
-            "input_type": "text | select | radio | checkbox | file | hidden",   // hidden columns can be used for categorizing the sources of input   
+            "input_type": "text | select | radio | checkbox | file | hidden",   // hidden columns can be used for categorizing the records   
             "placeholder": "", 
             "input_label": "", 
             "options": [{      // required for select tag options; also applies to multiselect checkboxes     
@@ -208,15 +208,15 @@ A form can be embedded into another application with the help of an https URL. I
             "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table     
             "validation": {       // Set of validation parameters that can restrict the inputs      
                 "isRequired": "0 | 1",    // "1" if mandatory; throws an error if user does not enter a value but clicks submit     
-                "maxLength": 255,         // for text and textarea input fields
-                "minLength": 255,   
+                "maxLength": 255,         // characters for text and textarea input fields
+                "minLength": 1,   
                 "types": ["image/png", "video/mp4", ... ],    // for restricting the file formats in file upload  
                 "size_in_kb": <max-file-size>,        
                 "min_resolution_in_pixels":  [<width>,<height>],    // resolution specification for images    
                 "max_resolution_in_pixels": [<width>,<height>]     
             },      
             "sub_form_button_label": "", // This is the add sub form button label      
-            "hide_sub_form_button": true, // Do not show add sub form button      
+            "hide_sub_form_button": true, // Do not show "add sub form" button      
             "default_instances_count": 1, // Default sub form items to show, useful when the add sub form button is hidden       
             "hide_instance_remove_button": true | false, // Disable removing existing sub form rows by hiding the close button; This is useful along with hide sub form button enabled     
             "sub_form_table": {      
@@ -505,7 +505,8 @@ The components are:
 }
 ```
 
-### A Job Application Form <a name="job"></a>     
+### eCommerce Product Upload Form <a name="job"></a>  
+In various eCommerce and item catalog applications, users upload products manually one-by-one or through a bulk upload option like a CSV file. The catalog created is then listed on the catalog listing page. We will try to achieve that through forms and reports. The data from each record can be used in an item detail page.     
  
 
 ## JSON body of a Report <a name="report"></a>  
