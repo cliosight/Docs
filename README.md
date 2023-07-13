@@ -506,7 +506,7 @@ The components are:
 ```
 
 ### eCommerce Product Upload Form <a name="job"></a>  
-In various eCommerce and item catalog applications, users upload products manually one-by-one or through a bulk upload option like a CSV file. The catalog created is then listed on the catalog listing page. We will try to achieve that through forms and reports. The data from each record can be used in an item detail page.     
+In eCommerce applications, users enter individual product details manually or through a bulk upload option like a CSV file. The catalog created is then viewed on the item listing page. We will try to achieve that through forms and reports. The data in each record can be used in an item detail page or elsewhere.     
  
 
 ## JSON body of a Report <a name="report"></a>  
