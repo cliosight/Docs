@@ -39,9 +39,9 @@ Cliosight is a robust platform that offers support for various leading database 
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to include multiple data sources by saving the configuration of each source in a single account. These configurations can be created for in-built databases or user-owned virtual machines. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-house MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple data sources by saving the configuration for each. These configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
 
-One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources  specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. On the other hand, the data from a report can be downloaded in the same format.       
+One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources  specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other databases or data sources.       
 
 Example of a datasource definition:      
 ```json     
