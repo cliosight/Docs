@@ -97,9 +97,9 @@ The modifications in the meeting table that will trigger an update email notific
 6. Cancelling a meeting    
 
 Forms for this example:    
-[Contact](https://demo.cliosight.com/app/forms/35/show?noNavbar=true)     
-[Group](https://demo.cliosight.com/app/forms/34/show?noNavbar=true)     
-[Meeting](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
+[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)     
+[Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)     
+[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
 
  ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -242,7 +242,7 @@ A form can be embedded into another application with the help of an https URL. I
 
 ## Examples of Forms ##   
 ### "Contact us" in landing pages and apps <a name="cq"></a>     
-[Contact Us Form](https://demo.cliosight.com/app/forms/42/show?noNavbar=true)        
+[Contact Us Form](https://app.cliosight.com/app/forms/42/show?noNavbar=true)        
 
 CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
 
@@ -322,7 +322,7 @@ The components are:
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub form   
 
-[Meeting Scheduling Form](https://demo.cliosight.com/app/forms/52/show?noNavbar=true)    
+[Meeting Scheduling Form](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
 
    ```css    
    {
@@ -512,8 +512,8 @@ While a form is the data input interface, a report is the output of data analysi
 1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
 2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
 A report can be embedded using a URL in the format:    
-https://demo.cliosight.com/app/reports/serial-number/show?noNavbar=true      
-For instance, https://demo.cliosight.com/app/reports/68/show?noNavbar=true      
+https://app.cliosight.com/app/reports/serial-number/show?noNavbar=true      
+For instance, https://app.cliosight.com/app/reports/68/show?noNavbar=true      
 
 ## Examples of Reports ##
 ### Meetings Report <a name="meetings_report"></a>   
@@ -531,7 +531,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 1. It works like a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
-Just like a form and a report, a dashboard can be shared using a URL in the format. For instance, https://demo.cliosight.com/app/dashboards/47/show?noNavbar=true      
+Just like a form and a report, a dashboard can be shared using a URL in the format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
 
