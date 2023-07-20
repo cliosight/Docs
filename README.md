@@ -1,9 +1,7 @@
 # Cliosight Documentation
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows.   
-This work is under progress. There were innumerable commits done on this file. Please contact us for any errors or clarifications:   
-1. dikshit.baruah@gmail.com      
-2. jaryya@gmail.com   
+This work is under progress. There were innumerable commits done on this file. Please contact us for any errors or clarifications at jigisha@cliosight.com or info@cliosight.com.
 
 # Table of contents
 1. [SQL Interface for Structured Data](#sql)   
@@ -16,7 +14,7 @@ This work is under progress. There were innumerable commits done on this file. P
 8. [JSON body of a Form](#form)    
 9. Examples of Forms          
 	1. ["Contact us" in Landing Pages](#cq)     
-	2. [A Section of the "Meeting Scheduling" Form](#meetings_form)   
+	2. [A Section of the "Meeting" Form](#meetings_form)   
 	3. [eCommerce Product Upload Form](#job)       
 10. [JSON body of a Report](#report)   
 11. Examples of Reports          
@@ -604,10 +602,9 @@ It is possible to disable uploading CSV file contents through the import data op
     "datasource_id": 1
 }
 ```
+## Email Notification <a name="email"></a>
 
 ### Sending Email Notifications on Events <a name="trigger_email"></a>
-
-## Email Notification <a name="email"></a>
 
 ## Workflows <a name="workflow"></a>
 
