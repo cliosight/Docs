@@ -8,18 +8,12 @@ This work is under progress. There were innumerable commits done on this file. P
 2. [Support for Multiple Data Sources](#datasources)   
 3. [File upload](#file)   
 4. [User Permissions and Access Control](#acl)   
-5. [A Relational Database Example](#example)   
-6. [Leveraging Automation and AI Components](#ai)   
-7. [Schema details of the Example](#schema)   
 8. [JSON body of a Form](#form)    
 9. Examples of Forms          
-	1. ["Contact us" in Landing Pages](#cq)     
-	2. [A Section of the "Meeting" Form](#meetings_form)   
-	3. [eCommerce Product Upload Form](#job)       
+[A Section of the "Meeting" Form](#meetings_form)      
 10. [JSON body of a Report](#report)   
 11. Examples of Reports          
-	1. [Meetings Report](#meetings_report)     
-	2. [Group Meetings Report](#meetings_group)     
+[Meetings Report](#meetings_report)     
 12. [Graphs and Charts with Cliosight Reports](#graphs)    
 13. [JSON body of a Reporting Dashboard](#dashboard)     
 14. [Example of a Reporting Dashboard](#example_dashboard)     
@@ -68,103 +62,6 @@ A form can be used to attach files associated with an entity in a database. A te
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
 Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, access restrictions apply to files stored within the account.     
-
-## A Relational Database Example <a name="example"></a>
-Let's explore the database design for corporate meetings. A **meeting** in our design can be categorized as either an **interview** or a **consultation**. It can be sent to individuals or a **group** of individuals whose **contact** information is already stored in the database. Additionally, existing contacts can be explicitly added to a meeting. It is important to note that meetings, groups, and contacts can be edited at any time.       
-To accurately track the individuals invited to a meeting, we need a direct association between the meeting and a contact. This is necessary because a group may be edited after a meeting has already taken place. Conversely, if a contact is added or removed from a group in a meeting, after the meeting is scheduled (created) but before the start time, the table linking the meeting and contact must be updated accordingly. Furthermore, when such changes occur, a meeting invite or cancellation email should be sent to the contact's email address. Similar notifications regarding meeting schedule, updates, or cancellations need to be sent to all participants. Achieving this scenario requires use of SQL triggers and scheduled jobs so that our system can handle the dynamic nature of meeting invitations, updates, and cancellations. 
-
-Similarly, other important considerations or enhancements may include:    
-1. Handling time conflicting meetings  
-2. Acknowledgement from attendees
-3. Tracking the session length and who all attended a meeting 
-4. Keeping an account of the highlights  
-5. Summary in follow up email to attendees and stakeholders    
-6. Taking care of time zone differences   
-
-Now, let's consider the database design for email notifications.    
-Meetings can be managed through a web interface with controlled access, where all past, ongoing, and scheduled meetings are listed. This can be achieved using a reporting widget, which is a table that allows individual records to be edited through a form. However, the common way meetings are communicated and managed today is through email only. It is important to note that these emails can be deleted at any time from the inbox by the invitees and organizers. To address this, our application will maintain a record of all meetings, and only a team admin will have the authority to permanently delete any of them.   
-
-To implement this functionality, we introduce an **email** entity that is instantiated once a meeting is scheduled or updated. Parameters specific to an email are stored in the corresponding table. Additionally, an email can have multiple **attachments**, and the one-to-one link between an attachment and an email is stored in a separate table. Once these attached files are saved in the database, they can be reused in other forms and reports.        
-
-One challenge to consider is that a contact might belong to multiple groups. When an email is sent to several groups and individual contacts, we need to ensure that there is no redundancy of email addresses, and recipients do not receive duplicate emails.
-
-The modifications in the meeting table that will trigger an update email notification include:
-1. Change in recipients (sent to specific invitees)
-2. Change in date and time
-3. Change in the meeting title
-4. Adding or modifying a meeting note
-5. Adding attachments
-6. Cancelling a meeting    
-
-Forms for this example:    
-[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)     
-[Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)     
-[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
-
- ## Leveraging Automation and AI Components <a name="ai"></a>
-
-While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI. 
-1. SQL query generator   
-2. JSON body generator
-3. HTML/CSS code generator      
-
-These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks.       
-As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.           
-
- ## Using AI in the meeting management portal  ##
-The content of meeting emails, such as the subject and message, can be generated using AI tools to precisely highlight the purpose and topics to be covered in the discussion. Essential details like the exact `location` or the `meeting link` with `passcode`, especially in hybrid scenarios with both online and offline attendees, should be clearly stated by the organizer. An online meeting can be organized through some self-hosted video calling application or some commonly used enterprise collaboration software like Zoom, Google Meet and Microsoft Teams, that will generate and return a link created dynamically through an API call.   
-
-To enhance attendee interaction, the organizer may want to attach text materials, images, or videos relevant to the subject. Including a summary of the attachments in the email will attract their attention and motivate them to spend some time preparing for the meeting.
-
-The concept of leveraging AI and automation can also be applied to sending follow-up emails, as mentioned in the possible enhancements section above. The `highlights` field of a meeting can store a summary derived from the transcript or whiteboard, which are a type of meeting attachment. The same can also be entered manually later by the users who have edit access for the report listing all meeting details. Therefore, an email can serve as an automated follow-up for attendees, stakeholders, or all invitees.     
-
-To support this, we can introduce an `email_type` field for the email entity, which can hold the values `follow-up`, `creation`, `updation`, or `cancellation`. The application should also provide a simple interface, such as a form, for the organizer to edit the contents of the email before sending it out.
-
-Creating a follow-up email is an optional feature that necessitates additional APIs for speech-to-text conversion in the video conferencing solution. However, note-taking functionality is already available in software like Etherpad. Application developers can consider integrating with open-source collaboration applications such as Jitsi Meet, which already includes Etherpad. To store the values back into the database, another API integration would be required.    
-
-    
-## Schema details of the Meeting Management Portal<a name="schema"></a>
-
-### Contact table ###
-
-CREATE TABLE `contact` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) DEFAULT NULL, `email` varchar(255) NOT NULL, `phone` varchar(255) DEFAULT NULL, `type` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )     
-
-### Group table ###
-
-CREATE TABLE `group` ( `id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `admin_email` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )
-      
-### Group and Contact Association ###
-
-CREATE TABLE `group_contact` ( `id` int NOT NULL AUTO_INCREMENT, `contact_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) )    
-
-### Meeting table ###
-
-CREATE TABLE `meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_code` varchar(255) NOT NULL, `title` varchar(255) DEFAULT NULL, `start_date_time` varchar(255) DEFAULT NULL, `purpose` varchar(255) DEFAULT NULL, `link` varchar(255) DEFAULT NULL, `location` varchar(255) DEFAULT NULL, `meeting_note` varchar(255) DEFAULT NULL, `meeting_passcode` varchar(255) DEAFULT NULL, `meeting_highlights` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
-
-### Meeting Email table ###
-
-CREATE TABLE `meeting_email` ( `id` int NOT NULL AUTO_INCREMENT, `email_type` varchar(255) NOT NULL, `from_email` varchar(255) NOT NULL, `attachement_id` int DEFAULT NULL, `meeting_id` int NOT NULL, PRIMARY KEY (`id`) )
-
-### Meeting Attachment table ###
-
-CREATE TABLE `meeting_attachment` ( `id` int NOT NULL AUTO_INCREMENT, `attachment_link` varchar(255) NOT NULL, `meeting_email_id` int DEFAULT NULL, PRIMARY KEY (`id`) )
-    
-### Interview table ###
-
-CREATE TABLE `interview` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `skill` varchar(255) DEFAULT NULL, `experience` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) ) 
-       
-### Consultation table ###
-
-CREATE TABLE `consultation` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `module` varchar(255) DEFAULT NULL, `category` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`) )    
-      
-    
-### Group and Meeting Association ###
-
-CREATE TABLE `group_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `group_id` int NOT NULL, PRIMARY KEY (`id`) ) 
-
-### Contact and Meeting Association ###
-
-CREATE TABLE `contact_meeting` ( `id` int NOT NULL AUTO_INCREMENT, `meeting_id` int NOT NULL, `contact_id` int NOT NULL, PRIMARY KEY (`id`) ) 
      
    
 ## JSON body of a Form <a name="form"></a>
@@ -243,79 +140,7 @@ A form can be embedded into another application with the help of an https URL. I
 ```   
       
 
-## Examples of Forms ##   
-### "Contact us" in landing pages and apps <a name="cq"></a>     
-[Contact Us Form](https://app.cliosight.com/app/forms/42/show?noNavbar=true)        
-
-CREATE TABLE `customer_queries` ( `id` int NOT NULL AUTO_INCREMENT, `message_body` text, `email` varchar(255) DEFAULT NULL, `fullname` varchar(255) DEFAULT NULL, `subject` varchar(255) DEFAULT NULL, `soft_delete` tinyint(1) DEFAULT '0', PRIMARY KEY (`id`) )
-
-```css
-{
-	"client_id": 2,    // Optional, added from backend according to the user id
-	"datasource_id": 1, 
-	"table": {
-    	"name": "customer_queries"  // The root table created in the datasource
-	},
-	"sub_form_definition": {
-    	"is_public": {
-        	"status": true  // Whether or not this form is accessible without login
-    	},
-    	"css_definition": "@import url('https://fonts.googleapis.com/css?family=Raleway');.form{background: linear-gradient(45deg, rgba(0,0,0,0), rgba(29, 200, 205, 0));}.form{align-items: center; margin: 0%; border: 2px solid white !important; }.form {font-family: Raleway; color: grey; }.btn{background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));border-radius: 30px; border: 0px solid white; height:50px; width:100%; margin: 10px; margin-left:0%;}.btn:hover{background:grey; color: white; border: 2px solid grey; border-radius: 30px;}input[type=text] {box-sizing: border-box; border: 2px solid #ccc; height:50px !important;  border: 2px solid grey; }input[type=text]:focus {border: 2px solid #555;} .form-control {border: 2px solid grey; height: 50px; margin-bottom: -20px;} .select2-choices {border: 2px solid grey !important;  border-radius: 5px !important; box-shadow: 5px 10px inset white !important;} p {background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));} .border {border: 2px solid green !important} textarea {margin-bottom: -20px !important; height: 6em !important}",  
-	// The uglified CSS definition
-        "inputs": [{  // start of the input fields of the form
-        	"input_category": "field", // Since this is a text input field
-        	"column": {
-            	"Field": "subject"  // Column name in the database table schema
-        	},
-        	"input_type": "text",  // Input type for single line text 
-        	"placeholder": "Message title",  // Optional; needed if input_label is not used
-	        “Input_label”: “”, // Optional 
-        	"validation": {
-            	"isRequired": "1", // 1 for an error message if left blank. 0 otherwise.
-            	"maxLength": 255   // According to the length of the field
-        	}
-    	     }, {  // Repeat the same for other fields
-        	"input_category": "field",
-        	"column": {
-            	"Field": "message_body"
-        	},
-        	"input_type": "textarea",   // Input type for a paragraph of text 
-        	"placeholder": "Your questions or comments",
-        	"validation": {
-            	"isRequired": "1", 
-            	"maxLength": 255
-        	}
-    	     }, {
-        	"cols": 6,    // Optional field to specify the columns in a row. 12 by default
-        	"input_category": "field",
-        	"column": {
-            	"Field": "fullname"
-        	},
-        	"input_type": "text",
-        	"placeholder": "Your full name",
-        	"validation": {
-            	"isRequired": "1",
-            	"maxLength": 255
-        	}
-    	     }, {
-        	"cols": 6,
-        	"input_category": "field",
-        	"column": {
-            	"Field": "email"
-        	},
-        	"input_type": "text",
-        	"placeholder": "Your email",
-        	"validation": {
-            	"isRequired": "1",
-            	"maxLength": 255
-        	}}],
-    	"last_insert_key_id": "id", 
-    	"unique_keys": ["id"],
-    	"submit_button_label": "Send Message", 
-    	"label": "Contact Us" 
-	} 
-}
-```   
+## Example of Form ##   
 
 ### A Section of the Meeting Creation Form <a name="meetings_form"></a>     
 The components are:   
@@ -518,13 +343,8 @@ A report can be embedded using a URL in the format:
 https://app.cliosight.com/app/reports/serial-number/show?noNavbar=true      
 For instance, https://app.cliosight.com/app/reports/68/show?noNavbar=true      
 
-## Examples of Reports ##
-### Meetings Report <a name="meetings_report"></a>   
- 
-
-### Group Meetings Report <a name="meetings_group"></a>
-
-
+## Example of a Report ##
+### Meetings Report <a name="meetings_report"></a>    
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
@@ -579,7 +399,7 @@ It is possible to disable uploading CSV file contents through the import data op
 
 ## JSON body of a Cliosight Trigger <a name="trigger"></a>
 
-## Examples of Triggers ##
+## Example of a Triggers ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
 ```css 
