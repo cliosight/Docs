@@ -1,7 +1,7 @@
 # Cliosight Documentation
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows.   
-Please contact us at jigisha@cliosight.com or info@cliosight.com.
+Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah).     
 
 # Table of contents
 [SQL Interface for Structured Data](#sql)   
@@ -10,17 +10,17 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com.
 [JSON body of a Form](#form)              
 [JSON body of a Report](#report)     
 [Graphs and Charts with Cliosight Reports](#graphs)    
-[Using Reports in Jupyter Notebook](#jupyter)
-[JSON body of a Reporting Dashboard](#dashboard)      
+[Using Reports in Jupyter Notebook](#jupyter)         
+[JSON body of a Reporting Dashboard](#dashboard)       
 [Ensuring Trustworthiness](#trust)    
-[JSON body of a Trigger](#trigger)    
-[Email Notification](#email)   
-[Workflows](#workflow) 
-[Examples of Workflows](#workflowexamples)   
-[Creating Workflows in Jupyter Notebook](#python)    
+[JSON body of a Trigger](#trigger)      
+[Email Notification](#email)      
+[Workflows](#workflow)         
+[Examples of Workflows](#workflowexamples)      
+[Creating Workflows in Jupyter Notebook](#python)        
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our SQL interface enables users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including cloud data storages and distributed ledgers, in future releases.
+Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including cloud data storages and distributed ledgers, in future releases.      
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
@@ -59,10 +59,10 @@ While some meeting actions can be automated through triggers, there are other as
 3. HTML/CSS code generator      
 
 These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks.      
-As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
+Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
   
 ## JSON body of a Form <a name="form"></a>
-A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The URL format of a form is https://demo.cliosight.com/app/forms/serial-number/show?noNavbar=true     
+A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The format of the link is **https://app.cliosight.com/app/forms/123/show?noNavbar=true**
 Below are the JSON tags that can be used within a form.   
 ```css
 {   
@@ -138,8 +138,8 @@ Below are the JSON tags that can be used within a form.
 ```   
       
 
-## Example of Forms ##   
-For an application like a meeting scheduling app, forms can be used to create contacts and groups of contacts. Along with that meeting scheduling form can also provide the necessary elements of the email notification that will be sent in various scenarios.   
+## Example of Forms in applications ##   
+For an application like a meeting scheduling app, forms can be used to create contacts and groups of contacts. Along with that meeting scheduling form can also provide the necessary elements of the email notification that will be sent once it is scheduled, updated or cancelled.    
 Forms for this example:    
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
@@ -339,7 +339,7 @@ A report can be embedded using a URL in the format:
 https://app.cliosight.com/app/reports/serial-number/show?noNavbar=true      
 For instance, https://app.cliosight.com/app/reports/68/show?noNavbar=true      
 
-### Example of a Meetings Report ###
+### Example of a Meeting app Report ###
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
@@ -354,7 +354,6 @@ A reporting dashboard is an aggregation of related reports with global filters.
 Just like a form and a report, a dashboard can be shared using a URL in the format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
-
 
 ```css
 {
@@ -395,9 +394,9 @@ Just like a form and a report, a dashboard can be shared using a URL in the form
 ## Ensuring Trustworthiness <a name="trust"></a>
 It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through the visualization widgets.
 
-## JSON body of a Cliosight Trigger <a name="trigger"></a>
+## JSON body of a Trigger <a name="trigger"></a>
 
-## Example of a Triggers ##
+## Example of a Trigger ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
 ```css 
