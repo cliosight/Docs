@@ -16,7 +16,8 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com.
 [JSON body of a Trigger](#trigger)    
 [Email Notification](#email)   
 [Workflows](#workflow) 
-[Examples of Workflows](#workflowexamples)     
+[Examples of Workflows](#workflowexamples)   
+[Creating Workflows in Jupyter Notebook](#python)    
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our SQL interface enables users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including cloud data storages and distributed ledgers, in future releases.
@@ -428,10 +429,9 @@ It is possible to disable uploading CSV file contents through the import data op
 
 ## Workflows <a name="workflow"></a>
 
-## Examples of Workflows 
-### Meeting Management Portal <a name="meetings_workflow"></a>
+## Examples of Workflows <a name="workflowexamples"></a>    
 
-### Sending follow-up emails <a name="followup_workflow"></a>
+## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>
 
 
 
