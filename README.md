@@ -1,41 +1,31 @@
 # Cliosight Documentation
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows.   
-This work is under progress. There were innumerable commits done on this file. Please contact us for any errors or clarifications at jigisha@cliosight.com or info@cliosight.com.
+Please contact us at jigisha@cliosight.com or info@cliosight.com.
 
 # Table of contents
-1. [SQL Interface for Structured Data](#sql)   
-2. [Support for Multiple Data Sources](#datasources)   
-3. [File upload](#file)   
-4. [User Permissions and Access Control](#acl)   
-8. [JSON body of a Form](#form)    
-9. Examples of Forms          
-[A Section of the "Meeting" Form](#meetings_form)      
-10. [JSON body of a Report](#report)   
-11. Examples of Reports          
-[Meetings Report](#meetings_report)     
-12. [Graphs and Charts with Cliosight Reports](#graphs)    
-13. [JSON body of a Reporting Dashboard](#dashboard)     
-14. [Example of a Reporting Dashboard](#example_dashboard)     
-15. [Ensuring Trustworthiness](#trust)    
-16. [JSON body of a Trigger](#trigger)  
-17. Examples of Triggers          
-	1. [Managing an SCD (Slowly Changing Dimension)](#scd)     
-	2. [Sending Email Notifications on Events](#trigger_email)    
-18. [Email Notification](#email)   
-19. [Workflows](#workflow) 
-20. Examples of Workflows     
-	1. [Meeting Management Portal](#meetings_workflow)     
-	2. [Sending follow-up emails](#followup_workflow)     
+[SQL Interface for Structured Data](#sql)   
+[Support for Multiple Data Sources](#datasources)   
+[User Permissions and Access Control](#acl)   
+[JSON body of a Form](#form)              
+[JSON body of a Report](#report)     
+[Graphs and Charts with Cliosight Reports](#graphs)    
+[Using Reports in Jupyter Notebook](#jupyter)
+[JSON body of a Reporting Dashboard](#dashboard)      
+[Ensuring Trustworthiness](#trust)    
+[JSON body of a Trigger](#trigger)    
+[Email Notification](#email)   
+[Workflows](#workflow) 
+[Examples of Workflows](#workflowexamples)     
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Additionally, it will seamlessly integrate with popular cloud data services such as AWS Dynamo DB, Azure Cosmos DB, and Google BigQuery. Our SQL interface enables users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including distributed ledgers, in future releases.
+Cliosight is a robust platform that offers support for various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our SQL interface enables users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including cloud data storages and distributed ledgers, in future releases.
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple data sources by saving the configuration for each. These configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple data sources. These are added via configurations that can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
 
-One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources  specifically for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other databases or data sources.       
+One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other databases or data sources.       
 
 Example of a datasource definition:      
 ```json     
@@ -55,9 +45,6 @@ Example of a datasource definition:
 	}
 }
 ```    
-
-## File upload <a name="file"></a>
-A form can be used to attach files associated with an entity in a database. A text file, image, video or any other type of file uploaded through a form will be stored in the cloud storage such that it is accessible through a URL. The file formats and size can be restricted by specifying them in the form definition.
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
@@ -342,11 +329,6 @@ The components are:
     	"submit_button_label": "Save Meeting"
 	}
 }
-     
-
-## eCommerce Product Upload Form <a name="job"></a>  
-In eCommerce applications, users enter individual product details manually or through a bulk upload option like a CSV file. The catalog created is then viewed on the item listing page. We will try to achieve that through forms and reports. The data in each record can be used in an item detail page or elsewhere.     
- 
 
 ## JSON body of a Report ## <a name="report"></a>  
 While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
@@ -356,11 +338,12 @@ A report can be embedded using a URL in the format:
 https://app.cliosight.com/app/reports/serial-number/show?noNavbar=true      
 For instance, https://app.cliosight.com/app/reports/68/show?noNavbar=true      
 
-## Example of a Report ##
-### Meetings Report <a name="meetings_report"></a>    
+### Example of a Meetings Report ###
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
+## Using Report data in Jupyter Notebook <a name="jupyter"></a>
+Testing machine learning models involve analysis with python using datasets from various sources like Kaggle that are downloaded as CSV files. The result in then plotted on a graph using python libraries like matplotlib, seaborn and others. Reports can serve as an input for such analysis and visualization tasks and the resultant datasets can be pushed to different datasources from the same source code. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
