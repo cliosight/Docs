@@ -342,10 +342,9 @@ The components are:
     	"submit_button_label": "Save Meeting"
 	}
 }
-```
+     ```
 
-
-## eCommerce Product Upload Form ## <a name="job"></a>  
+## eCommerce Product Upload Form <a name="job"></a>  
 In eCommerce applications, users enter individual product details manually or through a bulk upload option like a CSV file. The catalog created is then viewed on the item listing page. We will try to achieve that through forms and reports. The data in each record can be used in an item detail page or elsewhere.     
  
 
@@ -371,6 +370,7 @@ A reporting dashboard is an aggregation of related reports with global filters.
 Just like a form and a report, a dashboard can be shared using a URL in the format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true      
 
 ## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
+
 
 ```css
 {
