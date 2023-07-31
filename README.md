@@ -63,9 +63,19 @@ A form can be used to attach files associated with an entity in a database. A te
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
 Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, access restrictions apply to files stored within the account.     
      
-   
+## Leveraging Automation and AI Components <a name="ai"></a>
+
+While some meeting actions can be automated through triggers, there are other aspects that can provide a better user experience through the use of AI.
+1. SQL query generator  
+2. JSON body generator
+3. HTML/CSS code generator      
+
+These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks.      
+As far as this example is concerned, we can utilize another set of AI related APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
+  
 ## JSON body of a Form <a name="form"></a>
-A form can be embedded into another application with the help of an https URL. It can have sub-forms and reports and supports all basic input elements used in any HTML. The URL format of a form is https://demo.cliosight.com/app/forms/serial-number/show?noNavbar=true      
+A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The URL format of a form is https://demo.cliosight.com/app/forms/serial-number/show?noNavbar=true     
+Below are the JSON tags that can be used within a form.   
 ```css
 {   
    "datasource_id": <int-datasource-id>,   
@@ -140,7 +150,12 @@ A form can be embedded into another application with the help of an https URL. I
 ```   
       
 
-## Example of Form ##   
+## Example of Forms ##   
+For an application like a meeting scheduling app, forms can be used to create contacts and groups of contacts. Along with that meeting scheduling form can also provide the necessary elements of the email notification that will be sent in various scenarios.   
+Forms for this example:    
+[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
+[Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
+[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
 
 ### A Section of the Meeting Creation Form <a name="meetings_form"></a>     
 The components are:   
@@ -149,8 +164,6 @@ The components are:
 3. Rules based on the values selected from the drop down  
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub form   
-
-[Meeting Scheduling Form](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
 
    ```css    
    {
