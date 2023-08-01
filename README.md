@@ -9,14 +9,13 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 [User Permissions and Access Control](#acl)   
 [JSON body of a Form](#form)              
 [JSON body of a Report](#report)     
-[Graphs and Charts with Cliosight Reports](#graphs)    
-[Using Reports in Jupyter Notebook](#jupyter)         
-[JSON body of a Reporting Dashboard](#dashboard)       
-[Ensuring Trustworthiness](#trust)    
+[Graphs and Charts with Reports](#graphs)    
+[Using Reports' Data in Jupyter Notebook](#jupyter)         
+[JSON body of a Dashboard](#dashboard)         
 [JSON body of a Trigger](#trigger)      
 [Email Notification](#email)      
 [Workflows](#workflow)         
-[Examples of Workflows](#workflowexamples)      
+[Example of Workflows](#workflowexamples)      
 [Creating Workflows in Jupyter Notebook](#python)        
 
 ## SQL Interface for Structured Data <a name="sql"></a>
@@ -62,7 +61,7 @@ These are the only two types of syntaxes used in Cliosight for configuring the w
 Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
   
 ## JSON body of a Form <a name="form"></a>
-A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The format of the link is **https://app.cliosight.com/app/forms/123/show?noNavbar=true**
+A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The format of the link is **https://app.cliosight.com/app/forms/40/show?noNavbar=true**
 Below are the JSON tags that can be used within a form.   
 ```css
 {   
@@ -138,21 +137,20 @@ Below are the JSON tags that can be used within a form.
 ```   
       
 
-## Example of Forms in applications ##   
-For an application like a meeting scheduling app, forms can be used to create contacts and groups of contacts. Along with that meeting scheduling form can also provide the necessary elements of the email notification that will be sent once it is scheduled, updated or cancelled.    
-Forms for this example:    
+## An Example of Using Forms in Applications ##   
+For an application like a meeting scheduling portal, forms can be used to create contacts, groups and meeting requests. Forms can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled.       
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
 
-### A Section of the Meeting Creation Form <a name="meetings_form"></a>     
+### JSON tags for a Section of the Meeting Creation Form <a name="meetings_form"></a>     
 The components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
 3. Rules based on the values selected from the drop down  
 4. Sub form within a form 
-5. Multiple instances of aggregated values within the sub form   
-
+5. Multiple instances of aggregated values within the sub form
+   
 ```css    
 {
 	"datasource_id": 1,
@@ -330,14 +328,14 @@ The components are:
     	"submit_button_label": "Save Meeting"
 	}
 }
+```
 
-## JSON body of a Report <a name="report"></a>  
+## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
 2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
 A report can be embedded using a URL in the format:    
-https://app.cliosight.com/app/reports/serial-number/show?noNavbar=true      
-For instance, https://app.cliosight.com/app/reports/68/show?noNavbar=true      
+**https://app.cliosight.com/app/reports/68/show?noNavbar=true** 
 
 ### Example of a Meeting app Report ###
 
@@ -351,9 +349,10 @@ A reporting dashboard is an aggregation of related reports with global filters.
 1. It works like a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
-Just like a form and a report, a dashboard can be shared using a URL in the format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true      
+Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, **https://app.cliosight.com/app/dashboards/47/show?noNavbar=true**
 
-## Example of a Reporting Dashboard <a name="example_dashboard"></a>  
+
+## Example of a Dashboard <a name="example_dashboard"></a>  
 
 ```css
 {
