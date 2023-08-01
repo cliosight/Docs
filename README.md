@@ -10,13 +10,14 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 [JSON body of a Form](#form)              
 [JSON body of a Report](#report)     
 [Graphs and Charts with Reports](#graphs)    
-[Using Reports' Data in Jupyter Notebook](#jupyter)         
-[JSON body of a Dashboard](#dashboard)         
+[Using Reports in Jupyter Notebook](#jupyter)         
+[JSON body of a Dashboard](#dashboard)  
+[Ensuring Trustworthiness](#trust)     
 [JSON body of a Trigger](#trigger)      
 [Email Notification](#email)      
 [Workflows](#workflow)         
 [Example of Workflows](#workflowexamples)      
-[Creating Workflows in Jupyter Notebook](#python)        
+[Creating Workflows and Widgets in Jupyter Notebook](#python)        
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including cloud data storages and distributed ledgers, in future releases.      
@@ -337,12 +338,12 @@ While a form is the data input interface, a report is the output of data analysi
 A report can be embedded using a URL in the format:    
 **https://app.cliosight.com/app/reports/68/show?noNavbar=true** 
 
-### Example of a Meeting app Report ###
+### Example of a Report ###
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
-## Using Report data in Jupyter Notebook <a name="jupyter"></a>
-Testing machine learning models involve analysis with python using datasets from various sources like Kaggle that are downloaded as CSV files. The result in then plotted on a graph using libraries like matplotlib, seaborn and others. Reports can serve as an input for such analysis and visualization tasks and the resultant datasets can be pushed to different datasources from the same source code. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.
+## Using Reports in Jupyter Notebook <a name="jupyter"></a>
+Testing and training machine learning models is possible with basic python coding using datasets from various sources like Kaggle that are downloaded as CSV files. Different datasets can be proccessed, split and merged together. These are however stored locally on the machine where Jupyter is installed. The result of analysis tasks can be plotted on a graph using libraries like matplotlib, seaborn and others. Reports from diffrent datasoutces of one or more Cliosight accounts can serve as an alternative for such analysis and visualization. The resultant datasets of subsequent operations performed can be pushed back to various datasources from the same source code.      
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
@@ -391,7 +392,7 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
 }
   ```
 ## Ensuring Trustworthiness <a name="trust"></a>
-It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to tables of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through the visualization widgets.
+It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to forms (and related tables) of other datasources from which separate reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
@@ -430,7 +431,8 @@ It is possible to disable uploading CSV file contents through the import data op
 ## Examples of Workflows <a name="workflowexamples"></a>    
 
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
-Simple data analysis can provide pointers for fine-tuning an existing application or product design. It may also help in improving the performance of a machine learning model, or an application in the production environment. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of a project. This is made possible with the framework that Cliosight provides.   
+Data analysis can provide pointers for fine-tuning an existing application or product design. It can also help in improving the performance of a machine learning model in the production environment by training and testing with the right datasets in terms of quantity and quality. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of a project. This is made possible with the framework that Cliosight has provided. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.  
+
 
 
 
