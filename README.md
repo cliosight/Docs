@@ -342,7 +342,7 @@ A report can be embedded using a URL in the format:
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 ## Using Report data in Jupyter Notebook <a name="jupyter"></a>
-Testing machine learning models involve analysis with python using datasets from various sources like Kaggle that are downloaded as CSV files. The result in then plotted on a graph using python libraries like matplotlib, seaborn and others. Reports can serve as an input for such analysis and visualization tasks and the resultant datasets can be pushed to different datasources from the same source code. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.
+Testing machine learning models involve analysis with python using datasets from various sources like Kaggle that are downloaded as CSV files. The result in then plotted on a graph using libraries like matplotlib, seaborn and others. Reports can serve as an input for such analysis and visualization tasks and the resultant datasets can be pushed to different datasources from the same source code. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
@@ -429,7 +429,8 @@ It is possible to disable uploading CSV file contents through the import data op
 
 ## Examples of Workflows <a name="workflowexamples"></a>    
 
-## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>
+## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
+Simple data analysis can provide pointers for fine-tuning an existing application or product design. It may also help in improving the performance of a machine learning model, or an application in the production environment. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of a project. This is made possible with the framework that Cliosight provides.   
 
 
 
