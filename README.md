@@ -343,7 +343,7 @@ A report can be embedded using a URL in the format:
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Testing and training machine learning models is possible with basic python coding using datasets from various sources like Kaggle that are downloaded as CSV files. Different datasets can be proccessed, split and merged together. These are however stored locally on the machine where Jupyter is installed. The result of analysis tasks can be plotted on a graph using libraries like matplotlib, seaborn and others. Reports from diffrent datasoutces of one or more Cliosight accounts can serve as an alternative for such analysis and visualization. The resultant datasets of subsequent operations performed can be pushed back to various datasources from the same source code.      
+Testing and training machine learning models is possible with basic python coding using datasets from various sources like Kaggle that are downloaded as CSV files. Different datasets can be proccessed, split or merged together. These can however be stored locally on the machine where Jupyter is installed. The result of analysis tasks can be plotted on a graph using libraries like matplotlib, seaborn and others. Reports from diffrent datasoutces of one or more Cliosight accounts can serve as an alternative for such analysis and visualization. The resultant datasets of subsequent operations performed can be pushed back to various datasources from the same source code.      
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
@@ -392,7 +392,12 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
 }
   ```
 ## Ensuring Trustworthiness <a name="trust"></a>
-It is possible to disable uploading CSV file contents through the import data option in forms created for an in-built datasource. Reports created from these tables can however serve as inputs to forms (and related tables) of other datasources from which separate reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
+It is possible to restrict data input into a table using the following features of a form:  
+1. Disabling data import through CSV.     
+2. Disabling manual insert, update or delete query execution on the related tables.
+3. Ensuring that no other forms can insert data into those tables.    
+
+Reports created from these tables can however serve as inputs to forms of other datasources from which separate reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## JSON body of a Trigger <a name="trigger"></a>
 
