@@ -20,7 +20,7 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 [Creating Workflows and Widgets in Jupyter Notebook](#python)        
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to encompass emerging data sources, including cloud data storages and distributed ledgers, in future releases.      
+Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to include emerging data sources, like cloud data storages and distributed ledgers, in future releases.      
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
@@ -343,7 +343,7 @@ A report can be embedded using a URL in the format:
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Testing and training machine learning models is possible with basic python coding using datasets from various sources like Kaggle that are downloaded as CSV files. Different datasets can be proccessed, split or merged together. These can however be stored locally on the machine where Jupyter is installed. The result of analysis tasks can be plotted on a graph using libraries like matplotlib, seaborn and others. Reports from diffrent datasoutces of one or more Cliosight accounts can serve as an alternative for such analysis and visualization. The resultant datasets of subsequent operations performed can be pushed back to various datasources from the same source code.      
+Basic Python coding can be used to test and train machine learning models using datasets from various sources, such as Kaggle. These datasets are typically downloaded as CSV files and stored locally where Jupyter is installed or accessed. These can then be processed, split, or merged. The results of analysis tasks can be plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different data sources in one or more Cliosight accounts can be used for such analysis and visualization. The resultant datasets of subsequent operations can be pushed back to various data sources from the same source code. This makes sharing private datasets easy and secure.    
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
