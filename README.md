@@ -13,7 +13,7 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 [Using Reports in Jupyter Notebook](#jupyter)         
 [JSON body of a Dashboard](#dashboard)  
 [Ensuring Trustworthiness](#trust)   
-[Data Privacy and Security](#security)
+[Data Privacy and Security](#security)       
 [JSON body of a Trigger](#trigger)      
 [Email Notification](#email)      
 [Workflows](#workflow)         
