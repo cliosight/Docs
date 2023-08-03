@@ -359,11 +359,15 @@ Sharing private datasets online has several security implications. In order to p
 Some of the in-built features are:    
 1. [Role-based Access Control](#acl)
 2. Secure protocols for data and file transfer like HTTPS and SFTP only.
-3. Removal of personal information from data.     
-4. Merging of records for masking sensitive information.      
-5. User logs for tracking the access and updates on a table.      
-
-[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)        
+3. Automatic removal of personal information from data.     
+4. Masking sensitive information with queries.      
+5. Logs for tracking access and updates made on a table.
+   
+EU and USA:   
+[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
+India:     
+[The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
+[The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
@@ -421,19 +425,8 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
     "client_id": 2,
     "trigger_definition": {
         "trigger_type": "insert",
-        "trigger_entity": "contacts",
-        "trigger_action": "insert",
-        "trigger_action_entity": "contacts_scd",
-        "trigger_action_columns": [{
-            "column": "email",
-            "value": "{{new_row.email}}"
-        }, {
-            "column": "stage",
-            "value": "{{new_row.stage}}"
-        }, {
-            "column": "start_datetime",
-            "value": "{{current_datetime}}"
-        }],
+        "trigger_entity": "`contacts`",
+        "trigger_action_query": "insert into contacts_scd (email, stage, start_datetime) values('{{new_row.email}}', '{{new_row.stage}}', '{{current_datetime}}')",
         "label": "New Contact stage scd"
     },
     "datasource_id": 1
