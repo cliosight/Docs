@@ -12,7 +12,8 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 [Graphs and Charts with Reports](#graphs)    
 [Using Reports in Jupyter Notebook](#jupyter)         
 [JSON body of a Dashboard](#dashboard)  
-[Ensuring Trustworthiness](#trust)     
+[Ensuring Trustworthiness](#trust)   
+[Data Privacy and Security](#security)
 [JSON body of a Trigger](#trigger)      
 [Email Notification](#email)      
 [Workflows](#workflow)         
@@ -48,8 +49,8 @@ Example of a datasource definition:
 ```    
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly is also restricted.      
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Additionally, access restrictions apply to files stored within the account.     
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly can also be restricted.           
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Similar restrictions apply to files stored within the account.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -58,8 +59,7 @@ While some meeting actions can be automated through triggers, there are other as
 2. JSON body generator
 3. HTML/CSS code generator      
 
-These are the only two types of syntaxes used in Cliosight for configuring the widgets - SQL and JSON. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks.      
-Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
+SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks. This makes it easy for users to host forms like any other web page. Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
   
 ## JSON body of a Form <a name="form"></a>
 A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The format of the link is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**
@@ -343,7 +343,18 @@ A report can be embedded using a URL in the format:
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
+Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.   
+
+## Data Privacy and Security <a name="security"></a>       
+Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
+Some of the in-built features are:    
+1. [Role-based Access Control](#acl)
+2. Secure protocols for data and file transfer like HTTPS and SFTP only.
+3. Removal of personal information from data.     
+4. Merging of records for masking sensitive information.      
+5. User logs for tracking the access and updates on a table.      
+
+[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)       
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
