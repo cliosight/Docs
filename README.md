@@ -10,14 +10,14 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 [JSON body of a Form](#form)              
 [JSON body of a Report](#report)     
 [Graphs and Charts with Reports](#graphs)    
-[Using Reports in Jupyter Notebook](#jupyter)         
-[JSON body of a Dashboard](#dashboard)  
-[Ensuring Trustworthiness](#trust)   
-[Data Privacy and Security](#security)       
-[JSON body of a Trigger](#trigger)      
+[Using Reports in Jupyter Notebook](#jupyter)    
+[Ensuring Trustworthiness](#trust)      
+[Data Privacy and Security](#security)        
+[JSON body of a Dashboard](#dashboard)         
+[JSON body of a Trigger](#trigger)        
 [Email Notification](#email)      
-[Workflows](#workflow)         
-[Example of Workflows](#workflowexamples)      
+[JSON body of a Workflow](#workflow)         
+[Example of a Workflow](#workflowexamples)      
 [Creating Workflows and Widgets in Jupyter Notebook](#python)        
 
 ## SQL Interface for Structured Data <a name="sql"></a>
@@ -343,7 +343,15 @@ A report can be embedded using a URL in the format:
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.   
+Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
+
+## Ensuring Trustworthiness <a name="trust"></a>
+It is possible to restrict data input into a table using the following features of a form:  
+1. Disabling data import through CSV.     
+2. Disabling manual insert, update or delete query execution on the related tables.
+3. Ensuring that no other forms can insert data into those tables.    
+
+Reports created from these tables can however serve as inputs to forms of other datasources from which separate reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
@@ -354,7 +362,7 @@ Some of the in-built features are:
 4. Merging of records for masking sensitive information.      
 5. User logs for tracking the access and updates on a table.      
 
-[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)       
+[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)        
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
@@ -402,14 +410,6 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
     }]
 }
   ```
-## Ensuring Trustworthiness <a name="trust"></a>
-It is possible to restrict data input into a table using the following features of a form:  
-1. Disabling data import through CSV.     
-2. Disabling manual insert, update or delete query execution on the related tables.
-3. Ensuring that no other forms can insert data into those tables.    
-
-Reports created from these tables can however serve as inputs to forms of other datasources from which separate reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
-
 ## JSON body of a Trigger <a name="trigger"></a>
 
 ## Example of a Trigger ##
@@ -442,9 +442,9 @@ Reports created from these tables can however serve as inputs to forms of other 
 
 ### Sending Email Notifications on Events <a name="trigger_email"></a>
 
-## Workflows <a name="workflow"></a>
+## JSON body of a Workflow <a name="workflow"></a>
 
-## Examples of Workflows <a name="workflowexamples"></a>    
+## Example of a Workflow <a name="workflowexamples"></a>    
 
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the framework that Cliosight has provided. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.  
