@@ -332,7 +332,7 @@ The components are:
 ```
 
 ## JSON body of a Report <a name="report"></a> 
-While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options. Additionally, results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
+While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
 2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
 A report can be embedded using a URL in the format:    
@@ -343,7 +343,7 @@ A report can be embedded using a URL in the format:
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic Python coding can be used to test and train machine learning models using datasets from various sources, such as Kaggle. These datasets are typically downloaded as CSV files and stored locally where Jupyter is installed or accessed. These can then be processed, split, or merged. The results of analysis tasks can be plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different data sources in one or more Cliosight accounts can be used for such analysis and visualization. The resultant datasets of subsequent operations can be pushed back to various data sources from the same source code. This makes sharing private datasets easy and secure.    
+Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
 
 ## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
 A reporting dashboard is an aggregation of related reports with global filters. 
