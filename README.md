@@ -350,9 +350,9 @@ It is possible to restrict data input into a table using the following features 
 1. Disabling data import through CSV.     
 2. Disabling manual insert, update or delete query execution on the related tables.
 3. Ensuring that no other forms can insert data into those tables.
-4. Optional disabling of data export     
+4. Disabling of data export     
 
-Reports created from restricted tables can however serve as inputs to forms of other datasources from which separate reports can be generated, if export is not disabled. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, any reports or charts generated from these tables will showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability of the data, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
+Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
