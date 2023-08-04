@@ -4,21 +4,23 @@ A detailed explanation of datasources, forms, reports, dashboards, triggers and 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah).     
 
 # Table of contents
-[SQL Interface for Structured Data](#sql)   
-[Support for Multiple Data Sources](#datasources)   
-[User Permissions and Access Control](#acl)   
-[JSON body of a Form](#form)              
-[JSON body of a Report](#report)     
-[Graphs and Charts with Reports](#graphs)    
-[Using Reports in Jupyter Notebook](#jupyter)    
-[Ensuring Trustworthiness](#trust)      
-[Data Privacy and Security](#security)        
-[JSON body of a Dashboard](#dashboard)         
-[JSON body of a Trigger](#trigger)        
-[Email Notification](#email)      
-[JSON body of a Workflow](#workflow)         
-[Example of a Workflow](#workflowexamples)      
-[Creating Workflows and Widgets in Jupyter Notebook](#python)        
+<ul>
+<li>[SQL Interface for Structured Data](#sql)   </li>
+<li>[Support for Multiple Data Sources](#datasources)   </li>
+<li>[User Permissions and Access Control](#acl)   </li>
+<li>[JSON body of a Form](#form)        </li>      
+<li>[JSON body of a Report](#report)     </li>
+<li>[Graphs and Charts with Reports](#graphs)    </li>
+<li>[Using Reports in Jupyter Notebook](#jupyter)    </li>
+<li>[Ensuring Trustworthiness](#trust)      </li>
+<li>[Data Privacy and Security](#security)        </li>
+<li>[JSON body of a Dashboard](#dashboard)         </li>
+<li>[JSON body of a Trigger](#trigger)        </li>
+<li>[Email Notification](#email)      </li>
+<li>[JSON body of a Workflow](#workflow)         </li>
+<li>[Example of a Workflow](#workflowexamples)      </li>
+<li>[Creating Workflows and Widgets in Jupyter Notebook](#python)        </li>
+</ul>
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to include emerging data sources, like cloud data storages and distributed ledgers, in future releases.      
