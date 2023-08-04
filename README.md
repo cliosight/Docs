@@ -5,7 +5,7 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 
 # Table of contents
 <ul>
-<li>[SQL Interface for Structured Data](#sql)   </li>
+[SQL Interface for Structured Data](#sql)     
 <li>[Support for Multiple Data Sources](#datasources)   </li>
 <li>[User Permissions and Access Control](#acl)   </li>
 <li>[JSON body of a Form](#form)        </li>      
