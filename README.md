@@ -5,21 +5,21 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 
 # Table of contents
 
-<li> [SQL Interface for Structured Data](#sql)     </li>
-<li>[Support for Multiple Data Sources](#datasources)   </li>
-<li>[User Permissions and Access Control](#acl)   </li>
-<li>[JSON body of a Form](#form)        </li>      
-<li>[JSON body of a Report](#report)     </li>
-<li>[Graphs and Charts with Reports](#graphs)    </li>
-<li>[Using Reports in Jupyter Notebook](#jupyter)    </li>
-<li>[Ensuring Trustworthiness](#trust)      </li>
-<li>[Data Privacy and Security](#security)        </li>
-<li>[JSON body of a Dashboard](#dashboard)         </li>
-<li>[JSON body of a Trigger](#trigger)        </li>
-<li>[Email Notification](#email)      </li>
-<li>[JSON body of a Workflow](#workflow)         </li>
-<li>[Example of a Workflow](#workflowexamples)      </li>
-<li>[Creating Workflows and Widgets in Jupyter Notebook](#python)        </li>
+- [SQL Interface for Structured Data](#sql)
+- [Support for Multiple Data Sources](#datasources)
+- [User Permissions and Access Control](#acl)
+- [JSON body of a Form](#form)
+- [JSON body of a Report](#report)
+- [Graphs and Charts with Reports](#graphs)
+- [Using Reports in Jupyter Notebook](#jupyter)
+- [Ensuring Trustworthiness](#trust)
+- [Data Privacy and Security](#security)
+- [JSON body of a Dashboard](#dashboard)
+- [JSON body of a Trigger](#trigger)
+- [Email Notification](#email)
+- [JSON body of a Workflow](#workflow)
+- [Example of a Workflow](#workflowexamples)
+- [Creating Workflows and Widgets in Jupyter Notebook](#python)        
 
 
 ## SQL Interface for Structured Data <a name="sql"></a>
