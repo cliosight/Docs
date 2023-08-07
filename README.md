@@ -9,6 +9,7 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (D. Baruah).
 - [Support for Multiple Data Sources](#datasources)
 - [User Permissions and Access Control](#acl)
 - [JSON body of a Form](#form)
+- [JSON body of a Page](#page)
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
 - [Using Reports in Jupyter Notebook](#jupyter)
@@ -332,6 +333,11 @@ The components are:
 	}
 }
 ```
+
+## JSON body of a Page <a name="page"></a> 
+A web page builder is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button. But by putting together related forms, we can have a complete web page.      
+Example:     
+Meeting portal   
 
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
