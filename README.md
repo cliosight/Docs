@@ -335,18 +335,84 @@ The components are:
 ```
 
 ## JSON body of a Page <a name="page"></a> 
-A web page builder is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button. But by putting together related forms, we can have a complete web page.      
-Example:     
+A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button below which no HTML can be added. By putting together related forms, we can have a complete web page. The web page builder syntax enables users to place forms one next to the other or in a sequential order. Below is an example.     
 Meeting portal   
 
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
-1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or a table. 
-2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable reports and filters.      
+1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. 
+2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable report and filter combinations.      
 A report can be embedded using a URL in the format:    
 **https://app.cliosight.com/app/reports/68/show?noNavbar=true** 
 
-### Example of a Report ###
+### Example of a Report ###   
+Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the groups that they are a part of.  
+``` sql
+select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
+left join `groups_contacts` gc on gc.contact_id = c.id
+group by c.id
+```
+
+```css
+{
+    "datasource_id": "1",
+    "is_public": {
+        "status": false
+    },
+ "css_definition": "@import url('https://fonts.googleapis.com/css?family=Raleway');.form{background: linear-gradient(45deg, rgba(0,0,0,0), rgba(29, 200, 205, 0));}.form{align-items: center; margin: 0%; border: 2px solid white !important; }.form {font-family: Raleway; color: grey; }.btn{background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));border-radius: 30px; border: 0px solid white; height:40px; width: 150px; margin: 10px;}.btn:hover{background:grey; color: white; border: 2px solid grey; border-radius: 30px;}input[type=text] {box-sizing: border-box; border: 2px solid #ccc; height:40px !important;  border: 2px solid grey; }input[type=text]:focus {border: 2px solid #555;} .form-control {border: 2px solid grey; height: 50px; margin-bottom: -10px;} .select2-choices {border: 2px solid grey !important;  border-radius: 5px !important; box-shadow: 5px 10px inset white !important;} p {background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));} .border {border: 1px solid green !important} textarea {margin-bottom: -20px !important; height: 6em !important} .select2-container .select2-default {height: 30px !important; font-size: 16px !important; box-shadow: 5px 10px inset white !important; vertical-align: center; } .select2-chosen {font-size: 14px !important}  .control-label {font-size: 14px !important; margin:2px !important}",
+    "columns": {
+        "group_id": {
+            "hidden": true
+        },
+        "contact_id": {
+            "hidden": true
+        },
+        "Name": {
+            "links": [{
+                "type": "form",
+                "id": "35",
+                "args": [{
+                    "report_column": "contact_id",
+                    "name": "id"
+                }, {
+                    "report_column": "Email",
+                    "name": "email"
+                }],
+                "label": "Edit Contact"
+            }]
+        },
+        "Total Groups": {
+            "text-align": "right",
+            "dropdown-menu-align": "right",
+            "links": [{
+                "type": "report",
+                "id": "31",
+                "args": [{
+                    "report_column": "contact_id",
+                    "name": "contact_id"
+                }],
+                "label": "View Groups"
+            }]
+        }
+    },
+    "filter_menu": [{
+        "column": "Name"
+    }, {
+        "column": "Email",
+        "report_id": 49,
+        "name": "email"
+    }, {
+        "column": "Phone"
+    }, {
+        "column": "Total Groups"
+    }],
+    "report_links": [{  
+        "type": "form",
+        "id": "35",
+        "label": "Add a Contact"
+    }]
+}
+```     
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 
