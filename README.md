@@ -24,11 +24,11 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (D. Baruah).
 
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL server. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to include emerging data sources, like cloud data storages and distributed ledgers, in future releases.      
+Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to emerging data sources, like cloud data storages and distributed ledgers, in future releases.      
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple data sources. These are added via configurations that can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple data sources. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schema created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
 
 One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other databases or data sources.       
 
@@ -53,7 +53,7 @@ Example of a datasource definition:
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly can also be restricted.           
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Similar restrictions apply to files stored within the account.     
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Similar restrictions apply to files stored within an account.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -70,7 +70,7 @@ The format of the URL is **https://app.cliosight.com/app/forms/52/show?noNavbar=
 Below are the JSON tags that can be used within a form.   
 ```css
 {   
-   "datasource_id": <int-datasource-id>,      // mandatory
+   "datasource_id": <int-datasource-id>,      // Mandatory; to identify the datasource   
    "table": {    
         "name": "<main-table-name>" // Mandatory; This is the root table of the form      
     },       
@@ -133,7 +133,7 @@ Below are the JSON tags that can be used within a form.
                 "unique_keys": [“<column-name>”] // Array of unique key columns of the sub form root table can be specified here     
 	}		     
     }],     
-    "last_insert_id_key": "<column-name>", // specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
+    "last_insert_id_key": "<column-name>", // Specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
     "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
     "submit_button_label": "<button-label>",  // Default value is "Submit" 
     "label": "<form-heading>"  // Default value is "Form"
@@ -336,20 +336,23 @@ The components are:
 ```
 
 ## JSON body of a Page <a name="page"></a> 
-A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button below which no HTML can be added. By putting together related forms, we can have a complete web page. The web page builder JSON syntax enables users to place forms one next to the other or in a sequential order. Below is an example.     
+A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button below which no HTML can be added. By grouping together two or more forms, we can have a complete web page. The web page builder JSON syntax enables users to place forms one next to the other or in a sequential order. Below is an example.     
 [Meeting portal](https://app.cliosight.com/app/forms/29/show?noNavBar=true)   
 
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
-1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. They have a multiselect option just like form multiselect input field.        
+1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect option just like form multiselect input field.        
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous queries, leading to countless report and filter combinations.          
 A report can be embedded using a URL in the format given below:           
 **https://app.cliosight.com/app/reports/29/show?noNavbar=true** 
 
 ### Example of a Report ###   
-Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the groups that they are a part of. The link is given above.     
+Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the total number of groups that they are a part of.    
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true)         
+SQL Query for this report:      
 ``` sql
-select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) Phone,
+select min(c.id) as contact_id, min(gc.group_id) as group_id,
+min(c.name) as Name, min(c.email) as Email, min(c.phone) Phone,
 min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c 
 left join `groups_contacts` gc on gc.contact_id = c.id
 group by c.id
@@ -424,9 +427,9 @@ Basic python coding can be used to test and train machine learning models using 
 ## Ensuring Trustworthiness <a name="trust"></a>
 It is possible to restrict data input into a table using the following features of a form:  
 1. Disabling data import through CSV.     
-2. Disabling manual insert, update or delete query execution on the related tables.
+2. Disabling manual insert, update or delete query execution on the associated tables.
 3. Ensuring that no other forms can insert data into those tables.
-4. Disabling of data export     
+4. Disabling data export     
 
 Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using algorithms like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
@@ -450,7 +453,8 @@ A reporting dashboard is an aggregation of related reports with global filters.
 1. It works like a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
 3. It can have its own css definition which will override the css of the individual reports and forms.   
-Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, **https://app.cliosight.com/app/dashboards/47/show?noNavbar=true**
+Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance,
+**https://app.cliosight.com/app/dashboards/47/show?noNavbar=true**
 
 
 ## Example of a Dashboard <a name="example_dashboard"></a>  
