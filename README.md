@@ -65,17 +65,18 @@ While some meeting actions can be automated through triggers, there are other as
 SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks. This makes it easy for users to host forms like any other web page. Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
   
 ## JSON body of a Form <a name="form"></a>
-A form can be embedded into another application with the help of an https URL. It can have sub-forms, charts, reports and HTML and supports all basic input elements. The format of the link is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**
+A form can be shared independently or embedded into another application with the help of its https URL. It can have sub-forms, reports and HTML. It supports all basic input elements of a conventional HTML form.     
+The format of the URL is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**       
 Below are the JSON tags that can be used within a form.   
 ```css
 {   
-   "datasource_id": <int-datasource-id>,   
+   "datasource_id": <int-datasource-id>,      // mandatory
    "table": {    
-        "name": "<main-table-name>" // This is the root table of the form      
+        "name": "<main-table-name>" // Mandatory; This is the root table of the form      
     },       
    "sub_form_definition": {      
         "is_public": {       
-            "status": <boolean> // Indicates if the form is available without login      
+            "status": <boolean> // Default is false; Indicates if the form is available without login      
         },       
    "css_definition": "", // uglified css for the form      
         "inputs": [{      
@@ -86,7 +87,7 @@ Below are the JSON tags that can be used within a form.
             }],     
             "action": "show",    
             "show": true | false, // default action value is false    
-            "input_category": "field | multiselect | form",  // form is for supporting sub-form definition;     
+            "input_category": "field | multiselect | form",  // Mandatory; form is for supporting sub-form definition;     
             "column": {    
                 "Field": "<column-name>"  // column of the main table or the populated values via "multiselect" in input category     
             },
@@ -341,8 +342,8 @@ Meeting portal
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. 
-2. The contents of a report is nothing but the result of a SQL query. For any schema in an enterprise application, we can have numerous queries and hence innumerable report and filter combinations.      
-A report can be embedded using a URL in the format:    
+2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous queries, leading to countless report and filter combinations.          
+A report can be embedded using a URL in the format given below:           
 **https://app.cliosight.com/app/reports/68/show?noNavbar=true** 
 
 ### Example of a Report ###   
