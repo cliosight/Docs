@@ -336,20 +336,21 @@ The components are:
 ```
 
 ## JSON body of a Page <a name="page"></a> 
-A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button below which no HTML can be added. By putting together related forms, we can have a complete web page. The web page builder syntax enables users to place forms one next to the other or in a sequential order. Below is an example.     
-Meeting portal   
+A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button below which no HTML can be added. By putting together related forms, we can have a complete web page. The web page builder JSON syntax enables users to place forms one next to the other or in a sequential order. Below is an example.     
+[Meeting portal](https://app.cliosight.com/app/forms/29/show?noNavBar=true)   
 
 ## JSON body of a Report <a name="report"></a> 
-While a form is the data input interface, a report is the output of data analysis. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
-1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. 
+While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
+1. A report contains filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. They have a multiselect option just like form multiselect input field.        
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous queries, leading to countless report and filter combinations.          
 A report can be embedded using a URL in the format given below:           
-**https://app.cliosight.com/app/reports/68/show?noNavbar=true** 
+**https://app.cliosight.com/app/reports/29/show?noNavbar=true** 
 
 ### Example of a Report ###   
-Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the groups that they are a part of.  
+Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the groups that they are a part of. The link is given above.     
 ``` sql
-select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
+select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) Phone,
+min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c 
 left join `groups_contacts` gc on gc.contact_id = c.id
 group by c.id
 ```
