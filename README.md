@@ -521,7 +521,7 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
 ## Example of a Workflow <a name="workflowexamples"></a>    
 
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
-Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the framework that Cliosight has provided. Forms, reports and dashboards can be created instantly through APIs that return a link to the widget.  
+Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the framework that Cliosight has provided. Forms, pages, reports and dashboards can be created instantly through APIs that return a link to the widget.  
 
 
 
