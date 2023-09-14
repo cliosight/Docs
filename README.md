@@ -501,6 +501,7 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
 }
   ```
 ## JSON body of a Trigger <a name="trigger"></a>
+```css
 {        
 	"trigger_definition": {        
  		"trigger_type": "<crud-operation>",  // insert/delete/update      
@@ -510,7 +511,7 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
 	 },      
   	 "datasourtce_id": 1     
     }        
-
+```
 ## Example of a Trigger ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
