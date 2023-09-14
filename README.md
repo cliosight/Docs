@@ -420,6 +420,11 @@ group by c.id
 ```     
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
+Tabular data from reports can be used to plot graphs and charts using any standard Javascript or Python libraries for data visualization, Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. One such example is an area chart with Chart.js that depicts datasets from three different data sources, viz. in-house MySQL, remote MySQL and cloud-hosted MySQL database instances accross different cloud service providers. Another example is that of the common pie charts. We can also display live figures and stats by adding simple client-side Javascript to a form or a page.   
+Below are the mentioned examples:      
+Area chart with different datasources      
+Pie chart     
+Live stats on a landing page      
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
@@ -496,6 +501,15 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
 }
   ```
 ## JSON body of a Trigger <a name="trigger"></a>
+{        
+	"trigger_definition": {        
+ 		"trigger_type": "<crud-operation>",  // insert/delete/update      
+   		"trigger_entity": "<table-name>",  
+     		"trigger_action_query": "<sql-query-as-a-formatted-string>",     
+       		"label": "<name-for-the-trigger>"      
+	 },      
+  	 "datasourtce_id": 1     
+    }        
 
 ## Example of a Trigger ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
@@ -512,7 +526,7 @@ Just like a form and a report, a dashboard can be shared using a URL in a simila
     "datasource_id": 1
 }
 ```
-## Email Notification <a name="email"></a>
+## Email Notification <a name="email"></a>    
 
 ### Sending Email Notifications on Events <a name="trigger_email"></a>
 
