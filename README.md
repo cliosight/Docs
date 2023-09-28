@@ -28,9 +28,9 @@ Cliosight is a robust platform that offers addition of various leading database 
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple data sources. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schema created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple data sources. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
 
-One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources for paid accounts, ensuring efficient data transfer and processing. Data import option provided along with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other databases or data sources.       
+One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient data transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other in-built databases or data sources.       
 
 Example of a datasource definition:      
 ```json     
@@ -53,7 +53,7 @@ Example of a datasource definition:
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly can also be restricted.           
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like geographically targeted online marketing campaigns. Similar restrictions apply to files stored within an account.     
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like running geographically targeted online marketing campaigns. Similar restrictions are available for files stored within an account.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -336,7 +336,8 @@ The components are:
 ```
 
 ## JSON body of a Page <a name="page"></a> 
-A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button. By grouping together two or more forms, we can have a complete web page with multiple forms, and charts. The web page builder JSON syntax enables users to place forms one next to the other or in a sequential order. Below is an example.     
+A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button. By grouping together two or more forms, we can have a complete web page with multiple forms, and charts. The web page builder JSON syntax enables users to place forms one next to the other or in a sequential order. This eliminates the need for a database instance when hosting apps and web pages using serverless cloud services like Google App Engine, Azure App Service, or AWS Amplify.     
+Below is an example.     
 [Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
 
 ## JSON body of a Report <a name="report"></a> 
@@ -436,7 +437,7 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
+Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
