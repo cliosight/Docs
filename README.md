@@ -421,7 +421,7 @@ group by c.id
 ```     
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using any standard Javascript or Python libraries for data visualization, Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. One such example is an area chart with Chart.js that depicts datasets from three different data sources, viz. in-house MySQL, remote MySQL and cloud-hosted MySQL database instances accross different cloud service providers. Another example is that of the common pie charts. We can also display live figures and stats by adding simple client-side Javascript to a form or a page.   
+Tabular data from reports can be used to plot graphs and charts using any standard Javascript or Python libraries for data visualization, Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. One such example is an area chart with Chart.js that depicts datasets from three different data sources, viz. the in-house MySQL, a remote MySQL and a fully-managed MySQL database instance accross different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to a form or an HTML.   
 Below are the mentioned examples:      
 Area chart with different datasources      
 Pie chart     
@@ -437,7 +437,7 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
+Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
