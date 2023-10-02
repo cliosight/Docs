@@ -1,0 +1,176 @@
+ {
+	"datasource_id": 1,
+	"table": {
+    	"name": "meeting"
+	},
+	"sub_form_definition": {
+    	"is_public": {
+        	"status": true
+    	},
+         "css_definition": "@import url('https://fonts.googleapis.com/css?family=Raleway');.form{background: linear-gradient(45deg, rgba(0,0,0,0), rgba(29, 200, 205, 0));}.form{align-items: center; margin: 0%;}.form {font-family: Raleway; color: grey; }.btn{background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));border-radius: 30px; border: 0px solid white; height:50px; width:100%; margin: 0px; margin-bottom: 10px;}.btn:hover{background:grey; color: white; border: 2px solid grey; border-radius: 30px;}input[type=text] {box-sizing: border-box; border: 2px solid #ccc; height:50px !important;  border: 2px solid grey; }input[type=text]:focus {border: 2px solid #555;} .form-control {border: 2px solid grey; height: 50px; margin-bottom: 0px; background-color: white;} .select2-choices {border: 2px solid grey !important;  border-radius: 5px !important; box-shadow: 5px 10px inset white !important; height: 100px !important} p {background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));} .border {border: 2px solid green !important}",
+	 "inputs": [{
+        	"cols": 9,
+        	"input_category": "multiselect",
+        	"column": {
+            	"Field": "contact_id"
+        	},
+        	"input_type": "",
+        	"input_label": "Assign Contacts",
+        	"table_select_table": {
+            	"name": "contact"
+        	},
+        	"table_select_search_column": "email",
+        	"table_select_join_column": "id",
+        	"sub_form_button_label": "",
+        	"sub_form_table": {
+            	"name": "contact_meeting"
+        	},
+        	"join_criteria_main_table_column": {
+            	"Field": "id"
+        	},
+        	"join_criteria_sub_table_column": {
+            	"Field": "meeting_id"
+        	}
+    	},{
+        	"cols": 4,
+        	"input_category": "field",
+        	"column": {
+            	"Field": "purpose"
+        	},
+        	"input_type": "select",
+        	"input_label": "Enter the meeting's purpose",
+        	"placeholder": "Purpose",
+        	"options": [{
+            	"label": "Select Purpose",
+            	"value": ""
+        	}, {
+            	"label": "Interview",
+            	"value": "interview"
+        	}, {
+            	"label": "Consultation",
+            	"value": "consultation"
+        	}]
+    	}, {
+        	"rules": [{
+            	"column": "purpose",
+            	"value": "interview"
+        	}],
+        	"action": "show",
+        	"show": false,
+        	"cols": 9,
+        	"input_category": "form",
+        	"input_label": "Interview Details",
+        	"sub_form_button_label": "Add Interview Details",
+        	"hide_sub_form_button": false,
+        	"default_instances_count": 1, 
+        	"hide_instance_remove_button": false,
+        	"sub_form_table": {
+            	"name": "interview"
+        	},
+        	"join_criteria_main_table_column": {
+            	"Field": "id"
+        	},
+        	"join_criteria_sub_table_column": {
+            	"Field": "meeting_id"
+        	},
+        	"sub_form_definition": {
+            	"inputs": [{
+                	"cols": 6,
+                	"input_category": "field",
+                	"column": {
+                    	"Field": "skill"
+                	},
+                	"input_type": "select",
+                	"input_label": "Choose a skill",
+                	"options": [{
+                    	"label": "UI/UX",
+                    	"value": "uiux"
+                	}, {
+                    	"label": "Full-stack dev",
+                    	"value": "fullstack"
+                	}]
+            	}, {
+                	"cols": 6,
+                	"input_category": "field",
+                	"column": {
+                    	"Field": "experience"
+                	},
+                	"input_type": "select",
+                	"input_label": "Choose the experience level",
+                	"options": [{
+                    	"label": "Entry-Level",
+                    	"value": "entry"
+                	}, {
+                    	"label": "Mid-Level",
+                    	"value": "mid"
+                	}, {
+                    	"label": "Senior-Level",
+                    	"value": "senior"
+                	}]
+            	}],
+            	"unique_keys": ["id"]
+        	}
+    	}, {
+        	"rules": [{
+            	"column": "purpose",
+            	"value": "consultation"
+        	}],
+        	"action": "show",
+        	"show": false,
+        	"cols": 9,
+        	"input_category": "form",
+        	"input_label": "Consultation Details",
+        	"sub_form_button_label": "Add Consultation Details",
+        	"hide_sub_form_button": false,
+        	"default_instances_count": 1,
+        	"hide_instance_remove_button": false,
+        	"sub_form_table": {
+            	"name": "consultation"
+        	},
+        	"join_criteria_main_table_column": {
+            	"Field": "id"
+        	},
+        	"join_criteria_sub_table_column": {
+            	"Field": "meeting_id"
+        	},
+        	"sub_form_definition": {
+            	"inputs": [{
+                	"cols": 6,
+                	"input_category": "field",
+                	"column": {
+                    	"Field": "module"
+                	},
+                	"input_type": "select",
+                	"input_label": "Choose a module",
+                	"options": [{
+                    	"label": "Forms",
+                    	"value": "forms"
+                	}, {
+                    	"label": "Reports",
+                    	"value": "reports"
+                	}]
+            	}, {
+                	"cols": 6,
+                	"input_category": "field",
+                	"column": {
+                    	"Field": "category"
+                	},
+                	"input_type": "select",
+                	"input_label": "Choose the category",
+                	"options": [{
+                    	"label": "Technical",
+                    	"value": "technical"
+                	}, {
+                    	"label": "Functional",
+                    	"value": "functional"
+                	}]
+            	}],
+            	"unique_keys": ["id"]
+        	}
+    	}],
+    	"last_insert_id_key": "id",
+    	"unique_keys": ["meeting_code"],
+    	"label": "Meetings",
+    	"submit_button_label": "Save Meeting"
+	}
+}
