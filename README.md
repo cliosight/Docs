@@ -1,4 +1,4 @@
-# # Cliosight      
+# Cliosight      
 **Building the best data-driven applications and presentations**     
 
 
