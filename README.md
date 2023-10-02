@@ -156,7 +156,8 @@ The components are:
 2. Drop down menu with hardcoded values   
 3. Rules based on the values selected from the drop down  
 4. Sub form within a form 
-5. Multiple instances of aggregated values within the sub form        
+5. Multiple instances of aggregated values within the sub form
+
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
 
