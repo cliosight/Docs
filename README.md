@@ -25,10 +25,12 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (D. Baruah).
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to emerging data sources, like cloud data storages and distributed ledgers, in future releases.      
+![datastorages](https://miro.medium.com/v2/resize:fit:720/format:webp/1*r42HqHgUxlRpbFLr1PZtLg.png)    
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple data sources. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to **only one** in-built MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple data sources. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to only the in-built MySQL database with a **shared connection pool**.    
+![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
 One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient data transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other in-built databases or data sources.       
 
@@ -62,7 +64,8 @@ While some meeting actions can be automated through triggers, there are other as
 2. JSON body generator
 3. HTML/CSS code generator      
 
-SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks. This makes it easy for users to host forms like any other web page. Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.          
+SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks. This makes it easy for users to host forms like any other web page. Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.     
+![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)       
   
 ## JSON body of a Form <a name="form"></a>
 A form can be shared independently or embedded into another application with the help of its https URL. It can have sub-forms, reports and HTML. It supports all basic input elements of a conventional HTML form.     
