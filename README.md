@@ -1,5 +1,6 @@
-<h1>Cliosight</h1>       
-<h2>Building the best data-driven applications and presentations</h2>      
+<h1>Cliosight      
+**Building the best data-driven applications and presentations**     
+</h1>
 
 # Technical Documentation               
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
