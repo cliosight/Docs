@@ -28,17 +28,17 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to cloud data storages and distributed ledgers in future releases.   
+Cliosight is a platform that offers addition of various leading database servers for building reporting and micro CRM applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud data storages and distributed ledgers in future releases.   
 
 ![datastorages](https://miro.medium.com/v2/resize:fit:720/format:webp/1*r42HqHgUxlRpbFLr1PZtLg.png)    
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on the users' cloud VM. Cloud database instances in Google Cloud SQL, Amazon RDS and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
 
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
-One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other datasources.       
+One advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other datasources.       
 
 Example of a datasource definition:      
 ```json     
@@ -61,8 +61,8 @@ Example of a datasource definition:
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows.     
 Types of users:     
-1. Admin - all possible actions within an account.          
-2. Non-admin - View permission for assigned (non-public) forms and view permission assigned for reports and dashboards.
+1. **Admin** - all possible actions within an account.          
+2. **Non-admin** - View permission for assigned (non-public) forms and view permission assigned for reports and dashboards.
 3. Admin-minor - All permissions for forms, reports, dashboards, triggers and workflows. No access to datasources, users/groups and tables.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
@@ -177,8 +177,8 @@ The components are:
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect values.        
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous queries, leading to countless report and filter combinations.          
-A report can be embedded using a URL in the format given below:           
-**https://app.cliosight.com/app/reports/29/show?noNavbar=true** 
+A report can be embedded using a URL in the format given below:
+https://app.cliosight.com/app/reports/29/show?noNavbar=true     
 
 ### Example of a Report ###   
 Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the total number of groups that they are a part of.    
