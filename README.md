@@ -64,7 +64,7 @@ While some meeting actions can be automated through triggers, there are other as
 
 SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a web page.      
 ![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)  
-![dashboard](https://miro.medium.com/v2/resize:fit:640/format:webp/1*0M5N6ct9HbZhhrMEf_Ix6w.png)
+![dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*eB7N1_ebaIwvsf4IplsrcA.png)
   
 ## JSON body of a Form <a name="form"></a>
 A form can be created and shared independently or embedded into another application or web page. It can have sub-forms and reports. It supports all basic input elements of a conventional HTML5 form. 
