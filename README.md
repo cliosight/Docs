@@ -15,7 +15,8 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 - [Ensuring Trustworthiness](#trust)
 - [Data Privacy and Security](#security)
 - [JSON body of a Dashboard](#dashboard)
-- [JSON body of a Trigger](#trigger)
+- [JSON body of a Trigger](#trigger)     
+- [JSON body of a Job](#job)       
 - [Email Notification](#email)
 - [JSON body of a Workflow](#workflow)
 - [Example of a Workflow](#workflowexamples)
@@ -23,12 +24,14 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to cloud data storages and distributed ledgers in future releases.      
+Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to cloud data storages and distributed ledgers in future releases.   
+
 ![datastorages](https://miro.medium.com/v2/resize:fit:720/format:webp/1*r42HqHgUxlRpbFLr1PZtLg.png)    
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
+
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
 One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other datasources.       
@@ -63,6 +66,7 @@ While some meeting actions can be automated through triggers, there are other as
 3. HTML/CSS code generator      
 
 SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a web page.      
+
 ![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)  
 ![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*83DJIW4Rkxy_-JkzYIeRmQ.png)
   
@@ -171,6 +175,7 @@ A report can be embedded using a URL in the format given below:
 ### Example of a Report ###   
 Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the total number of groups that they are a part of.    
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true)         
+
 SQL Query for this report:      
 ``` sql
 select min(c.id) as contact_id, min(gc.group_id) as group_id,
@@ -285,7 +290,7 @@ Important points to remember while creating a dashboard:
 Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, 
 https://app.cliosight.com/app/dashboards/47/show?noNavbar=true
 
-A dashboard in Cliosight can is basically a collection of forms and reports. It has its own pre-HTML and post-HTML tags like a form and a report. The JSON syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM dashboard, a simple web application or a regular landing page for a product or a service.    
+A dashboard in Cliosight is basically a UI container for forms and reports. It can have its own pre-HTML and post-HTML. The JSON syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM dashboard, a simple web application or as a regular landing page for a product or a service.    
     
 Below is an example.     
 [Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
@@ -328,7 +333,9 @@ Below is an example.
     }]
 }
   ```
-## JSON body of a Trigger <a name="trigger"></a>
+## JSON body of a Trigger <a name="trigger"></a>   
+A trigger is the simplest way to taking action on data and insights. Since we are dealing with structured data, it means the basic CRUD operations on table rows based on events. As, explained later, when used along with background jobs, it can provide processing ability to forms and reports making it function like a full-fledged cloud-hosted web application.     
+
 ```css
 {        
 	"trigger_definition": {        
@@ -355,6 +362,9 @@ Below is an example.
     "datasource_id": 1
 }
 ```
+
+## JSON body of a Job <a name="job"></a>   
+
 ## Email Notification <a name="email"></a>    
 
 ### Sending Email Notifications on Events <a name="trigger_email"></a>
