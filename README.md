@@ -55,8 +55,11 @@ Example of a datasource definition:
 ```    
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly can also be restricted.           
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. Similar restrictions are available for files stored within an account.     
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows.     
+Types of users:     
+1. Admin - all possible actions within an account.          
+2. Non-admin - View permission for assigned (non-public) forms and view permission assigned for reports and dashboards.
+3. Admin-minor - Create permission for forms, reports, dashboards, triggers and workflows. No access to datasources, users/groups and tables.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -65,15 +68,16 @@ While some meeting actions can be automated through triggers, there are other as
 2. JSON body generator
 3. HTML/CSS code generator      
 
-SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a web page.      
+SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a conventional web page.      
 
 ![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)  
 ![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*83DJIW4Rkxy_-JkzYIeRmQ.png)
   
 ## JSON body of a Form <a name="form"></a>
 A form can be created and shared independently or embedded into another application or web page. It can have sub-forms and reports. It supports all basic input elements of a conventional HTML5 form. 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that functions as a UI container element, it can have any number of forms along with reports. This eliminates the need for a database instance when embeded within apps and web pages hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.    
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that is similar to a UI container, any number of forms and reports can be grouped together. This eliminates the need for a database when embeded within apps and web pages hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
 The format of the URL is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**       
+    
 Below are the JSON tags that can be used within a form.   
 ```css
 {   
@@ -256,7 +260,7 @@ Live stats on a landing page
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
 
-## Ensuring Trustworthiness <a name="trust"></a>
+## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
 It is possible to restrict data input into a table using the following features of a form:  
 1. Disabling data import through CSV.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
