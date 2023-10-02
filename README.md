@@ -275,15 +275,18 @@ India:
 [The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
 
-## JSON body of a Reporting Dashboard  <a name="dashboard"></a>
-A reporting dashboard is an aggregation of related reports with global filters. 
-1. It works like a report in terms of the definition of the filter menu. Global filters should be applied first as they take precedence over the report filters.  
-2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation with the dashboard reports.
-3. It can have its own css definition which will override the css of the individual reports and forms.   
-Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance,
-**https://app.cliosight.com/app/dashboards/47/show?noNavbar=true**
+## JSON body of a Dashboard  <a name="dashboard"></a>
+A dashboard is an aggregation of forms and multiple reports with global filters.  
 
-A dashboard in Cliosight can also be a collection of forms and charts, along with reports. The dashboard builder JSON syntax enables users to place forms and reports one next to the other or in a sequential order.  
+Important points to remember while creating a dashboard:     
+1. Global filters should be applied first as they take precedence over the report filters.  
+2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation amongst the reports.
+3. It can have its own css definition which will override the css of the individual reports, nested forms and embedded forms.   
+Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, 
+https://app.cliosight.com/app/dashboards/47/show?noNavbar=true
+
+A dashboard in Cliosight can is basically a collection of forms and reports. It has its own pre-HTML and post-HTML tags like a form and a report. The JSON syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM dashboard, a simple web application or a regular landing page for a product or a service.    
+    
 Below is an example.     
 [Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
 
