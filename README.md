@@ -290,11 +290,11 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
 Important points to remember while creating a dashboard:     
 1. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation amongst the reports.
-3. It can have its own css definition which will override the css of the individual reports, nested forms and embedded forms.   
+3. It can have its own css definition which will override the css of the individual reports, nested forms within reports and embedded forms.   
 Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, 
 https://app.cliosight.com/app/dashboards/47/show?noNavbar=true
 
-A dashboard in Cliosight is basically a UI container for forms and reports. It can have its own pre-HTML and post-HTML. The JSON syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM dashboard, a simple web application or as a regular landing page for a product or a service.    
+A dashboard in Cliosight is basically a UI container for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM dashboard, a simple web application or a regular landing page for a product or service.    
     
 Below is an example.     
 [Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
@@ -337,8 +337,9 @@ Below is an example.
     }]
 }
   ```
+
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger is the simplest way to taking action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing ability to UI elements making it a full-fledged cloud-hosted web application.     
+A trigger is the simplest way to taking action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing ability to UI elements making them full-fledged cloud-hosted web applications.     
 
 ```css
 {        
