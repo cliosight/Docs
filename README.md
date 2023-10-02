@@ -1,7 +1,7 @@
-# Cliosight Documentation
+# Cliosight Technical Documentation 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
-A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows.   
-Please contact us at jigisha@cliosight.com or info@cliosight.com (D. Baruah).     
+A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
+Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.     
 
 # Table of contents
 
@@ -9,7 +9,6 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (D. Baruah).
 - [Support for Multiple Data Sources](#datasources)
 - [User Permissions and Access Control](#acl)
 - [JSON body of a Form](#form)
-- [JSON body of a Page](#page)
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
 - [Using Reports in Jupyter Notebook](#jupyter)
@@ -24,38 +23,37 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (D. Baruah).
 
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to emerging data sources, like cloud data storages and distributed ledgers, in future releases.      
+Cliosight is a robust platform that offers addition of various leading database servers, including MySQL, Postgres, and Microsoft SQL. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to cloud data storages and distributed ledgers in future releases.      
 ![datastorages](https://miro.medium.com/v2/resize:fit:720/format:webp/1*r42HqHgUxlRpbFLr1PZtLg.png)    
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple data sources. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to only the in-built MySQL database with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be created for the in-built databases or those on the user's cloud VM. Cloud database instances like Google Cloud SQL are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
-One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient data transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other in-built databases or data sources.       
+One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other datasources.       
 
 Example of a datasource definition:      
 ```json     
 {
-	"client_id": 2,
-	"datasource_definition": {
-    	"type": "mysql",
-    	"inhouse": true,
-    	"connectionLimit": 12,
-    	"host": "localhost",
-    	"port": 3306,
-    	"user": "user1",
-    	"password": "password1",
-    	"database": "database1",
-    	"multipleStatements": true,
-    	"label": "Cliosight Mysql"
-	}
+    "client_id": 2,
+    "datasource_definition": {
+        "type": "mysql",
+        "connectionLimit": 10,
+        "host": "34.23.219.145",
+        "port": 3306,
+        "user": "cliosight",
+        "password": "Password123",
+        "database": "cliosight",
+        "multipleStatements": true,
+        "label": "My Website Database (Shared Bandwidth)"
+    }
 }
 ```    
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Executing CRUD SQL queries on the database tables directly can also be restricted.           
-Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. This functionality proves especially useful in CRM operations like running geographically targeted online marketing campaigns. Similar restrictions are available for files stored within an account.     
+Furthermore, administrators can designate users with the ability to create and execute triggers and workflows. Similar restrictions are available for files stored within an account.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -64,11 +62,12 @@ While some meeting actions can be automated through triggers, there are other as
 2. JSON body generator
 3. HTML/CSS code generator      
 
-SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form for adding extra elements like images and videos or text and hyperlinks. This makes it easy for users to host forms like any other web page. Users can utilize another set of APIs in specific components within Cliosight for a more comprehensive and sophiticated application design.     
+SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a web page.      
 ![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)       
   
 ## JSON body of a Form <a name="form"></a>
-A form can be shared independently or embedded into another application with the help of its https URL. It can have sub-forms, reports and HTML. It supports all basic input elements of a conventional HTML form.     
+A form can be created and shared independently or embedded into another application or web page. It can have sub-forms and reports. It supports all basic input elements of a conventional HTML5 form. 
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget, it can have any number of forms. This eliminates the need for a database instance when hosting apps and web pages using serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.    
 The format of the URL is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**       
 Below are the JSON tags that can be used within a form.   
 ```css
@@ -144,12 +143,11 @@ Below are the JSON tags that can be used within a form.
 } 
 ```   
       
-
-## An Example of Using Forms in Applications ##   
+## Example of Using Forms in Applications ##   
 For an application like a meeting scheduling portal, forms can be used to create contacts, groups and meeting requests. Forms can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled.       
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
-[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)    
+[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)     
 
 ### JSON tags for a Section of the Meeting Creation Form <a name="meetings_form"></a>     
 The components are:   
@@ -157,195 +155,13 @@ The components are:
 2. Drop down menu with hardcoded values   
 3. Rules based on the values selected from the drop down  
 4. Sub form within a form 
-5. Multiple instances of aggregated values within the sub form
-   
-```css    
-{
-	"datasource_id": 1,
-	"table": {
-    	"name": "meeting"
-	},
-	"sub_form_definition": {
-    	"is_public": {
-        	"status": true
-    	},
-         "css_definition": "@import url('https://fonts.googleapis.com/css?family=Raleway');.form{background: linear-gradient(45deg, rgba(0,0,0,0), rgba(29, 200, 205, 0));}.form{align-items: center; margin: 0%;}.form {font-family: Raleway; color: grey; }.btn{background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));border-radius: 30px; border: 0px solid white; height:50px; width:100%; margin: 0px; margin-bottom: 10px;}.btn:hover{background:grey; color: white; border: 2px solid grey; border-radius: 30px;}input[type=text] {box-sizing: border-box; border: 2px solid #ccc; height:50px !important;  border: 2px solid grey; }input[type=text]:focus {border: 2px solid #555;} .form-control {border: 2px solid grey; height: 50px; margin-bottom: 0px; background-color: white;} .select2-choices {border: 2px solid grey !important;  border-radius: 5px !important; box-shadow: 5px 10px inset white !important; height: 100px !important} p {background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));} .border {border: 2px solid green !important}",
-	 "inputs": [{
-        	"cols": 9,
-        	"input_category": "multiselect",
-        	"column": {
-            	"Field": "contact_id"
-        	},
-        	"input_type": "",
-        	"input_label": "Assign Contacts",
-        	"table_select_table": {
-            	"name": "contact"
-        	},
-        	"table_select_search_column": "email",
-        	"table_select_join_column": "id",
-        	"sub_form_button_label": "",
-        	"sub_form_table": {
-            	"name": "contact_meeting"
-        	},
-        	"join_criteria_main_table_column": {
-            	"Field": "id"
-        	},
-        	"join_criteria_sub_table_column": {
-            	"Field": "meeting_id"
-        	}
-    	},{
-        	"cols": 4,
-        	"input_category": "field",
-        	"column": {
-            	"Field": "purpose"
-        	},
-        	"input_type": "select",
-        	"input_label": "Enter the meeting's purpose",
-        	"placeholder": "Purpose",
-        	"options": [{
-            	"label": "Select Purpose",
-            	"value": ""
-        	}, {
-            	"label": "Interview",
-            	"value": "interview"
-        	}, {
-            	"label": "Consultation",
-            	"value": "consultation"
-        	}]
-    	}, {
-        	"rules": [{
-            	"column": "purpose",
-            	"value": "interview"
-        	}],
-        	"action": "show",
-        	"show": false,
-        	"cols": 9,
-        	"input_category": "form",
-        	"input_label": "Interview Details",
-        	"sub_form_button_label": "Add Interview Details",
-        	"hide_sub_form_button": false,
-        	"default_instances_count": 1, 
-        	"hide_instance_remove_button": false,
-        	"sub_form_table": {
-            	"name": "interview"
-        	},
-        	"join_criteria_main_table_column": {
-            	"Field": "id"
-        	},
-        	"join_criteria_sub_table_column": {
-            	"Field": "meeting_id"
-        	},
-        	"sub_form_definition": {
-            	"inputs": [{
-                	"cols": 6,
-                	"input_category": "field",
-                	"column": {
-                    	"Field": "skill"
-                	},
-                	"input_type": "select",
-                	"input_label": "Choose a skill",
-                	"options": [{
-                    	"label": "UI/UX",
-                    	"value": "uiux"
-                	}, {
-                    	"label": "Full-stack dev",
-                    	"value": "fullstack"
-                	}]
-            	}, {
-                	"cols": 6,
-                	"input_category": "field",
-                	"column": {
-                    	"Field": "experience"
-                	},
-                	"input_type": "select",
-                	"input_label": "Choose the experience level",
-                	"options": [{
-                    	"label": "Entry-Level",
-                    	"value": "entry"
-                	}, {
-                    	"label": "Mid-Level",
-                    	"value": "mid"
-                	}, {
-                    	"label": "Senior-Level",
-                    	"value": "senior"
-                	}]
-            	}],
-            	"unique_keys": ["id"]
-        	}
-    	}, {
-        	"rules": [{
-            	"column": "purpose",
-            	"value": "consultation"
-        	}],
-        	"action": "show",
-        	"show": false,
-        	"cols": 9,
-        	"input_category": "form",
-        	"input_label": "Consultation Details",
-        	"sub_form_button_label": "Add Consultation Details",
-        	"hide_sub_form_button": false,
-        	"default_instances_count": 1,
-        	"hide_instance_remove_button": false,
-        	"sub_form_table": {
-            	"name": "consultation"
-        	},
-        	"join_criteria_main_table_column": {
-            	"Field": "id"
-        	},
-        	"join_criteria_sub_table_column": {
-            	"Field": "meeting_id"
-        	},
-        	"sub_form_definition": {
-            	"inputs": [{
-                	"cols": 6,
-                	"input_category": "field",
-                	"column": {
-                    	"Field": "module"
-                	},
-                	"input_type": "select",
-                	"input_label": "Choose a module",
-                	"options": [{
-                    	"label": "Forms",
-                    	"value": "forms"
-                	}, {
-                    	"label": "Reports",
-                    	"value": "reports"
-                	}]
-            	}, {
-                	"cols": 6,
-                	"input_category": "field",
-                	"column": {
-                    	"Field": "category"
-                	},
-                	"input_type": "select",
-                	"input_label": "Choose the category",
-                	"options": [{
-                    	"label": "Technical",
-                    	"value": "technical"
-                	}, {
-                    	"label": "Functional",
-                    	"value": "functional"
-                	}]
-            	}],
-            	"unique_keys": ["id"]
-        	}
-    	}],
-    	"last_insert_id_key": "id",
-    	"unique_keys": ["meeting_code"],
-    	"label": "Meetings",
-    	"submit_button_label": "Save Meeting"
-	}
-}
-```
+5. Multiple instances of aggregated values within the sub form        
+[Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-## JSON body of a Page <a name="page"></a> 
-A web page in Cliosight is a collection of forms. With the pre and post-HTML JSON tags, a form described above can function like a web page except for the limitation that it can have only one submit button. By grouping together two or more forms, we can have a complete web page with multiple forms, and charts. The web page builder JSON syntax enables users to place forms one next to the other or in a sequential order. This eliminates the need for a database instance when hosting apps and web pages using serverless cloud services like Google App Engine, Azure App Service, or AWS Amplify.     
-Below is an example.     
-[Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
 
 ## JSON body of a Report <a name="report"></a> 
-While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. Both are equipped with bulk upload and download options respectively. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
-1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down menu in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect option just like form multiselect input field.        
+While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
+1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect values.        
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous queries, leading to countless report and filter combinations.          
 A report can be embedded using a URL in the format given below:           
 **https://app.cliosight.com/app/reports/29/show?noNavbar=true** 
@@ -465,6 +281,9 @@ A reporting dashboard is an aggregation of related reports with global filters.
 Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance,
 **https://app.cliosight.com/app/dashboards/47/show?noNavbar=true**
 
+A dashboard in Cliosight can also be a collection of forms and charts, along with reports. The dashboard builder JSON syntax enables users to place forms and reports one next to the other or in a sequential order.  
+Below is an example.     
+[Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
 
 ## Example of a Dashboard <a name="example_dashboard"></a>  
 
