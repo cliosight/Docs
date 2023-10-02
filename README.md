@@ -59,7 +59,7 @@ Cliosight ensures that each component created within its platform incorporates f
 Types of users:     
 1. Admin - all possible actions within an account.          
 2. Non-admin - View permission for assigned (non-public) forms and view permission assigned for reports and dashboards.
-3. Admin-minor - Create permission for forms, reports, dashboards, triggers and workflows. No access to datasources, users/groups and tables.     
+3. Admin-minor - All permissions for forms, reports, dashboards, triggers and workflows. No access to datasources, users/groups and tables.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
