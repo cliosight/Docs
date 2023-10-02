@@ -1,6 +1,6 @@
 # Cliosight      
 **Building the best data-driven applications and presentations**     
-
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 
 ## Technical Documentation               
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
@@ -28,8 +28,6 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a platform that offers addition of various leading database servers for building reporting and micro CRM applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud data storages and distributed ledgers in future releases.   
-
-![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
