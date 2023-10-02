@@ -1,5 +1,6 @@
 # Cliosight      
-**Building the best data-driven applications and presentations**     
+**Building the best data-driven applications and presentations**    
+
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 
 ## Technical Documentation               
@@ -78,7 +79,7 @@ SQL and JSON are the only two types of syntaxes used in Cliosight for configurin
 ## JSON body of a Form <a name="form"></a>
 A form can be created and shared independently or embedded into another application or web page. It can have sub-forms and reports. It supports all basic input elements of a conventional HTML5 form. 
 With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that is similar to a UI container, any number of forms and reports can be grouped together. This eliminates the need for a database when embeded within apps and web pages hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
-The format of the URL is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**       
+The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
     
 Below are the JSON tags that can be used within a form.   
 ```css
@@ -197,7 +198,7 @@ group by c.id
     "is_public": {
         "status": false
     },
- "css_definition": "@import url('https://fonts.googleapis.com/css?family=Raleway');.form{background: linear-gradient(45deg, rgba(0,0,0,0), rgba(29, 200, 205, 0));}.form{align-items: center; margin: 0%; border: 2px solid white !important; }.form {font-family: Raleway; color: grey; }.btn{background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));border-radius: 30px; border: 0px solid white; height:40px; width: 150px; margin: 10px;}.btn:hover{background:grey; color: white; border: 2px solid grey; border-radius: 30px;}input[type=text] {box-sizing: border-box; border: 2px solid #ccc; height:40px !important;  border: 2px solid grey; }input[type=text]:focus {border: 2px solid #555;} .form-control {border: 2px solid grey; height: 50px; margin-bottom: -10px;} .select2-choices {border: 2px solid grey !important;  border-radius: 5px !important; box-shadow: 5px 10px inset white !important;} p {background: linear-gradient(45deg, rgba(29, 224, 153, 0.8), rgba(29, 200, 205, 0.8));} .border {border: 1px solid green !important} textarea {margin-bottom: -20px !important; height: 6em !important} .select2-container .select2-default {height: 30px !important; font-size: 16px !important; box-shadow: 5px 10px inset white !important; vertical-align: center; } .select2-chosen {font-size: 14px !important}  .control-label {font-size: 14px !important; margin:2px !important}",
+ "css_definition": "",   
     "columns": {
         "group_id": {
             "hidden": true
