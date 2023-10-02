@@ -63,11 +63,12 @@ While some meeting actions can be automated through triggers, there are other as
 3. HTML/CSS code generator      
 
 SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a web page.      
-![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)       
+![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)  
+![dashboard](https://miro.medium.com/v2/resize:fit:640/format:webp/1*0M5N6ct9HbZhhrMEf_Ix6w.png)
   
 ## JSON body of a Form <a name="form"></a>
 A form can be created and shared independently or embedded into another application or web page. It can have sub-forms and reports. It supports all basic input elements of a conventional HTML5 form. 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget, it can have any number of forms. This eliminates the need for a database instance when hosting apps and web pages using serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.    
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that functions as a UI container element, it can have any number of forms along with reports. This eliminates the need for a database instance when embeded within apps and web pages hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.    
 The format of the URL is **https://app.cliosight.com/app/forms/52/show?noNavbar=true**       
 Below are the JSON tags that can be used within a form.   
 ```css
