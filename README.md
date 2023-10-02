@@ -334,7 +334,7 @@ Below is an example.
 }
   ```
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger is the simplest way to taking action on data and insights. Since we are dealing with structured data, it means the basic CRUD operations on table rows based on events. As, explained later, when used along with background jobs, it can provide processing ability to forms and reports making it function like a full-fledged cloud-hosted web application.     
+A trigger is the simplest way to taking action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing ability to UI elements making it a full-fledged cloud-hosted web application.     
 
 ```css
 {        
