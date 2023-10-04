@@ -3,7 +3,7 @@
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 
-## Technical Documentation               
+## Product Overview                   
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.     
 
