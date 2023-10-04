@@ -77,84 +77,12 @@ SQL and JSON are the only two types of syntaxes used in Cliosight for configurin
 ![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)
   
 ## JSON body of a Form <a name="form"></a>
-A form can be created and shared independently or embedded into another application or web page. It can have sub-forms and reports. It supports all basic input elements of a conventional HTML5 form. 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that is similar to a UI container, any number of forms and reports can be grouped together. This eliminates the need for a database when embeded within apps and web pages hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
+A form can be created and shared independently or used within another application or web page. It can have sub-forms and hyperlinks for reports. It supports all basic input elements of a conventional HTML5 form. This eliminates the need for a database when hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that is similar to a UI container, any number of forms and reports can be grouped together.      
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
     
-Below are the JSON tags that can be used within a form.   
-```css
-{   
-   "datasource_id": <int-datasource-id>,      // Mandatory; to identify the datasource   
-   "table": {    
-        "name": "<main-table-name>" // Mandatory; This is the root table of the form      
-    },       
-   "sub_form_definition": {      
-        "is_public": {       
-            "status": <boolean> // Default is false; Indicates if the form is available without login      
-        },       
-   "css_definition": "", // uglified css for the form      
-        "inputs": [{      
-            "cols": <values 1-12>, // Sets column width in the page; This is optional; default value is 12      
-            "rules": [{ // show/hide current input based on the rules and action properties     
-                "column": "<column-name>", // Matching column[‘Field’] value of a sibling input     
-                "value": "<input-value>" // If value entered or selected matches the specified value     
-            }],     
-            "action": "show",    
-            "show": true | false, // default action value is false    
-            "input_category": "field | multiselect | form",  // Mandatory; form is for supporting sub-form definition;     
-            "column": {    
-                "Field": "<column-name>"  // column of the main table or the populated values via "multiselect" in input category     
-            },
-            "pre_html": "",    // HTML code snippet above the element  
-            "post_html":"",    // HTML code snippet below the element      
-            "input_type": "text | select | radio | checkbox | file | hidden",   // hidden columns can be used for categorizing the records   
-            "placeholder": "", 
-            "input_label": "", 
-            "options": [{      // required for select tag options; also applies to multiselect checkboxes     
-                "label": "",       
-                "value": ""       
-            }],      
-            "table_select_table": “<table-name>”, // for single/multiselect dropdown where the options are from another table in database      
-            "table_select_search_column": "<column-name>", // column name of the table values in multiselect      
-            "table_select_join_column": "<column-name>", // the column name of the main table that is used to join with the search table     
-            "validation": {       // Set of validation parameters that can restrict the inputs      
-                "isRequired": "0 | 1",    // "1" if mandatory; throws an error if user does not enter a value but clicks submit     
-                "maxLength": 255,         // characters for text and textarea input fields
-                "minLength": 1,   
-                "types": ["image/png", "video/mp4", ... ],    // for restricting the file formats in file upload  
-                "min_size_in_kb": <min-file-size>,
-		"max_size_in_kb": <max-file-size>,        
-                "min_height_in_pixels":  <min_height>,    // min. resolution specification for images
-		"min_width_in_pixels":  <min_width>,   
-		"max_height_in_pixels":  <max_height>,    // max. resolution specification for images
-		"max_width_in_pixels":  <max_width>
-            },      
-            "sub_form_button_label": "", // This is the add sub form button label      
-            "hide_sub_form_button": true, // Do not show "add sub form" button      
-            "default_instances_count": 1, // Default sub form items to show, useful when the add sub form button is hidden       
-            "hide_instance_remove_button": true | false, // Disable removing existing sub form rows by hiding the close button; This is useful along with hide sub form button enabled     
-            "sub_form_table": {      
-                "name": "<table-name>" // sub form root table     
-            },      
-            "join_criteria_main_table_column": { // parent form root table join column      
-                "Field": "<column-name>"     
-            },     
-            "join_criteria_sub_table_column": { // sub form root table join column     
-                "Field": "<column-name>"     
-            },     
-            "sub_form_definition": {     
-                "inputs": [...], // sub form inputs defined here; Same as the parent form input conventions     
-                "unique_keys": [“<column-name>”] // Array of unique key columns of the sub form root table can be specified here     
-	}		     
-    }],     
-    "last_insert_id_key": "<column-name>", // Specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
-    "unique_keys":  ["<column-name>"], // Array of unique key columns of the main form root table can be specified here      
-    "submit_button_label": "<button-label>",  // Default value is "Submit" 
-    "label": "<form-heading>"  // Default value is "Form"
-    }        
-} 
-```   
-      
+Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
+
 ## Example of Using Forms in Applications ##   
 For an application like a meeting scheduling portal, forms can be used to create contacts, groups and meeting requests. Forms can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled.       
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
@@ -191,67 +119,7 @@ min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
 left join `groups_contacts` gc on gc.contact_id = c.id
 group by c.id
 ```
-
-```css
-{
-    "datasource_id": "1",
-    "is_public": {
-        "status": false
-    },
- "css_definition": "",   
-    "columns": {
-        "group_id": {
-            "hidden": true
-        },
-        "contact_id": {
-            "hidden": true
-        },
-        "Name": {
-            "links": [{
-                "type": "form",
-                "id": "35",
-                "args": [{
-                    "report_column": "contact_id",
-                    "name": "id"
-                }, {
-                    "report_column": "Email",
-                    "name": "email"
-                }],
-                "label": "Edit Contact"
-            }]
-        },
-        "Total Groups": {
-            "text-align": "right",
-            "dropdown-menu-align": "right",
-            "links": [{
-                "type": "report",
-                "id": "31",
-                "args": [{
-                    "report_column": "contact_id",
-                    "name": "contact_id"
-                }],
-                "label": "View Groups"
-            }]
-        }
-    },
-    "filter_menu": [{
-        "column": "Name"
-    }, {
-        "column": "Email",
-        "report_id": 49,
-        "name": "email"
-    }, {
-        "column": "Phone"
-    }, {
-        "column": "Total Groups"
-    }],
-    "report_links": [{  
-        "type": "form",
-        "id": "35",
-        "label": "Add a Contact"
-    }]
-}
-```     
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON for this report.     
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using any standard Javascript or Python libraries for data visualization, Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. One such example is an area chart with Chart.js that depicts datasets from three different data sources, viz. the in-house MySQL, a remote MySQL and a fully-managed MySQL database instance accross different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to a form or an HTML.   
@@ -261,7 +129,8 @@ Pie chart
 Live stats on a landing page      
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn. Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
+Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn.     
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
 It is possible to restrict data input into a table using the following features of a form:  
@@ -288,61 +157,28 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
 
 ## JSON body of a Dashboard  <a name="dashboard"></a>
-A dashboard is an aggregation of forms and multiple reports with global filters.  
+A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM application, analytics dashboard, a simple web application or a landing page for a product or service.     
+
+![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*6zfcgBDBd-2NzatGOMYjrg.png)    
 
 Important points to remember while creating a dashboard:     
 1. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation amongst the reports.
 3. It can have its own css definition which will override the css of the individual reports, nested forms within reports and embedded forms.   
 Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, 
-https://app.cliosight.com/app/dashboards/47/show?noNavbar=true
-
-A dashboard in Cliosight is basically a UI container for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM dashboard, a simple web application or a regular landing page for a product or service.    
+https://app.cliosight.com/app/dashboards/47/show?noNavbar=true   
     
 Below is an example.     
-[Meeting portal](https://app.cliosight.com/app/forms/42/show?noNavbar=true)   
+![Cliosight Meeting dashboard](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
+
+Click ![here]() to view the JSON for this implementation.    
 
 ## Example of a Dashboard <a name="example_dashboard"></a>  
 
-```css
-{
-    "css_definition": "#mc_dashboard_47 .bg-primary, #mc_dashboard_47 .btn-primary {background-image: linear-gradient(45deg, rgb(29, 224, 153), rgb(29, 200, 205));}",
-    "reports": [{     // list of reports
-        "id": "68",
-        "cols": 6
-    }, {
-        "id": "37",
-        "cols": 6
-    }, {
-        "id": "33",
-        "cols": 12
-    }],
-    "filter_menu": [{ 
-        "report_id": 28, // Report to be used for the filter menu
-        "label": "Group",
-        "column": "id", 
-        "column_label": "Name",  // Column name in the report
-        "name": "group_id",	// The column name in the reports in the dashboard that is common to the filter report
-        "reports": {     // The reports in this dashboard where filters will be applied
-            "37": {
-                "report_column": "group_id",
-                "name": "group_id",
-                "label": "Group",
-                "label_column": "Name"
-            },
-            "68": {
-                "report_column": "group_id",
-                "name": "group_id",
-                "label": "Group",
-                "label_column": "Name"
-            }
-        }
-    }]
-}
-  ```
+
 
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger is the simplest way to taking action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing ability to UI elements making them full-fledged cloud-hosted web applications.     
+A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
 ```css
 {        
