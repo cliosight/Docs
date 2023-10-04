@@ -1,0 +1,70 @@
+{   
+   "datasource_id": <int-datasource-id>,      // Mandatory; to identify the datasource   
+   "table": {    
+        "name": "<main-table-name>"          // Mandatory; This is the root table of the form      
+    },       
+   "sub_form_definition": {      
+        "is_public": {       
+            "status": <boolean>              // Default value is false; Indicates if the form is available without login      
+        },       
+   "css_definition": "",                     // uglified css for the form or the hyperlink             
+        "inputs": [{      
+            "cols": <values 1-12>,           // Optional; Sets column width in the page; Default value is 12      
+            "rules": [{                      // show/hide current input based on the rules and action properties     
+                "column": "<column-name>",   // Matching column[‘Field’] value of a sibling input     
+                "value": "<input-value>"     // If value entered or selected matches the specified value     
+            }],     
+            "action": "show",    
+            "show": true | false,            // default action value is false    
+            "input_category": "field | multiselect | form",         // Mandatory; form is for supporting sub-form definition;     
+            "column": {    
+                "Field": "<column-name>"     // column of the main table or the populated values via "multiselect" in input category     
+            },
+            "pre_html": "",                  // HTML code snippet above the element  
+            "post_html":"",                  // HTML code snippet below the element      
+            "input_type": "text | select | radio | checkbox | file | hidden",       // hidden columns can be used for categorizing the records   
+            "placeholder": "", 
+            "input_label": "", 
+            "options": [{                    // required for select tag options; also applies to multiselect checkboxes     
+                "label": "",       
+                "value": ""       
+            }],      
+            "table_select_table": “<table-name>”,        // for single or multiselect dropdown where the options are from another table in the database      
+            "table_select_search_column": "<column-name>",         // column name of the table values in multiselect      
+            "table_select_join_column": "<column-name>",           // the column name of the main table that is used to join with the search table     
+            "validation": {                  // Set of validation parameters that can restrict the inputs      
+                "isRequired": "0 | 1",       // "1" if the field is required; throws an error if user does not enter a value and clicks submit     
+                "maxLength": 255,            // Max. character length for text and textarea input fields
+                "minLength": 1,   
+                "types": ["image/png", "video/mp4", ... ],      // for restricting the file formats in file upload  
+                "min_size_in_kb": <min-file-size>,
+		            "max_size_in_kb": <max-file-size>,        
+                "min_height_in_pixels":  <min_height>,          // Min. resolution specification for images
+		            "min_width_in_pixels":  <min_width>,   
+		            "max_height_in_pixels":  <max_height>,          // Max. resolution specification for images
+		            "max_width_in_pixels":  <max_width>
+            },      
+            "sub_form_button_label": "",       // This is the add sub form button label      
+            "hide_sub_form_button": true,      // Do not show "add sub form" button      
+            "default_instances_count": 1,      // Default sub form items to show, useful when the add sub form button is hidden       
+            "hide_instance_remove_button": true | false,     // Disable removing existing sub form rows by hiding the close button; This is useful along with hide sub form button enabled     
+            "sub_form_table": {      
+                "name": "<table-name>"         // sub form root table     
+            },      
+            "join_criteria_main_table_column": {       // parent form root table join column      
+                "Field": "<column-name>"     
+            },     
+            "join_criteria_sub_table_column": {        // sub form root table join column     
+                "Field": "<column-name>"     
+            },     
+            "sub_form_definition": {     
+                "inputs": [...],               // sub form inputs defined here; Same as the parent form input conventions     
+                "unique_keys": [“<column-name>”]       // Array of unique key columns of the sub form root table can be specified here     
+	}		     
+    }],     
+    "last_insert_id_key": "<column-name>",     // Specify this column if its value is returned as the lastInsertId value; Example, auto_increment key in mysql.     
+    "unique_keys":  ["<column-name>"],         // Array of unique key columns of the main form root table can be specified here      
+    "submit_button_label": "<button-label>",   // Default value is "Submit" 
+    "label": "<form-heading>"                  // Default value is "Form"
+    }        
+} 
