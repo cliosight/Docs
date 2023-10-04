@@ -56,7 +56,8 @@ Example of a datasource definition:
     }
 }
 ```    
-   
+Watch this video for creating a datasource.     
+
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows.     
 Types of users:     
@@ -74,17 +75,19 @@ While some meeting actions can be automated through triggers, there are other as
 SQL and JSON are the only two types of syntaxes used in Cliosight for configuring widgets. Apart from this, the "pre-html" and "post-html" tags allow users to embed an HTML inside a form, report or dashboard for adding extra elements like images, videos, text or hyperlinks. This makes it easy for users to host any of these UI elements like a conventional web page.      
 
 ![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)  
-![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)
+![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)  
+
+Detailed explanation for using AI tools within Cliosight is given in this video.    
   
 ## JSON body of a Form <a name="form"></a>
 A form can be created and shared independently or used within another application or web page. It can have sub-forms and hyperlinks for reports. It supports all basic input elements of a conventional HTML5 form. This eliminates the need for a database when hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that is similar to a UI container, any number of forms and reports can be grouped together.      
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget that is similar to a UI container, any number of forms and reports can be grouped together. This is explained in the coming sections.    
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
 ## Example of Using Forms in Applications ##   
-For an application like a meeting scheduling portal, forms can be used to create contacts, groups and meeting requests. Forms can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled.       
+For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later will provide this capability.          
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)     
@@ -103,9 +106,11 @@ The components are:
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect values.        
-2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous queries, leading to countless report and filter combinations.          
+2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous sql queries, leading to countless report and filter combinations.          
 A report can be embedded using a URL in the format given below:
-https://app.cliosight.com/app/reports/29/show?noNavbar=true     
+https://app.cliosight.com/app/reports/29/show?noNavbar=true
+
+Detailed explanation for creating a report is given in this video.    
 
 ### Example of a Report ###   
 Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the total number of groups that they are a part of.    
@@ -128,9 +133,13 @@ Area chart with different datasources
 Pie chart     
 Live stats on a landing page      
 
+Click here to watch a video explaining the configurations and python code examples.   
+
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib and seaborn.     
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
+
+Detailed explanation for using reports in Python is given in this video.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
 It is possible to restrict data input into a table using the following features of a form:  
@@ -189,6 +198,8 @@ A trigger enables action on data and insights. Since we are mostly dealing with 
   	 "datasourtce_id": 1     
     }        
 ```
+Detailed explanation for creating and using a trigger is given in this video.      
+
 ## Example of a Trigger ##
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
