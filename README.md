@@ -59,7 +59,8 @@ Example of a datasource definition:
 Watch this video for creating a datasource.     
 
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows.     
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows.   
+
 Types of users:     
 1. **Admin** - Allowed to perform all possible actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
