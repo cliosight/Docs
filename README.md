@@ -164,10 +164,8 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
 Important points to remember while creating a dashboard:     
 1. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation amongst the reports.
-3. It can have its own css definition which will override the css of the individual reports, nested forms within reports and embedded forms.   
-Just like a form and a report, a dashboard can be shared using a URL in a similar format. For instance, 
-https://app.cliosight.com/app/dashboards/47/show?noNavbar=true   
-    
+3. It can have its own css definition which will override the css of the individual reports, nested forms within reports and embedded forms. Just like a form or a report, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
+        
 Below is an example.     
 ![Cliosight Meeting dashboard](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
 
