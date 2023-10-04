@@ -21,7 +21,8 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 - [JSON body of a Dashboard](#dashboard)
 - [JSON body of a Trigger](#trigger)     
 - [JSON body of a Job](#job)       
-- [Email Notification](#email)
+- [Email Notification](#email)      
+- [Cliosight API](#api)       
 - [JSON body of a Workflow](#workflow)
 - [Example of a Workflow](#workflowexamples)
 - [Creating Workflows and Widgets in Jupyter Notebook](#python)        
@@ -220,7 +221,9 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## Email Notification <a name="email"></a>    
 
-### Sending Email Notifications on Events <a name="trigger_email"></a>
+### Sending Email Notifications on Events <a name="trigger_email"></a>   
+
+## Cliosight API for automation <a name="api"></a>    
 
 ## JSON body of a Workflow <a name="workflow"></a>
 
