@@ -79,13 +79,16 @@ Detailed explanation for using AI tools within Cliosight is given in this video.
   
 ## JSON body of a Form <a name="form"></a>
 A form can be created and shared independently or used within another application or web page. It can have sub-forms. It supports all basic input elements of a conventional HTML5 form. This eliminates the need for a database when hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
+
 With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget which is similar to a UI container, any number of forms and reports can be grouped together. This is explained in the coming sections.    
+
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
 ## Example of Using Forms in Applications ##   
-For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later will provide this capability.          
+For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later will provide this capability.    
+
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)     
