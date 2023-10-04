@@ -169,7 +169,7 @@ India:
 ## JSON body of a Dashboard  <a name="dashboard"></a>
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, web application or a landing page.     
 
-![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*6zfcgBDBd-2NzatGOMYjrg.png)    
+![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*s_-xMPvwCf5bAE35PJOqdw.png)    
 
 Important points to remember while creating a dashboard:     
 1. Global filters should be applied first as they take precedence over the report filters.  
