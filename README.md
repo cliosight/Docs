@@ -167,12 +167,9 @@ Important points to remember while creating a dashboard:
 3. It can have its own css definition which will override the css of the individual reports, nested forms within reports and embedded forms. Just like a form or a report, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
         
 Below is an example.     
-![Cliosight Meeting dashboard](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
+[Cliosight Meeting dashboard](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
 
-Click ![here]() to view the JSON for this implementation.    
-
-## Example of a Dashboard <a name="example_dashboard"></a>  
-
+Click ![here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this implementation.    
 
 
 ## JSON body of a Trigger <a name="trigger"></a>   
