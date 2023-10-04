@@ -129,7 +129,7 @@ Pie chart
 Live stats on a landing page      
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks are plotted on a graph using libraries like matplotlib and seaborn.     
+Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib and seaborn.     
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creation, updation and sharing of private datasets more secure for collaborative applications.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
@@ -157,24 +157,26 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
 
 ## JSON body of a Dashboard  <a name="dashboard"></a>
-A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to host a CRM application, analytics dashboard, a simple web application or a landing page for a product or service.     
+A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, web application or a landing page.     
 
 ![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*6zfcgBDBd-2NzatGOMYjrg.png)    
 
 Important points to remember while creating a dashboard:     
 1. Global filters should be applied first as they take precedence over the report filters.  
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation amongst the reports.
-3. It can have its own css definition which will override the css of the individual reports, nested forms within reports and embedded forms. Just like a form or a report, a dashboard can be shared using a URL in a similar format. For instance,   
+3. It can have its own css definition which will override the css of the individual reports, nested forms and reports within those embedded reports and embedded forms. Just like a form or a report, a dashboard can be shared using a URL in a similar format. For instance,   
 https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
         
 Below is an example.     
-[Cliosight Meeting dashboard](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
 
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this implementation.    
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this implementation.   
+
+Detailed explanation for creating a dashboard is given in this video.    
 
 
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
+A trigger enables action on data and insights. Since we are mostly dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
 ```css
 {        
@@ -214,7 +216,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
 ## Example of a Workflow <a name="workflowexamples"></a>    
 
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
-Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the framework that Cliosight has provided. Forms, pages, reports and dashboards can be created instantly through APIs that return a link to the widget.  
+Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through APIs that return a link to the widgets.     
 
 
 
