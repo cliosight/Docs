@@ -64,8 +64,7 @@ Example of a datasource definition:
 Watch this video for creating a datasource.     
 
 ## Creating Database Tables for each Datasource <a name="tables"></a>     
-By executing a "CREATE TABLE" SQL query, a database table can be created for the configured datasources. Through this interface, admin users can execute all possible SQL queries on the tables directly.   
-
+Through this interface, admin users can execute all possible SQL queries on the tables directly. By executing a "CREATE TABLE" SQL query, a database table can be created for the configured datasources. 
 
 ## The building blocks of Cliosight ## 
 
