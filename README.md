@@ -104,7 +104,7 @@ The components are:
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-Click here to understand the detailed use of each JSON tag in a form explained through these examples.      
+Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
 
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
