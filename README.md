@@ -136,17 +136,23 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using any standard Javascript or Python libraries for data visualization, Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
 
-One such example is an area chart with Chart.js that depicts datasets from three different data sources, viz. the in-house MySQL, a remote MySQL and a fully-managed MySQL database instance accross different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to a form or an HTML.     
+One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. the in-house MySQL, remote MySQL and fully-managed MySQL database instances across different cloud platforms. 
+
+![multiple_datasources](https://miro.medium.com/v2/resize:fit:720/format:webp/1*DHi3EsibkdL0mRytmXhoFw.png)  
+
+Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to an HTML. Visit the [API](#api) section for more.   
+
+![pie_chart](https://miro.medium.com/v2/resize:fit:720/format:webp/1*vGRdfJfKoeByv6l5k7VVMg.png)      
 
 Below are the mentioned examples:      
 Area chart with different datasources      
 Pie chart     
 Live stats on a landing page      
 
-Click here to watch a video explaining the configurations and python code examples.   
+Click here to watch a video explaining the configurations and Python code examples.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to run experiments. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed or accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using libraries like matplotlib.     
+Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed or accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.     
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
