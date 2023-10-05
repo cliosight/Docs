@@ -37,9 +37,11 @@ Cliosight is a low-code platform that offers addition of various leading databas
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on a users' cloud VMs. Cloud database instances in Google Cloud SQL, Amazon RDS and Azure SQL Server are also supported. Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on a users' cloud VMs or database instances in Google Cloud SQL, Amazon RDS and Azure SQL Server. 
 
-One other advantage of being a paid user is the significantly faster upload speed for large volumes of data. This is made possible by dedicating resources, ensuring efficient transfer and processing. Data import option provided with forms will allow uploading bulk data from CSV files. Data from a report can be downloaded or exported to other datasources.       
+Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
+
+One other advantage of being a paid user is dedicated resources, ensuring faster data transfer and processing.
 
 Example of a datasource definition:      
 ```json     
@@ -80,7 +82,7 @@ Detailed explanation for using AI tools within Cliosight is given in this video.
 ![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)  
   
 ## JSON body of a Form <a name="form"></a>
-A form can be created and shared independently or used within another application or web page. It can have sub-forms. It supports all basic input elements of a conventional HTML5 form. This eliminates the need for a database when hosted using cloud serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
+A form can be created and shared independently or used within another application or web page. It can have sub-forms. It supports all basic input elements of a conventional HTML5 form. This eliminates the need for a database when hosted within an app with serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
 
 With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget which is similar to a UI container, any number of forms and reports can be grouped together. This is explained in the coming sections.    
 
