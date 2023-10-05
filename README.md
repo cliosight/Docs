@@ -75,7 +75,7 @@ Through this interface, Admin users can execute all possible SQL queries on the 
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted by the admin. An example of this is controlled access to forms and reports based on the geographic location of users.       
 
 Types of users:     
-1. **Admin** - Allowed to perform all possible actions within an account.          
+1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
 3. Admin-Minor - All permissions for forms, reports, dashboards, triggers and workflows. No access to datasources, users/groups and tables.     
      
