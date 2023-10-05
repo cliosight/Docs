@@ -91,7 +91,7 @@ For an application like a meeting scheduler, forms can be used to create contact
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
-[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)     
+[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
 ### JSON tags for a Section of the Meeting Scheduler Form <a name="meetings_form"></a>     
 The components are:   
@@ -103,6 +103,7 @@ The components are:
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
+Click here to understand the detailed use of each JSON tag in a form explained through these examples.      
 
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
@@ -231,7 +232,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ### Sending Email Notifications on Events <a name="trigger_email"></a>   
 
-## Cliosight API for automation <a name="api"></a>    
+## Cliosight API <a name="api"></a>    
 
 ## JSON body of a Workflow <a name="workflow"></a>
 
