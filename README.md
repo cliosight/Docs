@@ -13,6 +13,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [SQL Interface for Structured Data](#sql)
 - [Support for Multiple Data Sources](#datasources)
 - [User Permissions and Access Control](#acl)
+- [Creating Database Tables for each Datasource](#tables)    
 - [JSON body of a Form](#form)
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
@@ -62,8 +63,17 @@ Example of a datasource definition:
 ```    
 Watch this video for creating a datasource.     
 
+## Creating Database Tables for each Datasource <a name="tables"></a>     
+By executing a "CREATE TABLE" SQL query, a database table can be created for the configured datasources. Through this interface, admin users can execute all possible SQL queries on the tables directly.   
+
+
+## The building blocks of Cliosight ## 
+
+![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)     
+![worflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)   
+
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions such as data upload, viewing, and editing. An example of this control is restricting access to forms and reports based on the geographic location of users. Furthermore, administrators can designate users with the ability to create and execute triggers and workflows.   
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted by the admin. An example of this is controlled access to forms and reports based on the geographic location of users.       
 
 Types of users:     
 1. **Admin** - Allowed to perform all possible actions within an account.          
@@ -74,17 +84,16 @@ Types of users:
 
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used to configure all UI and automation elements.     
 1. SQL query generator for creating reports, and    
-2. JSON body generator for all   
+2. JSON body generator for all types of UI and processing elements.   
 
 Detailed explanation for using AI tools within Cliosight is given in this video.    
 
-![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)  
-![workflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)  
-  
 ## JSON body of a Form <a name="form"></a>
-A form can be created and shared independently or used within another application or web page. It can have sub-forms. It supports all basic input elements of a conventional HTML5 form. This eliminates the need for a database when hosted within an app with serverless infrastructure like Google App Engine, Azure App Service, or AWS Amplify.      
+A form is the data input method to populate tables created with the table creation interface. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. With a dashboard widget which is similar to a UI container, any number of forms and reports can be grouped together. This is explained in the coming sections.    
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button.  This eliminates the need for a database when used within an app hosted on a cloud VM or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. 
+
+A dashboard widget which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section.    
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
     
@@ -122,9 +131,7 @@ https://app.cliosight.com/app/reports/29/show?noNavbar=true
 Detailed explanation for creating a report is given in this video.    
 
 ### Example of a Report ###   
-Contacts and Groups report in the meeting application shows all contacts along with the total number of groups.      
-
-[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true)         
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
 
 SQL Query for this report:      
 ``` sql
@@ -134,12 +141,12 @@ min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
 left join `groups_contacts` gc on gc.contact_id = c.id
 group by c.id
 ```
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON for this report.     
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.     
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using any standard Javascript or Python libraries for data visualization, Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript or Python libraries for data visualization like Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
 
-One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. the in-house MySQL, remote MySQL and fully-managed MySQL database instances across different cloud platforms. 
+One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. the in-house MySQL, remote MySQL and fully-managed MySQL database instance across different cloud platforms - GCP, AWS and Azure.   
 
 ![multiple_datasources](https://miro.medium.com/v2/resize:fit:720/format:webp/1*DHi3EsibkdL0mRytmXhoFw.png)  
 
@@ -147,15 +154,17 @@ Another example is that of the common pie chart. We can also display live figure
 
 ![pie_chart](https://miro.medium.com/v2/resize:fit:720/format:webp/1*vGRdfJfKoeByv6l5k7VVMg.png)      
 
-Below are the mentioned examples:      
+Below is the live demo for the above mentioned examples:        
 Area chart with different datasources      
 Pie chart     
 Live stats on a landing page      
 
-Click here to watch a video explaining the Python code examples.   
+Click here to watch a video explaining the Python and Javascript code.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed and accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.     
+Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
+
+Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
@@ -168,7 +177,9 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
+Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. 
+
+As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
@@ -188,7 +199,7 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
 
 ## JSON body of a Dashboard  <a name="dashboard"></a>
-A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, single page web application or landing page.     
+A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, a single page web application or a landing page.     
 
 ![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*s_-xMPvwCf5bAE35PJOqdw.png)    
 
