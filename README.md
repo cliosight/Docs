@@ -118,7 +118,8 @@ https://app.cliosight.com/app/reports/29/show?noNavbar=true
 Detailed explanation for creating a report is given in this video.    
 
 ### Example of a Report ###   
-Contacts and Groups report in the meeting management portal shows all contacts with relevant details along with the total number of groups that they are a part of.    
+Contacts and Groups report in the meeting application shows all contacts along with the total number of groups.      
+
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true)         
 
 SQL Query for this report:      
