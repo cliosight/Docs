@@ -6,6 +6,7 @@
 ## Product Overview                   
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.     
+Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
 
 ## Table of contents
 
