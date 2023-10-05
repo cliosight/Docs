@@ -111,7 +111,7 @@ While a form is the data input interface, a report is the output of data analysi
 
 1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect values.
 
-2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous sql queries, leading to countless report and filter combinations.
+2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
 A report can be embedded using a URL in the format given below:
 https://app.cliosight.com/app/reports/29/show?noNavbar=true
@@ -149,7 +149,7 @@ Area chart with different datasources
 Pie chart     
 Live stats on a landing page      
 
-Click here to watch a video explaining the configurations and Python code examples.   
+Click here to watch a video explaining the Python code examples.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed or accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.     
