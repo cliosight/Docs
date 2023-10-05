@@ -146,9 +146,9 @@ Live stats on a landing page
 Click here to watch a video explaining the configurations and python code examples.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models using free and open-source datasets from various data science platforms like Kaggle. These are typically downloaded as CSV files or stored locally on the hard disk of the personal computer, cloud VM or serverless infrastructure where Jupyter is installed and accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib.     
+Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to run experiments. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed or accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using libraries like matplotlib.     
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to datasources as new reports or as additional records for existing reports. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
 Detailed explanation for using reports in Python code is given in this video.      
 
