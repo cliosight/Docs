@@ -20,6 +20,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Ensuring Trustworthiness](#trust)
 - [Data Privacy and Security](#security)
 - [JSON body of a Dashboard](#dashboard)
+- [Support for custom domain](#domain)   
 - [JSON body of a Trigger](#trigger)     
 - [JSON body of a Job](#job)       
 - [Email Notification](#email)      
@@ -204,6 +205,8 @@ Below is an example.
 Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this example.   
 
 Detailed explanation for creating a dashboard is given in this video.    
+
+## Providing a Custom Domain Name to Widgets <a name="domain"></a>      
 
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
