@@ -208,8 +208,7 @@ Important points to remember while creating a dashboard:
    
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
 
-3. It can have its own css definition which will override the css of the constituent and nested forms and reports. Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance,   
-https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
+3. It can have its own css definition which will override the css of the constituent and nested forms and reports. Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
         
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
