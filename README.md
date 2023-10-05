@@ -1,5 +1,5 @@
 # Cliosight      
-**Building the best data-driven applications and presentations**    
+**Building the best data-centeric applications and presentations**    
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 
