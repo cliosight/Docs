@@ -20,7 +20,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Ensuring Trustworthiness](#trust)
 - [Data Privacy and Security](#security)
 - [JSON body of a Dashboard](#dashboard)
-- [Support for custom domain](#domain)   
+- [Support for Custom Domain Name](#domain)   
 - [JSON body of a Trigger](#trigger)     
 - [JSON body of a Job](#job)       
 - [Email Notification](#email)      
