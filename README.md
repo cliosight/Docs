@@ -206,7 +206,7 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.
 
 Detailed explanation for creating a dashboard is given in this video.    
 
-## Providing a Custom Domain Name to Widgets <a name="domain"></a>      
+## Custom Domain Name for a Widget <a name="domain"></a>      
 
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
