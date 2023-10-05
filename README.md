@@ -146,11 +146,11 @@ Live stats on a landing page
 Click here to watch a video explaining the configurations and python code examples.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic python coding can be used to test and train machine learning models using free and open-source datasets from various platforms, such as Kaggle. These are typically downloaded as CSV files and stored locally on the hard disk of the personal computer or VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib and seaborn.     
+Basic Python coding can be used to test and train machine learning models using free and open-source datasets from various platforms like Kaggle. These are typically downloaded as CSV files and stored locally on the hard disk of the personal computer or VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib and seaborn.     
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
-Detailed explanation for using reports in Python is given in this video.      
+Detailed explanation for using reports in Python code is given in this video.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
 It is possible to restrict data input into a table using the following features of a form:  
