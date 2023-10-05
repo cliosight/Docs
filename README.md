@@ -13,7 +13,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [SQL Interface for Structured Data](#sql)
 - [Support for Multiple Data Sources](#datasources)
 - [User Permissions and Access Control](#acl)
-- [Creating Database Tables for each Datasource](#tables)    
+- [Database Tables for each Datasource](#tables)    
 - [JSON body of a Form](#form)
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
@@ -38,7 +38,7 @@ Cliosight is a low-code platform that offers addition of various leading databas
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on a users' cloud VMs or database instances in Google Cloud SQL, Amazon RDS and Azure SQL Server. 
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or database instances in Google Cloud SQL, Amazon RDS and Azure SQL Server. 
 
 Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
 
@@ -63,8 +63,8 @@ Example of a datasource definition:
 ```    
 Watch this video for creating a datasource.     
 
-## Creating Database Tables for each Datasource <a name="tables"></a>     
-Through this interface, admin users can execute all possible SQL queries on the tables directly. By executing a "CREATE TABLE" SQL query, a database table can be created for the configured datasources. 
+## Database Tables for each Datasource <a name="tables"></a>     
+Through this interface, Admin users can execute all possible SQL queries on the tables directly. For instance, by executing a "CREATE TABLE" query, a database table can be created for the configured datasource.    
 
 ## The building blocks of Cliosight ## 
 
