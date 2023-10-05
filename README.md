@@ -152,9 +152,9 @@ Live stats on a landing page
 Click here to watch a video explaining the Python code examples.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed or accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.     
+Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Test datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed and accessed remotely. Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.     
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
 Detailed explanation for using reports in Python code is given in this video.      
 
@@ -185,7 +185,7 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
 
 ## JSON body of a Dashboard  <a name="dashboard"></a>
-A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element for forms and reports. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, web application or a landing page.     
+A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, single page web application or landing page.     
 
 ![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*s_-xMPvwCf5bAE35PJOqdw.png)    
 
@@ -193,20 +193,20 @@ Important points to remember while creating a dashboard:
 
 1. Global filters should be applied first as they take precedence over the report filters.
    
-2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation amongst the reports.
+2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
 
-3. It can have its own css definition which will override the css of the individual reports, nested forms and reports within those embedded reports and embedded forms. Just like a form or a report, a dashboard can be shared using a URL in a similar format. For instance,   
+3. It can have its own css definition which will override the css of the constituent and nested forms and reports. Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance,   
 https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
         
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
 
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this implementation.   
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this example.   
 
 Detailed explanation for creating a dashboard is given in this video.    
 
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger enables action on data and insights. Since we are mostly dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
+A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
 ```css
 {        
@@ -241,7 +241,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## Email Notification <a name="email"></a>    
 
-### Sending Email Notifications on Events <a name="trigger_email"></a>   
+### Sending Email Notification on Event <a name="trigger_email"></a>   
 
 ## Cliosight API <a name="api"></a>    
 
@@ -250,9 +250,9 @@ Detailed explanation for creating and using a trigger is given in this video.
 ## Example of a Workflow <a name="workflowexamples"></a>    
 
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
-Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. 
+Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
 
-Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the APIs that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.     
+Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.     
 
 
 
