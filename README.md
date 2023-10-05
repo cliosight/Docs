@@ -146,9 +146,9 @@ Live stats on a landing page
 Click here to watch a video explaining the configurations and python code examples.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Basic Python coding can be used to test and train machine learning models using free and open-source datasets from various platforms like Kaggle. These are typically downloaded as CSV files and stored locally on the hard disk of the personal computer or VM where Jupyter is installed or accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib and seaborn.     
+Common Python packages can be used to train and test machine learning models using free and open-source datasets from various data science platforms like Kaggle. These are typically downloaded as CSV files or stored locally on the hard disk of the personal computer, cloud VM or serverless infrastructure where Jupyter is installed and accessed remotely. They are processed, split, or merged according to the requirements. The results of analysis tasks can be dumped as a CSV file or plotted on a graph using libraries like matplotlib.     
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to various datasources as new reports or as additional records for existing reports. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization. The results of subsequent operations can be pushed back to datasources as new reports or as additional records for existing reports. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
 Detailed explanation for using reports in Python code is given in this video.      
 
@@ -159,7 +159,7 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate synthetic datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
+Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
@@ -243,7 +243,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in the production environment by training and testing with datasets of highest quality. 
 
-Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the APIs that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return a link to the widgets.     
+Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the APIs that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.     
 
 
 
