@@ -81,16 +81,16 @@ Types of users:
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
-To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used to configure all UI and automation elements.     
-1. SQL query generator for creating reports, and    
-2. JSON body generator for all types of UI and processing elements.   
+To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
+1. SQL query generator for tables and reports,     
+2. JSON body generator for configuring all elements.     
 
 Detailed explanation for using AI tools within Cliosight is given in this video.    
 
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables created with the table creation interface. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button.  This eliminates the need for a database when used within an app hosted on a cloud VM or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. 
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button.  This eliminates the need for a database when used within an app or web page hosted on a cloud VM or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. 
 
 A dashboard widget which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section.    
 
