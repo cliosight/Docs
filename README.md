@@ -66,7 +66,7 @@ Watch this video for creating a datasource.
 ## Database Tables for each Datasource <a name="tables"></a>     
 Through this interface, Admin users can execute all possible SQL queries on the tables directly. For instance, by executing a "CREATE TABLE" query, a database table can be created for the configured datasource.    
 
-## The building blocks of Cliosight ## 
+## The building blocks of Cliosight applications ## 
 
 ![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)     
 ![worflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)   
@@ -77,7 +77,7 @@ Cliosight ensures that each component created within its platform incorporates f
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. Admin-Minor - All permissions for the basic building blocks. No access to datasources, users/groups and tables.     
+3. Admin-Minor - All permissions for UI and automation elements. No access to datasources, users/groups and tables.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
