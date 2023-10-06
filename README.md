@@ -1,5 +1,5 @@
 # Cliosight      
-**Building the best data-centeric applications and presentations**    
+**Building the best data-centric applications and presentations**    
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
 
@@ -181,7 +181,7 @@ Reports created from restricted tables using one of more of the above methods, c
 As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders (VAEs).     
 
 ## Data Privacy and Security <a name="security"></a>       
-Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make the datasets compliant with the applicable regulations.    
+Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
 
 Some of the in-built features are:    
 1. [Role-based Access Control](#acl)
