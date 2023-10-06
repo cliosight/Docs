@@ -149,8 +149,6 @@ One such example is an area chart with Chart.js that depicts datasets from three
 
 Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to an HTML. Visit the [API](#api) section for more.   
 
-![pie_chart](https://miro.medium.com/v2/resize:fit:640/format:webp/1*fTGWuezmFVXfoZ5aB6_l7A.png)      
-
 Below is the live demo for the above mentioned examples:        
 Area chart with different datasources      
 Pie chart     
