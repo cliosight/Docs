@@ -83,7 +83,7 @@ Types of users:
 
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
-2. JSON body generator for configuring all elements.     
+2. JSON body generator for configuration.     
 
 Detailed explanation for using AI tools within Cliosight is given in this video.    
 
@@ -147,11 +147,9 @@ Tabular data from reports can be used to plot graphs and charts using the standa
 
 One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. the in-house MySQL, remote MySQL and fully-managed MySQL database instance across different cloud platforms - GCP, AWS and Azure.   
 
-![multiple_datasources](https://miro.medium.com/v2/resize:fit:720/format:webp/1*DHi3EsibkdL0mRytmXhoFw.png)  
-
 Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to an HTML. Visit the [API](#api) section for more.   
 
-![pie_chart](https://miro.medium.com/v2/resize:fit:720/format:webp/1*vGRdfJfKoeByv6l5k7VVMg.png)      
+![pie_chart](https://miro.medium.com/v2/resize:fit:640/format:webp/1*fTGWuezmFVXfoZ5aB6_l7A.png)      
 
 Below is the live demo for the above mentioned examples:        
 Area chart with different datasources      
