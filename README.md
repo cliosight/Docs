@@ -120,7 +120,7 @@ Click here to understand the detailed use of each JSON tag in a form explained t
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
-1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded values or column values of another report or table. They can also have multiselect values.
+1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded or column values of another report or table. They can also have a multiselect option.
 
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
