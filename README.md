@@ -64,7 +64,7 @@ Example of a datasource definition:
 Watch this video for creating a datasource.     
 
 ## Database Tables for a Datasource <a name="tables"></a>     
-Through Cliosight, Admin users can execute SQL queries on the databases. For existing schemas, it is a convinient way to connect and work with multiple local and remote databases replacing a conventional workbench.        
+Through Cliosight, Admin users can execute SQL queries on the databases. For existing schemas, it is a convinient way to connect with multiple local or remote databases replacing a conventional workbench.        
 
 ## The building blocks of Cliosight applications ## 
 
