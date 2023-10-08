@@ -13,7 +13,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [SQL Interface for Structured Data](#sql)
 - [Support for Multiple Datasources](#datasources)
 - [User Permissions and Access Control](#acl)
-- [Database Tables for a Datasource](#tables)    
+- [Running Queries on a Datasource](#tables)    
 - [JSON body of a Form](#form)
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
@@ -63,8 +63,8 @@ Example of a datasource definition:
 ```    
 Watch this video for creating a datasource.     
 
-## Database Tables for a Datasource <a name="tables"></a>     
-Through Cliosight, Admin users can execute SQL queries on the databases. For existing schemas, it is a convinient way to connect with multiple local or remote databases replacing a conventional workbench.        
+## Running Queries on a Datasource <a name="tables"></a>     
+Admin users can execute SQL queries on a configured database and it's tables. For existing schemas, it is a more convinient way to connect with multiple local and remote databases compared to a conventional workbench.        
 
 ## The building blocks of Cliosight applications ## 
 
