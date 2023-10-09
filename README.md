@@ -202,10 +202,10 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
 Important features of a dashboard:     
 
 1. Global filters need to be applied first as they take precedence over the report filters.
-   
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
-
-3. It has its own css definition which will override the css of the constituent and nested forms and reports. Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
+3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This can however be turned off in the JSON of the dashlets using a tag.
+       
+Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
         
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
