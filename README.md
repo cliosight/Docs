@@ -196,15 +196,15 @@ India:
 ## JSON body of a Dashboard  <a name="dashboard"></a>
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, a single page web application or a landing page.     
 
-![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*s_-xMPvwCf5bAE35PJOqdw.png)    
+![Dashboard](https://miro.medium.com/v2/resize:fit:720/format:webp/1*1_Shrf3iILzzFzVcxqtkbQ.png)    
 
-Important points to remember while creating a dashboard:     
+Important features of a dashboard:     
 
-1. Global filters should be applied first as they take precedence over the report filters.
+1. Global filters need to be applied first as they take precedence over the report filters.
    
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
 
-3. It can have its own css definition which will override the css of the constituent and nested forms and reports. Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=true       
+3. It has its own css definition which will override the css of the constituent and nested forms and reports. Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
         
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
