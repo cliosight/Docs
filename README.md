@@ -128,7 +128,7 @@ India:
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. This eliminates the need for a database when used within an app or web page hosted on a cloud VM, containerized application or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later.    
+With the pre and post HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. This eliminates the need for a database when used within an app or a web page hosted on a cloud VM, container or serverless infrastructure like Kubernetes, Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later.    
 
 A dashboard which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested forms for editing existing records as explained in the section for creating [Reports](#report).        
 
