@@ -38,7 +38,7 @@ Cliosight is a low-code platform that offers addition of various leading databas
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or database instances in Google Cloud SQL, Amazon RDS and Azure SQL Server. 
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
 
 Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
 
@@ -72,12 +72,12 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 ![worflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)   
 
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted by the admin. An example of this is controlled access to forms and reports based on the geographic location of users.       
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted. An example of this is controlled access to forms and reports based on the geographic location of users.       
 
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. Admin-Minor - All permissions for UI and automation elements. No access to datasources, users/groups and tables.     
+3. Admin-Minor - All permissions for UI and automation components. No access to datasources, users/groups and tables.     
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -88,11 +88,11 @@ To provide a better user experience through the use of AI, we have added code ge
 Detailed explanation for using AI tools within Cliosight is given in this video.    
 
 ## JSON body of a Form <a name="form"></a>
-A form is the data input method to populate tables created with the table creation interface. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
+A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button.  This eliminates the need for a database when used within an app or web page hosted on a cloud VM or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. 
+With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. This eliminates the need for a database when used within an app or web page hosted on a cloud VM, containerized application or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later.    
 
-A dashboard widget which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section.    
+A dashboard which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested forms for editing existing records as explained in the section for creating [Reports](#report).        
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
     
@@ -203,7 +203,7 @@ Important features of a dashboard:
 
 1. Global filters need to be applied first as they take precedence over the report filters.
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
-3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This can however be turned off in the JSON of the dashlets using a tag.
+3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature.   
        
 Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
         
