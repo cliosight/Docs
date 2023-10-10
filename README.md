@@ -34,8 +34,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational databases. As we continue to evolve, we plan to expand our compatibility to various NoSQL cloud databases and distributed ledgers.   
 
-![datastorages](https://miro.medium.com/v2/resize:fit:720/format:webp/1*r42HqHgUxlRpbFLr1PZtLg.png)    
-![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MQ_QTZ0CGrNoiIe3y8ePgA.png)
+![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
 ## Support for Multiple Data Sources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
