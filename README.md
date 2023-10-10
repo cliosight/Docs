@@ -86,11 +86,11 @@ Types of users:
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute SQL queries on a configured database and it's tables. For existing schemas, it is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
 
-## The building blocks of Cliosight applications ## 
+## The building blocks of a Cliosight applications ## 
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
-### [Forms](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Reports](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboards](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Triggers and Jobs](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#Workflow)          
+### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#Workflow)          
 
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -121,8 +121,7 @@ India:
 
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
-# Form
-## JSON body of a Form <a name="form"></a>
+# Form     
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
 With the pre and post HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. This eliminates the need for a database when used within an app or a web page hosted on a cloud VM, container or serverless infrastructure like Kubernetes, Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later.    
@@ -130,6 +129,8 @@ With the pre and post HTML JSON tags, a form can function like a web page except
 A dashboard which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested forms for editing existing records as explained in the section for creating [Reports](#report).        
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
+
+## JSON body of a Form <a name="form"></a>
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
@@ -152,18 +153,18 @@ The components are:
 
 Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
 
-# Report
-## JSON body of a Report <a name="report"></a> 
+# Report     
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
 1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded or column values of another report or table. They can also have a multiselect option.
-
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
 A report can be embedded using a URL in the format given below:
 https://app.cliosight.com/app/reports/29/show?noNavbar=true
 
-Detailed explanation for creating a report is given in this video.    
+Detailed explanation for creating a report is given in this video.        
+
+## JSON body of a Report <a name="report"></a> 
 
 ## Example of a Report <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
@@ -212,8 +213,7 @@ Reports created from restricted tables using one of more of the above methods, c
 
 As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
 
-# Dashboard      
-## JSON body of a Dashboard  <a name="dashboard"></a>
+# Dashboard       
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*AsGGYWwgE718szC1BVeh4A.png)   
@@ -228,6 +228,8 @@ Just like the previous two types of widgets, a dashboard can be shared using a U
         
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
+
+## JSON body of a Dashboard  <a name="dashboard"></a>
 
 Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this example.   
 
