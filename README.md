@@ -97,6 +97,8 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 ### [Triggers and Jobs](#trigger) for automation.    
 ----------------------------------
 ### [Workflow](#workflow) for creating routines of tasks involving widgets.    
+----------------------------------     
+
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -127,6 +129,8 @@ India:
 
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
+# Forms
+--------
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
