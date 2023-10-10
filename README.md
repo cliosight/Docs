@@ -38,7 +38,7 @@ Automation
 - [JSON body of a Job](#job)        
 - [JSON body of a Workflow](#Workflow)
 - [Example of a Workflow](#workflowexamples)
-- [Creating Workflows and Widgets in Jupyter Notebook](#python)
+- [Using Workflows in Jupyter Notebook](#python)
 
 API   
 - [Cliosight API](#api)      
