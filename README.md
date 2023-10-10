@@ -1,7 +1,7 @@
 # Cliosight      
 **Building the best data-centric applications and presentations**    
 
-![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*HsRqxET_JE0b8kRq3P4OOg.png)  
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*P9ATHw_hA5fRkWgOCQBeRw.png)  
 
 ## Product Overview                   
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
