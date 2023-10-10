@@ -88,7 +88,7 @@ Types of users:
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute SQL queries on a configured database and it's tables. For existing schemas, it is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
 
-## The building blocks of a Cliosight applications ## 
+## The building blocks of a Cliosight application ## 
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
