@@ -89,7 +89,7 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
-### 1. [Forms](#form)       2. [Reports](#report)       3. [Dashboards](#dashboard)      4. [Triggers and Jobs](#trigger)       5. [Workflow](#Workflow)          
+### [Forms](#form)        [Reports](#report)        [Dashboards](#dashboard)       [Triggers and Jobs](#trigger)       [Workflow](#Workflow)          
 
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
