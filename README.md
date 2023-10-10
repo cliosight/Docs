@@ -8,36 +8,46 @@ A detailed explanation of datasources, forms, reports, dashboards, triggers and 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.     
 Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
 
-## Table of contents
+## Table of contents    
 
+Basic Architecture
 - [SQL Interface for Structured Data](#sql)
 - [Support for Multiple Datasources](#datasources)
 - [User Permissions and Access Control](#acl)
 - [Running Queries on a Datasource](#tables)
-- [Leveraging Automation and AI Components](#ai)          
+- [Leveraging Automation and AI Components](#ai)
+- [Data Privacy and Security](#security)
+- [Email Notification](#email)    
+- [Support for Custom Domain Name](#domain)      
+  
+Forms
 - [JSON body of a Form](#form)
+- [An Example of Using Forms](#form_example)
+- [JSON tags of a Section of the Meeting Scheduler Form](#meeting_form)     
+
+Reports    
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
 - [Using Reports in Jupyter Notebook](#jupyter)
 - [Ensuring Trustworthiness](#trust)
-- [Data Privacy and Security](#security)
 - [JSON body of a Dashboard](#dashboard)
-- [Support for Custom Domain Name](#domain)   
+
+Automation   
 - [JSON body of a Trigger](#trigger)     
-- [JSON body of a Job](#job)       
-- [Email Notification](#email)      
-- [Cliosight API](#api)       
+- [JSON body of a Job](#job)        
 - [JSON body of a Workflow](#workflow)
 - [Example of a Workflow](#workflowexamples)
-- [Creating Workflows and Widgets in Jupyter Notebook](#python)        
+- [Creating Workflows and Widgets in Jupyter Notebook](#python)
 
+API   
+- [Cliosight API](#api)      
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational databases. As we continue to evolve, we plan to expand our compatibility to various NoSQL cloud databases and distributed ledgers.   
 
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
-## Support for Multiple Data Sources <a name="datasources"></a>
+## Support for Multiple Datasources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
 
 Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
@@ -79,9 +89,13 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
 ### [Forms](#form) for data input.    
+----------------------------------
 ### [Reports](#report) for storing views.    
+----------------------------------  
 ### [Dashboards](#dashboard) for a unified view of widgets along with the option of adding HTML.    
+----------------------------------
 ### [Triggers and Jobs](#trigger) for automation.    
+----------------------------------
 ### [Workflow](#workflow) for creating routines of tasks involving widgets.    
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
@@ -91,6 +105,27 @@ To provide a better user experience through the use of AI, we have added code ge
 2. JSON body generator for configuration.     
 
 Detailed explanation for using AI tools within Cliosight is given in this video.    
+
+## Data Privacy and Security <a name="security"></a>       
+Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
+
+Some of the in-built features are:    
+1. [Role-based Access Control](#acl)
+2. Secure protocols for data and file transfer like HTTPS and SFTP only.
+3. Automatic removal of personal information from data.     
+4. Masking sensitive information with queries.      
+5. Logs for tracking access and updates made on a table.
+   
+EU and USA:   
+[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
+
+India:     
+[The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
+[The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
+
+## Email Notification <a name="email"></a>    
+
+## Custom Domain Name for a Widget <a name="domain"></a>      
 
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
@@ -103,14 +138,14 @@ The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=tr
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
-## Example of Using Forms in Applications ##   
+## An Example of Using Forms ##   
 For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later will provide this capability.    
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-### JSON tags for a Section of the Meeting Scheduler Form <a name="meetings_form"></a>     
+### JSON tags of a Section of the Meeting Scheduler Form <a name="meetings_form"></a>     
 The components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
@@ -179,24 +214,7 @@ It is possible to restrict data input into a table using the following features 
 
 Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. 
 
-As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).     
-
-## Data Privacy and Security <a name="security"></a>       
-Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
-
-Some of the in-built features are:    
-1. [Role-based Access Control](#acl)
-2. Secure protocols for data and file transfer like HTTPS and SFTP only.
-3. Automatic removal of personal information from data.     
-4. Masking sensitive information with queries.      
-5. Logs for tracking access and updates made on a table.
-   
-EU and USA:   
-[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
-
-India:     
-[The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
-[The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)      
+As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).      
 
 ## JSON body of a Dashboard  <a name="dashboard"></a>
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
@@ -218,8 +236,6 @@ Below is an example.
 Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this example.   
 
 Detailed explanation for creating a dashboard is given in this video.    
-
-## Custom Domain Name for a Widget <a name="domain"></a>      
 
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
@@ -255,11 +271,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## JSON body of a Job <a name="job"></a>   
 
-## Email Notification <a name="email"></a>    
-
-### Sending Email Notification on Event <a name="trigger_email"></a>   
-
-## Cliosight API <a name="api"></a>    
+## Sending Email Notification on Event <a name="trigger_email"></a>    
 
 ## JSON body of a Workflow <a name="workflow"></a>
 
@@ -268,9 +280,9 @@ Detailed explanation for creating and using a trigger is given in this video.
 ## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
 
-Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.     
-
-
+Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
+  
+## Cliosight API <a name="api"></a>   
 
 
 
