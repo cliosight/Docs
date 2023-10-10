@@ -36,7 +36,7 @@ Reports
 Automation   
 - [JSON body of a Trigger](#trigger)     
 - [JSON body of a Job](#job)        
-- [JSON body of a Workflow](#workflow)
+- [JSON body of a Workflow](#Workflow)
 - [Example of a Workflow](#workflowexamples)
 - [Creating Workflows and Widgets in Jupyter Notebook](#python)
 
@@ -92,8 +92,10 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 ### [Forms](#form)    
 ### [Reports](#report)   
 ### [Dashboards](#dashboard)  
-### [Triggers and Jobs](#trigger) 
-### [Workflow](#workflow)    
+### [Triggers and Jobs](#trigger)      
+### [Workflow](#Workflow)         
+
+![Dashboard](https://miro.medium.com/v2/resize:fit:640/format:webp/1*nVmEI6rMbmwdPd_sx7SFoQ.png)    
 
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -219,7 +221,6 @@ As a result, they  showcase a true representation of the data captured through t
 ## JSON body of a Dashboard  <a name="dashboard"></a>
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
-![Dashboard](https://miro.medium.com/v2/resize:fit:640/format:webp/1*nVmEI6rMbmwdPd_sx7SFoQ.png)
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*AsGGYWwgE718szC1BVeh4A.png)   
 
 Important features of a dashboard:     
@@ -274,11 +275,11 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>    
 
-## JSON body of a Workflow <a name="workflow"></a>
+## JSON body of a Workflow <a name="Workflow"></a>
 
 ## Example of a Workflow <a name="workflowexamples"></a>    
 
-## Creating Workflows and Widgets in Jupyter Notebook <a name="python"></a>     
+## Using Workflows in Jupyter Notebook <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
 
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
