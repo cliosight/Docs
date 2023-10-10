@@ -68,7 +68,7 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 
 ## The building blocks of Cliosight applications ## 
  
-![worflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)   
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)  
 
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted. An example of this is controlled access to forms and reports based on the geographic location of users.       
@@ -89,7 +89,7 @@ Detailed explanation for using AI tools within Cliosight is given in this video.
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post-HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. This eliminates the need for a database when used within an app or web page hosted on a cloud VM, containerized application or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later.    
+With the pre and post HTML JSON tags, a form can function like a web page except for the limitation that it can have only one submit button. This eliminates the need for a database when used within an app or web page hosted on a cloud VM, containerized application or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later.    
 
 A dashboard which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested forms for editing existing records as explained in the section for creating [Reports](#report).        
 
