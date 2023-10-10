@@ -95,8 +95,6 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 ### [Triggers and Jobs](#trigger)      
 ### [Workflow](#Workflow)         
 
-![Dashboard](https://miro.medium.com/v2/resize:fit:640/format:webp/1*nVmEI6rMbmwdPd_sx7SFoQ.png)    
-
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
