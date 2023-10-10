@@ -27,6 +27,7 @@ Forms
 
 Reports    
 - [JSON body of a Report](#report)
+- [Example of a Report](#report_example)     
 - [Graphs and Charts with Reports](#graphs)
 - [Using Reports in Jupyter Notebook](#jupyter)
 - [Ensuring Trustworthiness](#trust)
@@ -88,18 +89,12 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
-### [Forms](#form) for data input.    
-----------------------------------
-### [Reports](#report) for storing views.    
-----------------------------------  
-### [Dashboards](#dashboard) for a unified view of widgets along with the option of adding HTML.    
-----------------------------------
-### [Triggers and Jobs](#trigger) for automation.    
-----------------------------------
-### [Workflow](#workflow) for creating routines of tasks involving widgets.    
-----------------------------------     
+### [Forms](#form)    
+### [Reports](#report)   
+### [Dashboards](#dashboard)  
+### [Triggers and Jobs](#trigger) 
+### [Workflow](#workflow)    
 
-     
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
@@ -130,7 +125,6 @@ India:
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
 # Forms
---------
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
@@ -142,7 +136,7 @@ The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=tr
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
-## An Example of Using Forms ##   
+## An Example of Using Forms <a name="form_example"></a>        
 For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later will provide this capability.    
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
@@ -161,6 +155,7 @@ The components are:
 
 Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
 
+# Reports
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
@@ -173,7 +168,7 @@ https://app.cliosight.com/app/reports/29/show?noNavbar=true
 
 Detailed explanation for creating a report is given in this video.    
 
-### Example of a Report ###   
+## Example of a Report <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
 
 SQL Query for this report:      
@@ -218,8 +213,9 @@ It is possible to restrict data input into a table using the following features 
 
 Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. 
 
-As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).      
+As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
 
+# Dashboard      
 ## JSON body of a Dashboard  <a name="dashboard"></a>
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
@@ -241,6 +237,7 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.
 
 Detailed explanation for creating a dashboard is given in this video.    
 
+# Automation
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
@@ -285,7 +282,8 @@ Detailed explanation for creating and using a trigger is given in this video.
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
 
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
-  
+
+# API    
 ## Cliosight API <a name="api"></a>   
 
 
