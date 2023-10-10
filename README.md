@@ -143,7 +143,7 @@ For an application like a meeting scheduler, forms can be used to create contact
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-### JSON tags of a Section of the Meeting Scheduler Form <a name="meetings_form"></a>     
+### JSON tags of a Section of the Meeting Scheduler Form <a name="meeting_form"></a>     
 The components are:   
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
