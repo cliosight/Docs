@@ -20,12 +20,12 @@ Basic Architecture
 - [Email Notification](#email)    
 - [Support for Custom Domain Name](#domain)      
   
-Forms
+Form
 - [JSON body of a Form](#form)
 - [An Example of Using Forms](#form_example)
 - [JSON tags of a Section of the Meeting Scheduler Form](#meeting_form)     
 
-Reports    
+Report    
 - [JSON body of a Report](#report)
 - [Example of a Report](#report_example)     
 - [Graphs and Charts with Reports](#graphs)
@@ -34,11 +34,12 @@ Reports
 - [JSON body of a Dashboard](#dashboard)
 
 Automation   
-- [JSON body of a Trigger](#trigger)     
-- [JSON body of a Job](#job)        
-- [JSON body of a Workflow](#Workflow)
-- [Example of a Workflow](#workflowexamples)
-- [Using Workflows in Jupyter Notebook](#python)
+- [JSON body of a Trigger](#trigger)    
+- [JSON body of a Job](#job)     
+- [Sending Email Notification on Event](#trigger_email)        
+- [JSON body of a Workflow](#Workflow)    
+- [Example of a Workflow](#workflowexamples)     
+- [Using Workflows in Jupyter Notebook](#python)      
 
 API   
 - [Cliosight API](#api)      
@@ -89,7 +90,7 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
-### [Forms](#form)  &nbsp;&nbsp;&nbsp;&nbsp;      [Reports](#report)   &nbsp;&nbsp;&nbsp;&nbsp;     [Dashboards](#dashboard)   &nbsp;&nbsp;&nbsp;&nbsp;    [Triggers and Jobs](#trigger)   &nbsp;&nbsp;&nbsp;&nbsp;  [Workflow](#Workflow)          
+### [Forms](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Reports](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboards](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Triggers and Jobs](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#Workflow)          
 
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -120,7 +121,7 @@ India:
 
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
-# Forms
+# Form
 ## JSON body of a Form <a name="form"></a>
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
@@ -151,7 +152,7 @@ The components are:
 
 Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
 
-# Reports
+# Report
 ## JSON body of a Report <a name="report"></a> 
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
