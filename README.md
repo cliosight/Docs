@@ -218,10 +218,11 @@ As a result, they  showcase a true representation of the data captured through t
 # Dashboard <a name="dashboard"></a>         
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
-![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*AsGGYWwgE718szC1BVeh4A.png)   
+![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*AsGGYWwgE718szC1BVeh4A.png)      
+![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*YI_S6Gi4I5mL6HUXd_fQ0g.png)      
 
 Important features of a dashboard:     
-
+----------------------------------
 1. Global filters need to be applied first as they take precedence over the report filters.
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
 3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature.   
