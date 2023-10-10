@@ -13,7 +13,8 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [SQL Interface for Structured Data](#sql)
 - [Support for Multiple Datasources](#datasources)
 - [User Permissions and Access Control](#acl)
-- [Running Queries on a Datasource](#tables)    
+- [Running Queries on a Datasource](#tables)
+- [Leveraging Automation and AI Components](#ai)          
 - [JSON body of a Form](#form)
 - [JSON body of a Report](#report)
 - [Graphs and Charts with Reports](#graphs)
@@ -75,7 +76,13 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 
 ## The building blocks of Cliosight applications ## 
  
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)  
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
+
+### [Forms](#form) for data input.    
+### [Reports](#report) for storing views.    
+### [Dashboards](#dashboard) for a unified view of widgets along with the option of adding HTML.    
+### [Triggers and Jobs](#trigger) for automation.    
+### [Workflow](#workflow) for creating routines of tasks involving widgets.    
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
