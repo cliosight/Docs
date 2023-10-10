@@ -62,13 +62,6 @@ Example of a datasource definition:
 ```    
 Watch this video for creating a datasource.     
 
-## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute SQL queries on a configured database and it's tables. For existing schemas, it is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
-
-## The building blocks of Cliosight applications ## 
- 
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)  
-
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted. An example of this is controlled access to forms and reports based on the geographic location of users.       
 
@@ -76,6 +69,13 @@ Types of users:
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
 3. Admin-Minor - All permissions for UI and automation components. No access to datasources, users/groups and tables.     
+
+## Running Queries on a Datasource <a name="tables"></a>     
+Admin users can execute SQL queries on a configured database and it's tables. For existing schemas, it is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
+
+## The building blocks of Cliosight applications ## 
+ 
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)  
      
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
