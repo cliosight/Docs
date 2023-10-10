@@ -67,8 +67,7 @@ Watch this video for creating a datasource.
 Admin users can execute SQL queries on a configured database and it's tables. For existing schemas, it is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
 
 ## The building blocks of Cliosight applications ## 
-
-![elements](https://miro.medium.com/v2/resize:fit:720/format:webp/1*9VNmQUsN851BWedd64bfJA.png)     
+ 
 ![worflow](https://miro.medium.com/v2/resize:fit:720/format:webp/1*KZRn3jpn3tsc-dcTQ3FeHA.png)   
 
 ## User Permissions and Access Control <a name="acl"></a>
