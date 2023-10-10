@@ -39,7 +39,7 @@ Automation
 - [JSON body of a Trigger](#trigger)    
 - [JSON body of a Job](#job)     
 - [Sending Email Notification on Event](#trigger_email)        
-- [JSON body of a Workflow](#Workflow)    
+- [JSON body of a Workflow](#workflow)            
 - [Example of a Workflow](#workflowexamples)     
 - [Using Workflows in Jupyter Notebook](#python)      
 
@@ -92,7 +92,7 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*TDknynyxj4ZLwexSQazpFw.png)    
 
-### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#Workflow)          
+### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
 ## Leveraging Automation and AI Components <a name="ai"></a>
 
@@ -275,7 +275,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>    
 
-## JSON body of a Workflow <a name="Workflow"></a>
+## JSON body of a Workflow <a name="workflow"></a>
 
 ## Example of a Workflow <a name="workflowexamples"></a>    
 
