@@ -1,5 +1,5 @@
 # Cliosight      
-**Building the best data-centric applications and presentations**    
+**Building the best data-centric applications and presentations**   
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*P9ATHw_hA5fRkWgOCQBeRw.png)  
 
@@ -131,7 +131,7 @@ India:
 # Form <a name="form"></a>    
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application or a web page hosted on a cloud VM, dockerized container or serverless infrastructure like AWS EC2, GCE, Azure VM, AWS ECS, Google Kubernetes Engine, Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML within a form and other widgets discussed later. A form is complete, except for the limitation that it can have only one submit button.       
+With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application or a web page hosted on a cloud VM, dockerized container or serverless infrastructure like AWS EC2, GCE, Azure VM, AWS ECS, Google Kubernetes Engine, Google App Engine, Azure App Service, and AWS Amplify. So we can have form(s) within an HTML or HTML(s) within a form and other widgets discussed later. A form is complete, except for the limitation that it can have only one submit button.       
 
 A dashboard which is similar to a UI container, enables any number of forms and reports to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested forms for editing existing records as explained in the section for creating [Reports](#report).        
 
