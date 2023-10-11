@@ -52,14 +52,14 @@ Cliosight is a low-code platform that offers addition of various leading databas
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
-NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB are particularly interesting. This is because of their evolvement in the past few years in working in a containerized environment in cloud. 
+NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB are particularly interesting. This is because of their evolvement in the past few years in working in a containerized environment in cloud.      
 
 ![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uUtVtw163x-Ho7soVzf33w.png)    
 
 ## Support for Multiple Datasources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those installed on a user's cloud VM or fully managed database instances. 
 
-Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built MySQL database only with a **shared connection pool**.    
+Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases used by developers.     
 
 One other advantage of being a paid user is dedicated resources, ensuring faster data transfer and processing.
 
