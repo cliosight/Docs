@@ -51,6 +51,8 @@ Cliosight is a low-code platform that offers addition of various leading databas
 
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
+MySQL       Postgres
+
 ## Support for Multiple Datasources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
 
