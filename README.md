@@ -221,8 +221,8 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*AsGGYWwgE718szC1BVeh4A.png)      
 ![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*YI_S6Gi4I5mL6HUXd_fQ0g.png)      
 
-Important features of a dashboard:     
-----------------------------------
+#### Important features of a dashboard:     
+
 1. Global filters need to be applied first as they take precedence over the report filters.
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
 3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature.   
