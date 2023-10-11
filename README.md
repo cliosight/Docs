@@ -57,7 +57,7 @@ NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and 
 ![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uUtVtw163x-Ho7soVzf33w.png)    
 
 ## Support for Multiple Datasources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for fully managed database instances or those installed on a user's cloud VM.       
+Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for fully managed database instances or those installed on a cloud VM.       
 
 Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.       
 
