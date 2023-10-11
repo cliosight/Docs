@@ -52,7 +52,7 @@ Cliosight is a low-code platform that offers addition of various leading databas
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
-NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB are particlualry interesting because of their evolvement in the past few years in working in a containerized environment in cloud. 
+NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB are particularly interesting. This is because of their evolvement in the past few years in working in a containerized environment in cloud. 
 
 ![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*fbLzgnvkJJN-JV3P7hgDaA.png)    
 
