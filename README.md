@@ -54,7 +54,7 @@ SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amaz
 
 NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB are particlualry interesting because of their evolvement in the past few years in working in a containerized environment in cloud. 
 
-![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*0BYP8Kt9FQkfAVwzEAuM1Q.png)    
+![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*fbLzgnvkJJN-JV3P7hgDaA.png)    
 
 ## Support for Multiple Datasources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
