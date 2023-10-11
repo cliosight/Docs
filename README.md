@@ -90,7 +90,7 @@ Admin users can execute SQL queries on a configured database and it's tables. Fo
 
 ## The building blocks of a Cliosight application ## 
  
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*eRu6J04334am-I5dQreNpg.png)    
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
 
 ### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
