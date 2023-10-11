@@ -47,11 +47,14 @@ API
 - [Cliosight API](#api)      
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational databases. As we continue to evolve, we plan to expand our compatibility to various NoSQL cloud databases and distributed ledgers.   
+Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
 
+SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 ![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
-MySQL       Postgres
+NoSQL databases like Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB are particlualry interesting because of their evolvement in the past few years in working in a containerized environment in cloud. 
+
+![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*0BYP8Kt9FQkfAVwzEAuM1Q.png)    
 
 ## Support for Multiple Datasources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for those on users' cloud VMs or instances of Google Cloud SQL databases, Amazon RDS and Azure SQL server. 
