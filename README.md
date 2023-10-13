@@ -43,8 +43,7 @@ Automation
 - [Example of a Workflow](#workflowexamples)     
 - [Using Workflows in Jupyter Notebook](#python)      
 
-API   
-- [Cliosight API](#api)      
+[Cliosight API](#api)         
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
@@ -289,10 +288,7 @@ Data analysis can provide pointers for fine-tuning an existing application or pr
 
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
 
-# API    
-## Cliosight API <a name="api"></a>   
-
-
+# API <a name="api"></a>   
 
 
 
