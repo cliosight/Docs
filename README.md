@@ -132,7 +132,7 @@ A form is the data input method to populate tables. It can have multiple sub-for
 
 With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, dockerized container or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have forms within an HTML or several HTMLs within a form and other widgets discussed later. A form is complete, except for the limitation that it can have only one submit button. For instance, a simple [contact us](https://app.cliosight.com/app/forms/42/show?noNavbar=true) form can be used instead of the usual landing page.         
 
-A dashboard which is similar to a UI container, enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drill-down and editing existing records as explained in the section for [Reports](#report).        
+A dashboard which is similar to a UI container, enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drill-down and editing or adding records as explained in the section for [Reports](#report).        
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
 
@@ -162,7 +162,7 @@ Click here to understand the detailed use of each JSON tag in a form explained t
 # Report <a name="report"></a>  
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
-1. A report may contain filters and drill-down options through nested forms and reports. Just like a drop-down field in a form, filters in a report can either have hardcoded or column values of another report or table. They can also have a multiselect option.
+1. A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They can also have a multiselect option.
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
 A report can be embedded using a URL in the format given below:
@@ -170,8 +170,10 @@ https://app.cliosight.com/app/reports/29/show?noNavbar=true
 
 Detailed explanation for creating a report is given in this video.        
 
-## JSON body of a Report <a name="reportjson"></a> 
+## JSON body of a Report <a name="reportjson"></a>      
 
+The JSON of a report is given [here]().      
+   
 ## Example of a Report <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
 
@@ -183,7 +185,7 @@ min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
 left join `groups_contacts` gc on gc.contact_id = c.id
 group by c.id
 ```
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.     
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.        
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript or Python libraries for data visualization like Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
