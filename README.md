@@ -1,10 +1,10 @@
-![cliosight](https://media.licdn.com/dms/image/D4D22AQGUbQM7ua6EjA/feedshare-shrink_2048_1536/0/1697454463729?e=1700092800&v=beta&t=SFNzEHWroCISChxlBsC6yVlAAv9op4g45Oeygq8EmZQ)
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*nLORsrv77Eyyn9jLtHBfnQ.png)          
 # Cliosight      
 **Building the best data-centric applications and presentations**   
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)  
                  
-This is a detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
+Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is a bird's eye view of the major components of the platform, viz. datasources, forms, reports, dashboards, triggers and workflows.       
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.        
 Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
 
@@ -50,7 +50,7 @@ Automation
 [Cliosight Free Tier](#freetier)     
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
+Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
 
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 
