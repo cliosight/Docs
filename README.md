@@ -32,7 +32,6 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Leveraging AI Components](#ai)
 - [Data Privacy and Security](#security)
 - [Email Notification](#email)    
-- [Support for Custom Domain Name](#domain)      
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
@@ -109,7 +108,6 @@ India:
 
 ## Email Notification <a name="email"></a>    
 
-## Custom Domain Name for a Widget <a name="domain"></a>      
 
 # The building blocks of a Cliosight application <a name="app"></a>       
  
@@ -126,9 +124,11 @@ India:
       
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, dockerized container or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have forms within an HTML file or several HTML code snippets within a form and other widgets discussed later. For instance, a simple [contact us](https://app.cliosight.com/app/forms/42/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
+With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, a docker container or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have one or more Cliosight forms within an HTML file or several HTML code snippets within a form and other UI components discussed later. 
+     
+For instance, a simple [contact us](https://app.cliosight.com/app/forms/42/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
 
-A dashboard which is similar to a UI container, enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drill-down and editing or adding records as explained in the section for [Reports](#report).        
+A dashboard which is similar to a UI container, enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down and editing or adding records as explained in the section for [Report](#report) creation.        
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
 
@@ -198,9 +198,9 @@ One such example is an area chart with Chart.js that depicts datasets from three
 
 Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML. Visit the [API](#api) section for more.   
 
-Below is the live demo for the above mentioned examples:        
-Area chart with different datasources      
-Pie chart     
+Below is the live demo:          
+[Area chart with different datasources](https://cliosight.com/examples.html)      
+[Pie chart](https://cliosight.com/examples.html)             
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)           
 
 Click here to watch a video explaining the Python and Javascript code.   
