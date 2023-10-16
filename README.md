@@ -13,7 +13,22 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 
 ## Table of contents    
 
-[The Basic Architecture](#basic)       
+### [The Basic Architecture](#basic)       
+  
+### [Form](#form)       
+
+### [Report](#report)        
+
+### [Dashboard](#dashboard)
+
+### [Automation](#automation)      
+
+### [API](#api)    
+
+### [Free Tier Offerings](#freetier)     
+
+# The Basic Architecture <a name="basic"></a>       
+---------------------------------------------
 - [SQL Interface for Structured Data](#sql)
 	- [Support for Multiple Datasources](#datasources)
 	- [Running Queries on a Datasource](#tables)
@@ -23,38 +38,6 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Data Privacy and Security](#security)
 - [Email Notification](#email)    
 - [Support for Custom Domain Name](#domain)      
-  
-[Form](#form)       
-- [JSON body of a Form](#formjson)
-- [An Example of Using Forms](#form_example)
-- [JSON tags of a Section of the Meeting Scheduler Form](#meeting_form)     
-
-[Report](#report)        
-- [JSON body of a Report](#reportjson)     
-- [Example of a Report](#report_example)     
-- [Graphs and Charts with Reports](#graphs)
-- [Using Reports in Jupyter Notebook](#jupyter)
-- [Ensuring Trustworthiness](#trust)
-  
-[Dashboard](#dashboard)
-- [JSON body of a Dashboard](#dashboardjson)
-- [Example of a Dashboard](#dashboard_example)     
-
-[Automation](#automation)      
-- [JSON body of a Trigger](#trigger)
-- [Example of a Trigger](#trigger_example)     
-- [JSON body of a Job](#job)
-- [Example of a Job](#job_example)     
-- [Sending Email Notification on Event](#trigger_email)        
-- [JSON body of a Workflow](#workflow)            
-- [Example of a Workflow](#workflowexamples)     
-- [Using Workflows in Jupyter Notebook](#python)      
-
-[API](#api)    
-
-[Free Tier Offerings](#freetier)     
-
-# The Basic Architecture <a name="basic"></a>       
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
@@ -140,6 +123,12 @@ India:
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
 # Form <a name="form"></a>    
+---------------------------------------------       
+- [JSON body of a Form](#formjson)
+- [An Example of Using Forms](#form_example)
+- [JSON tags of a Section of the Meeting Scheduler Form](#meeting_form)
+
+      
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
 With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, dockerized container or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have forms within an HTML file or several HTML code snippets within a form and other widgets discussed later. For instance, a simple [contact us](https://app.cliosight.com/app/forms/42/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
@@ -171,7 +160,15 @@ The components are:
 
 Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
 
-# Report <a name="report"></a>  
+# Report <a name="report"></a>       
+---------------------------------------------          
+- [JSON body of a Report](#reportjson)     
+- [Example of a Report](#report_example)     
+- [Graphs and Charts with Reports](#graphs)
+- [Using Reports in Jupyter Notebook](#jupyter)
+- [Ensuring Trustworthiness](#trust)
+
+  
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
 1. A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They can also have a multiselect option.
@@ -233,7 +230,12 @@ Reports created from restricted tables using one of more of the above methods, c
 
 As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
 
-# Dashboard <a name="dashboard"></a>         
+# Dashboard <a name="dashboard"></a>        
+---------------------------------------------          
+- [JSON body of a Dashboard](#dashboardjson)
+- [Example of a Dashboard](#dashboard_example)
+
+  
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*u5xGSPnPbEYnGpQG_6jAKQ.png)        
@@ -261,6 +263,17 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.
 Detailed explanation for creating a dashboard is given in this video.    
 
 # Automation <a name="automation"></a>       
+---------------------------------------------          
+- [JSON body of a Trigger](#trigger)
+- [Example of a Trigger](#trigger_example)     
+- [JSON body of a Job](#job)
+- [Example of a Job](#job_example)     
+- [Sending Email Notification on Event](#trigger_email)        
+- [JSON body of a Workflow](#workflow)            
+- [Example of a Workflow](#workflowexamples)     
+- [Using Workflows in Jupyter Notebook](#python)
+
+  
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
@@ -309,8 +322,10 @@ Data analysis can provide pointers for fine-tuning an existing application or pr
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
 
 # API <a name="api"></a>   
+---------------------------------------------          
 
 # Free Tier Offerings <a name="freetier"></a>   
+---------------------------------------------          
 
 |Data and Files    |4 GB     |
 |------------------|---------|
