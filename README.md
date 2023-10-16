@@ -13,22 +13,22 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 
 ## Table of contents    
 
-### [The Basic Architecture](#basic)       
+### - [The Basic Architecture](#basic)       
   
-### [Form](#form)       
+### - [Form](#form)       
 
-### [Report](#report)        
+### - [Report](#report)        
 
-### [Dashboard](#dashboard)
+### - [Dashboard](#dashboard)
 
-### [Automation](#automation)      
+### - [Automation](#automation)      
 
-### [API](#api)    
+### - [API](#api)    
 
-### [Free Tier Offerings](#freetier)     
+### - [Free Tier Offerings](#freetier)     
 
 # The Basic Architecture <a name="basic"></a>       
----------------------------------------------
+
 - [SQL Interface for Structured Data](#sql)
 	- [Support for Multiple Datasources](#datasources)
 	- [Running Queries on a Datasource](#tables)
@@ -86,12 +86,6 @@ Types of users:
    
 ## Advanced File Storage <a name="files"></a>      
 This platform provides extra functionalities for files stored in a user's account. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
- 
-## The building blocks of a Cliosight application ## 
- 
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
-
-### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
 ## Leveraging AI Components <a name="ai"></a>
 
@@ -122,8 +116,14 @@ India:
 
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
+## The building blocks of a Cliosight application ## 
+ 
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
+
+### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
+
 # Form <a name="form"></a>    
----------------------------------------------       
+   
 - [JSON body of a Form](#formjson)
 - [An Example of Using Forms](#form_example)
 - [JSON tags of a Section of the Meeting Scheduler Form](#meeting_form)
@@ -161,7 +161,7 @@ The components are:
 Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
 
 # Report <a name="report"></a>       
----------------------------------------------          
+    
 - [JSON body of a Report](#reportjson)     
 - [Example of a Report](#report_example)     
 - [Graphs and Charts with Reports](#graphs)
@@ -231,7 +231,7 @@ Reports created from restricted tables using one of more of the above methods, c
 As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
----------------------------------------------          
+      
 - [JSON body of a Dashboard](#dashboardjson)
 - [Example of a Dashboard](#dashboard_example)
 
@@ -263,7 +263,7 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.
 Detailed explanation for creating a dashboard is given in this video.    
 
 # Automation <a name="automation"></a>       
----------------------------------------------          
+  
 - [JSON body of a Trigger](#trigger)
 - [Example of a Trigger](#trigger_example)     
 - [JSON body of a Job](#job)
@@ -322,10 +322,10 @@ Data analysis can provide pointers for fine-tuning an existing application or pr
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
 
 # API <a name="api"></a>   
----------------------------------------------          
+     
 
 # Free Tier Offerings <a name="freetier"></a>   
----------------------------------------------          
+    
 
 |Data and Files    |4 GB     |
 |------------------|---------|
