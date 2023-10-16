@@ -13,15 +13,17 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 
 ## Table of contents    
 
-- [The Basic Architecture](#basic)       
+- [The Basic Architecture](#basic)
+
+- [The building blocks of a Cliosight application](#app)       
   
-- [Form](#form)       
+	- [Form](#form)       
 
-- [Report](#report)        
+	- [Report](#report)        
 
-- [Dashboard](#dashboard)
+	- [Dashboard](#dashboard)
 
-- [Automation](#automation)      
+	- [Automation](#automation)      
 
 - [API](#api)    
 
@@ -116,7 +118,7 @@ India:
 
 ## Custom Domain Name for a Widget <a name="domain"></a>      
 
-## The building blocks of a Cliosight application ## 
+# The building blocks of a Cliosight application <a name="app"></a>       
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
 
