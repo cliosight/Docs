@@ -13,19 +13,19 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 
 ## Table of contents    
 
-### - [The Basic Architecture](#basic)       
+### 1. [The Basic Architecture](#basic)       
   
-### - [Form](#form)       
+### 2. [Form](#form)       
 
-### - [Report](#report)        
+### 3. [Report](#report)        
 
-### - [Dashboard](#dashboard)
+### 4. [Dashboard](#dashboard)
 
-### - [Automation](#automation)      
+### 5. [Automation](#automation)      
 
-### - [API](#api)    
+### 6. [API](#api)    
 
-### - [Free Tier Offerings](#freetier)     
+### 7. [Free Tier Offerings](#freetier)     
 
 # The Basic Architecture <a name="basic"></a>       
 
