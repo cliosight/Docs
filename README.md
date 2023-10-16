@@ -1,3 +1,4 @@
+![cliosight](https://media.licdn.com/dms/image/D4D22AQEBLBqOJTjt3A/feedshare-shrink_800/0/1697450480923?e=1700092800&v=beta&t=vdz7yRziwJqN0zvkw5Cth9ZPzvm2P_MgnRj8dT4eoGA)
 # Cliosight      
 **Building the best data-centric applications and presentations**   
 
@@ -15,6 +16,7 @@ Basic Architecture
 - [Support for Multiple Datasources](#datasources)
 - [User Permissions and Access Control](#acl)
 - [Running Queries on a Datasource](#tables)
+- [Advanced File Storage](#files)        
 - [Leveraging Automation and AI Components](#ai)
 - [Data Privacy and Security](#security)
 - [Email Notification](#email)    
@@ -43,7 +45,9 @@ Automation
 - [Example of a Workflow](#workflowexamples)     
 - [Using Workflows in Jupyter Notebook](#python)      
 
-[Cliosight API](#api)         
+[Cliosight API](#api)    
+
+[Cliosight Free Tier](#freetier)     
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
@@ -92,6 +96,9 @@ Types of users:
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute SQL queries on a configured database. It is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
 
+## Advanced File Storage <a name="files"></a>      
+This platform provides extra functionalities for files stored in a user's account. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
+ 
 ## The building blocks of a Cliosight application ## 
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
@@ -291,6 +298,9 @@ Data analysis can provide pointers for fine-tuning an existing application or pr
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
 
 # API <a name="api"></a>   
+
+# Free Tier Offerings <a name="freetier"></a>   
+
 
 
 
