@@ -14,15 +14,12 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 # Table of contents    
 
 - [The Basic Architecture](#basic)
-  
 - [The building blocks of a Cliosight application](#app)       
 	- [Form](#form)       
 	- [Report](#report)        
 	- [Dashboard](#dashboard)
 	- [Automation](#automation)      
-
 - [API](#api)
-  
 - [Free Tier Offerings](#freetier)     
 
 # The Basic Architecture <a name="basic"></a>       
