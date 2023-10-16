@@ -301,8 +301,21 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 
 # Free Tier Offerings <a name="freetier"></a>   
 
-|Data and Files    |4 GB|
-|------------------|----|
+|Data and Files    |4 GB     |
+|------------------|---------|
+
+|Widgets           |Unlimited|
+|------------------|---------|
+
+|Automation        |Unlimited|
+|------------------|---------|
+
+|Notification      |Limited  |
+|------------------|---------|
+
+|Support           |Unlimited|
+|------------------|---------|
+
 
 
 
