@@ -11,22 +11,18 @@ Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah
 	    
 Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
 
-## Table of contents    
+# Table of contents    
 
 - [The Basic Architecture](#basic)
-
-- [The building blocks of a Cliosight application](#app)       
   
+- [The building blocks of a Cliosight application](#app)       
 	- [Form](#form)       
-
 	- [Report](#report)        
-
 	- [Dashboard](#dashboard)
-
 	- [Automation](#automation)      
 
-- [API](#api)    
-
+- [API](#api)
+  
 - [Free Tier Offerings](#freetier)     
 
 # The Basic Architecture <a name="basic"></a>       
