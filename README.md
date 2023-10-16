@@ -44,6 +44,7 @@ NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azu
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for fully managed database instances or those installed on a cloud VM.       
 
 Schemas created are segregated based on these datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.       
+![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*YtJvXoJcHt9NAGjf0jpobA.png)    
 
 One other advantage of being a paid user is dedicated resources, ensuring faster data transfer and processing.
 
