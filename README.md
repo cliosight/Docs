@@ -2,7 +2,7 @@
 # Cliosight      
 **Building the best data-centric applications and presentations**   
 
-![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*P9ATHw_hA5fRkWgOCQBeRw.png)  
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)  
 
 ## Product Overview                   
 A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
@@ -17,7 +17,7 @@ Basic Architecture
 - [User Permissions and Access Control](#acl)
 - [Running Queries on a Datasource](#tables)
 - [Advanced File Storage](#files)        
-- [Leveraging Automation and AI Components](#ai)
+- [Leveraging AI Components](#ai)
 - [Data Privacy and Security](#security)
 - [Email Notification](#email)    
 - [Support for Custom Domain Name](#domain)      
@@ -35,7 +35,8 @@ Basic Architecture
 - [Ensuring Trustworthiness](#trust)
   
 [Dashboard](#dashboard)
-- [JSON body of a Dashboard](#dashboardjson)       
+- [JSON body of a Dashboard](#dashboardjson)
+- [Example of a Dashboard](#dashboard_example)     
 
 Automation   
 - [JSON body of a Trigger](#trigger)    
@@ -53,11 +54,8 @@ Automation
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications. Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
 
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
-![databases](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uSliBW8FQheXrPbM6El0JA.png)   
 
-NoSQL databases like Cassandra and Mongodb are particularly interesting. This is because of their evolvement in the past few years in containerized environment for cloud.      
-
-![nosql](https://miro.medium.com/v2/resize:fit:720/format:webp/1*uUtVtw163x-Ho7soVzf33w.png)    
+NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB.
 
 ## Support for Multiple Datasources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for fully managed database instances or those installed on a cloud VM.       
@@ -105,7 +103,7 @@ This platform provides extra functionalities for files stored in a user's accoun
 
 ### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
-## Leveraging Automation and AI Components <a name="ai"></a>
+## Leveraging AI Components <a name="ai"></a>
 
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
@@ -245,9 +243,11 @@ Just like the previous two types of widgets, a dashboard can be shared using a U
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
 
-## JSON body of a Dashboard  <a name="dashboardjson"></a>
+## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for this example.   
+## Example of a Dashboard <a name="dashboard_example"></a>   
+
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for the Meeting Scheduler example.   
 
 Detailed explanation for creating a dashboard is given in this video.    
 
@@ -300,6 +300,9 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 # API <a name="api"></a>   
 
 # Free Tier Offerings <a name="freetier"></a>   
+
+|Data and Files    |4 GB|
+|------------------|----|
 
 
 
