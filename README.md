@@ -5,16 +5,17 @@
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)  
                  
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is a bird's eye view of the major components of the platform, viz. datasources, forms, reports, dashboards, triggers and workflows.       
-Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.        
+Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.   
+      
 Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
 
 ## Table of contents    
 
 Basic Architecture
 - [SQL Interface for Structured Data](#sql)
-- [Support for Multiple Datasources](#datasources)
+	- [Support for Multiple Datasources](#datasources)
+	- [Running Queries on a Datasource](#tables)
 - [User Permissions and Access Control](#acl)
-- [Running Queries on a Datasource](#tables)
 - [Advanced File Storage](#files)        
 - [Leveraging AI Components](#ai)
 - [Data Privacy and Security](#security)
@@ -38,8 +39,10 @@ Basic Architecture
 - [Example of a Dashboard](#dashboard_example)     
 
 Automation   
-- [JSON body of a Trigger](#trigger)    
-- [JSON body of a Job](#job)     
+- [JSON body of a Trigger](#trigger)
+- [Example of a Trigger](#trigger_example)     
+- [JSON body of a Job](#job)
+- [Example of a Job](#job_example)     
 - [Sending Email Notification on Event](#trigger_email)        
 - [JSON body of a Workflow](#workflow)            
 - [Example of a Workflow](#workflowexamples)     
@@ -82,17 +85,18 @@ Example of a datasource definition:
 ```    
 Watch this video for creating a datasource.     
 
+
+## Running Queries on a Datasource <a name="tables"></a>     
+Admin users can execute SQL queries on a configured database. It is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
+
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted. An example of this is controlled access to forms and reports based on the geographic location of users.       
 
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. Admin-Minor - All permissions for UI and automation components. No access to datasources, users/groups and tables.     
-
-## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute SQL queries on a configured database. It is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
-
+3. Admin-Minor - All permissions for UI and automation components. No access to datasources, users/groups and tables.
+   
 ## Advanced File Storage <a name="files"></a>      
 This platform provides extra functionalities for files stored in a user's account. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
  
