@@ -1,11 +1,10 @@
-![cliosight](https://media.licdn.com/dms/image/D4D22AQEBLBqOJTjt3A/feedshare-shrink_800/0/1697450480923?e=1700092800&v=beta&t=vdz7yRziwJqN0zvkw5Cth9ZPzvm2P_MgnRj8dT4eoGA)
+![cliosight](https://media.licdn.com/dms/image/D4D22AQGUbQM7ua6EjA/feedshare-shrink_2048_1536/0/1697454463729?e=1700092800&v=beta&t=SFNzEHWroCISChxlBsC6yVlAAv9op4g45Oeygq8EmZQ)
 # Cliosight      
 **Building the best data-centric applications and presentations**   
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)  
-
-## Product Overview                   
-A detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
+                 
+This is a detailed explanation of datasources, forms, reports, dashboards, triggers and workflows within Cliosight.      
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.        
 Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
 
