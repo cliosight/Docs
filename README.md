@@ -13,7 +13,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 
 ## Table of contents    
 
-Basic Architecture
+[The Basic Architecture](#basic)       
 - [SQL Interface for Structured Data](#sql)
 	- [Support for Multiple Datasources](#datasources)
 	- [Running Queries on a Datasource](#tables)
@@ -40,7 +40,7 @@ Basic Architecture
 - [JSON body of a Dashboard](#dashboardjson)
 - [Example of a Dashboard](#dashboard_example)     
 
-Automation   
+[Automation](#automation)      
 - [JSON body of a Trigger](#trigger)
 - [Example of a Trigger](#trigger_example)     
 - [JSON body of a Job](#job)
@@ -50,9 +50,11 @@ Automation
 - [Example of a Workflow](#workflowexamples)     
 - [Using Workflows in Jupyter Notebook](#python)      
 
-[Cliosight API](#api)    
+[API](#api)    
 
-[Cliosight Free Tier](#freetier)     
+[Free Tier Offerings](#freetier)     
+
+# The Basic Architecture <a name="basic"></a>       
 
 ## SQL Interface for Structured Data <a name="sql"></a>
 Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
@@ -64,7 +66,7 @@ NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azu
 ## Support for Multiple Datasources <a name="datasources"></a>
 Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for fully managed database instances or those installed on a cloud VM.       
 
-Schemas created are segregated based on these datasources. Users on the free tier will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.       
+Schemas created are segregated based on these datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.       
 
 One other advantage of being a paid user is dedicated resources, ensuring faster data transfer and processing.
 
@@ -202,12 +204,12 @@ Tabular data from reports can be used to plot graphs and charts using the standa
 
 One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms.   
 
-Another example is that of the common pie chart. We can also display live figures and stats by adding simple client-side Javascript to an HTML. Visit the [API](#api) section for more.   
+Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML. Visit the [API](#api) section for more.   
 
 Below is the live demo for the above mentioned examples:        
 Area chart with different datasources      
 Pie chart     
-Live stats on a landing page      
+[Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)           
 
 Click here to watch a video explaining the Python and Javascript code.   
 
@@ -250,13 +252,15 @@ Below is an example.
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
+The JSON of a dashboard is given [here]().    
+
 ## Example of a Dashboard <a name="dashboard_example"></a>   
 
 Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for the Meeting Scheduler example.   
 
 Detailed explanation for creating a dashboard is given in this video.    
 
-# Automation
+# Automation <a name="automation"></a>       
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
@@ -273,7 +277,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
 ```
 Detailed explanation for creating and using a trigger is given in this video.      
 
-## Example of a Trigger ##
+## Example of a Trigger <a name="trigger_example"></a>    
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
 ```css 
@@ -290,6 +294,8 @@ Detailed explanation for creating and using a trigger is given in this video.
 ```
 
 ## JSON body of a Job <a name="job"></a>   
+
+## Example of a Job <a name="job_example"></a>     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>    
 
