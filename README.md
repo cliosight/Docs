@@ -303,10 +303,10 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 
 |Data and Files    |4 GB     |
 |------------------|---------|
-|Widgets           |Unlimited|
-|Automation        |Unlimited|
-|Notification      |Limited  |
-|Support           |Unlimited|
+|**Widgets**           |**Unlimited**|
+|**Automation**        |**Unlimited**|
+|**Notification**      |**Limited**  |
+|**Support**           |**Unlimited**|
 
 
 
