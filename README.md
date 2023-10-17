@@ -163,8 +163,7 @@ While a form is the data input interface, a report is the output of data analysi
    
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
-A report can be embedded using a URL in the format given below:
-https://app.cliosight.com/app/reports/29/show?noNavbar=true         
+A report can be embedded using a URL in the format https://app.cliosight.com/app/reports/29/show?noNavbar=true           
 
 ## JSON body of a Report <a name="reportjson"></a>      
 
@@ -232,7 +231,7 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
    
 3. It can have its own CSS definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature. 
      
-![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*JjgY566Frbg56BDyymmuHA.png)           
+![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*winal5N4G5-r5Qs1oMrdtg.png)             
   
 Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format.         
 For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false    
