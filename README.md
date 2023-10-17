@@ -118,9 +118,7 @@ India:
 # Form <a name="form"></a>    
    
 - [JSON body of a Form](#formjson)
-- [An Example of Using Forms](#form_example)
-- [JSON tags of a Section of the Meeting Scheduler Form](#meeting_form)
-
+- [An Example of Using Forms](#form_example)       
       
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
@@ -137,7 +135,7 @@ The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=tr
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
 ## An Example of Using Forms <a name="form_example"></a>        
-For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later provides this capability.    
+For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later provides this capability.        
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
