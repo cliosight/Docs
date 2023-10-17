@@ -18,15 +18,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 	- [Automation](#automation)      
 - [API](#api)
 - [Free Tier Offerings](#freetier)
-
-
-# The building blocks of a Cliosight application <a name="app"></a>       
- 
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
-
-## [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
-
-
+  
 # The Basic Architecture <a name="basic"></a>      
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)        
@@ -112,6 +104,13 @@ India:
 
 ## Email Notification <a name="email"></a>    
 Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 1000 emails to valid email ids. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
+
+# The building blocks of a Cliosight application <a name="app"></a>       
+ 
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
+
+## [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
+
 
 # Form <a name="form"></a>    
    
