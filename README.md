@@ -293,7 +293,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## JSON body of a Workflow <a name="workflow"></a>
 
-## Example of a Workflow - Executing daily HR opeartional tasks <a name="workflowexamples"></a>    
+## Example of a Workflow - Executing daily HR operational tasks <a name="workflowexamples"></a>    
 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
