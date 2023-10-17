@@ -308,7 +308,7 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
     
 |Category     |Offering for 14 days|
 |:----------------------|:-------------|
-|**Data and Files**    |**4 GB**     |
+|Data and Files    |4 GB    |
 |**Widgets**           |**Unlimited**|
 |**Automation**        |**Unlimited**|
 |**Notification**      |**Limited**  |
