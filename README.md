@@ -4,8 +4,7 @@
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)  
                  
-Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is a bird's eye view of the major components of the platform, viz. datasources, forms, reports, dashboards, triggers and workflows.  
-
+Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is a bird's eye view of the major components of the platform, viz. datasources, forms, reports, dashboards, triggers and workflows.        
 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.   
 	    
@@ -36,16 +35,13 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 ## SQL Interface for Structured Data <a name="sql"></a>
 Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
 
-SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
+## Support for Multiple Datasources <a name="datasources"></a>        
+Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
 
+SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB.
 
-## Support for Multiple Datasources <a name="datasources"></a>
-Paid users of our platform will be able to add multiple datasources to a single account. Configurations can be added for fully managed database instances or those installed on a cloud VM.       
-
-Schemas created are segregated based on these datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
-
-One other advantage of being a paid user is dedicated resources, ensuring faster data transfer and processing.
+Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.          
 
 Example of a datasource definition:      
 ```json     
@@ -65,24 +61,24 @@ Example of a datasource definition:
 }
 ```    
 Watch this video for creating a datasource.     
-
-
+      
 ## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute SQL queries on a configured database. It is a more convinient way to connect with multiple remote databases compared to a conventional workbench.        
+Admin users can execute create, update, delete and other SQL queries on a configured database. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of the browser interface. Views are stored as reports that can be exported to other configured datasources.                 
 
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions for data upload, viewing, and editing. Also execution of triggers and workflows can be restricted. An example of this is controlled access to forms and reports based on the geographic location of users.       
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
 
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. Admin-Minor - All permissions for UI and automation components. No access to datasources, users/groups and tables.
+3. Admin-Minor (WIP) - No access to datasources, tables, users/groups and automation components.
    
 ## Advanced File Storage <a name="files"></a>      
-This platform provides extra functionalities for files stored in a user's account. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
+This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
+
+Watch this video for creating a form for file upload and some uses of file reports.      
 
 ## Leveraging AI Components <a name="ai"></a>
-
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
 2. JSON body generator for configuration.     
@@ -90,7 +86,7 @@ To provide a better user experience through the use of AI, we have added code ge
 Detailed explanation for using AI tools within Cliosight is given in this video.    
 
 ## Data Privacy and Security <a name="security"></a>       
-Sharing private datasets online has several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
+Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
 
 Some of the in-built features are:    
 1. [Role-based Access Control](#acl)
@@ -107,13 +103,13 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 ## Email Notification <a name="email"></a>    
-
+Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 1000 emails to valid email ids. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
 # The building blocks of a Cliosight application <a name="app"></a>       
  
 ![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
 
-### [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
+## [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
 # Form <a name="form"></a>    
    
@@ -134,9 +130,8 @@ The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=tr
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
-## An Example of Using Forms <a name="form_example"></a>        
-For an application like a meeting scheduler, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary elements for an email notification that has to be sent once it is scheduled, updated or cancelled. Triggers and jobs explained later provides this capability.        
-
+## An Example of Using Forms - The Meeting Scheduler <a name="form_example"></a>        
+For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary information for an email that has to be sent out once a meeting is scheduled, updated or cancelled. Triggers and jobs explained later provides this capability.        
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
@@ -165,6 +160,7 @@ Click here to understand the detailed use of each JSON tag in a form explained t
 While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
 1. A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They can also have a multiselect option.
+   
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
 A report can be embedded using a URL in the format given below:
@@ -192,9 +188,7 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript or Python libraries for data visualization like Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
 
-One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms.   
-
-Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML. Visit the [API](#api) section for more.   
+One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML. Visit the [API](#api) section for more.   
 
 Below is the live demo:          
 [Area chart with different datasources](https://cliosight.com/examples.html)      
@@ -235,12 +229,15 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
   
 #### Important features of a dashboard:     
 1. Global filters need to be applied first as they take precedence over the report filters.
-2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.     
+   
+2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.
+   
 3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature. 
      
 ![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*JjgY566Frbg56BDyymmuHA.png)           
   
-Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
+Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format.         
+For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
         
 Below is an example.     
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
@@ -270,7 +267,7 @@ Detailed explanation for creating a dashboard is given in this video.
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
 
-```css
+```json
 {        
 	"trigger_definition": {        
  		"trigger_type": "<crud-operation>",  // insert/delete/update      
@@ -286,7 +283,7 @@ Detailed explanation for creating and using a trigger is given in this video.
 ## Example of a Trigger <a name="trigger_example"></a>    
 ### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
-```css 
+```json 
 {
     "client_id": 2,
     "trigger_definition": {
