@@ -19,7 +19,14 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 	- [Dashboard](#dashboard)
 	- [Automation](#automation)      
 - [API](#api)
-- [Free Tier Offerings](#freetier)     
+- [Free Tier Offerings](#freetier)
+
+
+# The building blocks of a Cliosight application <a name="app"></a>       
+ 
+![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
+
+## [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
 # The Basic Architecture <a name="basic"></a>       
 
@@ -105,16 +112,9 @@ India:
 ## Email Notification <a name="email"></a>    
 Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 1000 emails to valid email ids. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
-# The building blocks of a Cliosight application <a name="app"></a>       
- 
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
-
-## [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
-
 # Form <a name="form"></a>    
    
-- [JSON body of a Form](#formjson)
-- [An Example of Using Forms](#form_example)       
+- [JSON body of a Form with an example](#formjson) 
       
 A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
@@ -130,7 +130,7 @@ The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=tr
     
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
-## An Example of Using Forms - The Meeting Scheduler <a name="form_example"></a>        
+## An Example of Using Forms - The Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary information for an email that has to be sent out once a meeting is scheduled, updated or cancelled. Triggers and jobs explained later provides this capability.        
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
@@ -172,7 +172,7 @@ Detailed explanation for creating a report is given in this video.
 
 The JSON of a report is given [here]().      
    
-## Example of a Report <a name="report_example"></a> 
+## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
 
 SQL Query for this report:      
@@ -219,11 +219,9 @@ As a result, they  showcase a true representation of the data captured through t
 
 # Dashboard <a name="dashboard"></a>        
       
-- [JSON body of a Dashboard](#dashboardjson)
-- [Example of a Dashboard](#dashboard_example)
-
+- [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
+A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML code. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*u5xGSPnPbEYnGpQG_6jAKQ.png)        
   
@@ -237,36 +235,29 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
 ![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*JjgY566Frbg56BDyymmuHA.png)           
   
 Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format.         
-For instance, https://app.cliosight.com/app/dashboards/47/show?noNavbar=false       
-        
-Below is an example.     
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=false)   
+For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false    
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
 The JSON of a dashboard is given [here]().    
 
-## Example of a Dashboard <a name="dashboard_example"></a>   
+## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for the Meeting Scheduler example.   
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for the example.   
 
 Detailed explanation for creating a dashboard is given in this video.    
 
 # Automation <a name="automation"></a>       
   
-- [JSON body of a Trigger](#trigger)
-- [Example of a Trigger](#trigger_example)     
-- [JSON body of a Job](#job)
-- [Example of a Job](#job_example)     
+- [JSON body of a Trigger with example](#trigger)
+- [JSON body of a Job with example](#job)  
 - [Sending Email Notification on Event](#trigger_email)        
-- [JSON body of a Workflow](#workflow)            
-- [Example of a Workflow](#workflowexamples)     
+- [JSON body of a Workflow with example](#workflow)             
 - [Using Workflows in Jupyter Notebook](#python)
 
   
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events. As explained later, when used along with jobs, it provides processing capability to widgets making them full-fledged cloud-hosted web applications.     
-
+A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events. As explained later, when used along with jobs, it provides logic execution capability to the UI elements making them full-fledged cloud-hosted web applications.     
 ```json
 {        
 	"trigger_definition": {        
@@ -280,8 +271,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
 ```
 Detailed explanation for creating and using a trigger is given in this video.      
 
-## Example of a Trigger <a name="trigger_example"></a>    
-### Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
+## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
 
 ```json 
 {
@@ -298,15 +288,15 @@ Detailed explanation for creating and using a trigger is given in this video.
 
 ## JSON body of a Job <a name="job"></a>   
 
-## Example of a Job <a name="job_example"></a>     
+## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>    
 
 ## JSON body of a Workflow <a name="workflow"></a>
 
-## Example of a Workflow <a name="workflowexamples"></a>    
+## Example of a Workflow - Executing daily HR opeartional tasks <a name="workflowexamples"></a>    
 
-## Using Workflows in Jupyter Notebook <a name="python"></a>     
+## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
 
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
