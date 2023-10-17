@@ -222,7 +222,7 @@ As a result, they  showcase a true representation of the data captured through t
   
 A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML code. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
 
-![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:720/format:webp/1*jTP07l7ecLbyg8AbROy_-A.png)           
+![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
   
 #### Important features of a dashboard:     
 1. Global filters need to be applied first as they take precedence over the report filters.
@@ -231,7 +231,7 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
    
 3. It can have its own CSS definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature. 
      
-![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*winal5N4G5-r5Qs1oMrdtg.png)             
+![App](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UXneRLM6cizrljW-C_D5eg.png)                
   
 Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format.         
 For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false    
