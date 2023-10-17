@@ -146,7 +146,7 @@ The components are:
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-Click here to understand the detailed use of each JSON tag in a form explained through the example of a meeting scheduler application.      
+Click here to understand the detailed use of each JSON tag in the forms.      
 
 # Report <a name="report"></a>       
     
@@ -164,9 +164,7 @@ While a form is the data input interface, a report is the output of data analysi
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
 A report can be embedded using a URL in the format given below:
-https://app.cliosight.com/app/reports/29/show?noNavbar=true
-
-Detailed explanation for creating a report is given in this video.        
+https://app.cliosight.com/app/reports/29/show?noNavbar=true         
 
 ## JSON body of a Report <a name="reportjson"></a>      
 
@@ -183,7 +181,9 @@ min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
 left join `groups_contacts` gc on gc.contact_id = c.id
 group by c.id
 ```
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.        
+Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.      
+
+Detailed explanation for creating a report is given in this video.    
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript or Python libraries for data visualization like Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
