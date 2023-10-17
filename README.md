@@ -1,4 +1,4 @@
-![cliosight](https://media.licdn.com/dms/image/D4D22AQHxF19TItrIkw/feedshare-shrink_800/0/1697473161285?e=1700092800&v=beta&t=evEK0xv6xYzCHEbPrmunHpBaN3ni1Ugs_tSTbO6Os70)          
+![cliosight](https://media.licdn.com/dms/image/D4D22AQH580VWzyCudw/feedshare-shrink_800/0/1697528363112?e=1700697600&v=beta&t=3REPHWS9zSy09FxpL9-xJOIg-gp3jsULARhPQp82fYM)             
 # Cliosight      
 **Building the best data-centric applications and presentations**   
 
@@ -223,7 +223,7 @@ It is possible to restrict data input into a table using the following features 
 
 Reports created from restricted tables using one of more of the above methods, can however serve as inputs to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. 
 
-As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate AI generated datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
+As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate artificial datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
       
