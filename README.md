@@ -265,12 +265,12 @@ Detailed explanation for creating a dashboard is given in this video.
 
   
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic CRUD operations on table rows based on events. As explained later, when used along with background jobs, it provides processing capability to widgets making them self-sufficient cloud-hosted web applications.     
+A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events. As explained later, when used along with jobs, it provides processing capability to widgets making them full-fledged cloud-hosted web applications.     
 
 ```json
 {        
 	"trigger_definition": {        
- 		"trigger_type": "<crud-operation>",  // insert/delete/update      
+ 		"trigger_type": "<crud-operation>",       
    		"trigger_entity": "<table-name>",  
      		"trigger_action_query": "<sql-query-as-a-formatted-string>",     
        		"label": "<name-for-the-trigger>"      
