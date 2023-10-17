@@ -1,4 +1,4 @@
-![cliosight](https://media.licdn.com/dms/image/D4D22AQH580VWzyCudw/feedshare-shrink_800/0/1697528363112?e=1700697600&v=beta&t=3REPHWS9zSy09FxpL9-xJOIg-gp3jsULARhPQp82fYM)             
+![cliosight](https://media.licdn.com/dms/image/D4D22AQFyNzx7HFKUFw/feedshare-shrink_2048_1536/0/1697528527243?e=1700697600&v=beta&t=s_8BA3qV8QDGj62776gRxUmNT205SmwJauCnMC0NrAs)             
 # Cliosight      
 **Building the best data-centric applications and presentations**   
 
