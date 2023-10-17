@@ -26,9 +26,10 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 
 ## [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)        
 
-![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)    
 
-# The Basic Architecture <a name="basic"></a>       
+# The Basic Architecture <a name="basic"></a>      
+
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)        
 
 - [SQL Interface for Structured Data](#sql)
 	- [Support for Multiple Datasources](#datasources)
@@ -40,7 +41,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Email Notification](#email)    
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud databases and distributed ledgers.   
+Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases and distributed ledgers.   
 
 ## Support for Multiple Datasources <a name="datasources"></a>        
 Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
