@@ -208,7 +208,7 @@ Detailed explanation for using reports in Python code is given in this video.
 
 ## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
 It is possible to restrict data input into a table using the following features of a form:  
-1. Disabling data import through CSV.     
+1. Disabling data import through CSV file upload.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
@@ -230,7 +230,7 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
    
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.
    
-3. It can have its own css definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature. 
+3. It can have its own CSS definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature. 
      
 ![App](https://miro.medium.com/v2/resize:fit:720/format:webp/1*JjgY566Frbg56BDyymmuHA.png)           
   
@@ -306,13 +306,13 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 
 # Free Tier Offerings <a name="freetier"></a>   
     
-|Category     |Offering for 14 days|
+|Category     |Free for 14 days|
 |:----------------------|:-------------|
 |Data and Files    |4 GB    |
-|**Widgets**           |**Unlimited**|
-|**Automation**        |**Unlimited**|
-|**Notification**      |**Limited**  |
-|**Support**           |**Unlimited**|
+|Widgets           |Unlimited|
+|Automation        |Unlimited|
+|Notification      |Limited (1000 free) |
+|Support           |Unlimited|
 
 
 
