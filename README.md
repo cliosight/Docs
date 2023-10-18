@@ -377,7 +377,8 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 |Widgets           |Unlimited|
 |Automation        |Unlimited|
 |Notification      |Limited (1000 free) |
-|Support           |Unlimited|
+|Customization           |Unlimited|
+|Support    |Limited   |
 
 
 
