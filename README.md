@@ -242,9 +242,9 @@ The JSON tags of a dashboard is given [here]().
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important stats, reports, charts and forms to test the application and present it in a desired way. As explained earlier, the forms help in creating the three important entities of the schema, and the individual reports help in storing the results of an analysis such as the number of groups against each contact. A dashboard such as this one, will bring everything together for a unified view.      
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important stats, reports, charts and forms to test the application and present it in a desired way. Please note that the reports and one form do not have public access.       
 
-Please note that the reports and one form do not have public access.     
+As explained earlier, the forms help in creating the three important entities of the schema, and the individual reports help in storing the results of an analysis such as the number of groups against each contact. A dashboard such as this one, will bring everything together for a unified view.        
 
 ```json
 {
