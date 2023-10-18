@@ -167,7 +167,7 @@ A report can be embedded using a URL in the format https://app.cliosight.com/app
 
 ## JSON body of a Report <a name="reportjson"></a>      
 
-The JSON of a report is given [here]().      
+The JSON tags of a report is given [here]().      
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
