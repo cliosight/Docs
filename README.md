@@ -238,11 +238,76 @@ For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
-The JSON of a dashboard is given [here]().    
+The JSON tags of a dashboard is given [here]().    
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_dashboard_json.json) to view the JSON for the example.   
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important stats, reports, charts and forms to test the application and present it in a desired way. As explained earlier, the forms help in creating the three important entities of the schema, and the individual reports help in storing the results of an analysis such as the number of groups against each contact. A dashboard such as this one, will bring everything together for a unified view.      
+
+Please note that the reports and one form do not have public access.     
+
+```json
+{
+    "css_definition": "",
+    "pre_html": "<div><br/><br/><h1 style=\"text-align: center; font-family: Raleway\">Cliosight Meetings</h1><br/><div class=\"pre-html-container align-items-center\"><img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\" style=\"border: 2px solid grey\"></div><br/> <br/><iframe src=\"https://app.cliosight.com/app/reports/85/show?noNavbar=true\" width=\"100%\" height=\"400px\" style=\"background: #dee2e6! important; \"></iframe><br/></div>",
+
+    "hideToolbar": false,
+
+    "post_html": "<br/><h6 style=\"text-align: center\">Copyright Cliosight 2023 All rights reserved</h6><br/>",
+
+    "dashlets": [{
+            "id": "37",
+            "cols": 6
+        }, {
+            "id": "68",
+            "cols": 6
+        }, {
+            "id": "33",
+            "cols": 12
+        },
+        {
+            "html": "<br/><br/><div class=\"pre-html-container align-items-center\"><img src=\"https://camo.githubusercontent.com/addc451d43b21d635dd9c6e464e2aa0ae631a2efcf32907f0829a7817d29af51/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a3732302f666f726d61743a776562702f312a487352717845545f4a453062386b52713350344f4f672e706e67\" /> <br/><br/><p style=\"border: 2px solid black; font-size: 7vw; font-weight: 500; width: 100%; height: 100%; text-align: center; padding: 10%; background: white; color: black \">Forms</p></div>",
+            "cols": 6
+        },
+        {
+            "type": "form",
+            "id": "34",
+            "cols": 6
+        },
+        {
+            "type": "form",
+            "id": "35",
+            "cols": 6
+        },
+        {
+            "type": "form",
+            "id": "52",
+            "cols": 6
+        }
+    ],
+    "filter_menu": [{
+        "label": "Group",
+        "column": "id",
+        "column_label": "Name",
+        "report_id": 28,
+        "name": "group_id",
+        "reports": {
+            "37": {
+                "report_column": "group_id",
+                "name": "group_id",
+                "label": "Group",
+                "label_column": "Name"
+            },
+            "68": {
+                "report_column": "group_id",
+                "name": "group_id",
+                "label": "Group",
+                "label_column": "Name"
+            }
+        }
+    }]
+}
+```
 
 Detailed explanation for creating a dashboard is given in this video.    
 
