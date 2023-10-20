@@ -27,7 +27,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 	- [Support for Multiple Datasources](#datasources)
 	- [Running Queries on a Datasource](#tables)
 - [User Permissions and Access Control](#acl)
-- [Advanced File Storage](#files)        
+- [Advanced File Storage](#afiles)        
 - [Leveraging AI Components](#ai)
 - [Data Privacy and Security](#security)
 - [Email Notification](#email)    
@@ -73,7 +73,7 @@ Types of users:
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
 3. Admin-Minor (WIP) - No access to datasources, tables, users/groups and automation components.
    
-## Advanced File Storage <a name="files"></a>      
+## Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
 
 Watch this video for creating a form for file upload and some uses of file reports.      
