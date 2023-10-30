@@ -83,7 +83,9 @@ To provide a better user experience through the use of AI, we have added code ge
 1. SQL query generator for tables and reports,     
 2. JSON body generator for configuration.
 
-One question that might arise is, why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language? The answer to this is, even with meticulously crafted plain human languages used in prompt engineering, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist. With forms, reports and dashboards defined individually there is greater modular structure and no need for the user to understand the front-end code that was used. Changes are done right in the config the programming language becomes insignificant.            
+One question that might arise is, why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language? The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With tables, reports, forms, dashboards and automation code defined individually there is a greater modular structure and no need for the user to understand the code. Changes are done right in the config. Call it a shorthand for developing applications. The programming language becomes insignificant.    
+
+Having said that, 
 
 Detailed explanation for using AI within Cliosight is given in this video.    
 
