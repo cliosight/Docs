@@ -81,9 +81,11 @@ Watch this video for creating a form for file upload and some uses of file repor
 ## Leveraging AI Components <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
-2. JSON body generator for configuration.     
+2. JSON body generator for configuration.
 
-Detailed explanation for using AI tools within Cliosight is given in this video.    
+One question that might arise is, why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language? The answer to this is, even with meticulously crafted plain human languages used in prompt engineering, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist. With forms, reports and dashboards defined individually there is greater modular structure and no need for the user to understand the front-end code that was generated. Changes are done right in the config the programming language becomes insignificant.            
+
+Detailed explanation for using AI within Cliosight is given in this video.    
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
