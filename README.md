@@ -373,6 +373,7 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 |Category     |Free for 14 days|
 |:----------------------|:-------------|
 |Users    | 1    |
+|Datasources       | 1
 |Data and Files    |4 GB    |
 |Widgets           |Unlimited|
 |Automation        |Unlimited|
