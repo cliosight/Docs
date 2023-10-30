@@ -85,8 +85,9 @@ To provide a better user experience through the use of AI, we have added code ge
 
 One question that might arise is,   
 **<i>Why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With tables, reports, forms, dashboards and automation code defined individually there is a simpler modular structure for the end goal. There is no need for the user to understand the code. The programming language becomes insignificant. Changes are done right in the config. Call it a shorthand for developing applications.     
-Having said that, the same framework can be generalized and extended to cover more of programming requirements like on the system side in the future.     
+The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With tables, reports, forms, dashboards and automation code defined individually there is a simpler modular structure for the end goal. There is no need for the user to understand the code. The programming language becomes insignificant. Changes are done right in the config. Call it a shorthand for developing applications that comes with infrastructure. Having said that, the same framework can be generalized and extended to cover more of programming requirements like on the system side in the future.     
+
+![ai](https://cdn-images-1.medium.com/max/800/1*dUJq2LUbfKAHZlW8WXaveg.png)     
 
 Detailed explanation for using AI within Cliosight is given in this video.    
 
