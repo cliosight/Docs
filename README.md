@@ -41,7 +41,9 @@ Schemas created are segregated based on datasources. Users on the [free tier](#f
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB, Google Big Query and Azure Cosmos DB.
 
-Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.          
+Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
+
+![datasources](https://cdn-images-1.medium.com/max/800/1*L2ghFudqHTKOoQ0aIpU4qQ.png)  
 
 Example of a datasource definition:      
 ```json     
