@@ -111,7 +111,7 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 ## Email Notification <a name="email"></a>    
-Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 1000 emails to valid email ids. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
+Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 1000 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
 # The building blocks of a Cliosight application <a name="app"></a>       
  
