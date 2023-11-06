@@ -1,6 +1,6 @@
 ![cliosight](https://media.licdn.com/dms/image/D4D22AQHLw_TPA7GCDw/feedshare-shrink_2048_1536/0/1697539569687?e=1700697600&v=beta&t=SgIwiRrspxrW3HAwkhKRUGMBxKrikm9ELU-Du-YIipQ)             
 # Cliosight      
-**Building the best data-centric applications and presentations**   
+**Building the best applications & datasets**   
                  
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is a bird's eye view of the major components of the platform, viz. datasources, forms, reports, dashboards, triggers and workflows.        
 
@@ -65,7 +65,7 @@ Example of a datasource definition:
 Watch this video for creating a datasource.     
       
 ## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute create, update, delete and other SQL queries on a configured database. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of the browser interface. Views are stored as reports that can be exported to other configured datasources.                 
+Admin users can execute create, update, delete and other SQL queries on a configured server instance with a database. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of the browser interface. Views are stored as reports that can be exported to other configured datasources.                 
 
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
@@ -261,37 +261,9 @@ As explained earlier, the forms help in creating the three important entities of
 
     "hideToolbar": false,
 
-    "post_html": "<br/><h6 style=\"text-align: center\">Copyright Cliosight 2023 All rights reserved</h6><br/>",
+    "post_html": "<br/><h6 style=\"text-align: center\">Copyright Cliosight 2024. All rights reserved</h6><br/>",
 
-    "dashlets": [{
-            "id": "37",
-            "cols": 6
-        }, {
-            "id": "68",
-            "cols": 6
-        }, {
-            "id": "33",
-            "cols": 12
-        },
-        {
-            "html": "<br/><br/><div class=\"pre-html-container align-items-center\"><img src=\"https://camo.githubusercontent.com/addc451d43b21d635dd9c6e464e2aa0ae631a2efcf32907f0829a7817d29af51/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f76322f726573697a653a6669743a3732302f666f726d61743a776562702f312a487352717845545f4a453062386b52713350344f4f672e706e67\" /> <br/><br/><p style=\"border: 2px solid black; font-size: 7vw; font-weight: 500; width: 100%; height: 100%; text-align: center; padding: 10%; background: white; color: black \">Forms</p></div>",
-            "cols": 6
-        },
-        {
-            "type": "form",
-            "id": "34",
-            "cols": 6
-        },
-        {
-            "type": "form",
-            "id": "35",
-            "cols": 6
-        },
-        {
-            "type": "form",
-            "id": "52",
-            "cols": 6
-        }
+    "dashlets": [
     ],
     "filter_menu": [{
         "label": "Group",
