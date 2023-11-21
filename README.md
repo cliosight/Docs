@@ -228,7 +228,7 @@ As a result, they  showcase a true representation of the data captured through t
       
 - [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML code. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM, analytics dashboard, a single page web application or a landing page.     
+A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML code. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, a SPA or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
   
