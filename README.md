@@ -128,7 +128,7 @@ A form is the data input method to populate tables. It can have multiple sub-for
 
 With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, a docker container or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have one or more Cliosight forms within an HTML file or several HTML code snippets within a form and other UI components discussed later. 
      
-For instance, a simple [contact us](https://app.cliosight.com/app/forms/42/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
+For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
 
 A dashboard which is similar to a UI container, enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down and editing or adding records as explained in the section for [Report](#report) creation.        
 
