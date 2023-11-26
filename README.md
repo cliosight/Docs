@@ -39,7 +39,7 @@ Our interface and APIs enable users to perform a wide range of analytical operat
 Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
 
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
-NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.
+NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 Data warehouse: Google Big Query
 
 Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
