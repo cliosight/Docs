@@ -40,11 +40,9 @@ Schemas created are segregated based on datasources. Users on the [free tier](#f
 
 SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
-Data warehouse: Google Big Query
+Data warehouse - Google Big Query
 
 Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
-
-![datasources](https://cdn-images-1.medium.com/max/800/1*L2ghFudqHTKOoQ0aIpU4qQ.png)  
 
 Example of a datasource definition:      
 ```json     
@@ -74,7 +72,7 @@ Cliosight ensures that each component created within its platform incorporates f
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. Admin-Minor (WIP) - No access to datasources, tables, users/groups and automation components.
+3. **Admin-Minor** (WIP) - No access to datasources, tables, users/groups and automation components.
    
 ## Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
@@ -196,11 +194,10 @@ Detailed explanation for creating a report is given in this video.
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, Plotly, Chartist, HighCharts, D3.js, C3.js, Google charts to name a few. 
 
-One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML or by simply adding it to a dashboard. Visit the [API](#api) section for more.   
+One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply adding it to a dashboard. Visit the [API](#api) section for more.   
 
 Below is the live demo:          
-[Area chart with different datasources](https://cliosight.com/)      
-[Pie chart](https://cliosight.com/)             
+[Area chart with different datasources](https://app.cliosight.com/app/dashboards/50/show?noNavbar=true)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)           
 
 Click here to watch a video explaining the Python and Javascript code.   
