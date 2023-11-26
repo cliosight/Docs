@@ -194,9 +194,9 @@ Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.
 Detailed explanation for creating a report is given in this video.    
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript or Python libraries for data visualization like Chart.js, Plotly, HighCharts, D3.js, C3.js, Google charts to name a few in Javascript. 
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, Plotly, Chartist, HighCharts, D3.js, C3.js, Google charts to name a few. 
 
-One such example is an area chart with Chart.js that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML or simply adding it to a dashboard. Visit the [API](#api) section for more.   
+One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. Another example is that of the common pie chart. We can also display live figures and stats by adding an iframe to an HTML or by simply adding it to a dashboard. Visit the [API](#api) section for more.   
 
 Below is the live demo:          
 [Area chart with different datasources](https://cliosight.com/)      
