@@ -1,4 +1,3 @@
-![cliosight](https://media.licdn.com/dms/image/D4D22AQHLw_TPA7GCDw/feedshare-shrink_2048_1536/0/1697539569687?e=1700697600&v=beta&t=SgIwiRrspxrW3HAwkhKRUGMBxKrikm9ELU-Du-YIipQ)             
 # Cliosight      
 **Building the best applications & datasets**   
                  
@@ -26,6 +25,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [SQL Interface for Structured Data](#sql)
 	- [Support for Multiple Datasources](#datasources)
 	- [Running Queries on a Datasource](#tables)
+   	- [Support for Multiple Statements](#multiplestatements)
 - [User Permissions and Access Control](#acl)
 - [Advanced File Storage](#afiles)        
 - [Leveraging AI Components](#ai)
@@ -33,7 +33,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Email Notification](#email)    
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Our interface and APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned relational and non-relational databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases and distributed ledgers.   
+Our interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform specific databases, data warehouses and distributed ledgers.   
 
 ## Support for Multiple Datasources <a name="datasources"></a>        
 Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
@@ -42,7 +42,7 @@ SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amaz
 NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 Data warehouse - Google Big Query
 
-Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
+Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is additional datasources with dedicated resources, ensuring faster data transfer and processing.      
 
 Example of a datasource definition:      
 ```json     
@@ -64,8 +64,10 @@ Example of a datasource definition:
 Watch this video for creating a datasource.     
       
 ## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute create, update, delete and other SQL queries on a configured server instance with a database. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of the browser interface. Views are stored as reports that can be exported to other configured datasources.                 
-
+Admin users can execute CRUD SQL queries on a configured server instance with a database. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of the browser interface. Views are stored as reports that can be exported to other configured datasources.                 
+## Support for Multiple Statements <a name="multiplestatements"></a>     
+Execution of multiple SQL queries is possible in the admin console and in reports. Admin users can execute any type of multiple statements and view results serially in a JSON response. Reports can be created in the same way but only the final query is used for the storing values and preceeding queries can be used to generate intermediate results for use in the final query. This provides more complex processing within the platform for those who do not wish to move their data outside Cliosight for adding logic.         
+   
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
 
