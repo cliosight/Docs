@@ -66,7 +66,7 @@ Watch this video for creating a datasource.
       
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of our easy-to-use browser interface.          
-There are three types of congurations of datasources:  
+There are three types of congurations:  
 1. In-house (default)
 2. Shared Bandwidth
 3. Dedicated connections
@@ -74,7 +74,7 @@ There are three types of congurations of datasources:
 ![datasources](https://cdn-images-1.medium.com/max/800/1*3xB9QCgI5-xuQZ2Q0Ov_9w.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements and view results serially in a JSON response. In reports only the final `select` statement is used for storing the values. The preceeding queries can be used for generating real-time dynamic intermediate values for substituting variable terms in the final query. This provides convinience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
+Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements at once and view results serially in a JSON response. In reports however, only the final `select` statement is used for storing the values. The preceeding queries can be used for generating real-time dynamic intermediate values for substituting variable terms in the final query. This provides convinience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
