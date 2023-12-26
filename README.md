@@ -5,7 +5,8 @@ Cliosight is a low-code platform that offers addition of various leading databas
 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.   
 	    
-Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).          
+Check out our [blog](https://medium.com/@cliosight) and connect with us over [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).     
+Watch the tutorial videos here explaining each one in detail.     
 
 # Table of contents    
 
@@ -86,8 +87,6 @@ Types of users:
 ## Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
 
-Watch this video for creating a form for file upload and some uses of file reports.      
-
 ## Leveraging AI Components <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
@@ -98,8 +97,6 @@ One question that might arise is,
 The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. There is no need for the user to understand the code. The programming language thereby becomes insignificant. Changes can be done right in the config. Call it a shorthand for developing applications that comes with infrastructure. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
 
 ![ai](https://cdn-images-1.medium.com/max/800/1*dUJq2LUbfKAHZlW8WXaveg.png)     
-
-Detailed explanation for using AI within Cliosight is given in this video.    
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
@@ -162,8 +159,6 @@ The components are:
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-Click here to understand the detailed use of each JSON tag in the forms.      
-
 # Report <a name="report"></a>       
     
 - [JSON body of a Report](#reportjson)     
@@ -198,8 +193,6 @@ group by c.id
 ```
 Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.      
 
-Detailed explanation for creating a report is given in this video.    
-
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, Plotly, Chartist, HighCharts, D3.js, C3.js, Google charts to name a few. 
 
@@ -209,16 +202,12 @@ Below is the live demo:
 [Area chart with different datasources](https://app.cliosight.com/app/dashboards/50/show?noNavbar=true)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)           
 
-Click here to watch a video explaining the Python and Javascript code.   
-
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
 
 Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
-
-Detailed explanation for using reports in Python code is given in this video.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
 It is possible to restrict data input into a table using the following features of a form:  
@@ -244,7 +233,7 @@ A dashboard is an aggregation of forms and multiple reports with global filters.
    
 2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.
    
-3. It can have its own CSS definition which will override the css of the constituent and nested forms and reports. This is however a configurable feature. 
+3. It can have its own CSS definition which will override the css of the constituent reports and forms. This is however a configurable feature. 
      
 ![App](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UXneRLM6cizrljW-C_D5eg.png)                
   
@@ -257,9 +246,7 @@ The JSON tags of a dashboard is given [here]().
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important stats, reports, charts and forms to test the application and present it in a desired way. Please note that it is possible to restrict access in a dashboard and its constituents upto the filter level.     
-
-As explained earlier, the forms help in creating the three important entities of the schema, and the individual reports help in storing the results of an analysis such as the number of groups against each contact. A dashboard such as this one, will bring everything together for a unified view.        
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data. It is possible to restrict access in a dashboard and its constituents upto the filter level. The default type of a dashboard element is 'report'.           
 
 ```json
 {
@@ -278,7 +265,7 @@ As explained earlier, the forms help in creating the three important entities of
         }, {
             "id": "85",
             "cols": 12,
-		  "removeReportCss": false
+            "removeReportCss": false
         }, {
 
             "html": "",
@@ -315,8 +302,6 @@ As explained earlier, the forms help in creating the three important entities of
 }
 ```
 
-Detailed explanation for creating a dashboard is given in this video.    
-
 # Automation <a name="automation"></a>   
 
 - [Sending Email Notification on Event](#trigger_email)     
@@ -342,7 +327,6 @@ A trigger enables action on data and insights. Since we are dealing with structu
   	 "datasourtce_id": 1     
     }        
 ```
-Detailed explanation for creating and using a trigger is given in this video.      
 
 ## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
 ### Existing Contact update action for 'Open' state (refer to the Contacts form in Forms section)  
