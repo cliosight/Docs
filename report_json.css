@@ -1,6 +1,7 @@
 {
     "datasource_id": "",
-    "multipleStatements": true | false,
+    "multipleStatements": true | false,    
+    "page_size": 100,          
     "is_public": {
         "status": true | false,
     },
