@@ -329,7 +329,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
 ```
 
 ## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
-### Existing Contact update action for 'Open' state (refer to the Contacts form in Forms section)  
+### Existing Contact update action (refer to the Contacts form in Forms section)  
 ```json 
 {
     "client_id": 2,
@@ -338,7 +338,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
         "trigger_entity": "`contacts`",
         "trigger_condition_query": "select ('{{old_row.stage}}' <> '{{new_row.stage}}') as 'condition'",
         "trigger_action_query": "insert into contacts_scd (email, stage, start_datetime) values('{{new_row.email}}', '{{new_row.stage}}', '{{current_datetime}}')",
-        "label": "Existing Contact Stage SCD (open)"
+        "label": "Existing Contact Stage SCD"
     },
     "datasource_id": 1
 }
