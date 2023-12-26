@@ -379,12 +379,7 @@ Data analysis can provide pointers for fine-tuning an existing application or pr
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. UI and automation components can be created instantly in external applications.    
 
 # API <a name="api"></a>   
-## Form     
-## Report       
-## Dashboard       
-## Trigger        
-## Job       
-## Workflow       
+     
 
 # Free Tier Offerings <a name="freetier"></a>   
     
