@@ -33,7 +33,7 @@ Check out our [blog](https://medium.com/@cliosight) and connect with us over [Li
 - [Email Notification](#email)    
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Our interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform specific databases, data warehouses and distributed ledgers.   
+Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform specific databases, data warehouses and distributed ledgers.   
 
 ## Support for Multiple Datasources <a name="datasources"></a>        
 Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
@@ -64,9 +64,10 @@ Example of a datasource definition:
 Watch this video for creating a datasource.     
       
 ## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute CRUD SQL queries on a configured server instance with a database. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of the browser interface. Views are stored as reports that can be exported to other configured datasources.                 
+Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of our easy-to-use browser interface.          
+
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and in reports. Admin users can execute any type of multiple statements and view results serially in a JSON response. Reports can be created in the same way but only the final query is used for the storing values and preceeding queries can be used to generate intermediate results for use in the final query. This provides more complex processing within the platform for those who do not wish to move their data outside Cliosight for adding logic.         
+Execution of multiple SQL queries is possible in the admin console and for reports. Admin users can execute any number of statements and view results serially in a JSON response. Reports can be created in the same way. However only the final `select` statement is used for the storing values. The preceeding queries are used to generate real-time, dynamic intermediate results for use in the final query. This provides convinience in complex processing within the platform for those who do not wish to move their data to an external application for adding logic.         
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
@@ -88,7 +89,7 @@ To provide a better user experience through the use of AI, we have added code ge
 
 One question that might arise is,   
 **<i>Why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With tables, reports, forms, dashboards and automation code defined individually there is a simpler modular structure for the end goal. There is no need for the user to understand the code. The programming language becomes insignificant. Changes are done right in the config. Call it a shorthand for developing applications that comes with infrastructure. Having said that, the same framework can be generalized and extended to cover more of programming requirements like on the system side in the future.     
+The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. There is no need for the user to understand the code. The programming language thereby becomes insignificant. Changes can be done right in the config. Call it a shorthand for developing applications that comes with infrastructure. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
 
 ![ai](https://cdn-images-1.medium.com/max/800/1*dUJq2LUbfKAHZlW8WXaveg.png)     
 
@@ -112,7 +113,7 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 ## Email Notification <a name="email"></a>    
-Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 1000 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
+Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
 # The building blocks of a Cliosight application <a name="app"></a>       
  
@@ -125,13 +126,13 @@ Emails are an integral part of any CRM application. Using our email notification
    
 - [JSON body of a Form with an example](#formjson) 
       
-A form is the data input method to populate tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
+A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
 
-With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, a docker container or serverless infrastructure like Google App Engine, Azure App Service, and AWS Amplify. So we can have one or more Cliosight forms within an HTML file or several HTML code snippets within a form and other UI components discussed later. 
+With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, a docker container or serverless infrastructure. So we can have one or more Cliosight forms within an HTML or several HTML code snippets within a form. 
      
 For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
 
-A dashboard which is similar to a UI container, enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down and editing or adding records as explained in the section for [Report](#report) creation.        
+A dashboard enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down, editing or adding records as explained in the section for [Report](#report) creation.        
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
 
@@ -205,7 +206,7 @@ Below is the live demo:
 Click here to watch a video explaining the Python and Javascript code.   
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
+Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
 
 Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
 
@@ -291,15 +292,17 @@ As explained earlier, the forms help in creating the three important entities of
 
 Detailed explanation for creating a dashboard is given in this video.    
 
-# Automation <a name="automation"></a>       
-  
-- [JSON body of a Trigger with example](#trigger)
-- [JSON body of a Job with example](#job)  
-- [Sending Email Notification on Event](#trigger_email)        
-- [JSON body of a Workflow with example](#workflow)             
+# Automation <a name="automation"></a>   
+
+- [Sending Email Notification on Event](#trigger_email)     
+- [JSON body of a Trigger with example](#trigger)     
+- [JSON body of a Job with example](#job)         
+- [JSON body of a Workflow with example](#workflow)               
 - [Using Workflows in Jupyter Notebook](#python)
 
-  
+## Sending Email Notification on Event <a name="trigger_email"></a>        
+
+
 ## JSON body of a Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events. As explained later, when used along with jobs, it provides logic execution capability to the UI elements making them full-fledged cloud-hosted web applications.     
 ```json
@@ -331,17 +334,27 @@ Detailed explanation for creating and using a trigger is given in this video.
 ```
 
 ## JSON body of a Job <a name="job"></a>   
-
+A job executes recurrent SQL queries for executing an atomic ETL operation.   
+   
+```json
+{
+    "job_definition": {
+        "input_query": "",
+        "output_query": ""
+    },
+    "datasource_id": ""
+}
+```
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
+Let's consider a simple application that notifies users of a Saas product of the expiration of trial period through an email at 12 am everyday. 
 
-## Sending Email Notification on Event <a name="trigger_email"></a>    
+## JSON body of a Workflow <a name="workflow"></a>     
+A workflow in Cliosight is an aggregation of interconnected triggers and jobs within a datasource. 
 
-## JSON body of a Workflow <a name="workflow"></a>
-
-## Example of a Workflow - Executing daily HR operational tasks <a name="workflowexamples"></a>    
+## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>    
 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
-Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production by training and testing with high quality datasets. 
+Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
 
 Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
 
