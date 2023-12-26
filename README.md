@@ -70,7 +70,7 @@ There are three types of configurations:
 2. Shared Bandwidth
 3. Dedicated connections
 
-![datasources](https://cdn-images-1.medium.com/max/800/1*quy7dgKsMekQaXIBtej_2w.png)     
+![datasources](https://cdn-images-1.medium.com/max/800/1*gOw8XDH5HrIORvuRGP0YrA.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
 Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements at once and view results serially in a JSON response. In reports however, only the final `select` statement is used for storing the values.     
