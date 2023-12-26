@@ -471,44 +471,81 @@ The JSON tags of a dashboard are given below.
 
 ```json
 {
+    "is_public": {
+        "status": false
+    },
     "css_definition": "",
-    "pre_html": "<h1>Cliosight Meetings</h1>",
 
-    "hideToolbar": false,
+    "pre_html": "<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'><div><br/><h1 style=\"\">Cliosight Meetings</h1><br/>",
 
-    "post_html": "<br/><h6 style=\"text-align: center\">Copyright Cliosight 2024. All rights reserved</h6><br/>",
+    "hideToolbar": true,
 
+    "post_html": "<br/><h6 style=\"\">Copyright Cliosight 2024. All rights reserved<br/><br/>Built with <a href=\"https://cliosight.com\">Cliosight</a></h6><br/>",
     "widget_groups": [{
         "widgets": [{
-            "id": "85",
-            "cols": 12,
-            "removeReportCss": false
+                "html": "<!-- Negative space -->",
+                "cols": 1,
+                "type": "html"
+            }, {
+                "id": "85",
+                "cols": 10
+            }, {
+                "html": "<!-- Negative space -->",
+                "cols": 1,
+                "type": "html"
+            }, {
+                "id": "88",
+                "cols": 12
+            },
+            {
+                "id": "29",
+                "cols": 12,
+                "removeReportCss": false
+            },
+            {
+                "html": "<!-- Negative space -->",
+                "cols": 2,
+                "type": "html"
+            },
+            {
+                "type": "form",
+                "id": "52",
+                "cols": 8
+            },
+            {
+		"type": "html",   
+                "html": "<!-- Negative space -->",
+                "cols": 2
+            }
+        ]
+    }, {
+        "widgets": [{
+            "id": "68",
+            "cols": 6
         }, {
-            "html": "<!-- Negative Space --->",
-            "cols": 2,
-            "type": "html"
-        }, {
-            "type": "form",
-            "id": "52",
-            "cols": 8
-        }, {
-
-            "html": "<!-- Negative Space --->",
-            "cols": 2,
-            "type": "html"
-        }, {
-            "html": "<!-- Negative Space --->",
-            "cols": 1,
-            "type": "html"
-        }, {
-            "id": "88",
-            "cols": 10,
-            "removeReportCss": false
-        }, {
-
-            "html": "<!-- Negative Space --->",
-            "cols": 1,
-            "type": "html"
+            "id": "37",
+            "cols": 6
+        }],
+        "filter_menu": [{
+            "label": "Group",
+            "column": "id",
+            "column_label": "Name",
+            "report_id": 28,
+            "name": "group_id",
+            "reports": {
+                "37": {
+                    "report_column": "group_id",
+                    "name": "group_id",
+                    "label": "Group",
+                    "label_column": "Name"
+                },
+                "68": {
+                    "report_column": "group_id",
+                    "name": "group_id",
+                    "label": "Group",
+                    "label_column": "Name"
+                }
+            }
         }]
     }]
 }
