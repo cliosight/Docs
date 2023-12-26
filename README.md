@@ -336,8 +336,9 @@ One such example is an area chart that depicts datasets from three different dat
 
 Below is the live demo:          
 [Area chart with different datasources](https://app.cliosight.com/app/dashboards/50/show?noNavbar=true)                      
-[Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)       
-SQL Query for report above:     
+[Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
+
+SQL query for the report above:     
 ```sql
 select concat(count(*), ' Meetings Scheduled') from `meetings` as count       
 union all   
@@ -346,6 +347,19 @@ union all
 select concat(count(*), ' Groups Organized') from `groups` as count    
 union all    
 select concat(count(*), ' Interviews Recorded') from `interviews` as count    
+```
+Corresponding JSON (without CSS definition):    
+```json
+{
+    "datasource_id": "1",
+    "pre_html": "<div class=\"pre-html-container align-items-center\"><img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\"></div><div><br/><h1>Our numbers tell the story</h1></div>",
+    "is_public": {
+        "status": true
+    },
+    "css_definition": "",
+    "post_html": "<br/><a href=\"https://app.cliosight.com/app/reports/85/show?noNavbar=true\" target=\"_blank\">Share this report</a></div><br/><br/>",
+    "columns": {}
+}
 ```
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
