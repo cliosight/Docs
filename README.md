@@ -178,7 +178,7 @@ A report can be embedded using a URL in the format https://app.cliosight.com/app
 
 ## JSON body of a Report <a name="reportjson"></a>      
 
-The JSON tags of a report is given below.   
+The JSON tags of a report are given below.   
 ```css
 {
     "datasource_id": "",
@@ -352,7 +352,7 @@ Corresponding JSON (without CSS definition):
 ```json
 {
     "datasource_id": "1",
-    "pre_html": "<div class=\"pre-html-container align-items-center\"><img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\"></div><div><br/><h1>Our numbers tell the story</h1></div>",
+    "pre_html": "<div class=\"\"><img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\"></div><div><br/><h1>Our numbers tell the story</h1></div>",
     "is_public": {
         "status": true
     },
@@ -402,7 +402,7 @@ For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
-The JSON tags of a dashboard is given below.
+The JSON tags of a dashboard are given below.
 ```css
 {     
     "is_public": {
