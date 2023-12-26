@@ -591,9 +591,9 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 |Datasources       | 1
 |Data and Files    |4 GB    |
 |Widgets           |Unlimited|
-|Automation        |Unlimited|
+|Automation        |Limited|
 |Notification      |Limited (100 free) |
-|Customization           |Unlimited|
+|Customization           |None|
 |Support    |Limited   |
 
 
