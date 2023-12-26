@@ -243,7 +243,7 @@ The JSON tags of a report are given below.
 ```
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
-[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using using multiple statements.                   
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using multiple statements.                   
 
 SQL Query for this report:      
 ``` sql
@@ -254,7 +254,8 @@ left join `groups_contacts` gc on gc.contact_id = c.id   \
 where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))    \
 and (c.name = {{Name}} or {{Name}} is null)  \
 and (c.phone = {{Phone}} or {{Phone}} is null)   \
-group by c.id) abc;
+group by c.id) abc;       
+
 select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \
 min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \      
 count(gc.id) as 'Total Groups' from `contacts` c  \     
@@ -264,7 +265,8 @@ and (c.name = {{Name}} or {{Name}} is null)  \
 and (c.phone = {{Phone}} or {{Phone}} is null)  \
 group by c.id limit {{startIndex}}, {{pageSize}};
 ```
-Cliosight JSON for this report (without CSS and post HTML):         
+
+JSON for this report (without CSS and post HTML):         
 ```json
 {
     "datasource_id": "1",
