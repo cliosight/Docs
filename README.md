@@ -185,20 +185,84 @@ The JSON tags of a report is given [here](https://github.com/cliosight/Docs/blob
 
 SQL Query for this report:      
 ``` sql
-select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
-left join `groups_contacts` gc on gc.contact_id = c.id
-where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))
-and (c.name = {{Name}} or {{Name}} is null)
-and (c.phone = {{Phone}} or {{Phone}} is null)
+select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \         
+min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c  \        
+left join `groups_contacts` gc on gc.contact_id = c.id   \
+where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))    \
+and (c.name = {{Name}} or {{Name}} is null)  \
+and (c.phone = {{Phone}} or {{Phone}} is null)   \
 group by c.id) abc;
-select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
-left join `groups_contacts` gc on gc.contact_id = c.id
-where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))
-and (c.name = {{Name}} or {{Name}} is null)
-and (c.phone = {{Phone}} or {{Phone}} is null)
+select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \
+min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c  \
+left join `groups_contacts` gc on gc.contact_id = c.id  \
+where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))  \
+and (c.name = {{Name}} or {{Name}} is null)  \
+and (c.phone = {{Phone}} or {{Phone}} is null)  \
 group by c.id limit {{startIndex}}, {{pageSize}};
 ```
-Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.      
+Cliosight JSON for this report:         
+```json
+{
+    "datasource_id": "1",
+    "multipleStatements": true,
+    "is_public": {
+        "status": true
+    },
+    "post_html": "<br/><div class=\"pre-html-container align-items-center\"><div style=\"display: inline-block\"><a href=\"https://app.cliosight.com/app/reports/29/show?noNavbar=true\" target=\"_blank\">Share this report</a><br/></div></div>",
+    "css_definition": "",
+    "columns": {
+        "group_id": {
+            "hidden": true
+        },
+        "contact_id": {
+            "hidden": true
+        },
+        "Name": {
+            "links": [{
+                "type": "form",
+                "id": "35",
+                "args": [{
+                    "report_column": "contact_id",
+                    "name": "id"
+                }, {
+                    "report_column": "Email",
+                    "name": "email"
+                }],
+                "label": "Edit Contact"
+            }]
+        },
+        "Total Groups": {
+            "text-align": "right",
+            "dropdown-menu-align": "right",
+            "links": [{
+                "type": "report",
+                "id": "31",
+                "args": [{
+                    "report_column": "contact_id",
+                    "name": "contact_id"
+                }],
+                "label": "View Groups"
+            }]
+        }
+    },
+    "filter_menu": [{
+        "column": "Name"
+    }, {
+        "column": "Email",
+        "report_id": 49,
+        "name": "email"
+    }, {
+        "column": "Phone"
+    }, {
+        "column": "Total Groups"
+    }],
+    "report_links": [{
+        "type": "form",
+        "id": "35",
+        "label": "Add a Contact"
+    }]
+}
+```
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, Plotly, Chartist, HighCharts, D3.js, C3.js, Google charts to name a few. 
@@ -266,33 +330,24 @@ The JSON tags of a dashboard is given [here](https://github.com/cliosight/Docs/b
 
     "widget_groups": [{
         "widgets": [{
-            "html": "",
-            "cols": 0,
-            "type": "html"
-        }, {
             "id": "85",
             "cols": 12,
             "removeReportCss": false
         }, {
-
-            "html": "",
-            "cols": 0,
-            "type": "html"
-        }, {
-            "html": "",
-            "cols": 1,
+            "html": "<!-- Negative Space --->",
+            "cols": 2,
             "type": "html"
         }, {
             "type": "form",
             "id": "52",
-            "cols": 10
+            "cols": 8
         }, {
 
-            "html": "",
-            "cols": 1,
+            "html": "<!-- Negative Space --->",
+            "cols": 2,
             "type": "html"
         }, {
-            "html": "",
+            "html": "<!-- Negative Space --->",
             "cols": 1,
             "type": "html"
         }, {
@@ -301,7 +356,7 @@ The JSON tags of a dashboard is given [here](https://github.com/cliosight/Docs/b
             "removeReportCss": false
         }, {
 
-            "html": "",
+            "html": "<!-- Negative Space --->",
             "cols": 1,
             "type": "html"
         }]
