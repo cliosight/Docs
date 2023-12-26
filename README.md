@@ -178,29 +178,94 @@ A report can be embedded using a URL in the format https://app.cliosight.com/app
 
 ## JSON body of a Report <a name="reportjson"></a>      
 
-The JSON tags of a report is given [here](https://github.com/cliosight/Docs/blob/main/report_json.css).      
+The JSON tags of a report is given below.   
+```css
+{
+    "datasource_id": "",
+    "multipleStatements": true | false,    
+    "page_size": 100,   // Max. 500        
+    "is_public": {
+        "status": true | false,
+    },
+    "post_html": "",
+    "css_definition": "",
+    "columns": {
+        "<column_name>": {
+            "hidden": true | false
+        },
+        "<column_name>": {
+            "hidden": true | false
+        },
+        "<Report_Name>": {
+            "links": [{
+                "type": "form",
+                "id": "",
+                "args": [{
+                    "report_column": "",
+                    "name": ""
+                }, {
+                    "report_column": "",
+                    "name": ""
+                }],
+                "label": "Edit..."
+            }]
+        },
+        "Total Groups": {
+            "text-align": "",
+            "dropdown-menu-align": "",
+            "links": [{
+                "type": "report",
+                "id": "",
+                "args": [{
+                    "report_column": "",
+                    "name": ""
+                }],
+                "label": "View..."
+            }]
+        }
+    },
+    "filter_menu": [{
+        "column": ""
+    }, {
+        "column": "",
+        "report_id": <id>,
+        "name": ""
+    }, {
+        "column": ""
+    }, {
+        "column": ""
+    }],
+    "report_links": [{
+        "type": "form",
+        "id": "",
+        "label": "Add a ..."
+    }]
+}
+```
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
-[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each with multiple statements.                   
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using using multiple statements.                   
 
 SQL Query for this report:      
 ``` sql
 select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \         
-min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c  \        
+min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \       
+count(gc.id) as 'Total Groups' from `contacts` c  \        
 left join `groups_contacts` gc on gc.contact_id = c.id   \
 where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))    \
 and (c.name = {{Name}} or {{Name}} is null)  \
 and (c.phone = {{Phone}} or {{Phone}} is null)   \
 group by c.id) abc;
 select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \
-min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c  \
+min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \      
+count(gc.id) as 'Total Groups' from `contacts` c  \     
 left join `groups_contacts` gc on gc.contact_id = c.id  \
 where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))  \
 and (c.name = {{Name}} or {{Name}} is null)  \
 and (c.phone = {{Phone}} or {{Phone}} is null)  \
 group by c.id limit {{startIndex}}, {{pageSize}};
 ```
-Cliosight JSON for this report:         
+Cliosight JSON for this report (without CSS and post HTML):         
 ```json
 {
     "datasource_id": "1",
@@ -208,7 +273,7 @@ Cliosight JSON for this report:
     "is_public": {
         "status": true
     },
-    "post_html": "<br/><div class=\"pre-html-container align-items-center\"><div style=\"display: inline-block\"><a href=\"https://app.cliosight.com/app/reports/29/show?noNavbar=true\" target=\"_blank\">Share this report</a><br/></div></div>",
+    "post_html": "",
     "css_definition": "",
     "columns": {
         "group_id": {
@@ -265,13 +330,23 @@ Cliosight JSON for this report:
 ```
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, Plotly, Chartist, HighCharts, D3.js, C3.js, Google charts to name a few. 
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. 
 
-One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply adding it to a dashboard. Visit the [API](#api) section for more.   
+One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply adding it to a dashboard. 
 
 Below is the live demo:          
 [Area chart with different datasources](https://app.cliosight.com/app/dashboards/50/show?noNavbar=true)                      
-[Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)           
+[Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)       
+SQL Query for report above:     
+```sql
+select concat(count(*), ' Meetings Scheduled') from `meetings` as count       
+union all   
+select concat(count(*), ' Contacts Created') from `contacts` as count    
+union all    
+select concat(count(*), ' Groups Organized') from `groups` as count    
+union all    
+select concat(count(*), ' Interviews Recorded') from `interviews` as count    
+```
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
@@ -313,7 +388,67 @@ For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
-The JSON tags of a dashboard is given [here](https://github.com/cliosight/Docs/blob/main/dashboard_json.css).    
+The JSON tags of a dashboard is given below.
+```css
+{     
+    "is_public": {
+        "status": true | false     
+    },    
+  "css_definition": "",      
+  "pre_html": "",     
+  "post_html":"",    
+  "hideToolbar": true | false,      
+  "widget_groups": [{ 
+    "widgets": [{
+                "html": "",
+                "cols": 0 - 12,
+                "type": "html"
+            }, {
+                "id": "",
+                "cols": 0 - 12,
+                "removeReportCss": true | false
+            }, {
+                "type": "form",
+                "id": "52",
+                "cols": 0 - 12
+            }],
+    "widgets": [{
+                "html": "",
+                "cols": 0 - 12,
+                "type": "html"
+            }, {
+                "id": "",
+                "cols": 0 - 12,
+                "removeReportCss": true | false
+            }, {
+                "type": "form",
+                "id": "52",
+                "cols": 0 - 12
+            }],
+     "filter_menu": [{
+            "label": "",
+            "column": "",
+            "column_label": "",
+            "report_id": <id>,
+            "name": "",
+            "reports": {
+                "<id>": {
+                    "report_column": "",
+                    "name": "",
+                    "label": "",
+                    "label_column": ""
+                },
+                "<id>": {
+                    "report_column": "",
+                    "name": "",
+                    "label": "",
+                    "label_column": ""
+                }
+            }
+        }]
+    }]
+}
+```
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
