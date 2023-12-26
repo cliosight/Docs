@@ -1,5 +1,5 @@
 # Cliosight      
-**Building the best applications & datasets**   
+**Build the best applications & datasets with low-code**   
                  
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is an overview of the major components of the platform, viz. datasources, tables, forms, reports, dashboards, triggers, jobs and workflows.        
 
@@ -75,6 +75,7 @@ There are three types of congurations of datasources:
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
 Execution of multiple SQL queries is possible in the admin console and for reports creation. Admin users can execute any number of statements and view results serially in a JSON response. Reports can be created in the same way. However only the final `select` statement is used for storing the values. The preceeding queries can be used for generating real-time dynamic intermediate results for substituting variable terms in the final query. This provides convinience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks.    
+For example, in contacts and groups database schema, we can have two queries as given in the [Reports](reports) section.       
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
@@ -85,7 +86,7 @@ Types of users:
 3. **Admin-Minor** (Next Release) - No access to datasources, tables, users/groups and automation components.
    
 ## Advanced File Storage <a name="afiles"></a>      
-This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
+This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.     
 
 ## Leveraging AI Components <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
@@ -178,18 +179,25 @@ A report can be embedded using a URL in the format https://app.cliosight.com/app
 
 ## JSON body of a Report <a name="reportjson"></a>      
 
-The JSON tags of a report is given [here]().      
+The JSON tags of a report is given [here](https://github.com/cliosight/Docs/blob/main/report_json.css).      
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
-[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.               
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each with multiple statements.                   
 
 SQL Query for this report:      
 ``` sql
-select min(c.id) as contact_id, min(gc.group_id) as group_id,
-min(c.name) as Name, min(c.email) as Email, min(c.phone) Phone,
-min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c 
+select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
 left join `groups_contacts` gc on gc.contact_id = c.id
-group by c.id
+where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))
+and (c.name = {{Name}} or {{Name}} is null)
+and (c.phone = {{Phone}} or {{Phone}} is null)
+group by c.id) abc;
+select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, count(gc.id) as 'Total Groups' from `contacts` c
+left join `groups_contacts` gc on gc.contact_id = c.id
+where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))
+and (c.name = {{Name}} or {{Name}} is null)
+and (c.phone = {{Phone}} or {{Phone}} is null)
+group by c.id limit {{startIndex}}, {{pageSize}};
 ```
 Click [here](https://github.com/cliosight/Docs/blob/main/meeting_report_section.json) to view the JSON body for this report.      
 
@@ -242,7 +250,7 @@ For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
-The JSON tags of a dashboard is given [here]().    
+The JSON tags of a dashboard is given [here](https://github.com/cliosight/Docs/blob/main/dashboard_json.css).    
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
@@ -320,7 +328,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
 	"trigger_definition": {        
  		"trigger_type": "<crud-operation>",          
    		"trigger_entity": "<table-name>",    
-		"trigger_condition_query": "<check-for-a-condition-using-this>",    
+		"trigger_condition_query": "<check-for-a-condition>",    
      		"trigger_action_query": "<sql-query-as-a-formatted-string>",       
        		"label": "<name-for-the-trigger>"          
 	 },      
@@ -357,13 +365,13 @@ A job executes SQL queries at intervals for performing an ETL operation.
 }
 ```
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
-Let's consider a simple application that notifies trial users of a Saas product regularly through an email at 12 am everyday.     
+Let's consider a simple application that notifies trial users of a SaaS product. As an admin, I need to send notifications everyday through email.     
 
 ## JSON body of a Workflow <a name="workflow"></a>     
-A workflow in Cliosight is an aggregation of interconnected jobs within a datasource. Since it can only be directed towards a single datasource, importing data from others have to be carried out with utility jobs.    
+A workflow in Cliosight is an aggregation of interconnected jobs. Since it can only be configured for a single datasource, fetching data from others have to be carried out with utility jobs.       
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
-Consider the sales funnel that comprises sending promotional emails logically to existing or potential customers on certain events at regular intervals.     
+Consider the sales funnel that comprises sending promotional emails. We need to connect logically with existing or potential customers on certain events at regular intervals.     
 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
