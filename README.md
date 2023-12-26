@@ -272,7 +272,7 @@ JSON for this report (without CSS and post HTML):
     "datasource_id": "1",
     "multipleStatements": true,
     "is_public": {
-        "status": true
+        "status": false
     },
     "post_html": "",
     "css_definition": "",
