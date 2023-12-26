@@ -74,7 +74,7 @@ There are three types of congurations of datasources:
 ![datasources](https://cdn-images-1.medium.com/v2/resize:fit:800/1*quy7dgKsMekQaXIBtej_2w.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for reports. Admin users can execute any number of statements and view results serially in a JSON response. Reports can be created in the same way. However only the final `select` statement is used for the storing values. The preceeding queries are used to generate real-time, dynamic intermediate results for use in the final query. This provides convinience in complex data processing within the platform.
+Execution of multiple SQL queries is possible in the admin console and for reports creation. Admin users can execute any number of statements and view results serially in a JSON response. Reports can be created in the same way. However only the final `select` statement is used for storing the values. The preceeding queries can be used for generating real-time dynamic intermediate results for substituting variable terms in the final query. This provides convinience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks.    
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
@@ -82,7 +82,7 @@ Cliosight ensures that each component created within its platform incorporates f
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. **Admin-Minor** (WIP) - No access to datasources, tables, users/groups and automation components.
+3. **Admin-Minor** (Next Release) - No access to datasources, tables, users/groups and automation components.
    
 ## Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.    
@@ -209,7 +209,7 @@ Data is processed, split, or merged according to the requirements. Resultant dat
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
-## Ensuring Trustworthiness <a name="trust"></a> (WIP)    
+## Ensuring Trustworthiness <a name="trust"></a> (Next Release)    
 It is possible to restrict data input into a table using the following features of a form:  
 1. Disabling data import through CSV file upload.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
@@ -357,10 +357,10 @@ A job executes SQL queries at intervals for performing an ETL operation.
 }
 ```
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
-Let's consider a simple application that notifies users of a Saas product of the expiration of trial period through an email at 12 am everyday. 
+Let's consider a simple application that notifies trial users of a Saas product regularly through an email at 12 am everyday.     
 
 ## JSON body of a Workflow <a name="workflow"></a>     
-A workflow in Cliosight is an aggregation of interconnected triggers and jobs within a datasource. Since it can only be directed towards a single datasource, importing data from others have to be scheduled with jobs.    
+A workflow in Cliosight is an aggregation of interconnected jobs within a datasource. Since it can only be directed towards a single datasource, importing data from others have to be carried out with utility jobs.    
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
 Consider the sales funnel that comprises sending promotional emails logically to existing or potential customers on certain events at regular intervals.     
