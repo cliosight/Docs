@@ -1,7 +1,7 @@
 # Cliosight      
 **Building the best applications & datasets**   
                  
-Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is a bird's eye view of the major components of the platform, viz. datasources, forms, reports, dashboards, triggers, jobs and workflows.        
+Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is an overview of the major components of the platform, viz. datasources, tables, forms, reports, dashboards, triggers, jobs and workflows.        
 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any questions.   
 	    
@@ -65,9 +65,15 @@ Watch this video for creating a datasource.
       
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of our easy-to-use browser interface.          
+There are three types of congurations of datasources:  
+1. In-house (default)
+2. Shared Bandwidth
+3. Dedicated connections
+
+![datasources](https://cdn-images-1.medium.com/v2/resize:fit:800/1*quy7dgKsMekQaXIBtej_2w.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for reports. Admin users can execute any number of statements and view results serially in a JSON response. Reports can be created in the same way. However only the final `select` statement is used for the storing values. The preceeding queries are used to generate real-time, dynamic intermediate results for use in the final query. This provides convinience in complex processing within the platform for those who do not wish to move their data to an external application for adding logic.         
+Execution of multiple SQL queries is possible in the admin console and for reports. Admin users can execute any number of statements and view results serially in a JSON response. Reports can be created in the same way. However only the final `select` statement is used for the storing values. The preceeding queries are used to generate real-time, dynamic intermediate results for use in the final query. This provides convinience in complex data processing within the platform.
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
@@ -258,34 +264,53 @@ As explained earlier, the forms help in creating the three important entities of
 ```json
 {
     "css_definition": "",
-    "pre_html": "<div><br/><br/><h1 style=\"text-align: center; font-family: Raleway\">Cliosight Meetings</h1><br/><div class=\"pre-html-container align-items-center\"><img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\" style=\"border: 2px solid grey\"></div><br/> <br/><iframe src=\"https://app.cliosight.com/app/reports/85/show?noNavbar=true\" width=\"100%\" height=\"400px\" style=\"background: #dee2e6! important; \"></iframe><br/></div>",
+    "pre_html": "<h1>Cliosight Meetings</h1>",
 
     "hideToolbar": false,
 
     "post_html": "<br/><h6 style=\"text-align: center\">Copyright Cliosight 2024. All rights reserved</h6><br/>",
 
-    "dashlets": [
-    ],
-    "filter_menu": [{
-        "label": "Group",
-        "column": "id",
-        "column_label": "Name",
-        "report_id": 28,
-        "name": "group_id",
-        "reports": {
-            "37": {
-                "report_column": "group_id",
-                "name": "group_id",
-                "label": "Group",
-                "label_column": "Name"
-            },
-            "68": {
-                "report_column": "group_id",
-                "name": "group_id",
-                "label": "Group",
-                "label_column": "Name"
-            }
-        }
+    "widget_groups": [{
+        "widgets": [{
+            "html": "",
+            "cols": 0,
+            "type": "html"
+        }, {
+            "id": "85",
+            "cols": 12,
+		  "removeReportCss": false
+        }, {
+
+            "html": "",
+            "cols": 0,
+            "type": "html"
+        }, {
+            "html": "",
+            "cols": 1,
+            "type": "html"
+        }, {
+            "type": "form",
+            "id": "52",
+            "cols": 10
+        }, {
+
+            "html": "",
+            "cols": 1,
+            "type": "html"
+        }, {
+            "html": "",
+            "cols": 1,
+            "type": "html"
+        }, {
+            "id": "88",
+            "cols": 10,
+            "removeReportCss": false
+        }, {
+
+            "html": "",
+            "cols": 1,
+            "type": "html"
+        }]
     }]
 }
 ```
@@ -370,7 +395,7 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 |Data and Files    |4 GB    |
 |Widgets           |Unlimited|
 |Automation        |Unlimited|
-|Notification      |Limited (1000 free) |
+|Notification      |Limited (100 free) |
 |Customization           |Unlimited|
 |Support    |Limited   |
 
