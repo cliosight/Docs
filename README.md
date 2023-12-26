@@ -333,33 +333,35 @@ A trigger enables action on data and insights. Since we are dealing with structu
 ```json
 {        
 	"trigger_definition": {        
- 		"trigger_type": "<crud-operation>",       
-   		"trigger_entity": "<table-name>",  
-     		"trigger_action_query": "<sql-query-as-a-formatted-string>",     
-       		"label": "<name-for-the-trigger>"      
+ 		"trigger_type": "<crud-operation>",          
+   		"trigger_entity": "<table-name>",    
+		"trigger_condition_query": "<check-for-a-condition-using-this>",    
+     		"trigger_action_query": "<sql-query-as-a-formatted-string>",       
+       		"label": "<name-for-the-trigger>"          
 	 },      
   	 "datasourtce_id": 1     
     }        
 ```
 Detailed explanation for creating and using a trigger is given in this video.      
 
-## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>
-
+## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
+### Existing Contact update action for 'Open' state (refer to the Contacts form in Forms section)  
 ```json 
 {
     "client_id": 2,
     "trigger_definition": {
-        "trigger_type": "insert",
+        "trigger_type": "update",
         "trigger_entity": "`contacts`",
+        "trigger_condition_query": "select ('{{old_row.stage}}' <> '{{new_row.stage}}') as 'condition'",
         "trigger_action_query": "insert into contacts_scd (email, stage, start_datetime) values('{{new_row.email}}', '{{new_row.stage}}', '{{current_datetime}}')",
-        "label": "New Contact stage scd"
+        "label": "Existing Contact Stage SCD (open)"
     },
     "datasource_id": 1
 }
 ```
 
 ## JSON body of a Job <a name="job"></a>   
-A job executes recurrent SQL queries for executing an atomic ETL operation.   
+A job executes SQL queries at intervals for performing an ETL operation.   
    
 ```json
 {
@@ -374,17 +376,23 @@ A job executes recurrent SQL queries for executing an atomic ETL operation.
 Let's consider a simple application that notifies users of a Saas product of the expiration of trial period through an email at 12 am everyday. 
 
 ## JSON body of a Workflow <a name="workflow"></a>     
-A workflow in Cliosight is an aggregation of interconnected triggers and jobs within a datasource. 
+A workflow in Cliosight is an aggregation of interconnected triggers and jobs within a datasource. Since it can only be directed towards a single datasource, importing data from others have to be scheduled with jobs.    
 
-## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>    
+## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
+Consider the sales funnel that comprises sending promotional emails logically to existing or potential customers on certain events at regular intervals.     
 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
 
-Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. Forms, charts, reports and dashboards can be created instantly through these APIs that return links to the widgets.         
+Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. UI and automation components can be created instantly in external applications.    
 
 # API <a name="api"></a>   
-     
+## Form     
+## Report       
+## Dashboard       
+## Trigger        
+## Job       
+## Workflow       
 
 # Free Tier Offerings <a name="freetier"></a>   
     
