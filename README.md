@@ -135,7 +135,7 @@ With the pre and post HTML JSON tags a form can function like a web page. This e
      
 For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
 
-A dashboard enables any number of forms, reports and charts to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down, editing or adding records as explained in the section for [Report](#report) creation.        
+A dashboard enables any number of forms, reports and HTML code snippets to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down, editing or adding records as explained in the section for [Report](#report) creation.        
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
 
@@ -168,9 +168,9 @@ The components are:
 - [Ensuring Trustworthiness](#trust)
 
   
-While a form is the data input interface, a report is the output of data analysis with SQL or external Python code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
+While a form is the data input interface, a report is the output of data analysis with SQL or external code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
 
-1. A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They can also have a multiselect option.
+1. A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They may also have multiselect option.
    
 2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
@@ -183,10 +183,11 @@ The JSON tags of a report are given below.
 {
     "datasource_id": "",
     "multipleStatements": true | false,    
-    "page_size": 100,   // Max. 500        
+    "page_size": <int_value>,   // Max. 500; Default 10        
     "is_public": {
         "status": true | false,
     },
+    "pre_html": "",  
     "post_html": "",
     "css_definition": "",
     "columns": {
@@ -210,7 +211,7 @@ The JSON tags of a report are given below.
                 "label": "Edit..."
             }]
         },
-        "Total Groups": {
+        "<Report_Column_Name>": {
             "text-align": "",
             "dropdown-menu-align": "",
             "links": [{
@@ -334,13 +335,12 @@ JSON for this report (without CSS and post HTML):
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. 
 
-One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply adding it to a dashboard. 
-
-Below is the live demo:          
+One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply using it within a dashboard. 
+     
 [Area chart with different datasources](https://app.cliosight.com/app/dashboards/50/show?noNavbar=true)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
 
-SQL query for the report above:     
+SQL query for the report:     
 ```sql
 select concat(count(*), ' Meetings Scheduled') from `meetings` as count       
 union all   
@@ -365,11 +365,11 @@ Corresponding JSON (without CSS definition):
 ```
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using free and open-source datasets from various data science platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
+Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using datasets from various platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
 
 Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (Next Release)    
 It is possible to restrict data input into a table using the following features of a form:  
@@ -378,7 +378,7 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one or more of the above methods can, however, serve as inputs to forms of other data sources from which reports can be generated if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only.
+Reports created from restricted tables using one or more of the above methods can, however, serve as input to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only.
       
 As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate artificial datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
 
@@ -386,20 +386,18 @@ As a result, they  showcase a true representation of the data captured through t
       
 - [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of forms and multiple reports with global filters. It is basically a UI container element. It can have its own pre and post HTML code. The syntax enables users to place forms and reports one next to the other or in a sequential order. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, a SPA or a landing page.     
+A dashboard is an aggregation of HTML/CSS code, forms and reports with or without global filters. These can be placed one next to the other or in a sequential order like a conventional web page. Dashboards can have their own pre and post HTML as well. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, a SPA or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
   
-#### Important features of a dashboard:     
-1. Global filters need to be applied first as they take precedence over the report filters.
+#### Important features of dashboard:     
+1. Global filters take precedence over the report filters. Therefore, they need to be applied first. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.
    
-2. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.
-   
-3. It can have its own CSS definition which will override the css of the constituent reports and forms. This is however a configurable feature. 
+2. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable. 
      
 ![App](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UXneRLM6cizrljW-C_D5eg.png)                
   
-Just like the previous two types of widgets, a dashboard can be shared using a URL in a similar format.         
+Just like the previous two types of UI elements, a dashboard can be shared using a URL in a similar format.         
 For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false    
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
@@ -468,7 +466,7 @@ The JSON tags of a dashboard are given below.
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data. It is possible to restrict access in a dashboard and its constituents upto the filter level. The default type of a dashboard element is 'report'.           
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application. It is possible to restrict access in a dashboard and its constituents upto the filter level. The default widget type in a dashboard is 'report'.           
 
 ```json
 {
@@ -607,10 +605,10 @@ A job executes SQL queries at intervals for performing an ETL operation.
 }
 ```
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
-Let's consider a simple application that notifies trial users of a SaaS product. As an admin, I need to send notifications everyday through email.     
+Let's consider a simple application that notifies trial users of a SaaS product - Meeting Scheduler Portal. As an admin, I need to send notifications everyday through email.     
 
 ## JSON body of a Workflow <a name="workflow"></a>     
-A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through utility jobs.       
+A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through other utility jobs.       
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
 Consider the sales funnel that comprises sending promotional emails. We need to contact existing or potential customers on certain events at regular intervals.     
