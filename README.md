@@ -64,7 +64,7 @@ Example of a datasource definition:
       
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of our easy-to-use browser interface.          
-There are three types of configurations:  
+There are two types of configurations:  
 1. Shared Bandwidth
 2. Dedicated connections
 
