@@ -65,11 +65,10 @@ Example of a datasource definition:
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of our easy-to-use browser interface.          
 There are three types of configurations:  
-1. In-house (default)
-2. Shared Bandwidth
-3. Dedicated connections
+1. Shared Bandwidth
+2. Dedicated connections
 
-![datasources](https://cdn-images-1.medium.com/max/800/1*gOw8XDH5HrIORvuRGP0YrA.png)    
+![datasources](https://cdn-images-1.medium.com/max/800/1*_IhJ2hsx9USQOrgt_8I2PQ.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
 Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements at once and view results serially in a JSON response. In reports however, only the final `select` statement is used for storing the values.     
