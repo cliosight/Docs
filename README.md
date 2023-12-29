@@ -42,7 +42,7 @@ SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amaz
 NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 Data warehouse - Google Big Query
 
-Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is additional datasources with dedicated resources, ensuring faster data transfer and processing.      
+Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
 
 Example of a datasource definition:      
 ```json     
