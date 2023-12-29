@@ -33,13 +33,13 @@ Visit our website [cliosight.com](https://cliosight.com). Check out our [blog](h
 - [Email Notification](#email)    
 
 ## SQL Interface for Structured Data <a name="sql"></a>
-Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform specific databases, data warehouses and distributed ledgers.   
+Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
 ## Support for Multiple Datasources <a name="datasources"></a>        
-Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of the top databases.         
+Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of top databases.         
 
-SQL databases - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
-NoSQL databases - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
+SQL - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
+NoSQL - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 Data warehouse - Google Big Query
 
 Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
@@ -63,10 +63,10 @@ Example of a datasource definition:
 ```    
       
 ## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect with multiple cloud databases compared to a conventional workbench because of our easy-to-use browser interface.          
+Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect multiple cloud data storage products compared to a conventional workbench because of our easy-to-use browser interface.          
 There are two types of configurations:  
-1. Shared Bandwidth
-2. Dedicated connections
+1. Shared Bandwidth (for trial users using the in-built database)    
+2. Dedicated connections (for dev and enterprise users using both the in-built and external datasources)      
 
 ![datasources](https://cdn-images-1.medium.com/max/800/1*_IhJ2hsx9USQOrgt_8I2PQ.png)    
 
@@ -76,7 +76,7 @@ Execution of multiple SQL queries is possible in the admin console and for repor
 The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query. This provides convenience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is, access based on the geographic location of users.       
 
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
@@ -385,7 +385,7 @@ As a result, they  showcase a true representation of the data captured through t
       
 - [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of HTML/CSS code, forms and reports with or without global filters. These can be placed one next to the other or in a sequential order like a conventional web page. Dashboards can have their own pre and post HTML as well. This makes it the easiest way to develop and host a micro CRM application, analytics dashboard, a SPA or a landing page.     
+A dashboard is an aggregation of HTML/CSS code, forms and reports with or without global filters. These can be placed one next to the other or in a sequential order like a conventional web page. Dashboards can have their own pre and post HTML as well. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
   
@@ -465,12 +465,12 @@ The JSON tags of a dashboard are given below.
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application. It is possible to restrict access in a dashboard and its constituents upto the filter level. The default widget type in a dashboard is 'report'.           
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application. It is possible to restrict access in a dashboard's constituents upto the filter level. The default widget type in a dashboard is 'report'.           
 
 ```json
 {
     "is_public": {
-        "status": false
+        "status": true
     },
     "css_definition": "",
 
