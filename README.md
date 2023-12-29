@@ -71,9 +71,9 @@ There are two types of configurations:
 ![datasources](https://cdn-images-1.medium.com/max/800/1*_IhJ2hsx9USQOrgt_8I2PQ.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements at once and view results serially in a JSON response. In reports however, only the final `select` statement is used for storing the values.     
+Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements at once and view results serially in a JSON response. In reports however, only the final `select` statement is used for populating reports.     
 
-The preceeding queries in a report can be used for generating real-time dynamic intermediate values for substituting variable terms in the final query. This provides convenience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
+The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query. This provides convenience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is access based on the geographic location of users.       
