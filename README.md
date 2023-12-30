@@ -434,7 +434,8 @@ The JSON tags of a dashboard are given below.
             }, {
                 "type": "form",
                 "id": "52",
-                "cols": 0 - 12
+                "cols": 0 - 12,
+		"removeFormCss": true | false
             }],
      "filter_menu": [{
             "label": "",
@@ -507,7 +508,7 @@ The JSON tags of a dashboard are given below.
                 "type": "form",
                 "id": "52",
                 "cols": 8,
-		"removeFormCss": true | false
+		"removeFormCss": false
             },
             {
 		"type": "html",   
