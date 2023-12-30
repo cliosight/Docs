@@ -506,7 +506,8 @@ The JSON tags of a dashboard are given below.
             {
                 "type": "form",
                 "id": "52",
-                "cols": 8
+                "cols": 8,
+		"removeFormCss": true | false
             },
             {
 		"type": "html",   
