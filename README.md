@@ -420,7 +420,7 @@ The JSON tags of a dashboard are given below.
                 "removeReportCss": true | false
             }, {
                 "type": "form",
-                "id": "52",
+                "id": "",
                 "cols": 0 - 12
             }],
     "widgets": [{
@@ -433,7 +433,7 @@ The JSON tags of a dashboard are given below.
                 "removeReportCss": true | false
             }, {
                 "type": "form",
-                "id": "52",
+                "id": "",
                 "cols": 0 - 12,
 		"removeFormCss": true | false
             }],
