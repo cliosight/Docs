@@ -619,7 +619,7 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 
 # API <a name="api"></a>    
 
-## Fetch Data with Reports           
+## Fetch Data from a Report           
 
 [Contacts and Groups Report](#report_example)            
 ```curl
@@ -632,13 +632,13 @@ Content-Length: 32
 {"startIndex":0,"pageSize":500}
 ```
 ## With 'Name' filter              
-
+```curl
 https://app.cliosight.com/node/reports/29/data?tableRow={"Name":"Jigisha Aryya"}
-
+```
 ## Export data from a Report into a CSV file            
-
+```curl
 https://app.cliosight.com/node/reports/70/data/export?tableRow={}
-
+```
 ## Create a new Report "Contacts Named Jigisha" for a user and group (Python Request)                
 ```python
 import requests
@@ -675,20 +675,16 @@ json_data = {
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
 ```
 ## Create a new Form "Contact Cliosight"       
-
+```curl
 https://app.cliosight.com/node/forms/create 
-
+```
 ## Import Data in CSV files into Table(s)
 This API automatically updates duplicate IDs.    
 
 [Contact Creation](#form_example)               
-
+```curl
 https://app.cliosight.com/node/forms/44/importCsv           
-
-## Form Submission            
-
-https://app.cliosight.com/node/forms/38/submit
-
+```
 # Free Tier Offerings <a name="freetier"></a>   
     
 |Category     |Free for 14 days|
