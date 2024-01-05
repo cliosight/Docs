@@ -621,7 +621,7 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 
 ## Fetch Data with Reports           
 
-[Contacts and Groups Report](#report)            
+[Contacts and Groups Report](#report_example)            
 ```curl
 POST /node/reports/29/data?tableRow HTTP/1.1
 Host: app.cliosight.com
