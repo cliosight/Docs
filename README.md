@@ -651,7 +651,7 @@ curl 'https://app.cliosight.com/node/reports/70/data/export?tableRow=%7B%7D' -X 
 ```curl
 curl 'https://app.cliosight.com/node/reports/create' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDQ0MzE4OCwiZXhwIjoxNzA0NTI5NTg4fQ.Bfn_u7WdwReEoKHJpXAtcD6XaYyzTn2nC_CK3Gyr3Lg' -H 'Content-Type: application/json' -H 'Origin: https://app.cliosight.com' -H 'Connection: keep-alive' -H 'Referer: https://app.cliosight.com/app/reports' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin' --data-raw $'{"report_definition":{"config":"{\\n    \\"datasource_id\\": \\"\\",\\n    \\"columns\\": {}\\n}","query":"select * from `contacts` c where c.name like \'%Jigisha%\'","label":"Contacts Named Jigisha"},"mc_users":["2","6"],"mc_groups":["5"],"datasource_id":""}'             
 ```
-## Import Data with Forms into Table
+## Import Data with Forms into Table(s)
 
 [Contact Creation](#form_example)               
 
