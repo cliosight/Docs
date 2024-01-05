@@ -5,7 +5,7 @@ Cliosight is a low-code platform that offers addition of various leading databas
 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any clarifications.   
 	    
-Visit our website [cliosight.com](https://cliosight.com). Check out our [blog](https://medium.com/@cliosight) and our [Linkedin](https://www.linkedin.com/in/jigisha-aryya/) profile.         
+Visit our website [cliosight.com](https://cliosight.com) to write us a message. Check out our [blog](https://medium.com/@cliosight) and follow us on [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).         
 
 # Table of contents    
 
