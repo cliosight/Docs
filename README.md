@@ -622,7 +622,7 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 ## Fetch Data with Reports           
 
 [Contacts and Groups Report](#report)            
-
+```curl
 POST /node/reports/29/data?tableRow HTTP/1.1
 Host: app.cliosight.com
 Content-Type: application/json
@@ -630,9 +630,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsa
 Content-Length: 32
 
 {"startIndex":0,"pageSize":500}
-
+```
 ## With 'Name' filter              
-
+```curl
 POST /node/reports/29/data?tableRow={"Name":"Jigisha Aryya"} HTTP/1.1
 Host: app.cliosight.com
 Content-Type: application/json
@@ -640,17 +640,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsa
 Content-Length: 32
 
 {"startIndex":0,"pageSize":500}      
-
+```
 ## Export data from a Report into a CSV file (cURL)             
 
 This API automatically updates duplicate IDs.     
-
+```curl
 curl 'https://app.cliosight.com/node/reports/70/data/export?tableRow=%7B%7D' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Origin: https://app.cliosight.com' -H 'Connection: keep-alive' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: iframe' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: same-origin' --data-raw 'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDQ0MzE4OCwiZXhwIjoxNzA0NTI5NTg4fQ.Bfn_u7WdwReEoKHJpXAtcD6XaYyzTn2nC_CK3Gyr3Lg&report=%257B%2522id%2522%253A70%252C%2522label%2522%253A%2522zz%2520Stress%2520Test%2522%252C%2522description%2522%253Anull%252C%2522report_definition%2522%253A%257B%2522config%2522%253A%2522%257B%255Cn%2520%2520%2520%2520%255C%2522datasource_id%255C%2522%253A%25201%252C%255Cn%2520%2520%2520%2520%255C%2522page_size%255C%2522%253A%2520100%252C%255Cn%2520%2520%2520%2520%255C%2522columns%255C%2522%253A%2520%257B%257D%252C%255Cn%2520%2520%2520%2520%255C%2522filter_menu%255C%2522%253A%2520%255B%257B%255Cn%2520%2520%2520%2520%2520%2520%2520%2520%255C%2522column%255C%2522%253A%2520%255C%2522id%255C%2522%255Cn%2520%2520%2520%2520%257D%252C%2520%257B%255Cn%2520%2520%2520%2520%2520%2520%2520%2520%255C%2522column%255C%2522%253A%2520%255C%2522Date%255C%2522%255Cn%2520%2520%2520%2520%257D%252C%2520%257B%255Cn%2520%2520%2520%2520%2520%2520%2520%2520%255C%2522column%255C%2522%253A%2520%255C%2522Address%255C%2522%255Cn%2520%2520%2520%2520%257D%252C%2520%257B%255Cn%2520%2520%2520%2520%2520%2520%2520%2520%255C%2522column%255C%2522%253A%2520%255C%2522Agent%255C%2522%255Cn%2520%2520%2520%2520%257D%255D%255Cn%257D%2522%252C%2522label%2522%253A%2522zz%2520Stress%2520Test%2522%252C%2522query%2522%253A%2522select%2520*%2520from%2520stress_test%2522%252C%2522pageSize%2522%253A100%252C%2522startIndex%2522%253A0%257D%252C%2522mc_users%2522%253A%255B%255D%252C%2522mc_groups%2522%253A%255B%255D%252C%2522datasource_id%2522%253A1%257D'
-
+```
 ## Create a new Report "Contacts Named Jigisha" (cURL)                
-
+```curl
 curl 'https://app.cliosight.com/node/reports/create' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0' -H 'Accept: application/json, text/plain, */*' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br' -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDQ0MzE4OCwiZXhwIjoxNzA0NTI5NTg4fQ.Bfn_u7WdwReEoKHJpXAtcD6XaYyzTn2nC_CK3Gyr3Lg' -H 'Content-Type: application/json' -H 'Origin: https://app.cliosight.com' -H 'Connection: keep-alive' -H 'Referer: https://app.cliosight.com/app/reports' -H 'Sec-Fetch-Dest: empty' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin' --data-raw $'{"report_definition":{"config":"{\\n    \\"datasource_id\\": \\"\\",\\n    \\"columns\\": {}\\n}","query":"select * from `contacts` c where c.name like \'%Jigisha%\'","label":"Contacts Named Jigisha"},"mc_users":["2","6"],"mc_groups":["5"],"datasource_id":""}'             
-
+```
 ## Import Data with Forms into Table
 
 [Contact Creation](#form_example)               
