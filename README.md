@@ -332,9 +332,9 @@ JSON for this report (without CSS and post HTML):
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. 
 
-One such example is an area chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply using it within a dashboard. 
+One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply using it within a dashboard. 
      
-[Area chart with different datasources](https://app.cliosight.com/app/dashboards/50/show?noNavbar=true)                      
+[Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
 
 SQL query for the report:     
@@ -621,25 +621,48 @@ Being able to code a workflow by combining tasks using a simple JSON configurati
 
 ## Fetch Data from a Report           
 
-[Contacts and Groups Report](#report_example)            
-```curl
-POST /node/reports/29/data?tableRow HTTP/1.1
-Host: app.cliosight.com
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDQzNzEzNiwiZXhwIjoxNzA0NTIzNTM2fQ.xwlpYbtkV3pqfHOyntkYs0H47IFlQh8LMEsKT7C2sI0
-Content-Length: 32
+[12k records from an Excel sheet](https://app.cliosight.com/app/reports/70/show?noNavbar=true)           
+```python
+import requests
+import json
 
-{"startIndex":0,"pageSize":500}
+url = "https://app.cliosight.com/node/reports/70/data"
+
+payload = json.dumps({
+  "startIndex": 0,
+  "pageSize": 500  // Max. allowed is 500
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDU1NzE0NSwiZXhwIjoxNzA0NjQzNTQ1fQ.4oo2u_Xk6h75NrA_O8SuKGC90Rq6gbbsEaDzfOlryHg'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
 ```
-## With 'Name' filter              
-```curl
-https://app.cliosight.com/node/reports/29/data?tableRow={"Name":"Jigisha Aryya"}
+## With 'Agent' filter              
+```python
+import requests
+import json
+
+url = "https://app.cliosight.com/node/reports/70/data?tableRow={\"Agent\":\"Best Bricks\"}"
+
+payload = json.dumps({
+  "startIndex": 0,
+  "pageSize": 1000
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDU1NzE0NSwiZXhwIjoxNzA0NjQzNTQ1fQ.4oo2u_Xk6h75NrA_O8SuKGC90Rq6gbbsEaDzfOlryHg'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
 ```
-## Export data from a Report into a CSV file            
-```curl
-https://app.cliosight.com/node/reports/70/data/export?tableRow={}
-```
-## Create a new Report "Contacts Named Jigisha" for a user and group (Python Request)                
+## Create a new Report "Contacts Named Jigisha" for a Cliosight user and group               
 ```python
 import requests
 
@@ -674,17 +697,7 @@ json_data = {
 
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
 ```
-## Create a new Form "Contact Cliosight"       
-```curl
-https://app.cliosight.com/node/forms/create 
-```
-## Import Data in CSV files into Table(s)
-This API automatically updates duplicate IDs.    
 
-[Contact Creation](#form_example)               
-```curl
-https://app.cliosight.com/node/forms/44/importCsv           
-```
 # Free Tier Offerings <a name="freetier"></a>   
     
 |Category     |Free for 14 days|
