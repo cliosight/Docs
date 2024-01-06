@@ -242,7 +242,7 @@ The JSON tags of a report are given below.
 ```
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
-[Contacts & Groups](#api) report in the meeting application shows all contacts along with the total number of groups for each created using multiple statements.                   
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using multiple statements.                   
 
 SQL Query for this report:      
 ``` sql
@@ -395,7 +395,7 @@ A dashboard is an aggregation of HTML/CSS code, forms and reports with or withou
 ![App](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UXneRLM6cizrljW-C_D5eg.png)                
   
 Just like the previous two types of UI elements, a dashboard can be shared using a URL in a similar format.         
-For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=false    
+For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=true    
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
