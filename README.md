@@ -36,13 +36,13 @@ Visit our website [cliosight.com](https://cliosight.com) to write us a message. 
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
 ## Support for Multiple Datasources <a name="datasources"></a>        
-Schemas created are segregated based on datasources. Users on the [free tier](#freetier) will have access to the in-built database only with a **shared connection pool**. They will be able to choose from a list of top databases.         
+1. Schemas created are segregated based on datasources.       
+2. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
+3. Dev and enterprise users will be able to choose from a list of top databases for adding multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.              
 
-SQL - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
-NoSQL - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
-Data warehouse - Google Big Query
-
-Dev and enterprise tier users will be able to add multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.      
+**SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
+**NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
+**Data warehouse** - Google Big Query
 
 Example of a datasource definition:      
 ```json     
@@ -63,7 +63,7 @@ Example of a datasource definition:
 ```    
       
 ## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute CRUD SQL queries on a configured instance. It is a more convinient way to connect multiple cloud data storage products compared to a conventional workbench because of our easy-to-use browser interface.          
+Admin users can execute CRUD SQL queries and connect multiple cloud data storage products with our easy-to-use browser interface.          
 There are two types of configurations:  
 1. Shared Bandwidth (for trial users using the in-built database)    
 2. Dedicated connections (for dev and enterprise users using both the in-built and external datasources)      
@@ -71,20 +71,20 @@ There are two types of configurations:
 ![datasources](https://cdn-images-1.medium.com/max/800/1*_IhJ2hsx9USQOrgt_8I2PQ.png)    
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for report creation. Admin users can execute any number of statements at once and view results serially in a JSON response. In reports however, only the final `select` statement is used for populating reports.     
+Execution of multiple SQL queries is possible in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports.     
 
-The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query. This provides convenience in complex data processing within the platform. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
+The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
    
 ## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. Administrators can grant specific permissions to users, enabling controlled actions on UI and automation components. An example of this is, access based on the geographic location of users.       
+Cliosight ensures that each component created within its platform incorporates fine-grained access control. An example of this is, access based on the geographic location of users.       
 
 Types of users:     
 1. **Admin** - Allowed to perform all actions within an account.          
 2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. **Admin-Minor** (Next Release) - No access to datasources, tables, users/groups and automation components.
+3. **Admin-Minor** - No access to datasources, tables, users/groups and automation components.
    
 ## Advanced File Storage <a name="afiles"></a>      
-This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods. Text, CSV, spreadsheet, PDF, image, video and audio file formats will be supported for processing.     
+This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods.      
 
 ## Leveraging AI Components <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
@@ -93,7 +93,7 @@ To provide a better user experience through the use of AI, we have added code ge
 
 One question that might arise is,   
 **<i>Why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. There is no need for the user to understand the code. The programming language thereby becomes insignificant. Changes can be done right in the config. Call it a shorthand for developing applications that comes with infrastructure. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
+The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it follows the WYSIWYG principle. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
@@ -113,7 +113,7 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 ## Email Notification <a name="email"></a>    
-Emails are an integral part of any CRM application. Using our email notification system users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
+Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
 # The building blocks of a Cliosight application <a name="app"></a>       
  
@@ -126,13 +126,8 @@ Emails are an integral part of any CRM application. Using our email notification
    
 - [JSON body of a Form with an example](#formjson) 
       
-A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form.      
-
-With the pre and post HTML JSON tags a form can function like a web page. This eliminates the need for a database when used within another application hosted on a cloud VM, a docker container or serverless infrastructure. So we can have one or more Cliosight forms within an HTML or several HTML code snippets within a form. 
-     
-For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form can be used instead of the usual landing page. A form is complete, except for the limitation that it can have only one submit button.         
-
-A dashboard enables any number of forms, reports and HTML code snippets to be grouped together. This is explained in the [Dashboard](#dashboard) section. A report may also contain any number of nested reports and forms for drilling-down, editing or adding records as explained in the section for [Report](#report) creation.        
+A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the pre and post HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.                        
+For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form used in place of a product landing page.           
 
 The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
 
@@ -141,7 +136,8 @@ The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=tr
 Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
 
 ## An Example of Using Forms - The Meeting Scheduler Application <a name="form_example"></a>        
-For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. They can provide all the necessary information for an email that has to be sent out once a meeting is scheduled, updated or cancelled. Triggers and jobs explained later provides this capability.        
+For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with forms can be used to [automate](#automation) tasks like sending out emails.          
+
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
@@ -162,14 +158,13 @@ The components are:
 - [Example of a Report](#report_example)     
 - [Graphs and Charts with Reports](#graphs)
 - [Using Reports in Jupyter Notebook](#jupyter)
-- [Ensuring Trustworthiness](#trust)
-
+- [Ensuring Trustworthiness](#trust)        
   
-While a form is the data input interface, a report is the output of data analysis with SQL or external code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API that can serve as a source of data for visualization applications.  
+While a form is the data input interface, a report is the output of data analysis with SQL or external code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs).        
 
-1. A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They may also have multiselect option.
+A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They may also have a multiselect option.
    
-2. The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
+The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
           
 A report can be embedded using a URL in the format https://app.cliosight.com/app/reports/29/show?noNavbar=true           
 
@@ -362,11 +357,11 @@ Corresponding JSON (without CSS definition):
 ```
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Common Python packages can be used to train and test machine learning models. Data scientists and machine learning engineers prefer using datasets from various platforms like Kaggle to experiment with their models. Datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
+Public datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
 
 Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for such data analysis and visualization tasks. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports and tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
+Alternatively, reports from different datasources in one or more Cliosight accounts and datasources can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (Next Release)    
 It is possible to restrict data input into a table using the following features of a form:  
@@ -375,27 +370,26 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one or more of the above methods can, however, serve as input to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only.
-      
-As a result, they  showcase a true representation of the data captured through the intended workflow. This approach helps maintain integrity and reliability, reinforcing the accuracy of subsequent analyses and insights derived through visualization. This real-world data can be used to generate artificial datasets using deep learning models like GANs (Generative adversarial networks) and VAEs (Variational autoencoders).    
+Reports created from restricted tables using one or more of the above methods can, however, serve as input to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
       
 - [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of HTML/CSS code, forms and reports with or without global filters. These can be placed one next to the other or in a sequential order like a conventional web page. Dashboards can have their own pre and post HTML as well. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.     
+A dashboard is an aggregation of HTML/CSS, forms and reports. Dashboards can have their own pre and post HTML. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
   
 #### Important features of dashboard:     
-1. Global filters take precedence over the report filters. Therefore, they need to be applied first. It is possible to configure the filtering criteria by specifying which field should be used for the join operation.
-   
-2. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable. 
+1. Global filters take precedence over the report filters.         
+2. It is possible to configure the filtering criteria by specifying which field to be used for join operation.
+3. It is possible to restrict access in a dashboard's constituents upto the filter level.
+4. The default widget type in a dashboard is a 'report'.                       
+5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable using "removeReportCss" or "removeFormCss" JSON tag.                    
      
 ![App](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UXneRLM6cizrljW-C_D5eg.png)                
-  
-Just like the previous two types of UI elements, a dashboard can be shared using a URL in a similar format.         
-For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=true    
+
+A dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=true    
 
 ## JSON body of a Dashboard  <a name="dashboardjson"></a>      
 
@@ -461,10 +455,9 @@ The JSON tags of a dashboard are given below.
     }]
 }
 ```
-
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application. It is possible to restrict access in a dashboard's constituents upto the filter level. The default widget type in a dashboard is 'report'.           
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application.                  
 
 ```json
 {
@@ -548,7 +541,6 @@ The JSON tags of a dashboard are given below.
     }]
 }
 ```
-
 # Automation <a name="automation"></a>   
 
 - [Sending Email Notification on Event](#trigger_email)     
@@ -561,7 +553,7 @@ The JSON tags of a dashboard are given below.
 
 
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events. As explained later, when used along with jobs, it provides logic execution capability to the UI elements making them full-fledged cloud-hosted web applications.     
+A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events.       
 ```json
 {        
 	"trigger_definition": {        
@@ -574,7 +566,6 @@ A trigger enables action on data and insights. Since we are dealing with structu
   	 "datasourtce_id": 1     
     }        
 ```
-
 ## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
 ### Existing Contact update action (refer to the Contacts form in Forms section)  
 ```json 
@@ -590,7 +581,6 @@ A trigger enables action on data and insights. Since we are dealing with structu
     "datasource_id": 1
 }
 ```
-
 ## JSON body of a Job <a name="job"></a>   
 A job executes SQL queries at intervals for performing an ETL operation.   
    
