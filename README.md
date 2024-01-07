@@ -361,7 +361,7 @@ Public datasets are typically downloaded as CSV files to store locally on the ha
 
 Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
 
-Alternatively, reports from different datasources in one or more Cliosight accounts and datasources can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
 ## Ensuring Trustworthiness <a name="trust"></a> (Next Release)    
 It is possible to restrict data input into a table using the following features of a form:  
