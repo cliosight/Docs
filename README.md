@@ -1,7 +1,7 @@
 # Cliosight      
 **Build the best applications & datasets with low-code**   
                  
-Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. This document is an overview of the major components of the platform, viz. datasources, tables, forms, reports, dashboards, triggers, jobs and workflows. Watch the tutorial videos [here](https://www.youtube.com/channel/UC1STG2eLks_NJcwbdkjDDIQ) explaining each one in detail. 
+Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. Click [here](https://github.com/cliosight/Docs/blob/main/Spec.md) for an overview of the major components of the platform. Watch the tutorial videos [here](https://www.youtube.com/channel/UC1STG2eLks_NJcwbdkjDDIQ) explaining each one in detail. 
 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any clarifications.   
 	    
