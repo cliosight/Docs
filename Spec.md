@@ -591,12 +591,12 @@ Let's consider a simple application that notifies trial users of a SaaS product 
 A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through other utility jobs.       
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
-Consider the sales funnel that comprises sending promotional emails. We need to contact existing or potential customers on certain events at regular intervals.     
+Consider the sales funnel that comprises sending promotional emails. We need to contact existing or potential customers on certain events at regular intervals.   
 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
 
-Being able to code a workflow by combining tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with the API framework that Cliosight has provided. UI and automation components can be created instantly in external applications.    
+Being able to code a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with data pipelines. UI and automation components can be created instantly in external applications with our API.    
 
 # API <a name="api"></a>    
 
