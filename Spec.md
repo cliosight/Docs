@@ -348,9 +348,7 @@ Corresponding JSON (without CSS definition):
 ```
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Public datasets are typically downloaded as CSV files to store locally on the hard disk of their personal computers, cloud VM or storage attached to serverless infrastructure where Jupyter is installed and accessed locally or remotely.     
-
-Data is processed, split, or merged according to the requirements. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib et al.   
+Public datasets are typically downloaded as CSV files to store locally on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in these devices and accessed locally or remotely. Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al.   
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
@@ -361,20 +359,21 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms can insert data into those tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one or more of the above methods can, however, serve as input to forms of other datasources from which reports can be generated, if the fourth option is not applied. This ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
+Reports created from restricted tables using one or more of the above methods can, however, serve as input to other datasources from which reports can be generated. This is however possible if the fourth option is not applied.         
+It ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
       
 - [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of HTML/CSS, forms and reports. Dashboards can have their own pre and post HTML. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.     
+A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dashboards can have their own pre and post HTML. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.     
 
 ![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
   
 #### Important features of dashboard:     
 1. Global filters take precedence over the report filters.         
-2. It is possible to configure the filtering criteria by specifying which field to be used for join operation.
-3. It is possible to restrict access in a dashboard's constituents upto the filter level.
+2. It is possible to configure the filtering criteria by specifying which field to be used for a join operation.
+3. It is possible to restrict access in a dashboard's constituents upto the report filter level.
 4. The default widget type in a dashboard is a 'report'.                       
 5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable using "removeReportCss" or "removeFormCss" JSON tag.                    
      
@@ -406,7 +405,8 @@ The JSON tags of a dashboard are given below.
             }, {
                 "type": "form",
                 "id": "",
-                "cols": 0 - 12
+                "cols": 0 - 12,
+		"removeFormCss": true | false
             }],
     "widgets": [{
                 "html": "",
