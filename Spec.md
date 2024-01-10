@@ -536,7 +536,7 @@ The JSON tags of a dashboard are given below.
 
 - [Sending Email Notification on Event](#trigger_email)     
 - [JSON body of a Trigger with example](#trigger)     
-- [JSON body of a Job with example](#job)         
+- [JSON body of a Job with example](#jobs)         
 - [JSON body of a Workflow with example](#workflow)               
 - [Using Workflows in Jupyter Notebook](#python)
 
@@ -572,7 +572,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
     "datasource_id": 1
 }
 ```
-## JSON body of a Job <a name="job"></a>   
+## JSON body of a Job <a name="jobs"></a>   
 A job executes SQL queries at intervals for performing an ETL operation.   
    
 ```json
