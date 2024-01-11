@@ -356,11 +356,11 @@ Alternatively, reports from different datasources in one or more Cliosight accou
 It is possible to restrict data input into a table using the following features of a form:  
 1. Disabling data import through CSV file upload.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
-3. Ensuring that no other forms can insert data into those tables.
+3. Ensuring that no other forms or endpoints can insert data into these tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one or more of the above methods can, however, serve as input to other datasources from which reports can be generated. This is however possible if the fourth option is not applied.         
-It ensures that the primary table and associated sub-form tables receive their inputs via the designated form interface only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
+Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This is however possible only if the fourth option is not applied.         
+It ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
       
