@@ -92,10 +92,7 @@ Using our email notifications, users will be able to send a max of 100 emails to
 
 
 # Form <a name="form"></a>    
-   
-A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the pre and post HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.                        
-For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form used in place of a product landing page.             
-
+A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the pre and post HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.        
 ## An Example of Using Forms - The Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with forms can be used to [automate](#automation) tasks like sending out emails.          
 
@@ -227,12 +224,12 @@ Corresponding JSON (without CSS definition):
 ```json
 {
     "datasource_id": "1",
-    "pre_html": "<div class=\"\"><img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\"></div><div><br/><h1>Our numbers tell the story</h1></div>",
+    "pre_html": "<img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\"></div><div><br/><h1>Our numbers tell the story</h1>",
     "is_public": {
         "status": true
     },
     "css_definition": "",
-    "post_html": "<br/><a href=\"https://app.cliosight.com/app/reports/85/show?noNavbar=true\" target=\"_blank\">Share this report</a></div><br/><br/>",
+    "post_html": "<a href=\"https://app.cliosight.com/app/reports/85/show?noNavbar=true\" target=\"_blank\">Share this report</a></div>",
     "columns": {}
 }
 ```
@@ -242,7 +239,7 @@ Public datasets are typically downloaded as CSV files to store locally on the ha
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables. This makes creating, updating and sharing private datasets more secure for collaborative applications. Visit the [API](#api) section to know more.      
 
-## Ensuring Trustworthiness <a name="trust"></a> (Next Release)    
+## Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
 1. Disabling data import through CSV file upload.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
@@ -254,14 +251,7 @@ It ensures that the primary table and associated sub-form tables receive their i
 
 # Dashboard <a name="dashboard"></a>        
   
-A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dashboards can have their own pre and post HTML. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.           
-  
-#### Important features of dashboard:     
-1. Global filters take precedence over the report filters.         
-2. It is possible to configure the filtering criteria by specifying which field to be used for a join operation.
-3. Access can be controlled upto the report filter level.
-4. The default widget type in a dashboard is a 'report'.                       
-5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable.                             
+A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dashboards can have their own pre and post HTML. Access can be controlled upto the report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
