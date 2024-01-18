@@ -59,7 +59,7 @@ There are two types of configurations:
 1. Shared Bandwidth (for trial users using the in-built database)    
 2. Dedicated connections (for dev and enterprise users using both the in-built and external datasources)      
 
-![datasources](https://cdn-images-1.medium.com/max/800/1*_IhJ2hsx9USQOrgt_8I2PQ.png)    
+![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/1%20_IhJ2hsx9USQOrgt_8I2PQ.png)  
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
 Execution of multiple SQL queries is possible in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports.     
