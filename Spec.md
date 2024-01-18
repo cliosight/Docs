@@ -29,7 +29,7 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 ## Support for Multiple Datasources <a name="datasources"></a>        
 1. Schemas created are segregated based on datasources.       
 2. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
-3. Dev and enterprise users will be able to choose from a list of top databases for adding multiple datasources. One other advantage is dedicated resources.
+3. Dev and enterprise users will be able to choose from a list of top databases for multiple datasources.    
                   
 **SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
