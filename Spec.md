@@ -259,9 +259,9 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 #### Important features of dashboard:     
 1. Global filters take precedence over the report filters.         
 2. It is possible to configure the filtering criteria by specifying which field to be used for a join operation.
-3. It is possible to restrict access in a dashboard's constituents upto the report filter level.
+3. Access can be controlled upto the report filter level.
 4. The default widget type in a dashboard is a 'report'.                       
-5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable.                              
+5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable.                             
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
