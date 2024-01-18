@@ -261,7 +261,7 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 2. It is possible to configure the filtering criteria by specifying which field to be used for a join operation.
 3. It is possible to restrict access in a dashboard's constituents upto the report filter level.
 4. The default widget type in a dashboard is a 'report'.                       
-5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable using "removeReportCss" or "removeFormCss" JSON tag.                              
+5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable.                              
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
@@ -354,7 +354,7 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
 
 
-## JSON body of a Trigger <a name="trigger"></a>   
+## Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events.  
     
 ## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
@@ -372,13 +372,13 @@ A trigger enables action on data and insights. Since we are dealing with structu
     "datasource_id": 1
 }
 ```
-## JSON body of a Job <a name="jobs"></a>   
+## Job <a name="jobs"></a>   
 A job executes SQL queries at intervals for performing an ETL operation.   
 
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
 Let's consider a simple application that notifies trial users of a SaaS product - Meeting Scheduler Portal. As an admin, I need to send notifications everyday through email.     
 
-## JSON body of a Workflow <a name="workflow"></a>     
+## Workflow <a name="workflow"></a>     
 A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through other utility jobs.       
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
@@ -392,8 +392,7 @@ Being able to code a workflow by combining data management tasks using a simple 
 # API <a name="api"></a>    
 
 ## Fetch Data from a Report           
-
-[12k records from an Excel sheet](https://app.cliosight.com/app/reports/70/show?noNavbar=true)           
+       
 ```python
 import requests
 import json
@@ -402,7 +401,7 @@ url = "https://app.cliosight.com/node/reports/70/data"
 
 payload = json.dumps({
   "startIndex": 0,
-  "pageSize": 500  // Max. allowed is 500
+  "pageSize": 500  
 })
 headers = {
   'Content-Type': 'application/json',
