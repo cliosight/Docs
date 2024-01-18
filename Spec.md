@@ -29,29 +29,10 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 ## Support for Multiple Datasources <a name="datasources"></a>        
 1. Schemas created are segregated based on datasources.       
 2. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
-3. Dev and enterprise users will be able to choose from a list of top databases for adding multiple datasources to a single account. One other advantage is dedicated resources, ensuring faster data transfer and processing.              
-
+3. Dev and enterprise users will be able to choose from a list of top databases for adding multiple datasources. One other advantage is dedicated resources.              
 **SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
-**Data warehouse** - Google Big Query
-
-Example of a datasource definition:      
-```json     
-{
-    "client_id": 2,
-    "datasource_definition": {
-        "type": "mysql",
-        "connectionLimit": 10,
-        "host": "34.23.219.145",
-        "port": 3306,
-        "user": "cliosight",
-        "password": "Password123",
-        "database": "cliosight",
-        "multipleStatements": true,
-        "label": "My Website Database (Shared Bandwidth)"
-    }
-}
-```    
+**Data warehouse** - Google Big Query   
       
 ## Running Queries on a Datasource <a name="tables"></a>     
 Admin users can execute CRUD SQL queries and connect multiple cloud data storage products with our easy-to-use browser interface.          
@@ -62,9 +43,7 @@ There are two types of configurations:
 ![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/1%20_IhJ2hsx9USQOrgt_8I2PQ.png)  
 
 ## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports.     
-
-The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query. For instance, using values from dynamically created tables or adding logic to data cleaning tasks. An example is provided in the [Reports](#report_example) section.       
+Execution of multiple SQL queries is possible in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports. The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query.
    
 ## User Permissions and Access Control <a name="acl"></a>
 Cliosight ensures that each component created within its platform incorporates fine-grained access control. An example of this is, access based on the geographic location of users.       
@@ -107,24 +86,14 @@ India:
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
 # The building blocks of a Cliosight application <a name="app"></a>       
- 
-![components](https://miro.medium.com/v2/resize:fit:720/format:webp/1*277E4iGxIAECACSyt2Y9RA.png)      
 
  [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
 
 # Form <a name="form"></a>    
    
-- [JSON body of a Form with an example](#formjson) 
-      
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the pre and post HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.                        
-For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form used in place of a product landing page.           
-
-The format of the URL is https://app.cliosight.com/app/forms/52/show?noNavbar=true         
-
-## JSON body of a Form <a name="formjson"></a>
-    
-Click ![here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to view the complete list of JSON tags that can be used within a form.   
+For instance, a simple [contact us](https://app.cliosight.com/app/forms/62/show?noNavbar=true) form used in place of a product landing page.             
 
 ## An Example of Using Forms - The Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with forms can be used to [automate](#automation) tasks like sending out emails.          
@@ -151,81 +120,9 @@ The components are:
 - [Using Reports in Jupyter Notebook](#jupyter)
 - [Ensuring Trustworthiness](#trust)        
   
-While a form is the data input interface, a report is the output of data analysis with SQL or external code. It is equipped with a download option to save results in the CSV format. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs).        
-
-A report may contain filters and drill-down options through nested reports and forms. Just like a drop-down menu input field, filters in a report can either have hardcoded values or column values of another report or table. They may also have a multiselect option.
+While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs).        
    
-The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.
-          
-A report can be embedded using a URL in the format https://app.cliosight.com/app/reports/29/show?noNavbar=true           
-
-## JSON body of a Report <a name="reportjson"></a>      
-
-The JSON tags of a report are given below.   
-```css
-{
-    "datasource_id": "",
-    "multipleStatements": true | false,    
-    "page_size": <int_value>,   // Max. 500; Default 10        
-    "is_public": {
-        "status": true | false,
-    },
-    "pre_html": "",  
-    "post_html": "",
-    "css_definition": "",
-    "columns": {
-        "<column_name>": {
-            "hidden": true | false
-        },
-        "<column_name>": {
-            "hidden": true | false
-        },
-        "<Report_Name>": {
-            "links": [{
-                "type": "form",
-                "id": "",
-                "args": [{
-                    "report_column": "",
-                    "name": ""
-                }, {
-                    "report_column": "",
-                    "name": ""
-                }],
-                "label": "Edit..."
-            }]
-        },
-        "<Report_Column_Name>": {
-            "text-align": "",
-            "dropdown-menu-align": "",
-            "links": [{
-                "type": "report",
-                "id": "",
-                "args": [{
-                    "report_column": "",
-                    "name": ""
-                }],
-                "label": "View..."
-            }]
-        }
-    },
-    "filter_menu": [{
-        "column": ""
-    }, {
-        "column": "",
-        "report_id": <id>,
-        "name": ""
-    }, {
-        "column": ""
-    }, {
-        "column": ""
-    }],
-    "report_links": [{
-        "type": "form",
-        "id": "",
-        "label": "Add a ..."
-    }]
-}
-```
+The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using multiple statements.                   
@@ -316,9 +213,7 @@ JSON for this report (without CSS and post HTML):
 ```
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. 
-
-One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply using it within a dashboard. 
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply using it within a dashboard. 
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
@@ -363,89 +258,16 @@ Reports created from restricted tables using one or more of the above methods ca
 It ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
-      
-- [JSON body of a Dashboard with example](#dashboardjson)
   
-A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dashboards can have their own pre and post HTML. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.     
-
-![Dashboard_aggregation](https://miro.medium.com/v2/resize:fit:1400/1*hZpjHig-UJXT8hwOkDgZPQ.png)              
+A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dashboards can have their own pre and post HTML. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.           
   
 #### Important features of dashboard:     
 1. Global filters take precedence over the report filters.         
 2. It is possible to configure the filtering criteria by specifying which field to be used for a join operation.
 3. It is possible to restrict access in a dashboard's constituents upto the report filter level.
 4. The default widget type in a dashboard is a 'report'.                       
-5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable using "removeReportCss" or "removeFormCss" JSON tag.                    
-     
-![App](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UXneRLM6cizrljW-C_D5eg.png)                
+5. It can have its own CSS definition which will override the CSS of the constituent reports and forms. This is however configurable using "removeReportCss" or "removeFormCss" JSON tag.                              
 
-A dashboard can be shared using a URL in a similar format. For instance, https://app.cliosight.com/app/dashboards/49/show?noNavbar=true    
-
-## JSON body of a Dashboard  <a name="dashboardjson"></a>      
-
-The JSON tags of a dashboard are given below.
-```css
-{     
-    "is_public": {
-        "status": true | false     
-    },    
-  "css_definition": "",      
-  "pre_html": "",     
-  "post_html":"",    
-  "hideToolbar": true | false,      
-  "widget_groups": [{ 
-    "widgets": [{
-                "html": "",
-                "cols": 0 - 12,
-                "type": "html"
-            }, {
-                "id": "",
-                "cols": 0 - 12,
-                "removeReportCss": true | false
-            }, {
-                "type": "form",
-                "id": "",
-                "cols": 0 - 12,
-		"removeFormCss": true | false
-            }],
-    "widgets": [{
-                "html": "",
-                "cols": 0 - 12,
-                "type": "html"
-            }, {
-                "id": "",
-                "cols": 0 - 12,
-                "removeReportCss": true | false
-            }, {
-                "type": "form",
-                "id": "",
-                "cols": 0 - 12,
-		"removeFormCss": true | false
-            }],
-     "filter_menu": [{
-            "label": "",
-            "column": "",
-            "column_label": "",
-            "report_id": <id>,
-            "name": "",
-            "reports": {
-                "<id>": {
-                    "report_column": "",
-                    "name": "",
-                    "label": "",
-                    "label_column": ""
-                },
-                "<id>": {
-                    "report_column": "",
-                    "name": "",
-                    "label": "",
-                    "label_column": ""
-                }
-            }
-        }]
-    }]
-}
-```
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application.                  
@@ -464,14 +286,14 @@ The JSON tags of a dashboard are given below.
     "post_html": "<br/><h6 style=\"\">Copyright Cliosight 2024. All rights reserved<br/><br/>Built with <a href=\"https://cliosight.com\">Cliosight</a></h6><br/>",
     "widget_groups": [{
         "widgets": [{
-                "html": "<!-- Negative space -->",
+                "html": "",
                 "cols": 1,
                 "type": "html"
             }, {
                 "id": "85",
                 "cols": 10
             }, {
-                "html": "<!-- Negative space -->",
+                "html": "",
                 "cols": 1,
                 "type": "html"
             }, {
@@ -484,7 +306,7 @@ The JSON tags of a dashboard are given below.
                 "removeReportCss": false
             },
             {
-                "html": "<!-- Negative space -->",
+                "html": "",
                 "cols": 2,
                 "type": "html"
             },
@@ -496,7 +318,7 @@ The JSON tags of a dashboard are given below.
             },
             {
 		"type": "html",   
-                "html": "<!-- Negative space -->",
+                "html": "",
                 "cols": 2
             }
         ]
@@ -544,19 +366,8 @@ The JSON tags of a dashboard are given below.
 
 
 ## JSON body of a Trigger <a name="trigger"></a>   
-A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events.       
-```json
-{        
-	"trigger_definition": {        
- 		"trigger_type": "<crud-operation>",          
-   		"trigger_entity": "<table-name>",    
-		"trigger_condition_query": "<check-for-a-condition>",    
-     		"trigger_action_query": "<sql-query-as-a-formatted-string>",       
-       		"label": "<name-for-the-trigger>"          
-	 },      
-  	 "datasourtce_id": 1     
-    }        
-```
+A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events.  
+    
 ## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
 ### Existing Contact update action (refer to the Contacts form in Forms section)  
 ```json 
@@ -574,16 +385,7 @@ A trigger enables action on data and insights. Since we are dealing with structu
 ```
 ## JSON body of a Job <a name="jobs"></a>   
 A job executes SQL queries at intervals for performing an ETL operation.   
-   
-```json
-{
-    "job_definition": {
-        "input_query": "",
-        "output_query": ""
-    },
-    "datasource_id": ""
-}
-```
+
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
 Let's consider a simple application that notifies trial users of a SaaS product - Meeting Scheduler Portal. As an admin, I need to send notifications everyday through email.     
 
