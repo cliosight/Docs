@@ -265,7 +265,7 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
-[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true) dashboard provides a quick view of the important data of a meeting scheduler application.                  
+[Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true)                    
 
 ```json
 {
@@ -274,11 +274,11 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
     },
     "css_definition": "",
 
-    "pre_html": "<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'><div><br/><h1 style=\"\">Cliosight Meetings</h1><br/>",
+    "pre_html": "<h1>Cliosight Meetings</h1>",
 
     "hideToolbar": true,
 
-    "post_html": "<br/><h6 style=\"\">Copyright Cliosight 2024. All rights reserved<br/><br/>Built with <a href=\"https://cliosight.com\">Cliosight</a></h6><br/>",
+    "post_html": "<h6>Copyright Cliosight 2024. All rights reserved<br/><br/>Built with <a href=\"https://cliosight.com\">Cliosight</a></h6><br/>",
     "widget_groups": [{
         "widgets": [{
                 "html": "",
@@ -350,9 +350,11 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 }
 ```
 # Automation <a name="automation"></a>   
+Simple UI like forms and dashboards are useful. However for developing a full-fledged cloud hosted CRM application, automating tasks is mandatory. Our syntax provides a shorthand for one-click deployment of automation code.    
+Provision for custom Javascript and Python code will be provided in the next release.     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
-
+Sending notifications on events can be configured like any other backend component.   
 
 ## Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events.  
