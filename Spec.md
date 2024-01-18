@@ -29,7 +29,8 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 ## Support for Multiple Datasources <a name="datasources"></a>        
 1. Schemas created are segregated based on datasources.       
 2. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
-3. Dev and enterprise users will be able to choose from a list of top databases for adding multiple datasources. One other advantage is dedicated resources.              
+3. Dev and enterprise users will be able to choose from a list of top databases for adding multiple datasources. One other advantage is dedicated resources.
+                  
 **SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 **Data warehouse** - Google Big Query   
@@ -112,13 +113,7 @@ The components are:
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-# Report <a name="report"></a>       
-    
-- [JSON body of a Report](#reportjson)     
-- [Example of a Report](#report_example)     
-- [Graphs and Charts with Reports](#graphs)
-- [Using Reports in Jupyter Notebook](#jupyter)
-- [Ensuring Trustworthiness](#trust)        
+# Report <a name="report"></a>          
   
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs).        
    
@@ -356,12 +351,6 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 ```
 # Automation <a name="automation"></a>   
 
-- [Sending Email Notification on Event](#trigger_email)     
-- [JSON body of a Trigger with example](#trigger)     
-- [JSON body of a Job with example](#jobs)         
-- [JSON body of a Workflow with example](#workflow)               
-- [Using Workflows in Jupyter Notebook](#python)
-
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
 
 
@@ -433,7 +422,7 @@ url = "https://app.cliosight.com/node/reports/70/data?tableRow={\"Agent\":\"Best
 
 payload = json.dumps({
   "startIndex": 0,
-  "pageSize": 1000
+  "pageSize": 500
 })
 headers = {
   'Content-Type': 'application/json',
@@ -464,7 +453,7 @@ headers = {
 
 json_data = {
     'report_definition': {
-        'config': '{\n    "datasource_id": "",\n    "columns": {}\n}',
+        'config': '{ "columns": {}\n}',
         'query': "select * from `contacts` c where c.name like '%Jigisha%'",
         'label': 'Contacts Named Jigisha',
     },
