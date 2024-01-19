@@ -341,7 +341,7 @@ A job executes SQL queries at intervals for performing an ETL operation.
 Let's consider a simple application that notifies trial users of a SaaS product. As an admin, I need to send notifications everyday through email.     
 
 ## Workflow <a name="workflow"></a>     
-A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through other utility jobs or workflows.       
+A workflow in Cliosight is an aggregation of jobs and triggers. Since it can be configured only for one datasource at a time, fetching data from others has to be carried out through other utility jobs or workflows.       
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
 Consider the sales funnel that comprises sending promotional emails. We need to contact existing or potential customers on certain events at regular intervals.   
@@ -431,4 +431,4 @@ json_data = {
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
 ```
 # Develop your application design skills with Cliosight!
---------------------------------------------------------
+
