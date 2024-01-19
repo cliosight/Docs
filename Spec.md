@@ -1,88 +1,45 @@
 # Cliosight
 
 ![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)     
-
-# Table of contents    
-
-- [The Basic Architecture](#basic)
-- [The Primary Components](#app)       
-	- [Form](#form)       
-	- [Report](#report)        
-	- [Dashboard](#dashboard)
-	- [Automation](#automation)      
-- [API](#api)
-- [Free Tier Offerings](#freetier)
   
-# The Basic Architecture <a name="basic"></a>         
-
-- [SQL Interface for Structured Data](#sql)
-	- [Support for Multiple Datasources](#datasources)
-	- [Running Queries on a Datasource](#tables)
-   	- [Support for Multiple Statements](#multiplestatements)
-- [User Permissions and Access Control](#acl)
-- [Advanced File Storage](#afiles)        
-- [Leveraging AI Components](#ai)
-- [Data Privacy and Security](#security)
-- [Email Notification](#email)    
-
-## SQL Interface for Structured Data <a name="sql"></a>
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
-## Support for Multiple Datasources <a name="datasources"></a>           
-1. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
-2. Dev and enterprise users will be able to choose from a list of top databases for multiple datasources.    
+# Free Tier <a name="freetier"></a>   
+    
+|Category     |Free for 14 days|
+|:----------------------|:-------------|
+|Users    | 1    |
+|Datasources       | 1 (in-built MySQL)
+|Data and Files    |4 GB    |
+|Widgets           |Unlimited|
+|Automation        |Limited|
+|Notification      |Limited (100 free) |
+|Customization           |None|
+|Support    |Limited   |
+
+
+## Support for Multiple Datasources <a name="datasources"></a>             
                   
 **SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
-**Data warehouse** - Google Big Query   
-      
-## Running Queries on a Datasource <a name="tables"></a>     
-Admin users can execute CRUD SQL queries and connect multiple cloud data storage products with our easy-to-use browser interface.          
-There are two types of configurations:  
-1. Shared Bandwidth (for trial users using the in-built database)    
-2. Dedicated connections (for dev and enterprise users using both the in-built and external datasources)      
+**Data warehouse** - Google Big Query        
 
 ![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/1%20_IhJ2hsx9USQOrgt_8I2PQ.png)  
 
-## Support for Multiple Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is possible in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports. The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query.
-   
-## User Permissions and Access Control <a name="acl"></a>
-Cliosight ensures that each component created within its platform incorporates fine-grained access control. An example of this is, access based on the geographic location of users.       
-
-Types of users:     
-1. **Admin** - Allowed to perform all actions within an account.          
-2. **User** - Only view permission for assigned (non-public) forms, reports and dashboards.
-3. **Admin-Minor** - No access to datasources, tables, users/groups and automation components.
+## Running Multiple SQL Statements <a name="multiplestatements"></a>     
+Execution of multiple SQL queries is enabled in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports. The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query.
    
 ## Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods.      
 
-## Leveraging AI Components <a name="ai"></a>
+## Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
 2. JSON body generator for configuration.
 
 One question that might arise is,   
 **<i>Why is it not better to convert each individual part of a JSON to an instruction for an LLM to generate the code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of each database relation that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
-
-## Data Privacy and Security <a name="security"></a>       
-Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
-
-Some of the in-built features are:    
-1. [Role-based Access Control](#acl)
-2. Secure protocols for data and file transfer like HTTPS and SFTP only.
-3. Automatic removal of personal information from data.     
-4. Masking sensitive information with queries.      
-5. Logs for tracking access and updates made on a table.
-   
-EU and USA:   
-[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
-
-India:     
-[The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
-[The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
+The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of each database relation that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized to cover other programming requirements in the future.     
 
 ## Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
@@ -91,11 +48,10 @@ Using our email notifications, users will be able to send a max of 100 emails to
 
  [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
-
 # Form <a name="form"></a>    
-A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the pre and post HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.        
-## An Example of Using Forms - The Meeting Scheduler Application <a name="form_example"></a>        
-For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with forms can be used to [automate](#automation) tasks like sending out emails.          
+A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.        
+## An Example of Using Forms - A Meeting Scheduler Application <a name="form_example"></a>        
+For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with these forms can be used to [automate](#automation) tasks like sending out emails.          
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
@@ -112,10 +68,7 @@ The components are:
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
 # Report <a name="report"></a>          
-  
-While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs).        
-   
-The content of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
+While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using multiple statements.                   
@@ -249,6 +202,23 @@ It is possible to restrict data input into a table using the following features 
 
 Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This can however be done only if the fourth option is not applied.         
 It ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
+
+## Data Privacy and Security <a name="security"></a>       
+Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
+
+Some of the in-built features are:    
+1. [Role-based Access Control](#acl)
+2. Secure protocols for data and file transfer like HTTPS and SFTP only.
+3. Automatic removal of personal information from data.     
+4. Masking sensitive information with queries.      
+5. Logs for tracking access and updates made on a table.
+   
+EU and USA:   
+[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
+
+India:     
+[The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
+[The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 # Dashboard <a name="dashboard"></a>        
   
@@ -384,7 +354,7 @@ Being able to code a workflow by combining data management tasks using a simple 
 
 # API <a name="api"></a>    
 
-## Fetch Data from a Report           
+## Fetching Data from a Report           
        
 ```python
 import requests
@@ -461,17 +431,3 @@ json_data = {
 
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
 ```
-
-# Free Tier Offerings <a name="freetier"></a>   
-    
-|Category     |Free for 14 days|
-|:----------------------|:-------------|
-|Users    | 1    |
-|Datasources       | 1
-|Data and Files    |4 GB    |
-|Widgets           |Unlimited|
-|Automation        |Limited|
-|Notification      |Limited (100 free) |
-|Customization           |None|
-|Support    |Limited   |
-
