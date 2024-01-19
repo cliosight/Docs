@@ -44,11 +44,11 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 ## Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
-# The Primary Components <a name="app"></a>       
+## The Primary Components <a name="app"></a>       
 
  [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
-# Form <a name="form"></a>    
+## Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.        
 ## An Example of Using Forms - A Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with these forms can be used to [automate](#automation) tasks like sending out emails.          
@@ -57,17 +57,17 @@ For an application like a meeting scheduler portal, forms can be used to create 
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-### JSON tags of a Section of the Meeting Scheduler Form <a name="meeting_form"></a>     
-The components are:   
+### JSON tags of a Section of the 'Meeting' Form <a name="meeting_form"></a>     
+
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
 3. Rules based on the values selected from the drop down  
 4. Sub form within a form 
-5. Multiple instances of aggregated values within the sub form
+5. Multiple instances of aggregated values within the sub-form
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-# Report <a name="report"></a>          
+## Report <a name="report"></a>          
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
@@ -220,8 +220,7 @@ India:
 [The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
-# Dashboard <a name="dashboard"></a>        
-  
+## Dashboard <a name="dashboard"></a>        
 A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto the report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
@@ -310,7 +309,7 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
     }]
 }
 ```
-# Automation <a name="automation"></a>   
+## Automation <a name="automation"></a>   
 Simple UI like forms and dashboards are useful. However, for developing a full-fledged cloud-hosted CRM application, automating tasks is necessary. Our syntax provides a shorthand for one-click deployment of automation code. Provision for custom Javascript/Python code will be available soon.     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
@@ -349,11 +348,9 @@ Consider the sales funnel that comprises sending promotional emails. We need to 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
 
-Being able to create a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. UI and automation components can be created instantly in external applications with our API.    
+Being able to create a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. UI and automation components can be created instantly in external applications.    
 
-# API <a name="api"></a>    
-
-## Fetching Data from a Report           
+## API for Fetching Data from a Report           
        
 ```python
 import requests
@@ -395,7 +392,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 
 ```
-## Create a new Report "Contacts Named Jigisha" for a Cliosight user and group               
+## Creating a new Report           
 ```python
 import requests
 
@@ -430,5 +427,6 @@ json_data = {
 
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
 ```
-# Develop your application design skills with Cliosight!
+
+**Develop your application design skills with Cliosight. [Sign up](https://cliosight.com) today.**
 
