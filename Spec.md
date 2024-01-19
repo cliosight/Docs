@@ -71,7 +71,7 @@ For an application like a meeting scheduler portal, forms can be used to create 
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
    
 ## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
-[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each created using multiple statements.                   
+[Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.                   
 
 SQL Query for this report:      
 ``` sql
