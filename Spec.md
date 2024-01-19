@@ -30,7 +30,7 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 Execution of multiple SQL queries is enabled in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports. The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query.
    
 ## Advanced File Storage <a name="afiles"></a>      
-This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage for the in-built database and files. Like other components, files are also equipped with access control methods.      
+This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.      
 
 ## Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
@@ -39,10 +39,10 @@ To provide a better user experience through the use of AI, we have added code ge
 
 One question that might arise is,   
 **<i>Why is it not better to convert each individual part of a JSON to an instruction for an LLM to generate the code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of each database relation that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized to cover other programming requirements in the future.     
+The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of each database relation that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
 
 ## Email Notification <a name="email"></a>    
-Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
+Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
 # The Primary Components <a name="app"></a>       
 
@@ -159,7 +159,7 @@ JSON for this report (without CSS and post HTML):
 ```
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by adding an iframe to an HTML or by simply using it within a dashboard. 
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data through the report's endpoint or by adding an iframe to an HTML. The simplest way is to simply use it within a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
@@ -174,7 +174,7 @@ select concat(count(*), ' Groups Organized') from `groups` as count
 union all    
 select concat(count(*), ' Interviews Recorded') from `interviews` as count    
 ```
-Corresponding JSON (without CSS definition):    
+Corresponding JSON:    
 ```json
 {
     "datasource_id": "1",
@@ -222,7 +222,7 @@ India:
 
 # Dashboard <a name="dashboard"></a>        
   
-A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dashboards can have their own pre and post HTML. Access can be controlled upto the report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
+A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto the report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
@@ -239,7 +239,7 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 
     "hideToolbar": true,
 
-    "post_html": "<h6>Copyright Cliosight 2024. All rights reserved<br/><br/>Built with <a href=\"https://cliosight.com\">Cliosight</a></h6><br/>",
+    "post_html": "<h6>Copyright Cliosight 2024. All rights reserved</h6>",
     "widget_groups": [{
         "widgets": [{
                 "html": "",
@@ -311,8 +311,7 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 }
 ```
 # Automation <a name="automation"></a>   
-Simple UI like forms and dashboards are useful. However, for developing a full-fledged cloud-hosted CRM application, automating tasks is necessary. Our syntax provides a shorthand for one-click deployment of automation code.    
-Provision for custom Javascript/Python code will be available soon.     
+Simple UI like forms and dashboards are useful. However, for developing a full-fledged cloud-hosted CRM application, automating tasks is necessary. Our syntax provides a shorthand for one-click deployment of automation code. Provision for custom Javascript/Python code will be available soon.     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
 Sending notifications on events can be configured like any other backend component.   
@@ -350,7 +349,7 @@ Consider the sales funnel that comprises sending promotional emails. We need to 
 ## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
 
-Being able to code a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. This is made possible with data pipelines. UI and automation components can be created instantly in external applications with our API.    
+Being able to create a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. UI and automation components can be created instantly in external applications with our API.    
 
 # API <a name="api"></a>    
 
@@ -431,3 +430,5 @@ json_data = {
 
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
 ```
+# Develop your application design skills with Cliosight!
+--------------------------------------------------------
