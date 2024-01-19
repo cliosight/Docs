@@ -341,7 +341,7 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 ```
 # Automation <a name="automation"></a>   
 Simple UI like forms and dashboards are useful. However for developing a full-fledged cloud hosted CRM application, automating tasks is mandatory. Our syntax provides a shorthand for one-click deployment of automation code.    
-Provision for custom Javascript and Python code will be provided in the next release.     
+Provision for custom Javascript and Python code will be available in the next release.     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
 Sending notifications on events can be configured like any other backend component.   
