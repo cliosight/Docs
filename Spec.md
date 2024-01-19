@@ -1,7 +1,12 @@
+Cliosight
+---------
+
+![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)     
+
 # Table of contents    
 
 - [The Basic Architecture](#basic)
-- [The building blocks of a Cliosight application](#app)       
+- [The Primary Components](#app)       
 	- [Form](#form)       
 	- [Report](#report)        
 	- [Dashboard](#dashboard)
@@ -9,9 +14,7 @@
 - [API](#api)
 - [Free Tier Offerings](#freetier)
   
-# The Basic Architecture <a name="basic"></a>      
-
-![cliosight](https://miro.medium.com/v2/resize:fit:720/format:webp/1*ksvjxqFiHYyXAfC8_Zo9gA.png)        
+# The Basic Architecture <a name="basic"></a>         
 
 - [SQL Interface for Structured Data](#sql)
 	- [Support for Multiple Datasources](#datasources)
@@ -26,10 +29,9 @@
 ## SQL Interface for Structured Data <a name="sql"></a>
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
-## Support for Multiple Datasources <a name="datasources"></a>        
-1. Schemas created are segregated based on datasources.       
-2. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
-3. Dev and enterprise users will be able to choose from a list of top databases for multiple datasources.    
+## Support for Multiple Datasources <a name="datasources"></a>           
+1. Users on the [free tier](#freetier) will have access to the in-built MySQL database only with a shared connection pool.         
+2. Dev and enterprise users will be able to choose from a list of top databases for multiple datasources.    
                   
 **SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
@@ -63,8 +65,8 @@ To provide a better user experience through the use of AI, we have added code ge
 2. JSON body generator for configuration.
 
 One question that might arise is,   
-**<i>Why is it not better to convert every part of the JSON to an instruction for an LLM to generate the underlying design and code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always possible to describe the exact schema of a database and the fine details of each relation that might co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
+**<i>Why is it not better to convert each individual part of a JSON to an instruction for an LLM to generate the code in a preferred programming language?** </i>     
+The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of each database relation that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized to cover more of programming requirements like on the system side in the future.     
 
 ## Data Privacy and Security <a name="security"></a>       
 Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
@@ -86,7 +88,7 @@ India:
 ## Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free. Visit the [automation](#automation) section to see how emails are sent using triggers and jobs in various business use cases.         
 
-# The building blocks of a Cliosight application <a name="app"></a>       
+# The Primary Components <a name="app"></a>       
 
  [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
@@ -205,7 +207,7 @@ JSON for this report (without CSS and post HTML):
 ```
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live figures and stats by adding an iframe to an HTML or by simply using it within a dashboard. 
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by adding an iframe to an HTML or by simply using it within a dashboard. 
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
@@ -246,7 +248,7 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms or endpoints can insert data into these tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This is however possible only if the fourth option is not applied.         
+Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This can however be done only if the fourth option is not applied.         
 It ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 # Dashboard <a name="dashboard"></a>        
@@ -340,8 +342,8 @@ A dashboard is an aggregation of HTML/CSS code snippets, forms and reports. Dash
 }
 ```
 # Automation <a name="automation"></a>   
-Simple UI like forms and dashboards are useful. However for developing a full-fledged cloud hosted CRM application, automating tasks is mandatory. Our syntax provides a shorthand for one-click deployment of automation code.    
-Provision for custom Javascript and Python code will be available in the next release.     
+Simple UI like forms and dashboards are useful. However, for developing a full-fledged cloud-hosted CRM application, automating tasks is necessary. Our syntax provides a shorthand for one-click deployment of automation code.    
+Provision for custom Javascript/Python code will be available soon.     
 
 ## Sending Email Notification on Event <a name="trigger_email"></a>        
 Sending notifications on events can be configured like any other backend component.   
@@ -368,10 +370,10 @@ A trigger enables action on data and insights. Since we are dealing with structu
 A job executes SQL queries at intervals for performing an ETL operation.   
 
 ## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
-Let's consider a simple application that notifies trial users of a SaaS product - Meeting Scheduler Portal. As an admin, I need to send notifications everyday through email.     
+Let's consider a simple application that notifies trial users of a SaaS product. As an admin, I need to send notifications everyday through email.     
 
 ## Workflow <a name="workflow"></a>     
-A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through other utility jobs.       
+A workflow in Cliosight is an aggregation of interconnected jobs and triggers. Since it can only be configured for a single datasource, fetching data from others has to be carried out through other utility jobs or workflows.       
 
 ## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
 Consider the sales funnel that comprises sending promotional emails. We need to contact existing or potential customers on certain events at regular intervals.   
@@ -397,7 +399,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDU1NzE0NSwiZXhwIjoxNzA0NjQzNTQ1fQ.4oo2u_Xk6h75NrA_O8SuKGC90Rq6gbbsEaDzfOlryHg'
+  'Authorization': ''
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -417,7 +419,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDU1NzE0NSwiZXhwIjoxNzA0NjQzNTQ1fQ.4oo2u_Xk6h75NrA_O8SuKGC90Rq6gbbsEaDzfOlryHg'
+  'Authorization': ''
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
@@ -430,10 +432,10 @@ print(response.text)
 import requests
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:121.0) Gecko/20100101 Firefox/121.0',
+    'User-Agent': '',
     'Accept': 'application/json, text/plain, */*',
     'Accept-Language': 'en-US,en;q=0.5',
-    'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImNsaWVudElkIjoyLCJ1c2VyRW1haWwiOiJjbGlvc3VpdGUuYXBwQGdtYWlsLmNvbSIsImlhdCI6MTcwNDQ0MzE4OCwiZXhwIjoxNzA0NTI5NTg4fQ.Bfn_u7WdwReEoKHJpXAtcD6XaYyzTn2nC_CK3Gyr3Lg',
+    'Authorization': '',
     'Content-Type': 'application/json',
     'Connection': 'keep-alive',
     'Referer': 'https://app.cliosight.com/app/reports',
