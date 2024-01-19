@@ -4,7 +4,7 @@
   
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
-# Free Tier <a name="freetier"></a>   
+## Free Tier <a name="freetier"></a>   
     
 |Category     |Free for 14 days|
 |:----------------------|:-------------|
