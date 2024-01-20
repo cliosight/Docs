@@ -39,7 +39,7 @@ To provide a better user experience through the use of AI, we have added code ge
 
 One question that might arise is,   
 **<i>Why is it not better to convert each individual part of a JSON to an instruction for an LLM to generate the code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of each database relation that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
+The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of database relations that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
 
 ## Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
@@ -159,7 +159,7 @@ JSON for this report (without CSS and post HTML):
 ```
 
 ## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data through the report's endpoint or by adding an iframe to an HTML. The simplest way is to simply use it within a dashboard.      
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data through the report's endpoint or by adding an iframe to an HTML. The simplest way is to use it within a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
@@ -189,9 +189,9 @@ Corresponding JSON:
 ```
 
 ## Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Public datasets are typically downloaded as CSV files to store locally on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in these devices and accessed locally or remotely. Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al.   
+Public datasets are typically downloaded as CSV files to store it locally on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in these devices and accessed locally or remotely. Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al.   
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables. This makes creating, updating and sharing private datasets more secure for collaborative applications.   
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for collaborative applications.   
 
 ## Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
@@ -221,7 +221,7 @@ India:
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 ## Dashboard <a name="dashboard"></a>        
-A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto the report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
+A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
 
 ## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
 
