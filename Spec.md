@@ -194,7 +194,7 @@ Public datasets are typically downloaded as CSV files on the hard disk of person
 
 Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al. Custom datasets can be created and accessed using Python libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.      
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for ML that use SQL apart from Python in a collaborative work environment.   
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for a data science team that uses SQL apart from Python in a collaborative work environment.   
 
 ### Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
