@@ -22,7 +22,7 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 **Data warehouse** - Google Big Query        
 
-![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/1%20_IhJ2hsx9USQOrgt_8I2PQ.png)  
+![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/datasources.png)   
 
 ### Running Multiple SQL Statements <a name="multiplestatements"></a>     
 Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values used in substituting variable terms in the final query. Check out [this example](#report_example).
