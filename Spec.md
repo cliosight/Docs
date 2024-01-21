@@ -4,7 +4,7 @@
   
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
-## Free Tier <a name="freetier"></a>   
+### Free Tier <a name="freetier"></a>   
     
 |Category     |Free for 14 days|
 |:----------------------|:-------------|
@@ -18,7 +18,7 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 |Support    |Limited   |
 
 
-## Support for Multiple Datasources <a name="datasources"></a>             
+### Support for Multiple Datasources <a name="datasources"></a>             
                   
 **SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
@@ -26,13 +26,13 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 
 ![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/1%20_IhJ2hsx9USQOrgt_8I2PQ.png)  
 
-## Running Multiple SQL Statements <a name="multiplestatements"></a>     
+### Running Multiple SQL Statements <a name="multiplestatements"></a>     
 Execution of multiple SQL queries is enabled in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports. The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query.
    
-## Advanced File Storage <a name="afiles"></a>      
+### Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.      
 
-## Leveraging AI <a name="ai"></a>
+### Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
 2. JSON body generator for configuration.
@@ -41,16 +41,16 @@ One question that might arise is,
 **<i>Why is it not better to convert each individual part of a JSON to an instruction for an LLM to generate the code in a preferred programming language?** </i>     
 The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of database relations that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
 
-## Email Notification <a name="email"></a>    
+### Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
-## The Primary Components <a name="app"></a>       
+### The Primary Components <a name="app"></a>       
 
  [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
-## Form <a name="form"></a>    
+### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.        
-## An Example of Using Forms - A Meeting Scheduler Application <a name="form_example"></a>        
+### An Example of Using Forms - A Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with these forms can be used to [automate](#automation) tasks like sending out emails.          
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
@@ -67,10 +67,10 @@ For an application like a meeting scheduler portal, forms can be used to create 
 
 [Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
-## Report <a name="report"></a>          
+### Report <a name="report"></a>          
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
    
-## Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
+### Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.                   
 
 SQL Query for this report:      
@@ -158,7 +158,7 @@ JSON for this report (without CSS and post HTML):
 }
 ```
 
-## Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
+### Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data through the report's endpoint or by adding an iframe to an HTML. The simplest way is to use it within a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
@@ -188,12 +188,12 @@ Corresponding JSON:
 }
 ```
 
-## Using Reports in Jupyter Notebook <a name="jupyter"></a>
+### Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Public datasets are typically downloaded as CSV files to store it locally on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in these devices and accessed locally or remotely. Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al.   
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for collaborative applications.   
 
-## Ensuring Trustworthiness <a name="trust"></a>           
+### Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
 1. Disabling data import through CSV file upload.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
@@ -203,7 +203,7 @@ It is possible to restrict data input into a table using the following features 
 Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This can however be done only if the fourth option is not applied.         
 It ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
-## Data Privacy and Security <a name="security"></a>       
+### Data Privacy and Security <a name="security"></a>       
 Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
 
 Some of the in-built features are:    
@@ -220,10 +220,10 @@ India:
 [The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
 [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
-## Dashboard <a name="dashboard"></a>        
+### Dashboard <a name="dashboard"></a>        
 A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
 
-## Example of a Dashboard - Cliosight Meetings Portal <a name="dashboard_example"></a>   
+### Example of a Dashboard - Cliosight Meetings <a name="dashboard_example"></a>   
 
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true)                    
 
@@ -309,17 +309,17 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
     }]
 }
 ```
-## Automation <a name="automation"></a>   
+### Automation <a name="automation"></a>   
 Simple UI like forms and dashboards are useful. However, for developing a full-fledged cloud-hosted CRM application, automating tasks is necessary. Our syntax provides a shorthand for one-click deployment of automation code. Provision for custom Javascript/Python code will be available soon.     
 
-## Sending Email Notification on Event <a name="trigger_email"></a>        
+### Sending Email Notification on Event <a name="trigger_email"></a>        
 Sending notifications on events can be configured like any other backend component.   
 
-## Trigger <a name="trigger"></a>   
+### Trigger <a name="trigger"></a>   
 A trigger enables action on data and insights. Since we are dealing with structured data, it means executing the basic operations on table rows based on events.  
     
-## Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
-### Existing Contact update action (refer to the Contacts form in Forms section)  
+### Example of a Trigger - Managing an SCD (Slowly Changing Dimension) <a name="scd"></a>    
+**Existing Contact update action**  
 ```json 
 {
     "client_id": 2,
@@ -333,24 +333,24 @@ A trigger enables action on data and insights. Since we are dealing with structu
     "datasource_id": 1
 }
 ```
-## Job <a name="jobs"></a>   
+### Job <a name="jobs"></a>   
 A job executes SQL queries at intervals for performing an ETL operation.   
 
-## Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
+### Example of a Job - Managing free tier users of a SaaS platform <a name="job_example"></a>     
 Let's consider a simple application that notifies trial users of a SaaS product. As an admin, I need to send notifications everyday through email.     
 
-## Workflow <a name="workflow"></a>     
+### Workflow <a name="workflow"></a>     
 A workflow in Cliosight is an aggregation of jobs and triggers. Since it can be configured only for one datasource at a time, fetching data from others has to be carried out through other utility jobs or workflows.       
 
-## Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
+### Example of a Workflow - Executing daily sales operational tasks <a name="workflowexamples"></a>        
 Consider the sales funnel that comprises sending promotional emails. We need to contact existing or potential customers on certain events at regular intervals.   
 
-## Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
+### Using Workflows in Jupyter Notebook for Machine Learning <a name="python"></a>     
 Data analysis can provide pointers for fine-tuning an existing application or product design through hypothesis testing. It can also help in improving the performance of a machine learning model in production with high quality datasets. 
 
 Being able to create a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. UI and automation components can be created instantly in external applications.    
 
-## API for Fetching Data from a Report           
+### API for Fetching Data from a Report           
        
 ```python
 import requests
@@ -371,7 +371,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 
 print(response.text)
 ```
-## With 'Agent' filter              
+### With 'Agent' filter              
 ```python
 import requests
 import json
@@ -392,7 +392,7 @@ response = requests.request("POST", url, headers=headers, data=payload)
 print(response.text)
 
 ```
-## Creating a new Report           
+### Creating a new Report           
 ```python
 import requests
 
