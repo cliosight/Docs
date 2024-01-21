@@ -267,9 +267,9 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
         ]
     }]
 }
-
+```
 [Using global filters](https://app.cliosight.com/app/dashboards/51/show?noNavbar=true)
-
+```json
 {
     "is_public": {
         "status": true
@@ -284,10 +284,12 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
     }, {
         "widgets": [{
             "id": "68",
-            "cols": 6
+            "cols": 6,
+            "removeReportCss": true
         }, {
             "id": "37",
-            "cols": 6
+            "cols": 6,
+            "removeReportCss": false
         }],
         "filter_menu": [{
             "label": "Group",
