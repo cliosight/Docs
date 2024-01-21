@@ -1,18 +1,18 @@
 # Cliosight
   
-Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-house and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
+Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
 ### Free Tier <a name="freetier"></a>   
     
 |Category     |Free for 14 days|
 |:----------------------|:-------------|
 |Users    | 1    |
-|Datasources       | 1 (in-built MySQL)
+|Datasources       | 1 (in-built)
 |Data and Files    |4 GB    |
 |Widgets           |Unlimited|
 |Automation        |Limited|
-|Notification      |Limited (100 free) |
-|Customization           |None|
+|Notification      |Limited |
+|Customization           |None |
 |Support    |Limited   |
 
 
@@ -25,7 +25,7 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 ![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/1%20_IhJ2hsx9USQOrgt_8I2PQ.png)  
 
 ### Running Multiple SQL Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is enabled in the admin console and for report creation. In reports however, only the final `select` statement is used for populating reports. The preceeding queries in a report SQL query block can be used for fetching real-time and dynamic intermediate values for substituting variable terms in the final query.
+Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values used in substituting variable terms in the final query. Check out [this example](#meeting_form).
    
 ### Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.      
@@ -49,16 +49,16 @@ Using our email notifications, users will be able to send a max of 100 emails to
 ### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
 
-Check out the list of [JSON tags](https://github.com/cliosight/Docs/blob/main/form_json_format.css) that can be used in creating a form.
+This is a list of [JSON tags](https://github.com/cliosight/Docs/blob/main/form_json_format.css) that can be used while creating a form.
 
 ### Example of Forms - Meeting Scheduler Application <a name="form_example"></a>        
-For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with these forms can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
+For an application like a meeting scheduler portal, forms can be used to add contacts, groups and meeting requests. Data collected can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-**JSON tags of a Section of the 'Meeting' Form** <a name="meeting_form"></a>     
+**JSON of a section of the 'Meeting' form** <a name="meeting_form"></a>     
 
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
@@ -66,7 +66,7 @@ For an application like a meeting scheduler portal, forms can be used to create 
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub-form
 
-[JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
+[JSON configuration](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
 ### Report <a name="report"></a>          
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
@@ -74,7 +74,7 @@ While a form is the data input interface, a report is the output of data analysi
 ### Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.                   
 
-SQL Query for this report:      
+SQL query for this report:      
 ``` sql
 select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \         
 min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \       
@@ -95,7 +95,7 @@ and (c.phone = {{Phone}} or {{Phone}} is null)  \
 group by c.id limit {{startIndex}}, {{pageSize}};
 ```
 
-JSON for this report (without CSS and post HTML):         
+JSON (without CSS and post HTML):         
 ```json
 {
     "datasource_id": "1",
@@ -160,7 +160,7 @@ JSON for this report (without CSS and post HTML):
 ```
 
 ### Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data through the report's endpoint or by adding an iframe to an HTML. The simplest way is to use it within a dashboard.      
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data or by adding an iframe to an HTML. The simplest way is to use it within a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
@@ -190,9 +190,11 @@ Corresponding JSON:
 ```
 
 ### Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Public datasets are typically downloaded as CSV files to store it locally on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in these devices and accessed locally or remotely. Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al.   
+Public datasets are typically downloaded as CSV files on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in the hardware and accessed locally or remotely.   
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for this purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for collaborative applications.   
+Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al. Custom datasets can be created and accessed using Python libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.      
+
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for ML that use SQL apart from Python in a collaborative work environment.   
 
 ### Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
@@ -201,8 +203,9 @@ It is possible to restrict data input into a table using the following features 
 3. Ensuring that no other forms or endpoints can insert data into these tables.
 4. Disabling data export     
 
-Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This can however be done only if the fourth option is not applied.         
-It ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
+Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This can however be done only if the fourth option is not applied.     
+
+This approach ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 ### Data Privacy and Security <a name="security"></a>       
 Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
