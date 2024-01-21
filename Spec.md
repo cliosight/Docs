@@ -233,79 +233,38 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
         "status": true
     },
     "css_definition": "",
-
     "pre_html": "<h1>Cliosight Meetings</h1>",
-
     "hideToolbar": true,
-
     "post_html": "<h6>Copyright Cliosight 2024. All rights reserved</h6>",
     "widget_groups": [{
         "widgets": [{
-                "html": "",
-                "cols": 1,
-                "type": "html"
-            }, {
                 "id": "85",
-                "cols": 10
+                "cols": 12
             }, {
-                "html": "",
-                "cols": 1,
+                "html": "<h4>Charts and Graphs</h4>",
+                "cols": 12,
+                "type": "html"
+            },
+            {
+                "html": " <iframe src=\"https://chart.cliosight.com\"></iframe> ",
+                "cols": 6,
                 "type": "html"
             }, {
-                "id": "88",
-                "cols": 12
-            },
-            {
-                "id": "29",
-                "cols": 12,
-                "removeReportCss": false
-            },
-            {
-                "html": "",
-                "cols": 2,
+                "html": " <iframe src=\"https://chart.cliosight.com/bargraph.html\"></iframe> ",
+                "cols": 6,
                 "type": "html"
             },
             {
                 "type": "form",
-                "id": "52",
-                "cols": 8,
-		"removeFormCss": false
+                "id": "65",
+                "cols": 12
             },
             {
-		"type": "html",   
-                "html": "",
-                "cols": 2
+                "id": "88",
+                "cols": 12,
+                "removeReportCss": false
             }
         ]
-    }, {
-        "widgets": [{
-            "id": "68",
-            "cols": 6
-        }, {
-            "id": "37",
-            "cols": 6
-        }],
-        "filter_menu": [{
-            "label": "Group",
-            "column": "id",
-            "column_label": "Name",
-            "report_id": 28,
-            "name": "group_id",
-            "reports": {
-                "37": {
-                    "report_column": "group_id",
-                    "name": "group_id",
-                    "label": "Group",
-                    "label_column": "Name"
-                },
-                "68": {
-                    "report_column": "group_id",
-                    "name": "group_id",
-                    "label": "Group",
-                    "label_column": "Name"
-                }
-            }
-        }]
     }]
 }
 ```
