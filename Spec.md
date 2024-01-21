@@ -33,29 +33,32 @@ This platform provides extra functionalities for files uploaded through a form. 
 ### Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
-2. JSON body generator for configuration.
+2. JSON body generator for element configuration.
 
 One question that might arise is,   
-**<i>Why is it not better to convert each individual part of a JSON to an instruction for an LLM to generate the code in a preferred programming language?** </i>     
-The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of database relations that may co-exist in a sophisticated application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
+<i>**Why is it not better to convert individual parts of a JSON config to instructions for an LLM to generate the application code in a preferred programming language?** </i>     
+The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of complex relations that may co-exist in an enterprise application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
 
 ### Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
 ### The Primary Components <a name="app"></a>       
 
- [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
+[Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
 ### Form <a name="form"></a>    
-A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.        
-### An Example of Using Forms - A Meeting Scheduler Application <a name="form_example"></a>        
-For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with these forms can be used to [automate](#automation) tasks like sending out emails.          
+A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
+
+Check out the list of [JSON tags](https://github.com/cliosight/Docs/blob/main/form_json_format.css) that can be used in creating a form.
+
+### Example of Forms - Meeting Scheduler Application <a name="form_example"></a>        
+For an application like a meeting scheduler portal, forms can be used to create contacts, groups and meeting requests. Data collected with these forms can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
 [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
 [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-### JSON tags of a Section of the 'Meeting' Form <a name="meeting_form"></a>     
+**JSON tags of a Section of the 'Meeting' Form** <a name="meeting_form"></a>     
 
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
@@ -63,7 +66,7 @@ For an application like a meeting scheduler portal, forms can be used to create 
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub-form
 
-[Click here to view the JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
+[JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
 ### Report <a name="report"></a>          
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations.      
