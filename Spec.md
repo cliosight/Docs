@@ -223,7 +223,7 @@ India:
 ### Dashboard <a name="dashboard"></a>        
 A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
 
-### Example of a Dashboard - Cliosight Meetings <a name="dashboard_example"></a>   
+### Examples of Dashboards <a name="dashboard_example"></a>   
 
 [Cliosight Meetings](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true)                    
 
@@ -265,6 +265,51 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
                 "removeReportCss": false
             }
         ]
+    }]
+}
+
+[Using global filters](https://app.cliosight.com/app/dashboards/51/show?noNavbar=true)
+
+{
+    "is_public": {
+        "status": true
+    },
+    "css_definition": "",
+    "pre_html": "<h1>Reports with Global Filter</h1>",
+    "hideToolbar": false,
+    "post_html": "",
+    "widget_groups": [{
+        "widgets": [
+        ]
+    }, {
+        "widgets": [{
+            "id": "68",
+            "cols": 6
+        }, {
+            "id": "37",
+            "cols": 6
+        }],
+        "filter_menu": [{
+            "label": "Group",
+            "column": "id",
+            "column_label": "Name",
+            "report_id": 28,
+            "name": "group_id",
+            "reports": {
+                "37": {
+                    "report_column": "group_id",
+                    "name": "group_id",
+                    "label": "Group",
+                    "label_column": "Name"
+                },
+                "68": {
+                    "report_column": "group_id",
+                    "name": "group_id",
+                    "label": "Group",
+                    "label_column": "Name"
+                }
+            }
+        }]
     }]
 }
 ```
@@ -332,40 +377,18 @@ print(response.text)
 ```
 ### With 'Agent' filter              
 ```python
-import requests
-import json
+....
 
 url = "https://app.cliosight.com/node/reports/70/data?tableRow={\"Agent\":\"Best Bricks\"}"
 
-payload = json.dumps({
-  "startIndex": 0,
-  "pageSize": 500
-})
-headers = {
-  'Content-Type': 'application/json',
-  'Authorization': ''
-}
-
-response = requests.request("POST", url, headers=headers, data=payload)
-
-print(response.text)
-
+...
 ```
 ### Creating a new Report           
 ```python
 import requests
 
 headers = {
-    'User-Agent': '',
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Authorization': '',
-    'Content-Type': 'application/json',
-    'Connection': 'keep-alive',
-    'Referer': 'https://app.cliosight.com/app/reports',
-    'Sec-Fetch-Dest': 'empty',
-    'Sec-Fetch-Mode': 'cors',
-    'Sec-Fetch-Site': 'same-origin',
+  ....
 }
 
 json_data = {
