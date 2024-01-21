@@ -49,7 +49,7 @@ Using our email notifications, users will be able to send a max of 100 emails to
 ### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
 
-This is a list of [JSON tags](https://github.com/cliosight/Docs/blob/main/form_json_format.css) that can be used while creating a form.
+[Click here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to see all JSON tags that can be used in creating a form.
 
 ### Example of Forms - Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to add contacts, groups and meeting requests. Data collected can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
@@ -192,9 +192,9 @@ Corresponding JSON:
 ### Using Reports in Jupyter Notebook <a name="jupyter"></a>
 Public datasets are typically downloaded as CSV files on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in the hardware and accessed locally or remotely.   
 
-Data is processed, split, or merged according to the requirements of a data science project. Resultant datasets can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn et al. Custom datasets can be created and accessed using Python libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.      
+Data is processed, split, or merged according to the requirements of a data science project. Results can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn etc. Custom datasets can be created and accessed using Python libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.     
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure for a data science team that uses SQL apart from Python in a collaborative work environment.   
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure in a collaborative environment for a those who use SQL apart from Python.   
 
 ### Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
