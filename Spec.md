@@ -49,7 +49,7 @@ Using our email notifications, users will be able to send a max of 100 emails to
 ### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
 
-[Click here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to see all JSON tags that can be used in creating a form.
+[Click here](https://github.com/cliosight/Docs/blob/main/form_json_format.css) to see all JSON tags that can be used for creating a form.
 
 ### Example of Forms - Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to add contacts, groups and meeting requests. Data collected can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
@@ -160,7 +160,7 @@ JSON (without CSS and post HTML):
 ```
 
 ### Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data or by adding an iframe to an HTML. The simplest way is to use it within a dashboard.      
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data from a report or by using it in an iframe. The simplest way is to use it in a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
