@@ -181,12 +181,12 @@ Corresponding JSON:
 ```json
 {
     "datasource_id": "1",
-    "pre_html": "<img src=\"\" width=\"100%\"></div><div><h1>Our numbers tell the story</h1>",
+    "pre_html": "<img src=\"\"><h1>Our numbers tell the story</h1>",
     "is_public": {
         "status": true
     },
     "css_definition": "",
-    "post_html": "<a href=\"\" target=\"_blank\">Share this report</a></div>",
+    "post_html": "",
     "columns": {}
 }
 ```
@@ -400,6 +400,5 @@ json_data = {
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)
 ...        
 ```
-
 **Develop your application design skills with Cliosight. [Sign up](https://cliosight.com) today.**
 
