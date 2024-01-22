@@ -181,12 +181,12 @@ Corresponding JSON:
 ```json
 {
     "datasource_id": "1",
-    "pre_html": "<img src=\"https://images.squarespace-cdn.com/content/v1/55a6ed19e4b0a3840f00af2f/1506720719545-CGYAQCFETD4430AHBQ3Z/board+meeting+graphic.png?format=2500w\" width=\"100%\"></div><div><br/><h1>Our numbers tell the story</h1>",
+    "pre_html": "<img src=\"\" width=\"100%\"></div><div><h1>Our numbers tell the story</h1>",
     "is_public": {
         "status": true
     },
     "css_definition": "",
-    "post_html": "<a href=\"https://app.cliosight.com/app/reports/85/show?noNavbar=true\" target=\"_blank\">Share this report</a></div>",
+    "post_html": "<a href=\"\" target=\"_blank\">Share this report</a></div>",
     "columns": {}
 }
 ```
