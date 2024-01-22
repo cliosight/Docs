@@ -76,7 +76,7 @@ While a form is the data input interface, a report is the output of data analysi
 ### Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.                   
 
-SQL query for this report:      
+SQL query:      
 ``` sql
 select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \         
 min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \       
@@ -97,7 +97,7 @@ and (c.phone = {{Phone}} or {{Phone}} is null)  \
 group by c.id limit {{startIndex}}, {{pageSize}};
 ```
 
-JSON (without CSS and post HTML):         
+JSON:         
 ```json
 {
     "datasource_id": "1",
@@ -196,7 +196,7 @@ Public datasets are typically downloaded as CSV files on the hard disk of person
 
 Data is processed, split, or merged according to the requirements of a data science project. Results can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn etc. Custom datasets can be created and accessed using Python libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.     
 
-Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure in a collaborative environment for those who use SQL apart from Python.   
+Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure in a collaborative work environment.   
 
 ### Ensuring Trustworthiness <a name="trust"></a>           
 It is possible to restrict data input into a table using the following features of a form:  
