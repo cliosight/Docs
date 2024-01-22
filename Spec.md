@@ -362,43 +362,25 @@ Data analysis can provide pointers for fine-tuning an existing application or pr
 
 Being able to create a workflow by combining data management tasks using a simple JSON configuration can speed up the design and development phases of an AI/ML project. UI and automation components can be created instantly in external applications.    
 
-### API for Fetching Data from a Report           
+### Fetching Data from a Report           
        
 ```python
-import requests
-import json
-
+...
 url = "https://app.cliosight.com/node/reports/70/data"
+# with filter
+# url = "https://app.cliosight.com/node/reports/70/data?tableRow={\"Agent\":\"Best Bricks\"}"
 
 payload = json.dumps({
   "startIndex": 0,
   "pageSize": 500  
 })
-headers = {
-  'Content-Type': 'application/json',
-  'Authorization': ''
-}
 
 response = requests.request("POST", url, headers=headers, data=payload)
-
-print(response.text)
-```
-### With 'Agent' filter              
-```python
-....
-
-url = "https://app.cliosight.com/node/reports/70/data?tableRow={\"Agent\":\"Best Bricks\"}"
-
 ...
 ```
 ### Creating a new Report           
 ```python
-import requests
-
-headers = {
-  ....
-}
-
+...
 json_data = {
     'report_definition': {
         'config': '{ "columns": {}\n}',
@@ -415,7 +397,8 @@ json_data = {
     'datasource_id': '1',
 }
 
-response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)            
+response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)
+...        
 ```
 
 **Develop your application design skills with Cliosight. [Sign up](https://cliosight.com) today.**
