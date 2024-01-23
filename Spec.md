@@ -295,7 +295,7 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
         }, {
             "id": "37",
             "cols": 6,
-            "removeReportCss": false
+            "removeReportCss": true
         }],
         "filter_menu": [{
             "label": "Group",
@@ -400,5 +400,5 @@ json_data = {
 response = requests.post('https://app.cliosight.com/node/reports/create', headers=headers, json=json_data)
 ...        
 ```
-**Develop your application design skills with Cliosight. [Sign up](https://cliosight.com) today.**
+**Develop the best applications and datasets for machine learning with Cliosight. [Sign up](https://cliosight.com) today.**
 
