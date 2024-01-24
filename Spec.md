@@ -245,7 +245,8 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
     "widget_groups": [{
         "widgets": [{
                 "id": "85",
-                "cols": 12
+                "cols": 12,
+                "removeReportCss": false
             }, {
                 "html": "<h4>Charts and Graphs</h4>",
                 "cols": 12,
@@ -263,7 +264,8 @@ A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Acce
             {
                 "type": "form",
                 "id": "65",
-                "cols": 12
+                "cols": 12,
+                "removeFormCss": false
             },
             {
                 "id": "88",
