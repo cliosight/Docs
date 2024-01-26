@@ -25,7 +25,7 @@ Our web interface with APIs enable users to perform a wide range of analytical o
 ![datasources](https://raw.githubusercontent.com/cliosight/Docs/main/datasources.png)   
 
 ### Running Multiple SQL Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values used in substituting variable terms in the final query. Check out [this example](#report_example).
+Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values for replacing variables used in the final query. Check out [this example](#report_example).
    
 ### Advanced File Storage <a name="afiles"></a>      
 This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.      
