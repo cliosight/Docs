@@ -210,12 +210,11 @@ Reports created from restricted tables using one or more of the above methods ca
 This approach ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
 ### Data Privacy and Security <a name="security"></a>       
-Sharing private datasets created using our platform will have several security implications. In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable regulations.    
-
+In order to provide assurance to users, Cliosight is designed to have in place all the possible tools to make datasets compliant with the applicable security regulations.    
 Some of the in-built features are:    
-1. [Role-based Access Control](#acl)
+1. Role-based Access Control (Admin, User and Admin-Minor)
 2. Secure protocols for data and file transfer like HTTPS and SFTP only.
-3. Automatic removal of personal information from data.     
+3. Removal of personal information from data.     
 4. Masking sensitive information with queries.      
 5. Logs for tracking access and updates made on a table.
    
