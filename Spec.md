@@ -1,4 +1,6 @@
-# Cliosight
+<p align="center">
+<h1>Cliosight</h1>
+</p>
   
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases, data warehouses and distributed ledgers.   
 
@@ -49,7 +51,9 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 ### Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
-### The Primary Components <a name="app"></a>       
+<p align="center">
+<h2>The Primary Components</h2>
+</p>
 
 [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
