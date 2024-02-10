@@ -54,9 +54,9 @@ Using our email notifications, users will be able to send a max of 100 emails to
 <p align="center">
 <h2 align="center">The Primary Components</h2>
 </p>
-
+<div align="center">
 [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
-
+</div>
 <p align="center">
 <img src="https://raw.githubusercontent.com/cliosight/Docs/main/cliosight.png">  
 </p>
