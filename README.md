@@ -1,5 +1,6 @@
-<p align="center">     
-<h2 align="center">Cliosight - Build the best applications & datasets with low-code</h2>
+<p align="center">    
+<h1 align="center">Cliosight</h1>
+<h4 align="center">Build the best applications & datasets with low-code</h4>
 <hr/>
 </p>
            
