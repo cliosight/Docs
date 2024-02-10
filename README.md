@@ -1,9 +1,9 @@
 <p align="center">
 <h1 align="center">Cliosight</h1>      
-<h3 align="center">Build the best applications & datasets with low-code</h3>
+<h4 align="center">Build the best applications & datasets with low-code</h4>
 </p>
-<p align="center">
-<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*3NPO6Fn12ZT2BhvehO576g.png">
+<p align="center" width="100%">
+<img width="100%" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*3NPO6Fn12ZT2BhvehO576g.png">
 </p>
            
 Cliosight is a low-code platform that offers addition of various leading database servers for developing data-centric applications with SQL and JSON. Click [here](https://github.com/cliosight/Docs/blob/main/Spec.md) for an overview of the major components of the platform. Watch the tutorial videos [here](https://www.youtube.com/channel/UC1STG2eLks_NJcwbdkjDDIQ) explaining each one in detail. 
