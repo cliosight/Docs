@@ -54,6 +54,7 @@ Using our email notifications, users will be able to send a max of 100 emails to
 <p align="center">
 <h2 align="left">The Primary Components</h2>
 </p>
+
 [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
 <p align="center">
