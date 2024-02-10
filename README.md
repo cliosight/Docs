@@ -7,9 +7,8 @@ Cliosight is a low-code platform that offers addition of various leading databas
 
 Please contact us at jigisha@cliosight.com or info@cliosight.com (Dikshit Baruah) for any clarifications.   
 	    
-Visit our website [cliosight.com](https://cliosight.com) to sign up for 14 days free trial. Check out our [blog](https://medium.com/@cliosight) and follow us on [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).         
-         
-1. [Report](https://app.cliosight.com/app/reports/70/show?noNavbar=true)                  
-2. [Form](https://app.cliosight.com/app/forms/62/show?noNavbar=true)                
-3. [Dashboard](https://app.cliosight.com/app/dashboards/49/show?noNavbar=true)                   
+Website: [cliosight.com](https://cliosight.com) 
+Blog: [Medium](https://medium.com/@cliosight)     
+Linkedin: [Linkedin](https://www.linkedin.com/in/jigisha-aryya/).         
+                 
 
