@@ -40,7 +40,7 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 Developing with LLM and current Low-code/No-code plaftorms:      
 ![ai_1](https://raw.githubusercontent.com/cliosight/Docs/main/current_lowcode.png)    
 
-Developing with Cliosight:      
+Versus developing with Cliosight:      
 ![current_lowcode](https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png)    
 
 ### Email Notification <a name="email"></a>    
