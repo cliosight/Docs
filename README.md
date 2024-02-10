@@ -1,6 +1,8 @@
 <p align="center">    
 <h1 align="center">Cliosight</h1>
 <h4 align="center">Build the best applications & datasets with low-code</h4>
+</p>
+<p align="center" width="100%">  
 <img src="https://github.com/cliosight/Docs/blob/main/logo_temp.png?raw=true" align="center">
 </p>
 
