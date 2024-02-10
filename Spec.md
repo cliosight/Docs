@@ -1,7 +1,5 @@
-<p align="center">    
-<h1 align="center">Cliosight</h1>
-</p>
 
+# Cliosight
 Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases and data management solutions.   
 
 ### Free Tier <a name="freetier"></a>   
@@ -38,13 +36,10 @@ To provide a better user experience through the use of AI, we have added code ge
 One question that might arise is,   
 <i>**Why is it not better to convert individual parts of a JSON config into instructions for an LLM to generate the code in a preferred programming language?** </i>     
 The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of complex relations that may co-exist in an enterprise application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.    
-<div align="center">
-  <h4>Using LLM and No-code/Low-code tools versus Cliosight with AI</h4>
+<div align="left">
+  <h4>Using LLM in Cliosight</h4>
 </div>
-<p align="center">
-<img src="https://raw.githubusercontent.com/cliosight/Docs/main/current_lowcode.png">   
-</p>
-<p align="center">
+<p align="left">
 <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
 </p>
 
