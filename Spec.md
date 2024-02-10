@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" width="100%">
 <h1>Cliosight</h1>
 </p>
   
