@@ -2,7 +2,7 @@
 <h1 align="center">Cliosight</h1>
 </p>
 
-Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases.   
+Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases and data management solutions.   
 
 ### Free Tier <a name="freetier"></a>   
     
