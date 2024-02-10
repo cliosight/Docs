@@ -1,5 +1,5 @@
 <p align="center">
-<h1 align="center">Cliosight</h1>      
+<p align="center">Cliosight</p>      
 <h4 align="center">Build the best applications & datasets with low-code</h4>
 <hr/>
 </p>
