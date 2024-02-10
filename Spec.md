@@ -37,7 +37,8 @@ One question that might arise is,
 <i>**Why is it not better to convert individual parts of a JSON config into instructions for an LLM to generate the code in a preferred programming language?** </i>     
 The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of complex relations that may co-exist in an enterprise application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
   
-![ai_1](https://raw.githubusercontent.com/cliosight/Docs/main/current_lowcode.png)    ![current_lowcode](https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png)    
+![ai_1](https://raw.githubusercontent.com/cliosight/Docs/main/current_lowcode.png){:style="display:block; margin-left:auto; margin-right:auto"}    
+![current_lowcode](https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png){:style="display:block; margin-left:auto; margin-right:auto"}    
 
 ### Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
