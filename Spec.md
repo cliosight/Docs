@@ -36,11 +36,11 @@ To provide a better user experience through the use of AI, we have added code ge
 One question that might arise is,   
 <i>**Why is it not better to convert individual parts of a JSON config into instructions for an LLM to generate the code in a preferred programming language?** </i>     
 The answer to this is, even with meticulously crafted prompts, it is not always easy to describe the fine details of complex relations that may co-exist in an enterprise application design. With UI and automation code defined individually there is a simpler modular structure for the end goal. Changes can be done right in the config because it interprets exactly the way a user wants. Having said that, the same framework can be generalized for other programming requirements in the future.     
-<p align="center" width="100%">
-<img width="70%" src="https://raw.githubusercontent.com/cliosight/Docs/main/current_lowcode.png">    
+<p align="center">
+<img src="https://raw.githubusercontent.com/cliosight/Docs/main/current_lowcode.png">    
 </p>
-<p align="center" width="100%">
-<img width="70%" src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
+<p align="center">
+<img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
 </p>
 
 ### Email Notification <a name="email"></a>    
@@ -49,9 +49,9 @@ Using our email notifications, users will be able to send a max of 100 emails to
 ### The Primary Components <a name="app"></a>       
 
 [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)       
-
-![cliosight](https://raw.githubusercontent.com/cliosight/Docs/main/cliosight.png)     
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/cliosight/Docs/main/cliosight.png">  
+</p>
 ### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
 
