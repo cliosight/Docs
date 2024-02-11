@@ -69,9 +69,9 @@ A form is the data input method for populating tables. It can have multiple sub-
 ### Example of Forms - Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to add contacts, groups and meeting requests. Data collected can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
 
-[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
+[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true) ,   [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true) ,   [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-**JSON of a section of the 'Meeting' form** <a name="meeting_form"></a>  [JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
+**JSON of a section of the 'Meeting' form** <a name="meeting_form"></a> ( [JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json) )          
 
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
