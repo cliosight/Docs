@@ -39,18 +39,13 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 <table border="0">
 <tr>
 <td>
-<img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
+<img src="https://github.com/cliosight/Docs/blob/main/current_lowcode.png?raw=true">   
 </td>
 <td>
 <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
 </td>
 </tr>
 </table>
-
-<p float="left">
-  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100%" />
-  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100%" /> 
-</p>
 
 
 ### Email Notification <a name="email"></a>    
