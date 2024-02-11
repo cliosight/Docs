@@ -47,6 +47,12 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 </tr>
 </table>
 
+<p float="left">
+  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100" />
+  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100" /> 
+</p>
+
+
 ### Email Notification <a name="email"></a>    
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
