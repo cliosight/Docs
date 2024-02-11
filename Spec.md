@@ -52,7 +52,7 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
 
 <p align="center">
-<h2 align="left">The Primary Components</h2>
+<h2 align="left">The Primary Components of a Cliosight Application</h2>
 </p>
 
 [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
@@ -71,7 +71,7 @@ For an application like a meeting scheduler portal, forms can be used to add con
 
 [Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true) ,   [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true) ,   [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
-**JSON of a section of the 'Meeting' form** <a name="meeting_form"></a> ( [JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json) )          
+**JSON specification for a section of the 'Meeting' form** <a name="meeting_form"></a> ( [JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json) )          
 
 1. Multiselect input from another table 
 2. Drop down menu with hardcoded values   
@@ -174,7 +174,7 @@ JSON:
 Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data from a report or by using it in an iframe. The simplest way is to use it in a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
-[Live stats report](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
+[Live stats](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
 
 SQL query for the report:     
 ```sql
