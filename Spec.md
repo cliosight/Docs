@@ -48,8 +48,8 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 </table>
 
 <p float="left">
-  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100" />
-  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100" /> 
+  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100%" />
+  <img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png" width="100%" /> 
 </p>
 
 
