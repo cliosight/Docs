@@ -39,9 +39,10 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 <table border="0">
 <tr>
 <td>
-<img width="80%" src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
+<img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
 </td>
-<img width="80%" src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
+<td>
+<img src="https://raw.githubusercontent.com/cliosight/Docs/main/ai_in_cliosight.png">   
 </td>
 </tr>
 </table>
