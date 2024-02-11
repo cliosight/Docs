@@ -1,6 +1,6 @@
 
 # Cliosight
-Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases and data management solutions.   
+Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we continue to evolve, we plan to expand our compatibility to various cloud platform-specific databases and data management systems.   
 
 ### Free Tier <a name="freetier"></a>   
     
@@ -69,9 +69,7 @@ A form is the data input method for populating tables. It can have multiple sub-
 ### Example of Forms - Meeting Scheduler Application <a name="form_example"></a>        
 For an application like a meeting scheduler portal, forms can be used to add contacts, groups and meeting requests. Data collected can be used to [automate](#automation) tasks like sending out meeting invite/update/cancellation emails.          
 
-[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    
-[Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    
-[Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
+[Contact](https://app.cliosight.com/app/forms/35/show?noNavbar=true)    [Group](https://app.cliosight.com/app/forms/34/show?noNavbar=true)    [Meeting](https://app.cliosight.com/app/forms/52/show?noNavbar=true)  
 
 **JSON of a section of the 'Meeting' form** <a name="meeting_form"></a>     
 
@@ -81,7 +79,7 @@ For an application like a meeting scheduler portal, forms can be used to add con
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub-form
 
-[JSON configuration](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
+[JSON](https://github.com/cliosight/Docs/blob/main/meeting_form_json.json)        
 
 ### Report <a name="report"></a>          
 While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations. This is because a filter can show the column values of a report, apart from hardcoded values like a conventional drop-down menu or multiselect option.  
