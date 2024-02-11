@@ -221,9 +221,8 @@ In order to provide assurance to users, Cliosight is designed to have in place a
 Some of the in-built features are:    
 1. Role-based Access Control (Admin, User and Admin-Minor)
 2. Secure protocols for data and file transfer like HTTPS and SFTP only.
-3. Removal of personal information from data.     
-4. Masking sensitive information with queries.      
-5. Logs for tracking access and updates made on a table.
+3. Removal of personal and sensitive information from data with pre-defined queries.     
+4. Logs for tracking access and updates made on a table.
    
 EU and USA:   
 [GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
