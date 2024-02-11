@@ -58,7 +58,7 @@ Using our email notifications, users will be able to send a max of 100 emails to
 [Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Trigger and Job](#trigger)   &nbsp;&nbsp;|&nbsp;&nbsp;  [Workflow](#workflow)    
 
 <p align="left">
-<img src="https://raw.githubusercontent.com/cliosight/Docs/main/cliosight.png">  
+<img width="100%" src="https://raw.githubusercontent.com/cliosight/Docs/main/cliosight.png">  
 </p>
 
 ### Form <a name="form"></a>    
