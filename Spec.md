@@ -1,6 +1,6 @@
 
 # Cliosight
-Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we evolve, we will expand our compatibility to cloud platform-specific databases, data management systems and DLTs.   
+Our web interface with APIs enable users to perform a wide range of analytical operations, encompassing both the in-built and user-owned databases. As we evolve, we will expand our compatibility to various cloud platform-specific databases, data management systems and DLTs.   
 
 ### Free Tier (Tentative) <a name="freetier"></a>   
     
