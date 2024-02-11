@@ -2,7 +2,7 @@
 <h1 align="center">Cliosight</h1>
 <h4 align="center">Build the best applications & datasets with low-code</h4>
 </p>
-<p align="center" width="100%"> 
+<p align="left" width="100%"> 
 <img align="center" width="60%" src="https://github.com/cliosight/Docs/blob/main/logo_temp.png?raw=true">
 </p>
 
