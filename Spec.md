@@ -23,10 +23,7 @@ Our interface and APIs enable users to perform variety of analytical operations,
 **Data warehouse** - Google Big Query        
 
 ### Running Multiple SQL Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values for replacing variables used in the final query. Check out [this example](#report_example).
-   
-### Advanced File Storage <a name="afiles"></a>      
-This platform provides extra functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.      
+Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values for replacing variables used in the final query. Check out [this example](#report_example).    
 
 ### Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
@@ -79,8 +76,11 @@ For an application like a meeting scheduler portal, forms can be used to add con
 4. Sub form within a form 
 5. Multiple instances of aggregated values within the sub-form      
 
+### File Storage <a name="afiles"></a>      
+This platform provides specific functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.  
+      
 ### Report <a name="report"></a>          
-While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations. This is because a filter can show the column values of a report, apart from hardcoded values like a conventional drop-down menu or multiselect option.  
+While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). The contents of a report is simply the result of a SQL query. Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations. This is because a filter can also show the column values of a report, apart from tables or hardcoded values like a conventional drop-down menu or multiselect option.  
    
 ### Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.                   
@@ -171,7 +171,7 @@ JSON:
 ```
 
 ### Creating Graphs and Charts with JavaScript libraries and Reports <a name="graphs"></a>
-Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries for data visualization like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching the data from a report or by using it in an iframe. The simplest way is to use it in a dashboard.      
+Tabular data from reports can be used to plot graphs and charts using the standard Javascript libraries like Chart.js, HighCharts, D3.js, C3.js to name a few. One such example is a line chart that depicts datasets from three different datasources, viz. in-built, containerized and fully-managed MySQL database instances across different cloud platforms. We can also display live stats by fetching data through a report API or by using it in an iframe. The simplest way is to add it to a dashboard.      
      
 [Chart with different datasources](https://chart.cliosight.com)                      
 [Live stats](https://app.cliosight.com/app/reports/85/show?noNavbar=true)    
@@ -201,9 +201,7 @@ Corresponding JSON:
 ```
 
 ### Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Public datasets are typically downloaded as CSV files on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in the hardware and accessed locally or remotely.   
-
-Data is processed, split, or merged according to the requirements of a data science project. Results can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn etc. Custom datasets can be created and accessed using Python libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.     
+Public datasets are typically downloaded as CSV files on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in the hardware and accessed locally or remotely. Data is processed, split, or merged according to the requirements by a data scientist. Results can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn etc. Custom datasets can be registered and accessed using libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.     
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure in a collaborative work environment.   
 
