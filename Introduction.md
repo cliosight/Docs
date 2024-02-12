@@ -81,7 +81,7 @@ For an application like a meeting scheduler portal, forms can be used to add con
 This platform provides specific functionalities for files uploaded through a form. The [free tier](#freetier) will allow a max of 4GB storage space for the in-built database and files. Like other components, files are also equipped with access control methods.  
       
 ### Report <a name="report"></a>          
-While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations. This is because a filter can also show the column values of a report, apart from tables or hardcoded values like a conventional drop-down menu or multiselect option.  
+While a form is the data input interface, a report is the output of data analysis with SQL or external code. Results of a report can be accessed via Cliosight's API or exported to other datasources with [jobs](#jobs). Within an enterprise application's schema, there can be numerous SQL queries, leading to countless report and filter combinations. This is because a filter can also show the column values of a report, apart from a table or hardcoded values similar to a conventional drop-down menu or multiselect option.  
    
 ### Example of a Report - Contacts and Groups Report  <a name="report_example"></a> 
 [Contacts & Groups](https://app.cliosight.com/app/reports/29/show?noNavbar=true) report in the meeting application shows all contacts along with the total number of groups for each.                   
