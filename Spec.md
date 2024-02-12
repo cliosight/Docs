@@ -225,12 +225,9 @@ Some of the in-built features are:
 3. Removal of personal and sensitive information from data with pre-defined queries.     
 4. Logs for tracking access and updates made on a table.
    
-EU and USA:   
-[GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
+EU and USA: [GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
+India: [The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf) [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
-India:     
-[The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf)     
-[The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
 
 ### Dashboard <a name="dashboard"></a>        
 A dashboard is an aggregation of forms, reports and HTML/CSS code snippets. Access can be controlled upto report filter level. This makes it the easiest way to develop and host an analytics dashboard, a SPA or a landing page.                                    
