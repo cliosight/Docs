@@ -88,15 +88,6 @@ While a form is the data input interface, a report is the output of data analysi
 
 SQL query:      
 ``` sql
-select count(*) as count from (select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \         
-min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \       
-count(gc.id) as 'Total Groups' from `contacts` c  \        
-left join `groups_contacts` gc on gc.contact_id = c.id   \
-where ({{term}} is null or c.name like concat('%',{{term}},'%') or c.phone like concat('%',{{term}},'%'))    \
-and (c.name = {{Name}} or {{Name}} is null)  \
-and (c.phone = {{Phone}} or {{Phone}} is null)   \
-group by c.id) abc;       
-
 select min(c.id) as contact_id, min(gc.group_id) as group_id, min(c.name) as Name, \
 min(c.email) as Email, min(c.phone) as Phone, min(c.stage) as Stage, \      
 count(gc.id) as 'Total Groups' from `contacts` c  \     
