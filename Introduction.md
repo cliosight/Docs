@@ -19,7 +19,7 @@ Our interface and APIs enable users to perform variety of analytical operations,
 
 ### Support for Multiple Datasources <a name="datasources"></a>             
                   
-**SQL** - MySQL, Postgres, Microsoft SQL Server, Google Cloud SQL and Amazon RDS.       
+**SQL** - MySQL, Postgres, Microsoft SQL Server and Amazon RDS.       
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 **Data warehouse** - Google Big Query        
 
