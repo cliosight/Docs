@@ -23,9 +23,6 @@ Our interface and APIs enable users to perform variety of analytical operations,
 **NoSQL** - Cassandra, Mongodb, Amazon Dynamo DB and Azure Cosmos DB.      
 **Data warehouse** - Google Big Query        
 
-### Running Multiple SQL Statements <a name="multiplestatements"></a>     
-Execution of multiple SQL queries is enabled in the admin console and report creation. In reports however, only the final `SELECT` statement is used. The preceeding queries can be used for fetching real-time, dynamic intermediate values for replacing variables in the final query. Check out [this example](#report_example).    
-
 ### Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
