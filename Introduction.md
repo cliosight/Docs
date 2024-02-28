@@ -44,7 +44,7 @@ The answer to this is, even with meticulously crafted prompts, it is not always 
 
 
 ### Email Notification <a name="email"></a>    
-Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free.
+Using our email notifications, users will be able to send a max of 100 emails to valid email ids for free during the trial period.
 
 <p align="center">
 <h2 align="left">The Primary Components of a Cliosight Application</h2>
