@@ -50,7 +50,9 @@ Using our email notifications, users will be able to send a max of 100 emails to
 <h2 align="left">The Primary Components of a Cliosight Application</h2>
 </p>
 
-[Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Automation](#automation)    
+[Form](#form)  &nbsp;&nbsp;|&nbsp;&nbsp;      [Report](#report)   &nbsp;&nbsp;|&nbsp;&nbsp;     [Dashboard](#dashboard)   &nbsp;&nbsp;|&nbsp;&nbsp;    [Automation](#automation)        
+
+Please note: Due to ongoing development, the app links might not work.     
 
 ### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
@@ -391,5 +393,4 @@ response = requests.post('https://app.cliosight.com/node/reports/create', header
 ```
 **Develop the best applications and datasets for machine learning with Cliosight. [Sign up](https://cliosight.com) today.**
 
-Please note: Due to ongoing development, the links might not work.
 
