@@ -188,7 +188,7 @@ Corresponding JSON:
 ```
 
 ### Using Reports in Jupyter Notebook <a name="jupyter"></a>
-Public datasets are typically downloaded as CSV files on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Jupyter is installed in the hardware and accessed locally or remotely. Data is processed, split, or merged according to the requirements by a data scientist. Results can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn etc. Custom datasets can be registered and accessed using libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.     
+Public datasets are typically downloaded as CSV files on the hard disk of personal computers, cloud VM or storage attached to serverless infrastructure. Data is processed, split, or merged accordingly. Results can be dumped as a CSV file or plotted on a graph using matplotlib, seaborn etc. Custom datasets, on the other hand, can be accessed using libraries like TensorFlow Dataset (TFDS) and `torch.utils.data` in PyTorch.     
 
 Alternatively, reports from different datasources in one or more Cliosight accounts can be used for the same purpose. The results of subsequent operations can be pushed back to connected datasources as new reports or as additional records for existing reports or tables using our API. This makes creating, updating and sharing private datasets more secure in a collaborative work environment.   
 
@@ -197,9 +197,7 @@ It is possible to restrict data input into a table using the following features 
 1. Disabling data import through CSV file upload.     
 2. Disabling manual insert, update or delete query execution on the associated tables.
 3. Ensuring that no other forms or endpoints can insert data into these tables.
-4. Disabling data export     
-
-Reports created from restricted tables using one or more of the above methods can serve other datasources from which reports can be generated. This can however be done only if the fourth option is not applied.     
+4. Disabling data export       
 
 This approach ensures that the primary table and associated sub-form tables receive their inputs through the designated form interface or endpoint only. This real-world data can be used for generating artificial datasets using GANs (Generative adversarial networks) or VAEs (Variational autoencoders).    
 
@@ -209,7 +207,6 @@ Some of the in-built features are:
 1. Role-based Access Control (Admin, User and Admin-Minor)
 2. Secure protocols for data and file transfer like HTTPS and SFTP only.
 3. Removal of personal and sensitive information from data with pre-defined queries.     
-4. Logs for tracking access and updates made on a table.
    
 EU and USA: [GDPR vs. HIPPA compliance](https://www.onetrust.com/blog/hipaa-vs-gdpr-compliance/)      
 India: [The PDP Bill](https://www.meity.gov.in/writereaddata/files/The%20Digital%20Personal%20Data%20Potection%20Bill%2C%202022_0.pdf) [The EHR Standards](https://main.mohfw.gov.in/sites/default/files/17739294021483341357.pdf)     
