@@ -22,6 +22,8 @@ Our interface and APIs enable users to perform variety of analytical operations,
 **SQL** - MySQL, Postgres, Microsoft SQL Server and Amazon RDS.         
 **Data warehouse** - Google Big Query        
 
+![datasources](https://github.com/cliosight/Docs/blob/main/datasources.png)
+
 ### Leveraging AI <a name="ai"></a>
 To provide a better user experience through the use of AI, we have added code generators for the two types of syntaxes used within the platform.  
 1. SQL query generator for tables and reports,     
@@ -53,13 +55,7 @@ Using our email notifications, users will be able to send a max of 100 emails to
 
 Please note: Due to ongoing development, the app links might not work.     
 
-<table border="0">
-<tr>
-<td>
-<img src="https://github.com/cliosight/Docs/blob/main/cliosight.png?raw=true">   
-</td>
-</tr>
-</table>
+![cliosight](https://github.com/cliosight/Docs/blob/main/cliosight.png)  
 
 ### Form <a name="form"></a>    
 A form is the data input method for populating tables. It can have multiple sub-forms. It supports all basic input elements of a conventional HTML5 form. With the 'pre' and 'post' HTML JSON tags a form can function like a web page. A form is complete, except for the limitation that it can have only one submit button.  
