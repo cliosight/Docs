@@ -3,7 +3,7 @@
 
 Our interface and APIs enable users to perform variety of analytical operations, encompassing both the in-built and user-owned databases. As we evolve, we will expand our compatibility to various cloud-platform-specific databases, data management systems and DLTs.   
 
-![apps](https://github.com/cliosight/Docs/blob/main/header_image.webp)
+![apps](https://raw.githubusercontent.com/cliosight/Docs/main/header_img.webp)
 
 ### Free Tier (Tentative) <a name="freetier"></a>   
     
